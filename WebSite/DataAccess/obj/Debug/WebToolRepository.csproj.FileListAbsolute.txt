@@ -20,4 +20,3 @@ D:\Dev\BitBucket\WebTool\WebSite\DataAccess\bin\Debug\EntityFramework.dll
 D:\Dev\BitBucket\WebTool\WebSite\DataAccess\bin\Debug\EntityFramework.xml
 D:\Dev\BitBucket\WebTool\WebSite\DataAccess\obj\Debug\WebToolRepository.dll
 D:\Dev\BitBucket\WebTool\WebSite\DataAccess\obj\Debug\WebToolRepository.pdb
-D:\Dev\BitBucket\WebTool\WebSite\DataAccess\obj\Debug\WebToolRepository.csprojResolveAssemblyReference.cache

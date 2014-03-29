@@ -19,3 +19,17 @@ D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolServiceBase\bin\Release\L
 D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolServiceBase\bin\Release\Utilities.dll
 D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolServiceBase\bin\Release\Utilities.pdb
 D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolServiceBase\bin\Release\EntityFramework.xml
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\WebToolServiceBase.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\WebToolServiceBase.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\Castle.Core.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\EntityFramework.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\Enyim.Caching.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\LogHelperLibrary.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\Utilities.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\WebToolRepository.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\WebToolRepository.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\Utilities.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Release\EntityFramework.xml
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Release\WebToolServiceBase.csprojResolveAssemblyReference.cache
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Release\WebToolServiceBase.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Release\WebToolServiceBase.pdb
