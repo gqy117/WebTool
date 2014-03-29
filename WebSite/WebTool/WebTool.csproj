@@ -828,6 +828,6 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>PreBuild.bat</PreBuildEvent>
+    <PreBuildEvent>call "$(SolutionDir)PreBuild.bat"</PreBuildEvent>
   </PropertyGroup>
 </Project>

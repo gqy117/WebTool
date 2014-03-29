@@ -22,10 +22,10 @@ D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\bin\Debug\WebToolCulture.dll
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\bin\Debug\WebToolCulture.pdb
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\bin\Debug\zh-CN\WebToolCulture.resources.dll
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\bin\Debug\DataHelperLibrary.dll
-D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Debug\WebToolCulture.csprojResolveAssemblyReference.cache
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Debug\WebToolCulture.Resource.UIResource.resources
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Debug\WebToolCulture.Resource.UIResource.zh-CN.resources
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Debug\WebToolCulture.csproj.GenerateResource.Cache
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Debug\zh-CN\WebToolCulture.resources.dll
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Debug\WebToolCulture.dll
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Debug\WebToolCulture.pdb
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Debug\WebToolCulture.csprojResolveAssemblyReference.cache
