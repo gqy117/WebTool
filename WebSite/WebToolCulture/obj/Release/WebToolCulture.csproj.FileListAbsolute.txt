@@ -27,3 +27,4 @@ D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.cspro
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\zh-CN\WebToolCulture.resources.dll
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.dll
 D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.pdb
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.csprojResolveAssemblyReference.cache
