@@ -1,0 +1,74 @@
+﻿@{ Layout = "~/Views/Shared/_rootLayout.cshtml"; }
+<div class="fixed-top">
+    <!-- BEGIN HEADER -->
+    @Html.Action("Index", "IndexHead")
+    @Html.Partial("~/Views/Shared/_bootstrapLayout.cshtml")
+    <!-- END HEADER -->
+
+    <div id="Loading" class="dataTables_processing" style="visibility: hidden;"><i class="fa fa-coffee"></i>&nbsp;Please wait...</div>
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container row-fluid">
+        <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar nav-collapse collapse">
+            <!-- BEGIN SIDEBAR MENU -->
+            <ul class="page-sidebar-menu">
+                <li id="Dashboard">
+                    <a href="javascript:LeftPanel_Dashboard_Click();">
+                        <i class="icon-home"></i>@UIResource.Dashboard
+                        <span class="selected"></span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="page-sidebar-menu">
+                <li id="WOL">
+                    <a href="javascript:LeftPanel_WOL_Click();">
+                        <i class="icon-th-list"></i>@UIResource.WOL
+                        <span class="selected"></span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </div>
+        <!-- END SIDEBAR -->
+        <!-- BEGIN PAGE -->
+        <div class="page-content">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+        <!-- END PAGE -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    @Html.Partial("~/Views/Home/IndexFooter.cshtml")
+    <!-- END FOOTER -->
+</div>
+
+
+
+
+<script>
+    function _indexLayout_On_Ready() {
+        jQuery(document).ready(function () {
+            App.init(); // init the rest of plugins and elements
+            UIModals.init();
+        });
+    }
+    Add_JS_Content('_indexLayout_On_Ready();');
+
+
+    function LeftPanel_Dashboard_Click() {
+        Track('Index', 'LeftPanel_Dashboard');
+        window.location.href = "@Url.Action("Index", "Home")";
+
+    }
+    function LeftPanel_WOL_Click() {
+        Track('Index', 'LeftPanel_WOL');
+        window.location.href = "@Url.Action("WOL", "Tool")";
+    }
+
+
+
+</script>

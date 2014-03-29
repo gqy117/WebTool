@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebToolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="WOL">
+          <Key>
+            <PropertyRef Name="WOLID" />
+          </Key>
+          <Property Name="WOLID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="WOLName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MACAddress" Type="nvarchar" MaxLength="20" />
+          <Property Name="SubnetMask" Type="nvarchar" MaxLength="20" />
+          <Property Name="HostName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Port" Type="int" />
+          <Property Name="Protocol" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_WOL_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="WOL" Type="Self.WOL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="WOL">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SelectUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectWOL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="StartRecord" Type="int" Mode="In" />
+          <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="WOLName" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="WebToolModelStoreContainer">
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WOL" EntityType="Self.WOL" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_WOL_UserId" Association="Self.FK_WOL_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WOL" EntitySet="WOL" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebToolModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="WOLs" Relationship="Self.FK_WOL_UserId" FromRole="Users" ToRole="WOL" />
+        </EntityType>
+        <EntityType Name="WOL">
+          <Key>
+            <PropertyRef Name="WOLID" />
+          </Key>
+          <Property Name="WOLID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="WOLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MACAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SubnetMask" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HostName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Port" Type="Int32" />
+          <Property Name="Protocol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_WOL_UserId" FromRole="WOL" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_WOL_UserId">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="WOL" Type="Self.WOL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="WOL">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebToolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="WOLs" EntityType="Self.WOL" />
+          <AssociationSet Name="FK_WOL_UserId" Association="Self.FK_WOL_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WOL" EntitySet="WOLs" />
+          </AssociationSet>
+          <FunctionImport Name="SelectUser" ReturnType="Collection(WebToolModel.SelectUser_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectWOL" ReturnType="Collection(WebToolModel.SelectWOL_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="StartRecord" Mode="In" Type="Int32" />
+            <Parameter Name="OrderBy" Mode="In" Type="String" />
+            <Parameter Name="WOLName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SelectUser_Result">
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SelectWOL_Result">
+          <Property Type="Int64" Name="RowID" Nullable="true" />
+          <Property Type="Int32" Name="WOLID" Nullable="true" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="String" Name="WOLName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MACAddress" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SubnetMask" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="HostName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Port" Nullable="true" />
+          <Property Type="String" Name="Protocol" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebToolModelStoreContainer" CdmEntityContainer="WebToolEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="WebToolModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WOLs">
+            <EntityTypeMapping TypeName="WebToolModel.WOL">
+              <MappingFragment StoreEntitySet="WOL">
+                <ScalarProperty Name="WOLID" ColumnName="WOLID" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="WOLName" ColumnName="WOLName" />
+                <ScalarProperty Name="MACAddress" ColumnName="MACAddress" />
+                <ScalarProperty Name="SubnetMask" ColumnName="SubnetMask" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="Protocol" ColumnName="Protocol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectUser" FunctionName="WebToolModel.Store.SelectUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WebToolModel.SelectUser_Result">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectWOL" FunctionName="WebToolModel.Store.SelectWOL" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WebToolModel.SelectWOL_Result">
+                <ScalarProperty Name="RowID" ColumnName="RowID" />
+                <ScalarProperty Name="WOLID" ColumnName="WOLID" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="WOLName" ColumnName="WOLName" />
+                <ScalarProperty Name="MACAddress" ColumnName="MACAddress" />
+                <ScalarProperty Name="SubnetMask" ColumnName="SubnetMask" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="Protocol" ColumnName="Protocol" />
+                <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

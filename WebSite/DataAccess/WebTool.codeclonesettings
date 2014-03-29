@@ -1,0 +1,5 @@
+<CodeCloneSettings>
+  <Exclusions>
+    <Namespace>WebToolRepository</Namespace>
+  </Exclusions>
+</CodeCloneSettings>      

@@ -1,0 +1,16 @@
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolModel\bin\Release\WebToolModel.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolModel\bin\Release\WebToolModel.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolModel\bin\Release\WebToolCulture.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolModel\bin\Release\WebToolCulture.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolModel\bin\Release\zh-CN\WebToolCulture.resources.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolModel\obj\Release\WebToolModel.csprojResolveAssemblyReference.cache
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolModel\obj\Release\WebToolModel.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolModel\obj\Release\WebToolModel.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolModel\bin\Release\WebToolModel.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolModel\bin\Release\WebToolModel.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolModel\bin\Release\WebToolCulture.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolModel\bin\Release\WebToolCulture.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolModel\bin\Release\zh-CN\WebToolCulture.resources.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolModel\obj\Release\WebToolModel.csprojResolveAssemblyReference.cache
+D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolModel\obj\Release\WebToolModel.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolModel\obj\Release\WebToolModel.pdb
