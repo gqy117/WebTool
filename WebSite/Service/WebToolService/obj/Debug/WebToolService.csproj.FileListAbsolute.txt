@@ -1,0 +1,54 @@
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\obj\Debug\WebToolService.csprojResolveAssemblyReference.cache
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolService.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolService.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\DataMap.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\Utilities.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolCulture.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolRepository.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\Utilities.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolCulture.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolRepository.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\zh-CN\WebToolCulture.resources.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\obj\Debug\WebToolService.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\obj\Debug\WebToolService.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolModel.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolModel.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolServiceBase.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\WebToolService\bin\Debug\WebToolServiceBase.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolService.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolService.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\Utilities.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolCulture.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolModel.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolRepository.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolServiceBase.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\Utilities.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolCulture.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolModel.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolRepository.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolServiceBase.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\zh-CN\WebToolCulture.resources.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\obj\Debug\WebToolService.csprojResolveAssemblyReference.cache
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\obj\Debug\WebToolService.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\Service\WebToolService\obj\Debug\WebToolService.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolService.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolService.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\Utilities.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolCulture.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolRepository.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolServiceBase.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolRepository.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\Utilities.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolCulture.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\WebToolServiceBase.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\zh-CN\WebToolCulture.resources.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\obj\Debug\WebToolService.csprojResolveAssemblyReference.cache
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\obj\Debug\WebToolService.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\obj\Debug\WebToolService.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\Autofac.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\Autofac.Extras.DynamicProxy2.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\Castle.Core.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\DataHelperLibrary.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\EntityFramework.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\Enyim.Caching.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolService\bin\Debug\EntityFramework.xml
