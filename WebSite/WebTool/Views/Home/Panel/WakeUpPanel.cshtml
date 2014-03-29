@@ -1,0 +1,35 @@
+﻿<script>
+     var WOL = { ProfileId: 0 };
+     function WakeUp() {
+         Panel3_ViewMore_Click();
+         Post(
+             {
+                 url: "@Url.Content("~/Tool/WakeUp")",
+                 //data: JSON.stringify(WOL),
+                 success: function (message) {
+                     $('#alertWakeUpSuccess').show();
+                 }
+             }
+         );
+     }
+
+
+    function Panel3_ViewMore_Click() {
+        Track('Index', 'Panel3_ViewMore');
+    }
+ </script>
+
+
+<div class="span3 responsive" data-tablet="span6  fix-offset" data-desktop="span3">
+    <div class="dashboard-stat blue">
+        <div class="visual">
+            <i class="icon-globe"></i>
+        </div>
+        <a class="more" href="javascript: WakeUp();">@UIResource.WakeUp <i class="m-icon-swapright m-icon-white"></i>
+        </a>
+    </div>
+    <div id="alertWakeUpSuccess" class="alert alert-success" style="display: none;">
+        <button class="close" onclick="$('#alertWakeUpSuccess').hide();"></button>
+        <strong>@UIResource.Success</strong>
+    </div>
+</div>

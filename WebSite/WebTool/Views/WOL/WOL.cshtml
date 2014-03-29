@@ -1,0 +1,63 @@
+﻿@{ Layout = "~/Views/Shared/_indexLayout.cshtml"; }
+<script>
+    function WOL_Click() {
+        Track('WOL', 'WOL');
+    }
+
+    Add_JS_Content('ActiveCurrentPanel("WOL");');
+
+</script>
+@System.Web.Optimization.Scripts.Render("~/Content/JSTable")
+@{
+    HeaderCaption HeaderCaption = new HeaderCaption()
+    {
+        Header1 = UIResource.WOL,
+        Header2 = UIResource.WakeOnLan,
+        Navigation1 = UIResource.WOL,
+        Navigation1Click = "WOL_Click();",
+        Navigation2 = UIResource.WakeOnLan,
+        Navigation2Click = "WOL_Click();",
+    };
+}
+@Html.Partial("~/Views/Shared/HeaderPanel.cshtml", HeaderCaption)
+
+
+
+<div class="row-fluid">
+    <div class="span6 responsive" data-tablet="span12 fix-offset" data-desktop="span6">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <h4><i class="icon-reorder"></i>@UIResource.WOLList</h4>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <table class="table table-striped table-bordered table-hover" id="WOLTable">
+                    <thead>
+                        <tr>
+                            <th>WOLID</th>
+                            <th>@UIResource.WOLName</th>
+                            <th>@UIResource.HostName</th>
+                            <th>@UIResource.MACAddress</th>
+                            <th>@UIResource.SubnetMask</th>
+                            <th>@UIResource.Port</th>
+                            <th>@UIResource.Protocol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+
+
+<script>
+    CreateTable("#WOLTable", '@Url.Content("~/Tool/WOLTable")');
+
+</script>
+

@@ -1,0 +1,15 @@
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\DataAccess\bin\Debug\WebToolRepository.dll.config
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\DataAccess\bin\Debug\WebToolRepository.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\DataAccess\bin\Debug\WebToolRepository.pdb
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\DataAccess\bin\Debug\DataMap.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.csprojResolveAssemblyReference.cache
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.dll
+F:\Program Files\Microsoft Visual Studio 9.0\workspace\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\bin\Debug\WebToolRepository.dll.config
+D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\bin\Debug\WebToolRepository.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\bin\Debug\WebToolRepository.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\bin\Debug\EntityFramework.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\bin\Debug\EntityFramework.xml
+D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.dll
+D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.pdb
+D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.csprojResolveAssemblyReference.cache
