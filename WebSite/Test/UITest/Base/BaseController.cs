@@ -13,7 +13,7 @@ namespace UITest
     {
         #region Properties
         #region MainSite
-        private string _MainSite = "http://localhost:12599/";
+        private string _MainSite = "http://gqy115.cloudapp.net/";
         public string MainSite
         {
             get { return _MainSite; }
@@ -28,7 +28,7 @@ namespace UITest
         {
             get
             {
-                _IE = _IE?? new InternetExplorerDriver();
+                _IE = _IE ?? new InternetExplorerDriver();
                 return _IE;
             }
         }
@@ -46,7 +46,8 @@ namespace UITest
         #endregion
         public RemoteWebDriver CurrentBroswer { get; set; }
         private List<RemoteWebDriver> _Broswers;
-        public List<RemoteWebDriver> Broswers {
+        public List<RemoteWebDriver> Broswers
+        {
             get
             {
                 _Broswers = _Broswers ?? new List<RemoteWebDriver>();
@@ -61,7 +62,7 @@ namespace UITest
             Broswers.Add(IE);
             Broswers.Add(Chrome);
             Init();
-        } 
+        }
         #endregion
         #region Methods
         public abstract void Init();
@@ -82,7 +83,7 @@ namespace UITest
         public virtual void CloseBroswer()
         {
             this.CurrentBroswer.Quit();
-        } 
+        }
         #endregion
         #endregion
     }
