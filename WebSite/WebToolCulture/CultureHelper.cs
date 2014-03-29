@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Web;
+
+namespace WebToolService
+{
+    public class CultureHelper
+    {
+        private static Dictionary<string, string> LanguageDictionary = new Dictionary<string, string>()
+            {
+                {ConstParameter.Chinese, ConstParameter.SimplifiedChinese},
+            };
+
+        public static void SetCurrentCulture(CultureInfo culture)
+        {
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+        }
+
+        public static void SetCurrentCulture(string[] userLanguages)
+        {
+            string lang = GetLang(userLanguages);
+            SetCurrentCulture(lang);
+        }
+
+        public static void SetCurrentCulture(string lang)
+        {
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(lang);
+            SetCurrentCulture(culture);
+        }
+        public static string GetLang(string[] userLanguages)
+        {
+            string lang = ConstParameter.English;
+            if (userLanguages != null && userLanguages.Length != 0)
+            {
+                foreach (string s in userLanguages)
+                {
+                    string shortLang = s.Substring(0, 2);
+                    if (LanguageDictionary.ContainsKey(shortLang))
+                    {
+                        lang = LanguageDictionary[shortLang];
+                        break;
+                    }
+                }
+            }
+            return lang;
+        }
+
+        public static string GetAnotherLanguage(string lang)
+        {
+            return lang == null || lang == ConstParameter.English ? ConstParameter.SimplifiedChinese : ConstParameter.English;
+        }
+    }
+}

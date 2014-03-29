@@ -1,0 +1,19 @@
+﻿@using CaptchaMvc.HtmlHelpers
+<div id="DivCaptchaImage" class="control-group">
+    <div class="controls">
+        <div class="input-icon left">
+            @Html.Captcha(UIResource.Refresh, "", 4)
+        </div>
+    </div>
+</div>
+
+<script>
+    function RefineCaptcha() {
+        $('#CaptchaInputText').attr("class", "m-wrap");
+        $('#CaptchaInputText').attr("placeholder", "@UIResource.Captcha");
+        $('#DivCaptchaImage br').eq(1).remove();
+        $('#DivCaptchaImage img').attr('style', 'margin-left: 12%;');
+        $('#CaptchaInputText').before('<i class="icon-lock"></i>');
+    }
+    RefineCaptcha();
+</script>
