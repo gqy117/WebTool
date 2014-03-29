@@ -17,3 +17,13 @@ D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolCulture\obj\Release\zh-CN\WebTool
 D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolCulture\obj\Release\WebToolCulture.dll
 D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolCulture\obj\Release\WebToolCulture.pdb
 D:\Dev\VSTFS\WebTool\Production\WebSite\WebToolCulture\bin\Release\DataHelperLibrary.dll
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\bin\Release\WebToolCulture.dll
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\bin\Release\WebToolCulture.pdb
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\bin\Release\zh-CN\WebToolCulture.resources.dll
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\bin\Release\DataHelperLibrary.dll
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.Resource.UIResource.resources
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.Resource.UIResource.zh-CN.resources
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.csproj.GenerateResource.Cache
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\zh-CN\WebToolCulture.resources.dll
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.dll
+D:\Dev\BitBucket\WebTool\WebSite\WebToolCulture\obj\Release\WebToolCulture.pdb

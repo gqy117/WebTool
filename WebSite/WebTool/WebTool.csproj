@@ -755,11 +755,7 @@
     <Content Include="Views\Shared\JS\Localization.cshtml" />
     <Content Include="Views\Account\Login\Captcha.cshtml" />
     <Content Include="Views\Shared\JS\AntiForgeryToken.cshtml" />
-    <None Include="Properties\PublishProfiles\FS.pubxml" />
-    <None Include="Properties\PublishProfiles\gqy115.pubxml" />
-    <None Include="Properties\PublishProfiles\gqy116.pubxml" />
     <None Include="Properties\PublishProfiles\WebDeploy.pubxml" />
-    <None Include="Properties\PublishProfiles\WebToolFTP.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Service\WebToolOtherTool\WebToolOtherService.csproj">
