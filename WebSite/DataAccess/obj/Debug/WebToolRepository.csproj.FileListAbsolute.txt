@@ -13,3 +13,11 @@ D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\bin\Debug\EntityFramework.xml
 D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.dll
 D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.pdb
 D:\Dev\VSTFS\WebTool\Production\WebSite\DataAccess\obj\Debug\WebToolRepository.csprojResolveAssemblyReference.cache
+D:\Dev\BitBucket\WebTool\WebSite\DataAccess\bin\Debug\WebToolRepository.dll.config
+D:\Dev\BitBucket\WebTool\WebSite\DataAccess\bin\Debug\WebToolRepository.dll
+D:\Dev\BitBucket\WebTool\WebSite\DataAccess\bin\Debug\WebToolRepository.pdb
+D:\Dev\BitBucket\WebTool\WebSite\DataAccess\bin\Debug\EntityFramework.dll
+D:\Dev\BitBucket\WebTool\WebSite\DataAccess\bin\Debug\EntityFramework.xml
+D:\Dev\BitBucket\WebTool\WebSite\DataAccess\obj\Debug\WebToolRepository.csprojResolveAssemblyReference.cache
+D:\Dev\BitBucket\WebTool\WebSite\DataAccess\obj\Debug\WebToolRepository.dll
+D:\Dev\BitBucket\WebTool\WebSite\DataAccess\obj\Debug\WebToolRepository.pdb

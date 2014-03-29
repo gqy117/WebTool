@@ -7,3 +7,12 @@ D:\Dev\VSTFS\WebTool\Production\WebSite\Test\UITest\bin\Debug\WebDriver.xml
 D:\Dev\VSTFS\WebTool\Production\WebSite\Test\UITest\obj\Debug\UITest.csprojResolveAssemblyReference.cache
 D:\Dev\VSTFS\WebTool\Production\WebSite\Test\UITest\obj\Debug\UITest.dll
 D:\Dev\VSTFS\WebTool\Production\WebSite\Test\UITest\obj\Debug\UITest.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\bin\Debug\chromedriver.exe
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\bin\Debug\IEDriverServer.exe
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\bin\Debug\UITest.dll
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\bin\Debug\UITest.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\bin\Debug\WebDriver.dll
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\bin\Debug\WebDriver.xml
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\obj\Debug\UITest.csprojResolveAssemblyReference.cache
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\obj\Debug\UITest.dll
+D:\Dev\BitBucket\WebTool\WebSite\Test\UITest\obj\Debug\UITest.pdb
