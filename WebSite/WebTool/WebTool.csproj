@@ -42,6 +42,8 @@
     <ExcludeFilesFromDeployment>WebTool.Publish.xml;</ExcludeFilesFromDeployment>
     <DeployIisAppPath>Default Web Site/WebTool</DeployIisAppPath>
     <PackageAsSingleFile>true</PackageAsSingleFile>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <PublishDatabases>true</PublishDatabases>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
