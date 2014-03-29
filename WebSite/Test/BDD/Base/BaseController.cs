@@ -10,7 +10,7 @@ namespace BDD
 {
     public abstract class BaseController
     {
-                #region Properties
+        #region Properties
         public dynamic MainController { get; set; }
         public Mock<HttpContextBase> HttpContext { get; set; }
         public Mock<HttpRequestBase> Request { get; set; }
@@ -74,7 +74,7 @@ namespace BDD
         public abstract void InitMainController();
         public virtual void BindControllerContext()
         {
-            this.MainController.ControllerContext = this.ControllerContext.Object; 
+            this.MainController.ControllerContext = this.ControllerContext.Object;
         }
         #endregion
         #endregion

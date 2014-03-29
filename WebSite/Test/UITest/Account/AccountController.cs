@@ -42,7 +42,7 @@ namespace UITest
         }
         #endregion
         #region DoLogin
-        [TestMethod]
+        //[TestMethod]
         public void DoLogin()
         {
             base.Run(() =>
