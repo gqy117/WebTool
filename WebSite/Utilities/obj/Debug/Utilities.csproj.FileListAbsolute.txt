@@ -10,3 +10,10 @@ D:\Dev\VSTFS\WebTool\Production\WebSite\Utilities\obj\Debug\Utilities.pdb
 D:\Dev\VSTFS\WebTool\Production\WebSite\Utilities\bin\Debug\Enyim.Caching.dll
 D:\Dev\VSTFS\WebTool\Production\WebSite\Utilities\bin\Debug\LogHelperLibrary.dll
 D:\Dev\VSTFS\WebTool\Production\WebSite\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+D:\Dev\BitBucket\WebTool\WebSite\Utilities\bin\Debug\Utilities.dll
+D:\Dev\BitBucket\WebTool\WebSite\Utilities\bin\Debug\Utilities.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Utilities\bin\Debug\Enyim.Caching.dll
+D:\Dev\BitBucket\WebTool\WebSite\Utilities\bin\Debug\LogHelperLibrary.dll
+D:\Dev\BitBucket\WebTool\WebSite\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+D:\Dev\BitBucket\WebTool\WebSite\Utilities\obj\Debug\Utilities.dll
+D:\Dev\BitBucket\WebTool\WebSite\Utilities\obj\Debug\Utilities.pdb
