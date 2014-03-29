@@ -828,7 +828,10 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>"$(SolutionDir)Dlls\MicrosoftAjaxMinifier\ajaxmin.exe" "$(ProjectDir)Content\assets\css\style_default.css" –out "$(ProjectDir)Content\assets\css\style_default.min.css" –clobber
+"$(SolutionDir)Dlls\MicrosoftAjaxMinifier\ajaxmin.exe" "$(ProjectDir)Content\assets\uniform\css\uniform.default.css" –out "$(ProjectDir)Content\assets\uniform\css\uniform.default.min.css" –clobber
+"$(SolutionDir)Dlls\MicrosoftAjaxMinifier\ajaxmin.exe" "$(ProjectDir)Content\Site.css" –out "$(ProjectDir)Content\Site.min.css" –clobber
+"$(SolutionDir)Dlls\MicrosoftAjaxMinifier\ajaxmin.exe" "$(ProjectDir)Content\assets\css\style_responsive.css" –out "$(ProjectDir)Content\assets\css\style_responsive.min.css" –clobber
+"$(SolutionDir)Dlls\MicrosoftAjaxMinifier\ajaxmin.exe" "$(ProjectDir)Content\assets\font-awesome\css\font-awesome.css" –out "$(ProjectDir)Content\assets\font-awesome\css\font-awesome.min.css" –clobber</PreBuildEvent>
   </PropertyGroup>
 </Project>
