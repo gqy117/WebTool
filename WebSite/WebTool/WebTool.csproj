@@ -739,7 +739,6 @@
     <Content Include="Content\font\fontawesome-webfont.woff" />
     <Content Include="Content\font\fontawesome-webfont_162a16fe.eot" />
     <Content Include="Content\assets\plugins\bootstrap-modal\.gitattributes" />
-    <Content Include="Content\assets\plugins\bootstrap-modal\.gitignore" />
     <Content Include="Content\assets\plugins\bootstrap-modal\component.json" />
     <Content Include="Content\assets\plugins\bootstrap-modal\composer.json" />
     <Content Include="Content\assets\plugins\bootstrap-modal\LICENSE" />
