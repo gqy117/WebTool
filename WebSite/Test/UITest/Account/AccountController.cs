@@ -63,7 +63,7 @@ namespace UITest
             {
                 if (element.Text == "1")
                 {
-                    res = true;
+                    res = tru e;
                 }
             }
             Assert.IsTrue(res);
