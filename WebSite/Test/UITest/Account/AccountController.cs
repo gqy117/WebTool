@@ -44,7 +44,7 @@ namespace UITest
         }
         #endregion
         #region DoLogin
-        //[Test]
+        [Test]
         public void DoLogin()
         {
             base.Run(() =>
