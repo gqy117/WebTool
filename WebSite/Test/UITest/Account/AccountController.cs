@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 
 namespace UITest
 {
-    [TestFixture]
+    [TestClass]
     public class AccountController : BaseController
     {
         #region Properties
@@ -29,7 +27,7 @@ namespace UITest
         #endregion
         #region Test
         #region OpenLoginPage
-        [Test]
+        [TestMethod]
         public void OpenLoginPage()
         {
             base.Run(() =>
@@ -44,7 +42,7 @@ namespace UITest
         }
         #endregion
         #region DoLogin
-        [Test]
+        [TestMethod]
         public void DoLogin()
         {
             base.Run(() =>
