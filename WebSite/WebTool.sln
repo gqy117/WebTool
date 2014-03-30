@@ -42,12 +42,57 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD", "Test\BDD\BDD.csproj"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITest", "Test\UITest\UITest.csproj", "{25678DE2-986B-4D10-9B54-47EE9D520136}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D1D49B1-B47F-4FC7-B250-BB5AF3122E71}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
-EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gqy117.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WebTool\\WebTool.csproj
+		SccProjectTopLevelParentUniqueName1 = WebTool.sln
+		SccProjectName1 = WebTool
+		SccLocalPath1 = WebTool
+		SccProjectUniqueName2 = WebToolCulture\\WebToolCulture.csproj
+		SccProjectTopLevelParentUniqueName2 = WebTool.sln
+		SccProjectName2 = WebToolCulture
+		SccLocalPath2 = WebToolCulture
+		SccProjectUniqueName3 = Utilities\\Utilities.csproj
+		SccProjectTopLevelParentUniqueName3 = WebTool.sln
+		SccProjectName3 = Utilities
+		SccLocalPath3 = Utilities
+		SccProjectUniqueName4 = Service\\WebToolService\\WebToolService.csproj
+		SccProjectTopLevelParentUniqueName4 = WebTool.sln
+		SccProjectName4 = Service/WebToolService
+		SccLocalPath4 = Service\\WebToolService
+		SccProjectUniqueName5 = Service\\WebToolServiceBase\\WebToolServiceBase.csproj
+		SccProjectTopLevelParentUniqueName5 = WebTool.sln
+		SccProjectName5 = Service/WebToolServiceBase
+		SccLocalPath5 = Service\\WebToolServiceBase
+		SccProjectUniqueName6 = DataAccess\\WebToolRepository.csproj
+		SccProjectTopLevelParentUniqueName6 = WebTool.sln
+		SccProjectName6 = DataAccess
+		SccLocalPath6 = DataAccess
+		SccProjectUniqueName7 = Service\\WebToolOtherTool\\WebToolOtherService.csproj
+		SccProjectTopLevelParentUniqueName7 = WebTool.sln
+		SccProjectName7 = Service/WebToolOtherTool
+		SccLocalPath7 = Service\\WebToolOtherTool
+		SccProjectUniqueName8 = Test\\WebAndLoadTestProject\\WebAndLoadTestProject.csproj
+		SccProjectTopLevelParentUniqueName8 = WebTool.sln
+		SccProjectName8 = Test/WebAndLoadTestProject
+		SccLocalPath8 = Test\\WebAndLoadTestProject
+		SccProjectUniqueName9 = Test\\UnitTestProject\\UnitTestProject.csproj
+		SccProjectTopLevelParentUniqueName9 = WebTool.sln
+		SccProjectName9 = Test/UnitTestProject
+		SccLocalPath9 = Test\\UnitTestProject
+		SccProjectUniqueName10 = Test\\BDD\\BDD.csproj
+		SccProjectTopLevelParentUniqueName10 = WebTool.sln
+		SccProjectName10 = Test/BDD
+		SccLocalPath10 = Test\\BDD
+		SccProjectUniqueName11 = Test\\UITest\\UITest.csproj
+		SccProjectTopLevelParentUniqueName11 = WebTool.sln
+		SccProjectName11 = Test/UITest
+		SccLocalPath11 = Test\\UITest
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -115,8 +160,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D6AE36BD-4E08-4438-BCD9-F56D469B962D} = {4A66FF73-DA7F-472C-A775-4DADD9DEBDBF}
 		{D45E5829-9254-439A-8435-BF04D2D2F4BF} = {4A66FF73-DA7F-472C-A775-4DADD9DEBDBF}
+		{D6AE36BD-4E08-4438-BCD9-F56D469B962D} = {4A66FF73-DA7F-472C-A775-4DADD9DEBDBF}
 		{C458CE84-5BB1-4A0E-AD8A-3E6FA7B9901F} = {D6AE36BD-4E08-4438-BCD9-F56D469B962D}
 		{38CD1CD2-3DEB-43BB-B649-E4D0CB2644CC} = {D6AE36BD-4E08-4438-BCD9-F56D469B962D}
 		{7EAE600D-97A9-4946-B8DA-1248667482E0} = {E8E11C5E-35DD-4669-AC27-AA3710D29790}
