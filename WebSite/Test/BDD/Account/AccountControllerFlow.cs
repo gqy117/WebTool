@@ -33,7 +33,7 @@ namespace BDD
         [Then(@"I see no exceptions")]
         public void ThenISeeNoExceptions()
         {
-            throw new Exception("Email notification test.");
+
         }
         #endregion
     }
