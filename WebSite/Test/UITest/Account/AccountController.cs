@@ -29,7 +29,7 @@ namespace UITest
         #endregion
         #region Test
         #region OpenLoginPage
-        //[Test]
+        [Test]
         public void OpenLoginPage()
         {
             base.Run(() =>
@@ -44,7 +44,7 @@ namespace UITest
         }
         #endregion
         #region DoLogin
-        [Test]
+        //[Test]
         public void DoLogin()
         {
             base.Run(() =>
