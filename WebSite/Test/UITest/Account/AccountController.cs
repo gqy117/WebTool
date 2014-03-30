@@ -29,7 +29,7 @@ namespace UITest
         #endregion
         #region Test
         #region OpenLoginPage
-        [Test]
+        //[Test]
         public void OpenLoginPage()
         {
             base.Run(() =>
