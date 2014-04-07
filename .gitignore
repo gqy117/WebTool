@@ -1,25 +1,10 @@
-WebSite/Service/WebToolService/obj/
-WebSite/WebTool/obj/
-WebSite/Service/WebToolOtherTool/obj/
-WebSite/Utilities/obj/
-WebSite/Service/WebToolServiceBase/obj/
-WebSite/Test/BDD/obj/
-WebSite/WebToolCulture/obj/
 
-
-
-WebSite/DataAccess/obj/
-WebSite/Test/BDD/bin/
-WebSite/Test/UnitTestProject/bin/
-WebSite/Test/UITest/obj/
-WebSite/Test/UITest/bin/
-WebSite/Test/WebAndLoadTestProject/obj/
 
 
 #################
 ## Eclipse
 #################
-
+*/Logs/*
 *.pydevproject
 .project
 .metadata
