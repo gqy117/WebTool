@@ -17,8 +17,6 @@ namespace WebTool
         public UserService UserService { get; set; }
         public LanguageService LanguageService { get; set; }
 
-        public ErrorLoggerAttribute ErrorLogger { get; set; }
-
         public virtual string MainCshtmlName
         {
             get { return ""; }
