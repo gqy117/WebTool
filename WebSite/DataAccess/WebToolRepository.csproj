@@ -35,24 +35,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Glimpse.Ado">
       <HintPath>..\packages\Glimpse.Ado.1.7.0\lib\net40\Glimpse.Ado.dll</HintPath>
     </Reference>
-    <Reference Include="Glimpse.Core, Version=1.8.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Glimpse.1.8.4\lib\net40\Glimpse.Core.dll</HintPath>
+    <Reference Include="Glimpse.Core">
+      <HintPath>..\packages\Glimpse.1.8.0\lib\net40\Glimpse.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Glimpse.EF5">
-      <HintPath>..\packages\Glimpse.EF5.1.6.1\lib\net40\Glimpse.EF5.dll</HintPath>
+    <Reference Include="Glimpse.EF6, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Glimpse.EF6.1.6.1\lib\net40\Glimpse.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
@@ -93,7 +96,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="WebTool.codeclonesettings" />
     <EntityDeploy Include="WebToolEF.edmx">

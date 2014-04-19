@@ -58,7 +58,6 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\Autofac.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\Autofac.Extras.DynamicProxy2.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\Castle.Core.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\DataHelperLibrary.dll
-D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\EntityFramework.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\Enyim.Caching.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\Utilities.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\WebToolCulture.dll
@@ -74,3 +73,6 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Debug\WebToolService
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Debug\WebToolService.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Debug\WebToolService.pdb
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\WebToolService.dll.config
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\EntityFramework.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\EntityFramework.SqlServer.xml
