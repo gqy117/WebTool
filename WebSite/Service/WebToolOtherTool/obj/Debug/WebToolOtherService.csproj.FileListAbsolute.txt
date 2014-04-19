@@ -22,7 +22,6 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WOL\WolCmd.e
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WebToolOtherService.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WebToolOtherService.pdb
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\DataHelperLibrary.dll
-D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\EntityFramework.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\Utilities.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WebToolCulture.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WebToolRepository.dll
@@ -39,3 +38,6 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Debug\WebToolOther
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Debug\WebToolOtherService.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Debug\WebToolOtherService.pdb
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WebToolOtherService.dll.config
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\EntityFramework.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\EntityFramework.SqlServer.xml
