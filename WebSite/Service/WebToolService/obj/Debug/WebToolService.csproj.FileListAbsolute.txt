@@ -73,3 +73,4 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\zh-CN\WebToolC
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Debug\WebToolService.csprojResolveAssemblyReference.cache
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Debug\WebToolService.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Debug\WebToolService.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Debug\WebToolService.dll.config
