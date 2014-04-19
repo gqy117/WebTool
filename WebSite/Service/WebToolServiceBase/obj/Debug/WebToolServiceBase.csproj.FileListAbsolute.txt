@@ -41,6 +41,3 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Debug\WebToolSer
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Debug\WebToolServiceBase.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Debug\WebToolServiceBase.pdb
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\WebToolServiceBase.dll.config
-D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\Glimpse.Ado.dll
-D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\Glimpse.Core.dll
-D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\Glimpse.EF5.dll
