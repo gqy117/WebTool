@@ -38,3 +38,4 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\zh-CN\WebToo
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Debug\WebToolOtherService.csprojResolveAssemblyReference.cache
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Debug\WebToolOtherService.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Debug\WebToolOtherService.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WebToolOtherService.dll.config
