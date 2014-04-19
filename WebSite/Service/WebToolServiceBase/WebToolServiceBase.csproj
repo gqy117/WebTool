@@ -44,6 +44,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Dlls\Enyim.Caching.dll</HintPath>
     </Reference>
+    <Reference Include="Glimpse.Ado, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Glimpse.Ado.1.7.0\lib\net40\Glimpse.Ado.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core">
+      <HintPath>..\..\packages\Glimpse.1.8.0\lib\net40\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.EF5">
+      <HintPath>..\..\packages\Glimpse.EF5.1.6.1\lib\net40\Glimpse.EF5.dll</HintPath>
+    </Reference>
     <Reference Include="LogHelperLibrary">
       <HintPath>..\..\Dlls\LogHelperLibrary.dll</HintPath>
     </Reference>
@@ -76,6 +86,10 @@
       <Project>{c458ce84-5bb1-4a0e-ad8a-3e6fa7b9901f}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
