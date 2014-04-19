@@ -29,7 +29,6 @@ D:\Dev\VSTFS\WebTool\Production\WebSite\Service\WebToolServiceBase\bin\Debug\Ent
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\WebToolServiceBase.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\WebToolServiceBase.pdb
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\Castle.Core.dll
-D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\EntityFramework.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\Enyim.Caching.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\LogHelperLibrary.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\Utilities.dll
@@ -41,3 +40,6 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Debug\WebToolSer
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Debug\WebToolServiceBase.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\obj\Debug\WebToolServiceBase.pdb
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\WebToolServiceBase.dll.config
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\EntityFramework.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolServiceBase\bin\Debug\EntityFramework.SqlServer.xml

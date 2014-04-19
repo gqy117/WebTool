@@ -84,9 +84,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dlls\DataHelperLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Enyim.Caching, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -102,8 +105,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Glimpse.1.8.4\lib\net40\Glimpse.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Glimpse.EF5">
-      <HintPath>..\packages\Glimpse.EF5.1.6.1\lib\net40\Glimpse.EF5.dll</HintPath>
+    <Reference Include="Glimpse.EF6">
+      <HintPath>..\packages\Glimpse.EF6.1.6.1\lib\net40\Glimpse.EF6.dll</HintPath>
     </Reference>
     <Reference Include="Glimpse.Mvc4">
       <HintPath>..\packages\Glimpse.Mvc4.1.5.3\lib\net40\Glimpse.Mvc4.dll</HintPath>
@@ -118,7 +121,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -737,7 +739,9 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.eot" />
