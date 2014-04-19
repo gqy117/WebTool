@@ -51,7 +51,7 @@ namespace WebTool
             Builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired();
             RegisterWebToolRepositoryService();
             //RegisterAOP();
-            RegisterLogger();
+            //RegisterLogger();
             RegisterCaptcha();
         }
         #region Service
