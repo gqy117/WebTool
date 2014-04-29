@@ -76,15 +76,17 @@
                     .appendTo(document.body)
                     .filter('div') // Filter for the div tag only, script tags could surface
                     .dialog({ // Create the jQuery UI dialog
-                        title: link.data('dialog-title'),
-                        modal: true,
-                        resizable: true,
-                        draggable: true,
-                        width: link.data('dialog-width') || 600,
-                        beforeClose: function () { resetForm($(this).find('form')); }
-                    })
+                                title: link.data('dialog-title'),
+                                modal: true,
+                                resizable: true,
+                                draggable: true,
+                                width: link.data('dialog-width') || 600,
+                                beforeClose: function () {
+                                    resetForm($(this).find('form'));
+                                }
+                            })
                     .find('form') // Attach logic on forms
-                        .submit(formSubmitHandler)
+                    .submit(formSubmitHandler)
                     .end();
             });
     };
