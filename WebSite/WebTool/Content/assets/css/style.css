@@ -820,7 +820,7 @@ Portlets
 .portlet.yellow .portlet-title h4, .portlet-title.yellow h4,
 .portlet.red .portlet-title h4, .portlet-title.red h4,
 .portlet.purple .portlet-title h4, .portlet-title.purple h4,
-.portlet.dark-grey .portlet-title h4, .portlet-title.dark-grey h4, {
+.portlet.dark-grey .portlet-title h4, .portlet-title.dark-grey h4 {
   color: #fff;
 }
 
