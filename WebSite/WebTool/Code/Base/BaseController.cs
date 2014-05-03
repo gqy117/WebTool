@@ -16,10 +16,9 @@ namespace WebTool
         #region Properties
         public UserService UserService { get; set; }
         public LanguageService LanguageService { get; set; }
-
         public virtual string MainCshtmlName
         {
-            get { return ""; }
+            get { return String.Empty; }
         }
 
         public UserModel CurrentUserModel { get; set; }

@@ -31,13 +31,12 @@ namespace WebTool
             return View(this.MainCshtmlName, new LoginModel());
         }
 
-        //[CaptchaVerify("Captchaisnotvalid", typeof(UIResource))]
+        ////[CaptchaVerify("Captchaisnotvalid", typeof(UIResource))]
         [HttpPost]
         public ActionResult Login(LoginModel loginModel)
         {
             return base.DoLogin(loginModel);
         }
         #endregion
-
     }
 }

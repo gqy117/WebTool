@@ -12,7 +12,6 @@ using WebToolService;
 
 namespace WebTool
 {
-
     public class MvcApplication : System.Web.HttpApplication
     {
         #region Application
@@ -29,9 +28,7 @@ namespace WebTool
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
-
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
         public void Application_OnBeginRequest(object sender, EventArgs e)
         {
@@ -70,7 +67,7 @@ namespace WebTool
                 CultureHelper.SetCurrentCulture(lang);
                 HttpCookie cookie = new HttpCookie(ConstParameter.WebToolLanguage, lang);
                 cookie.Expires = DateTime.Now.AddYears(10);
-                //cookie.Domain = ConstParameter.CurrentDomain;
+                ////cookie.Domain = ConstParameter.CurrentDomain;
                 Response.Cookies.Add(cookie);
             }
         } 

@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using DataHelperLibrary;
 using WebToolService;
 
-
 namespace WebTool
 {
     public abstract class AccountBaseController : BaseController
@@ -15,7 +14,7 @@ namespace WebTool
         {
             if (!String.IsNullOrEmpty(userModel.Get(x => x.ErrorMessage)))
             {
-                ModelState.AddModelError("", userModel.ErrorMessage);
+                ModelState.AddModelError(String.Empty, userModel.ErrorMessage);
             }
         }
         #region Action
