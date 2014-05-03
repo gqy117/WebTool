@@ -17,6 +17,5 @@ namespace WebTool
             Response.StatusCode = 404;
             return View("NotFound");
         }
-
     }
 }

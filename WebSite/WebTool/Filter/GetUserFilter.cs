@@ -12,7 +12,10 @@ namespace WebTool
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             this.CurrentBaseController = filterContext.Controller as BaseController;
-            if (this.CurrentBaseController == null) return;
+            if (this.CurrentBaseController == null)
+            {
+                return;
+            }
             this.CurrentBaseController.GetCurrentUser();
 
             base.OnActionExecuting(filterContext);

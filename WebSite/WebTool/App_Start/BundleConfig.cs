@@ -6,7 +6,6 @@ namespace WebTool
 {
     public class BundleConfig
     {
-
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.IgnoreList.Clear();
@@ -23,7 +22,8 @@ namespace WebTool
 
         private static void RegisterJSMain(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/AllJS").Include("~/Content/assets/js/jquery-1.8.3.min.js",
+            bundles.Add(new ScriptBundle("~/Content/AllJS").Include(
+            "~/Content/assets/js/jquery-1.8.3.min.js",
             "~/Content/assets/uniform/jquery.uniform.min.js",
             "~/Content/assets/breakpoints/breakpoints.js",
             "~/Content/assets/bootstrap/js/bootstrap.min.js",
@@ -32,14 +32,14 @@ namespace WebTool
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
-            "~/Scripts/WebTool.js"
-            ));
+            "~/Scripts/WebTool.js"));
         }
+
         private static void RegisterJSTable(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/JSTable").Include("~/Content/assets/data-tables/jquery.dataTables.js",
-            "~/Content/assets/data-tables/DT_bootstrap.js"
-            ));
+            bundles.Add(new ScriptBundle("~/Content/JSTable").Include(
+            "~/Content/assets/data-tables/jquery.dataTables.js",
+            "~/Content/assets/data-tables/DT_bootstrap.js"));
         }
         #endregion
 
@@ -51,15 +51,14 @@ namespace WebTool
             "~/Content/assets/font-awesome/css/font-awesome.min.css",
             "~/Content/assets/css/style.css",
             "~/Content/assets/css/themes/default.css",
-            //"~/Content/assets/css/themes/light.css",
+                ////"~/Content/assets/css/themes/light.css",
             "~/Content/assets/uniform/css/uniform.default.css",
             "~/Content/assets/bootstrap/css/bootstrap-responsive.min.css",
             "~/Content/Site.css",
             "~/Content/assets/css/style_responsive.css",
             "~/Content/assets/data-tables/DT_bootstrap.css",
              "~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.css",
-             "~/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"
-            ));
+             "~/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"));
         }
     }
 }
