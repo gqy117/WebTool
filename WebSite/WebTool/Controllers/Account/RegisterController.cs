@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using WebToolService;
 
-
 namespace WebTool
 {
     public class RegisterController : AccountBaseController
@@ -17,8 +16,6 @@ namespace WebTool
             get { return "~/Views/Account/Register.cshtml"; }
         }
         #endregion
-
-
         #region Methods
         public ActionResult Index()
         {
@@ -44,6 +41,5 @@ namespace WebTool
             }
         }
         #endregion
-
     }
 }

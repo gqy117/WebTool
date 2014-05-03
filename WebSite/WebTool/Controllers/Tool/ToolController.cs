@@ -14,10 +14,19 @@ namespace WebTool
     public class ToolController : TableBaseController<WOLModel>
     {
         #region Properties
-        public CMDHelper CMDHelper = new CMDHelper();
+        private CMDHelper _CMDHelper = new CMDHelper();
+
+        public CMDHelper CMDHelper
+        {
+            get
+            {
+                return _CMDHelper;
+            }
+        }
+
         public WOLService WOLService { get; set; }
         public WOLModel WOLModel { get; set; }
-        private string _FileName = "";
+        private string _FileName = String.Empty;
         public string FileName
         {
             get
@@ -31,7 +40,14 @@ namespace WebTool
             }
         }
         #region MainResultColumn
-        public override List<string> PropertyList { get { return new List<string>() { "WOLID", "WOLName", "HostName", "MACAddress", "SubnetMask", "Port", "Protocol" }; } }
+
+        public override List<string> PropertyList
+        {
+            get
+            {
+                return new List<string>() { "WOLID", "WOLName", "HostName", "MACAddress", "SubnetMask", "Port", "Protocol" };
+            }
+        }
         #endregion
         #endregion
         #region Methods
@@ -40,7 +56,7 @@ namespace WebTool
         {
             return View("~/Views/WOL/WOL.cshtml");
         }
-        //[HttpPost, ValidateAntiForgeryToken]
+        ////[HttpPost, ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult WakeUp()
         {
