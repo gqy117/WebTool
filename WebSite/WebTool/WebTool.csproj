@@ -689,6 +689,7 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
+    <Content Include="WebTool.Publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\ui-modals.js" />
@@ -795,6 +796,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\WebDeploy.pubxml" />
+    <Content Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Service\WebToolOtherTool\WebToolOtherService.csproj">
