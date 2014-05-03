@@ -103,3 +103,4 @@ publish
 ...
 WebSite/TestResults/
 WebSite/.JustCode/WebTool.solution-user.settings.xml
+WebSite/WebTool/StyleCop.Cache

@@ -13,7 +13,15 @@ namespace WebTool
     public class ErrorLoggerAttribute : HandleErrorAttribute
     {
         #region Properties
-        public static NLog.Logger LogHelper = NLog.LogManager.GetCurrentClassLogger();
+        private static NLog.Logger _LogHelper = NLog.LogManager.GetCurrentClassLogger();
+
+        public static NLog.Logger LogHelper
+        {
+            get
+            {
+                return _LogHelper;
+            }
+        }
         #endregion
         public override void OnException(ExceptionContext filterContext)
         {
@@ -23,7 +31,7 @@ namespace WebTool
 
         public void LogError(Exception ex)
         {
-            LogHelper.ErrorException("", ex);
+            LogHelper.ErrorException(String.Empty, ex);
         }
     }
 }

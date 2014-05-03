@@ -14,6 +14,5 @@ namespace WebTool
         {
            return PartialView("~/Views/Home/LanguageBar.cshtml", this.LanguageService.GetLanguageModel(Request.Cookies[ConstParameter.WebToolLanguage].Get(x => x.Value).ToStringN()));
         }
-
     }
 }
