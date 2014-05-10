@@ -17,6 +17,8 @@ using Enyim.Caching;
 using Microsoft.SqlServer.Server;
 using WebToolService;
 
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(WebTool.BootStrap), "PostStart")]
+////[assembly: PreApplicationStartMethod(typeof(WebTool.BootStrap), "PostStart")]
 namespace WebTool
 {
     public class BootStrap
@@ -41,6 +43,10 @@ namespace WebTool
         }
         #endregion
 
+        public static void PostStart()
+        {
+            ////Console.Clear();
+        }
         #region Methods
         public void Configure()
         {
