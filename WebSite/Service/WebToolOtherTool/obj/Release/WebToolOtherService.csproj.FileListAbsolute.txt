@@ -38,3 +38,6 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Release\zh-CN\WebT
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Release\WebToolOtherService.csprojResolveAssemblyReference.cache
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Release\WebToolOtherService.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\obj\Release\WebToolOtherService.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Release\WebToolOtherService.dll.config
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Release\EntityFramework.SqlServer.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Release\EntityFramework.SqlServer.xml
