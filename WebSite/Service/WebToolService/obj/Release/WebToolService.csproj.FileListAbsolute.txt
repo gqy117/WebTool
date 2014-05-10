@@ -71,3 +71,6 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Release\zh-CN\WebToo
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Release\WebToolService.csprojResolveAssemblyReference.cache
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Release\WebToolService.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\obj\Release\WebToolService.pdb
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Release\WebToolService.dll.config
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Release\EntityFramework.SqlServer.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolService\bin\Release\EntityFramework.SqlServer.xml
