@@ -8,7 +8,7 @@ using Enyim.Caching.Memcached;
 
 namespace WebToolService
 {
-    public class MemcachedHelper
+    public class MemcachedHelper : ICacheHelper
     {
         public static MemcachedClient Memcached = new MemcachedClient();
 

@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using Autofac;
 using Enyim.Caching;
 using Enyim.Caching.Memcached;
 using WebToolRepository;
@@ -27,10 +28,8 @@ namespace WebToolService
             }
         }
         public virtual int Count { get; set; }
-        #region Memcached
-        public bool IsMemcachedSuccess = true;
-        public MemcachedHelper MemcachedHelper =new MemcachedHelper();
-
+        #region Cache
+        public ICacheHelper CacheHelper = WebToolService.BootStrap.Container.Resolve<ICacheHelper>();
         #endregion
         #region Validation
         public ValidationContext ValidationContext { get; set; }
@@ -41,7 +40,6 @@ namespace WebToolService
             get { return _IsValid; }
             set { _IsValid = value; }
         }
-
         #endregion
         #endregion
         #region Constructors
