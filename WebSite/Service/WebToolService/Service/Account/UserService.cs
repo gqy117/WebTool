@@ -30,7 +30,7 @@ namespace WebToolService
         public UserModel GetUserModelByName(string userNameEncryped)
         {
             string userName = Utility.AESHelper.DecryptStringFromBytes(userNameEncryped);
-            return base.MemcachedHelper.GetCache(userName, () => Context.Users.FirstOrDefault(x => x.UserName == userName).To<User, UserModel>());
+            return base.CacheHelper.GetCache(userName, () => Context.Users.FirstOrDefault(x => x.UserName == userName).To<User, UserModel>());
         }
         #endregion
         #region Insert
