@@ -41,3 +41,5 @@ D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WebToolOther
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\EntityFramework.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\EntityFramework.SqlServer.dll
 D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\Autofac.dll
+D:\Dev\BitBucket\WebTool\WebSite\Service\WebToolOtherTool\bin\Debug\WebActivatorEx.dll
