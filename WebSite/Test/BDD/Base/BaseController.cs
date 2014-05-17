@@ -22,6 +22,7 @@ namespace BDD
         #region Constructors
         public BaseController()
         {
+            this.InitDI();
             this.InitRequest();
             this.InitResponse();
             this.InitHttpContext();
@@ -30,6 +31,12 @@ namespace BDD
         }
         #endregion
         #region Methods
+        #region InitDI
+        public virtual void InitDI()
+        {
+            WebToolService.BootStrap.StartUp();
+        }
+        #endregion
         #region Request
         public virtual void InitRequest()
         {

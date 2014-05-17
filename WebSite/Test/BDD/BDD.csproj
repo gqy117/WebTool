@@ -90,6 +90,10 @@
       <Project>{c4c2f800-0f47-424f-92fe-1c37e850c1ca}</Project>
       <Name>WebToolService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\Utilities.csproj">
+      <Project>{c458ce84-5bb1-4a0e-ad8a-3e6fa7b9901f}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\WebToolCulture\WebToolCulture.csproj">
       <Project>{38cd1cd2-3deb-43bb-b649-e4d0cb2644cc}</Project>
       <Name>WebToolCulture</Name>
