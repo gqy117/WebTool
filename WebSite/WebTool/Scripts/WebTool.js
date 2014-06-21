@@ -113,7 +113,7 @@ function CreateTable(tableName, sAjaxSource, isProcessing) {
         'sAjaxSource': sAjaxSource,
         "fnInfoCallback": function (oSettings, iStart, iEnd, iMax, iTotal, sPre) {
             //ShowLoading();
-            return UIResource.Showing + " " + iStart + " " + UIResource.to + " " + iEnd + " " + UIResource.of + " " + iTotal + " " + UIResource.record;
+            return UIResource.Showing + " " + iStart + " " + UIResource.to + " " + iEnd + " " + UIResource.Paging_of + " " + iTotal + " " + UIResource.record;
         },
         "fnPreDrawCallback": function () {
             // gather info to compose a message
