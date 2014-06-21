@@ -1,14 +1,11 @@
-﻿<script>
-     var UIResource = {
-         Prev: '@UIResource.Prev',
-         Next: '@UIResource.Next',
-         Loading: '@UIResource.Loading',
-         RecordsPerPage: '@UIResource.RecordsPerPage',
-         Showing: '@UIResource.Showing',
-         to: '@UIResource.to',
-         of: '@UIResource.Paging_of',
-         record: '@UIResource.record',
-         Search: '@UIResource.Search',
-     };
-  
+﻿@using WebTool
+
+@{
+    var resourceString = Html.Raw(((BaseController) ViewContext.Controller).ResourceJson);
+}
+
+<script>
+    var UIResource = @(resourceString);
+
+
 </script>
