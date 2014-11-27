@@ -42,3 +42,18 @@ Common utilities such as **NLog**, **JSON.net**, **Enyim.Caching**(**Memcached**
 Multilanguage project, display different language depending on browser settings and user selection.
 
 ### 6. WebTool
+Main website.
+
+(1) Use **Autofac** as **DI** framework.
+
+(2) Use **Castle.Core** as **AOP** framework.
+
+(3) Use **Glimpse** to debug.
+
+(4) Use **StyleCop** to keep codes clean.
+
+(5) Use **bootstrap** as UI framework.
+
+(6) Use **knockout.js** to bind json data to the UI.
+
+(7) Use **JqueryDataTables** as table control.
