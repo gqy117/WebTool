@@ -9,27 +9,12 @@
 .project
 .metadata
 bin/
+obj/
 tmp/
 *.tmp
 *.bak
 *.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
 
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-.buildpath
 
 
 #################
@@ -51,7 +36,7 @@ local.properties
 *_p.c
 *.ilk
 *.meta
-*.obj
+
 *.pch
 *.pdb
 *.pgc
@@ -100,7 +85,7 @@ DocProject/Help/html
 publish
 
 # Others
-...
+
 WebSite/TestResults/
 WebSite/.JustCode/WebTool.solution-user.settings.xml
 WebSite/WebTool/StyleCop.Cache
