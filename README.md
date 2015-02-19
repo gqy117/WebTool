@@ -1,7 +1,7 @@
 WebTool
 =======
 
-A website contains brunches of best practices.
+A demo website contains many best practices.
 
 ### 1. WebTool
 Main website.
@@ -35,7 +35,7 @@ Use **MSTest** and **Moq** to do the unit tests.
 
 (4) WebAndLoadTestProject
 
-Load tests project.
+**Load tests** project.
 
 ### 3. Utilities
 Common utilities such as **NLog**, **JSON.net**, **Enyim.Caching**(**Memcached** C# implementation).
