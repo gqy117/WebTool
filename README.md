@@ -20,7 +20,7 @@ Main website.
 
 (7) Use **JqueryDataTables** as table control.
 
-(7) Use **Google Analytics** to analyze users' behaviour.
+(8) Use **Google Analytics** to analyze users' behaviour.
 
 ### 2.Tests
 (1) BDD
