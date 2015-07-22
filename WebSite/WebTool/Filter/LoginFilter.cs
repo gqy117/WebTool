@@ -17,15 +17,15 @@ namespace WebTool
             {
                 return;
             }
-            if (!this.CurrentBaseController.IsLogin())
-            {
-                filterContext.Result = this.CurrentBaseController.RedirectToLoginPage();
-            }
-            else
-            {
-                this.CurrentBaseController.GetCurrentUser();
-                base.OnActionExecuting(filterContext);
-            }
+            ////if (!this.CurrentBaseController.IsLogin())
+            ////{
+            ////    filterContext.Result = this.CurrentBaseController.RedirectToLoginPage();
+            ////}
+            ////else
+            ////{
+            this.CurrentBaseController.GetCurrentUser();
+            base.OnActionExecuting(filterContext);
+            ////}
         }
     }
 }
