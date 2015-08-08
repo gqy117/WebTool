@@ -1,13 +1,12 @@
 ﻿(function () {
-    angular.module("topApp")
+    angular.module("mainApp")
          .controller('headController', ['headService', headController]);
 
     function headController(headService) {
-        var head = headService;
 
-        this.brand_Click = head.brand;
-        this.myProfile_Click = head.myProfile;
-        this.logOut_Click = head.logOut;
+        this.brand_Click = headService.brand;
+        this.myProfile_Click = headService.myProfile;
+        this.logOut_Click = headService.logOut;
     }
 }());
 
@@ -20,13 +19,3 @@ function _indexLayout_On_Ready() {
 }
 Add_JS_Content('_indexLayout_On_Ready();');
 
-
-function LeftPanel_Dashboard_Click() {
-    Track('Index', 'LeftPanel_Dashboard');
-    window.location.href = App.baseUrl + 'Home/Index';
-
-}
-function LeftPanel_WOL_Click() {
-    Track('Index', 'LeftPanel_WOL');
-    window.location.href = App.baseUrl + 'Tool/WOL';
-}

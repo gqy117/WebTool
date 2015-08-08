@@ -61,7 +61,9 @@ namespace WebTool
         private static void RegisterJSHead(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Head").Include(
-            "~/Views/Head/head.app.js",
+            "~/Views/Shared/main.app.js",
+            "~/Views/Sidebar/sidebar.service.js",
+            "~/Views/Sidebar/sidebar.controller.js",
             "~/Views/Head/head.service.js",
             "~/Views/Head/head.controller.js",
             "~/Views/Head/languageBar.js"));

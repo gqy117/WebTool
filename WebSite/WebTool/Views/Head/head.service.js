@@ -1,6 +1,6 @@
 ﻿(function () {
     angular
-    .module('topApp')
+    .module('mainApp')
     .factory('headService', headService);
 
 
