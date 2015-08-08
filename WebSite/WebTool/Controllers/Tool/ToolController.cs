@@ -50,28 +50,35 @@ namespace WebTool
         }
         #endregion
         #endregion
+
         #region Methods
+
         [HttpGet]
         public ActionResult WOL()
         {
             return View("~/Views/WOL/WOL.cshtml");
         }
+
         ////[HttpPost, ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult WakeUp()
         {
             this.WOLModel = this.WOLService.GetWOLById(this.CurrentUserModel.UserId).FirstOrDefault();
+            
             if (this.WOLModel != null)
             {
                 this.WOLModel.FileName = this.FileName;
                 this.WOLModel.Wake();
             }
+
             return Json(UIResource.Done);
         }
+
         public ActionResult WOLTable(JQueryTable model)
         {
             return base.GetJsonTable(model, () => { this.MainList = this.WOLService.GetWOLById(this.CurrentUserModel.UserId, model); });
         }
+
         #endregion
     }
 }
