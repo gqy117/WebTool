@@ -707,10 +707,12 @@
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Views\Account\login.js" />
     <Content Include="Views\Account\register.js" />
+    <Content Include="Views\Head\Language\languageBar.controller.js" />
+    <Content Include="Views\Head\Language\languageBar.service.js" />
     <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Home\home.js" />
     <Content Include="Views\Head\head.controller.js" />
-    <Content Include="Views\Head\languageBar.js" />
+    <Content Include="Views\Head\Language\languageBar.js" />
     <Content Include="Views\Shared\JS\BottomJS.js" />
     <Content Include="Views\Shared\JS\GoogleAnalytics.js" />
     <Content Include="Views\Shared\JS\HeadJS.js" />
@@ -814,7 +816,7 @@
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Shared\HeaderPanel.cshtml" />
     <Content Include="Views\WOL\WOL.cshtml" />
-    <Content Include="Views\Head\LanguageBar.cshtml" />
+    <Content Include="Views\Head\Language\LanguageBar.cshtml" />
     <Content Include="Views\Shared\JS\Localization.cshtml" />
     <Content Include="Views\Account\Login\Captcha.cshtml" />
     <Content Include="Views\Shared\JS\AntiForgeryToken.cshtml" />
