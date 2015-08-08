@@ -73,7 +73,8 @@ namespace WebTool
         private static void RegisterJSRegister(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Register").Include(
-            "~/Views/Account/register.js"));
+            "~/Views/Account/Register/register.service.js",
+            "~/Views/Account/Register/register.controller.js"));
         }
 
         private static void RegisterJSHome(BundleCollection bundles)
