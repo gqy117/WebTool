@@ -706,6 +706,7 @@
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Views\Home\home.js" />
     <Content Include="Views\Home\homeHead.js" />
+    <Content Include="Views\Home\homeLanguageBar.js" />
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
     </Content>
