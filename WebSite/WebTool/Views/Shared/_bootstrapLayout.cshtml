@@ -1,4 +1,7 @@
-﻿@System.Web.Optimization.Scripts.Render("~/Content/AllJS")
+﻿@using System.Web.Optimization;
+
+@Scripts.Render("~/Content/AllJS")
+@Scripts.Render("~/Content/Head")
 <script>
         App.baseUrl = '@Url.Content("~")';
 </script>

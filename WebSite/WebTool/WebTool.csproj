@@ -704,9 +704,10 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
+    <Content Include="Views\Account\login.js" />
     <Content Include="Views\Home\home.js" />
-    <Content Include="Views\Home\homeHead.js" />
-    <Content Include="Views\Home\homeLanguageBar.js" />
+    <Content Include="Views\Head\head.js" />
+    <Content Include="Views\Head\languageBar.js" />
     <Content Include="Views\WOL\wol.js" />
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
