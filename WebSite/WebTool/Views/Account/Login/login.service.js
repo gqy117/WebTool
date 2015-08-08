@@ -17,7 +17,7 @@
                 }
             },
 
-            formLogin_forgetpassword_Click: function _formLogin_forgetpassword_Click() {
+            signUpNow: function _signUpNow() {
                 Track('Login', 'SignUpNow');
                 window.location.href = App.baseUrl + 'Register/Index';
             }
