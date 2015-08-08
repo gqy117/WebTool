@@ -40,7 +40,8 @@ namespace WebTool
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
-            "~/Scripts/WebTool.js"));
+            "~/Scripts/WebTool.js",
+            "~/Views/Shared/main.app.js"));
         }
 
         private static void RegisterJSRoot(BundleCollection bundles)
@@ -61,7 +62,6 @@ namespace WebTool
         private static void RegisterJSHead(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Head").Include(
-            "~/Views/Shared/main.app.js",
             "~/Views/Sidebar/sidebar.service.js",
             "~/Views/Sidebar/sidebar.controller.js",
             "~/Views/Head/head.service.js",
@@ -89,7 +89,8 @@ namespace WebTool
         private static void RegisterJSLogin(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Login").Include(
-            "~/Views/Account/login.js"));
+            "~/Views/Account/Login/login.service.js",
+            "~/Views/Account/Login/login.controller.js"));
         }
 
         private static void RegisterJSWol(BundleCollection bundles)
