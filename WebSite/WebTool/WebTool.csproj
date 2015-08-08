@@ -707,6 +707,7 @@
     <Content Include="Views\Home\home.js" />
     <Content Include="Views\Home\homeHead.js" />
     <Content Include="Views\Home\homeLanguageBar.js" />
+    <Content Include="Views\WOL\wol.js" />
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
     </Content>
