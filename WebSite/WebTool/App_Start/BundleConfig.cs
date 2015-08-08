@@ -33,7 +33,8 @@ namespace WebTool
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
             "~/Scripts/WebTool.js",
-            "~/Views/Home/home.js"));
+            "~/Views/Home/home.js",
+            "~/Views/Home/homeHead.js"));
         }
 
         private static void RegisterJSTable(BundleCollection bundles)
