@@ -7,8 +7,8 @@
             @UIResource.WakeUp <i class="m-icon-swapright m-icon-white"></i>
         </a>
     </div>
-    <div id="alertWakeUpSuccess" class="alert alert-success" style="display: none;">
-        <button class="close" onclick="$('#alertWakeUpSuccess').hide();"></button>
+    <div id="alertWakeUpSuccess" ng-show="wakeUpPanel.isShowAlertWakeUpSuccess" class="alert alert-success ng-hide">
+        <button class="close" ng-click="wakeUpPanel.hideSuccessMessage()"></button>
         <strong>@UIResource.Success</strong>
     </div>
 </div>
