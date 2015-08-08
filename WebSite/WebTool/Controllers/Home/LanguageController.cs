@@ -12,7 +12,7 @@ namespace WebTool
     {
         public ActionResult Index()
         {
-           return PartialView("~/Views/Home/LanguageBar.cshtml", this.LanguageService.GetLanguageModel(Request.Cookies[ConstParameter.WebToolLanguage].Get(x => x.Value).ToStringN()));
+           return PartialView("~/Views/Head/Language/LanguageBar.cshtml", this.LanguageService.GetLanguageModel(Request.Cookies[ConstParameter.WebToolLanguage].Get(x => x.Value).ToStringN()));
         }
     }
 }

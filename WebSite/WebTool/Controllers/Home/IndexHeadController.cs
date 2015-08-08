@@ -13,7 +13,7 @@ namespace WebTool
         [HttpGet]
         public ActionResult Index()
         {
-            return PartialView("~/Views/Home/IndexHead.cshtml", this.CurrentUserModel);
+            return PartialView("~/Views/Head/Head.cshtml", this.CurrentUserModel);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace WebTool
     {
         public ActionResult Index()
         {
-            return View();
+            return View("~/Views/Home/Home.cshtml");
         }
     }
 }
