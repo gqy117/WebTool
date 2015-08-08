@@ -17,6 +17,8 @@ namespace WebTool
         public static void RegisterJS(BundleCollection bundles)
         {
             RegisterJSMain(bundles);
+            RegisterJSHome(bundles);
+            RegisterJSWol(bundles);
             RegisterJSTable(bundles);
         }
 
@@ -32,10 +34,21 @@ namespace WebTool
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
-            "~/Scripts/WebTool.js",
+            "~/Scripts/WebTool.js"));
+        }
+
+        private static void RegisterJSHome(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Home").Include(
             "~/Views/Home/home.js",
             "~/Views/Home/homeHead.js",
             "~/Views/Home/homeLanguageBar.js"));
+        }
+
+        private static void RegisterJSWol(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Wol").Include(
+            "~/Views/WOL/wol.js"));
         }
 
         private static void RegisterJSTable(BundleCollection bundles)
