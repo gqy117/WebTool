@@ -31,6 +31,7 @@ namespace WebTool
         {
             bundles.Add(new ScriptBundle("~/Content/AllJS").Include(
             "~/Content/assets/js/jquery-1.8.3.min.js",
+            "~/Scripts/angular.min.js",
             "~/Content/assets/uniform/jquery.uniform.min.js",
             "~/Content/assets/breakpoints/breakpoints.js",
             "~/Content/assets/bootstrap/js/bootstrap.min.js",
@@ -39,7 +40,8 @@ namespace WebTool
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
-            "~/Scripts/WebTool.js"));
+            "~/Scripts/WebTool.js",
+            "~/Views/Shared/main.app.js"));
         }
 
         private static void RegisterJSRoot(BundleCollection bundles)
@@ -60,31 +62,43 @@ namespace WebTool
         private static void RegisterJSHead(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Head").Include(
-            "~/Views/Head/head.js",
-            "~/Views/Head/languageBar.js"));
+            "~/Views/Sidebar/sidebar.service.js",
+            "~/Views/Sidebar/sidebar.controller.js",
+            "~/Views/Head/head.service.js",
+            "~/Views/Head/head.controller.js",
+            "~/Views/Head/Language/languageBar.service.js",
+            "~/Views/Head/Language/languageBar.controller.js"));
         }
 
         private static void RegisterJSRegister(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Register").Include(
-            "~/Views/Account/register.js"));
+            "~/Views/Account/Register/register.service.js",
+            "~/Views/Account/Register/register.controller.js"));
         }
 
         private static void RegisterJSHome(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Home").Include(
-            "~/Views/Home/home.js"));
+            "~/Views/Home/headerPanel.service.js",
+            "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
+            "~/Views/Home/home.js",
+            "~/Views/Home/Panel/wakeUpPanel.service.js",
+            "~/Views/Home/Panel/wakeUpPanel.controller.js"));
         }
 
         private static void RegisterJSLogin(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Login").Include(
-            "~/Views/Account/login.js"));
+            "~/Views/Account/Login/login.service.js",
+            "~/Views/Account/Login/login.controller.js"));
         }
 
         private static void RegisterJSWol(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Wol").Include(
+            "~/Views/WOL/headerPanel.service.js",
+            "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
             "~/Views/WOL/wol.js"));
         }
 

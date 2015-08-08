@@ -1,0 +1,22 @@
+﻿<div ng-controller="sidebarController as sidebar" class="page-sidebar nav-collapse collapse">
+    <!-- BEGIN SIDEBAR MENU -->
+    <ul class="page-sidebar-menu">
+        <li id="Dashboard">
+            <a ng-click="sidebar.LeftPanel_Dashboard_Click()">
+                <i class="icon-home"></i>@UIResource.Dashboard
+                <span class="selected"></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
+    <ul class="page-sidebar-menu">
+        <li id="WOL">
+            <a ng-click="sidebar.LeftPanel_WOL_Click()">
+                <i class="icon-th-list"></i>@UIResource.WOL
+                <span class="selected"></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
+    <!-- END SIDEBAR MENU -->
+</div>

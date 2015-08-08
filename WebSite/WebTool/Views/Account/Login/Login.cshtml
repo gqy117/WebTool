@@ -1,0 +1,56 @@
+@{ Layout = "~/Views/Account/Login/_loginLayout.cshtml"; }
+@using CaptchaMvc.HtmlHelpers
+@using System.Web.Optimization
+@model WebToolService.LoginModel
+
+<div ng-app="mainApp" class="content">
+    <!-- BEGIN LOGIN FORM -->
+    <form id="FormLogin" ng-controller="loginController as login" class="form-vertical login-form" action="@Url.Content("~/Account/Login")" method="POST">
+        <h3 class="form-title">
+            @UIResource.LoginToYourAccount
+        </h3>
+        <div class="control-group">
+            <div class="controls">
+                <div class="input-icon left">
+                    <i class="icon-user"></i>
+                    <input name="UserName" class="m-wrap" type="text" placeholder="@UIResource.Username" value="@Model.UserName" />
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <div class="input-icon left">
+                    <i class="icon-lock"></i>
+                    <input id="FormLogin_Password" ng-keyup="login.formLogin_Password_keyup($event)" name="Password" class="m-wrap" type="password" style=""
+                           placeholder="@UIResource.Password" />
+                </div>
+            </div>
+        </div>
+        @*@Html.Partial("~/Views/Account/Login/Captcha.cshtml")*@
+
+        @Html.MyValidationSummary()
+        <div class="form-actions">
+            <label class="checkbox">
+                @Html.CheckBoxFor(x => x.RememberMe)
+                @UIResource.RememberMe
+            </label>
+            <a ng-click="login.formLogin_Submit()" id="login-btn" class="btn green pull-right">
+                @UIResource.Login <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+        <div class="forget-password">
+            <h4>
+                @UIResource.DontHaveAAccount
+            </h4>
+            <p>
+                <a ng-click="login.signUpNow()" class="" id="forget-password">@UIResource.SignUpNow</a>
+            </p>
+        </div>
+
+    </form>
+
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Content/Login")
+}
