@@ -1,15 +1,15 @@
-﻿function MyProfile_Click() {
-    Track('IndexHead', 'MyProfile');
-}
+﻿(function () {
+    angular.module("topApp")
+         .controller('headController', ['headService', headController]);
 
-function LogOut_Click() {
-    Track('IndexHead', 'LogOut');
-    window.location.href = App.baseUrl + "Account/Login";
-}
+    function headController(headService) {
+        var head = headService;
 
-function brand_Click() {
-    Track('IndexHead', 'brand');
-}
+        this.brand_Click = head.brand;
+        this.myProfile_Click = head.myProfile;
+        this.logOut_Click = head.logOut;
+    }
+}());
 
 
 function _indexLayout_On_Ready() {
