@@ -3,15 +3,15 @@
 <!-- BEGIN HEADER -->
 <div class="header navbar navbar-inverse navbar-fixed-top">
     <!-- BEGIN TOP NAVIGATION BAR -->
-    <div class="navbar-inner">
+    <div class="navbar-inner" ng-controller="headController as head">
         <div class="container-fluid">
             <!-- BEGIN LOGO -->
-            <a class="brand" href="javascript:brand_Click();">
+            <a class="brand" ng-click="head.brand_Click()">
                 <img src="@Url.Content("~/Content/assets/img/logo.png")" alt="logo" />
             </a>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-            <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+            <a class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
                 <img src="@Url.Content("~/Content/assets/img/menu-toggler.png")" alt="" />
             </a>
 
@@ -20,13 +20,15 @@
             <ul class="nav pull-right">
                 @Html.Action("Index", "Language")
                 <!-- BEGIN USER LOGIN DROPDOWN -->
-                <li class="dropdown user"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img alt="" src="@Url.Content("~/Content/assets/img/avatar1_small.jpg")" />
-                    <span class="username">@Model.Get(x => x.UserName)</span> <i class="icon-angle-down"></i></a>
+                <li class="dropdown user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img alt="" src="@Url.Content("~/Content/assets/img/avatar1_small.jpg")" />
+                        <span class="username">@Model.Get(x => x.UserName)</span> <i class="icon-angle-down"></i>
+                    </a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:MyProfile_Click();"><i class="icon-user"></i>@UIResource.MyProfile</a></li>
+                        <li><a ng-click="head.myProfile_Click()"><i class="icon-user"></i>@UIResource.MyProfile</a></li>
                         <li class="divider"></li>
-                        <li><a href="javascript:LogOut_Click();"><i class="icon-key"></i>@UIResource.LogOut</a></li>
+                        <li><a ng-click="head.logOut_Click()"><i class="icon-key"></i>@UIResource.LogOut</a></li>
                     </ul>
                 </li>
                 <!-- END USER LOGIN DROPDOWN -->

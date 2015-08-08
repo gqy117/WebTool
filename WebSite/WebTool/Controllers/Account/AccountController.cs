@@ -19,7 +19,7 @@ namespace WebTool
 
         public override string MainCshtmlName
         {
-            get { return "~/Views/Account/Login.cshtml"; }
+            get { return "~/Views/Account/Login/Login.cshtml"; }
         }
         #endregion
 
