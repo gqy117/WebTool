@@ -32,7 +32,8 @@ namespace WebTool
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
-            "~/Scripts/WebTool.js"));
+            "~/Scripts/WebTool.js",
+            "~/Views/Home/home.js"));
         }
 
         private static void RegisterJSTable(BundleCollection bundles)
