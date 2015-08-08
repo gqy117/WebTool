@@ -13,32 +13,41 @@ namespace WebTool
 
         public override string MainCshtmlName
         {
-            get { return "~/Views/Account/Register.cshtml"; }
+            get { return "~/Views/Account/Register/Register.cshtml"; }
         }
+
         #endregion
+
         #region Methods
         public ActionResult Index()
         {
             return View(this.MainCshtmlName, new RegisterModel());
         }
+
         [HttpPost]
         public ActionResult Index(RegisterModel registerModel)
         {
-            bool res = false;
+            ActionResult result;
+
+            bool success = false;
+
             if (ModelState.IsValid)
             {
-                res = UserService.Insert(registerModel);
-                AddModelError(registerModel);
+                success = UserService.Insert(registerModel);
+                base.AddModelError(registerModel);
             }
-            if (res)
+
+            if (success)
             {
                 base.DoLogin(registerModel);
-                return RedirectToHomePage();
+                result = base.RedirectToHomePage();
             }
             else
             {
-                return View(this.MainCshtmlName, registerModel);
+                result = View(this.MainCshtmlName, registerModel);
             }
+
+            return result;
         }
         #endregion
     }
