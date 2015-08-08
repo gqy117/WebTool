@@ -34,7 +34,8 @@ namespace WebTool
             "~/Scripts/ui-modals.js",
             "~/Scripts/WebTool.js",
             "~/Views/Home/home.js",
-            "~/Views/Home/homeHead.js"));
+            "~/Views/Home/homeHead.js",
+            "~/Views/Home/homeLanguageBar.js"));
         }
 
         private static void RegisterJSTable(BundleCollection bundles)
