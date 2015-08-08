@@ -66,7 +66,8 @@ namespace WebTool
             "~/Views/Sidebar/sidebar.controller.js",
             "~/Views/Head/head.service.js",
             "~/Views/Head/head.controller.js",
-            "~/Views/Head/languageBar.js"));
+            "~/Views/Head/Language/languageBar.service.js",
+            "~/Views/Head/Language/languageBar.controller.js"));
         }
 
         private static void RegisterJSRegister(BundleCollection bundles)
