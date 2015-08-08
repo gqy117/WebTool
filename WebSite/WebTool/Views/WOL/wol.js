@@ -1,5 +1,5 @@
 ﻿(function () {
     Add_JS_Content('ActiveCurrentPanel("WOL");');
 
-    CreateTable("#WOLTabler", App.baseUrl + 'Tool/WOLTable');
+    CreateTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
 }());
