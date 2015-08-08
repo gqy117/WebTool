@@ -709,7 +709,8 @@
     <Content Include="Views\Account\register.js" />
     <Content Include="Views\Head\Language\languageBar.controller.js" />
     <Content Include="Views\Head\Language\languageBar.service.js" />
-    <Content Include="Views\Shared\HeaderPanel\headerPanel.service.js" />
+    <Content Include="Views\Home\headerPanel.service.js" />
+    <Content Include="Views\WOL\headerPanel.service.js" />
     <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Home\home.js" />
     <Content Include="Views\Head\head.controller.js" />
@@ -722,7 +723,7 @@
     <Content Include="Views\Sidebar\sidebar.controller.js" />
     <Content Include="Views\Sidebar\sidebar.service.js" />
     <Content Include="Views\Shared\HeaderPanel\headerPanel.controller.js" />
-    <Content Include="Views\WOL\wol.service.js" />
+    <Content Include="Views\WOL\wol.js" />
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -783,7 +784,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
