@@ -7,13 +7,13 @@
     @Scripts.Render("~/Content/Root")
 
     @Html.Partial("~/Views/Shared/JS/Localization.cshtml")
-@*    @Html.Partial("~/Views/Shared/JS/AntiForgeryToken.cshtml")*@
-    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")"/>
+    @*    @Html.Partial("~/Views/Shared/JS/AntiForgeryToken.cshtml")*@
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" />
     @System.Web.Optimization.Styles.Render("~/Content/AllCSS")
 </head>
-    <body>
-        @RenderBody()
-    </body>
+<body ng-app="mainApp">
+    @RenderBody()
+</body>
 
 @Scripts.Render("~/Content/Bottom")
 
