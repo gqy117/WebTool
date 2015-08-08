@@ -1,5 +1,6 @@
 @{ Layout = "~/Views/Account/Login/_loginLayout.cshtml"; }
 
+@using System.Web.Optimization
 @model WebToolService.RegisterModel
 
 <div class="content">
@@ -39,18 +40,5 @@
     @Html.MyValidationSummary()
     <!-- END LOGIN FORM -->
 </div>
-<script>
-    function FormRegister_Submit() {
-        Track('Register', 'Register');
-        $('#FormRegister').submit();
-    }
 
-    function Register_On_Ready() {
-        $("#FormRegister_ConfirmPassword").keyup(function (event) {
-            if (event.keyCode == 13) {
-                FormRegister_Submit();
-            }
-        });
-    }
-    Add_JS_Content('Register_On_Ready();');
-</script>
+@Scripts.Render("~/Content/Register")
