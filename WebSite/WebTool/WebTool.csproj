@@ -707,7 +707,7 @@
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Views\Account\login.js" />
     <Content Include="Views\Account\register.js" />
-    <Content Include="Views\Head\head.app.js" />
+    <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Home\home.js" />
     <Content Include="Views\Head\head.controller.js" />
     <Content Include="Views\Head\languageBar.js" />
@@ -716,6 +716,8 @@
     <Content Include="Views\Shared\JS\HeadJS.js" />
     <Content Include="Views\Shared\JS\PageEnd.js" />
     <Content Include="Views\Shared\JS\pageStart.js" />
+    <Content Include="Views\Sidebar\sidebar.controller.js" />
+    <Content Include="Views\Sidebar\sidebar.service.js" />
     <Content Include="Views\WOL\wol.js" />
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
@@ -828,6 +830,7 @@
     <Content Include="Settings.StyleCop" />
     <None Include="Properties\PublishProfiles\WebToolFTP.pubxml" />
     <Content Include="Views\Head\head.service.js" />
+    <Content Include="Views\Sidebar\Sidebar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
