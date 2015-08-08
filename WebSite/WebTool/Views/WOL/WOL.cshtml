@@ -1,4 +1,5 @@
-﻿@{ Layout = "~/Views/Shared/_indexLayout.cshtml"; }
+﻿@using System.Web.Optimization
+@{ Layout = "~/Views/Shared/_indexLayout.cshtml"; }
 
 @System.Web.Optimization.Scripts.Render("~/Content/JSTable")
 @{
@@ -12,7 +13,7 @@
         Navigation2Click = "WOL_Click();",
     };
 }
-@Html.Partial("~/Views/Shared/HeaderPanel.cshtml", HeaderCaption)
+@Html.Partial("~/Views/Shared/HeaderPanel/HeaderPanel.cshtml", HeaderCaption)
 
 
 
@@ -47,5 +48,7 @@
         <!-- END EXAMPLE TABLE PORTLET-->
     </div>
 </div>
+@section scripts{
+    @Scripts.Render("~/Content/Wol")
+}
 
-@System.Web.Optimization.Scripts.Render("~/Content/Wol")
