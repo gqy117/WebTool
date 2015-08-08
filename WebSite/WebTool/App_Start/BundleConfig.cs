@@ -31,6 +31,7 @@ namespace WebTool
         {
             bundles.Add(new ScriptBundle("~/Content/AllJS").Include(
             "~/Content/assets/js/jquery-1.8.3.min.js",
+            "~/Scripts/angular.min.js",
             "~/Content/assets/uniform/jquery.uniform.min.js",
             "~/Content/assets/breakpoints/breakpoints.js",
             "~/Content/assets/bootstrap/js/bootstrap.min.js",
@@ -60,7 +61,9 @@ namespace WebTool
         private static void RegisterJSHead(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Head").Include(
-            "~/Views/Head/head.js",
+            "~/Views/Head/head.app.js",
+            "~/Views/Head/head.service.js",
+            "~/Views/Head/head.controller.js",
             "~/Views/Head/languageBar.js"));
         }
 
