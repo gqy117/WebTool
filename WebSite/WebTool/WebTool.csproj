@@ -689,6 +689,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\AjaxLogin.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-1.6.2.min.js" />
@@ -706,8 +707,9 @@
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Views\Account\login.js" />
     <Content Include="Views\Account\register.js" />
+    <Content Include="Views\Head\head.app.js" />
     <Content Include="Views\Home\home.js" />
-    <Content Include="Views\Head\head.js" />
+    <Content Include="Views\Head\head.controller.js" />
     <Content Include="Views\Head\languageBar.js" />
     <Content Include="Views\Shared\JS\BottomJS.js" />
     <Content Include="Views\Shared\JS\GoogleAnalytics.js" />
@@ -825,6 +827,7 @@
     <None Include="Properties\PublishProfiles\WebDeploy.pubxml" />
     <Content Include="Settings.StyleCop" />
     <None Include="Properties\PublishProfiles\WebToolFTP.pubxml" />
+    <Content Include="Views\Head\head.service.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

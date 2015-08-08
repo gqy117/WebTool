@@ -1,4 +1,5 @@
-﻿@{ Layout = "~/Views/Shared/_rootLayout.cshtml"; }
+﻿@using System.Web.Optimization
+@{ Layout = "~/Views/Shared/_rootLayout.cshtml"; }
 <div class="fixed-top">
     <!-- BEGIN HEADER -->
     @Html.Action("Index", "IndexHead")
@@ -42,16 +43,7 @@
     </div>
     <!-- END CONTAINER -->
     <!-- BEGIN FOOTER -->
+    @Scripts.Render("~/Content/Head")
     @Html.Partial("~/Views/Head/Footer.cshtml")
     <!-- END FOOTER -->
 </div>
-
-
-
-
-<script>
-
-
-
-
-</script>
