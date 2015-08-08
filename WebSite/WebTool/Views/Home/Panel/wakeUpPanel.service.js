@@ -7,7 +7,13 @@
     function wakeUpPanelService() {
         return {
 
-            wakeUp: function _panel3_ViewMore() {
+            hideMessage: function _hideMessage() {
+                this.isShowAlertWakeUpSuccess = false;
+            },
+
+            wakeUp: function _wakeUp() {
+                var context = this;
+
                 Track('Index', 'Panel3_ViewMore');
 
                 Post(
@@ -15,7 +21,7 @@
                         url: App.baseUrl + 'Tool/WakeUp',
                         //data: JSON.stringify(WOL),
                         success: function (message) {
-                            $('#alertWakeUpSuccess').show();
+                            context.isShowAlertWakeUpSuccess = true;
                         }
                     }
                 );
