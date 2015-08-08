@@ -6,12 +6,14 @@
             @Model.Header1 <small>@Model.Header2</small>
         </h3>
         <ul class="breadcrumb">
-            <li><i class="icon-home"></i><a href="javascript:@Model.Navigation1Click">@Model.Navigation1</a>
-                <span class="icon-angle-right"></span></li>
+            <li>
+                <i class="icon-home"></i><a ng-click="headPanel.navigation1Click">@Model.Navigation1</a>
+                <span class="icon-angle-right"></span>
+            </li>
             <li><a href="javascript:@Model.Navigation2Click">@Model.Navigation2</a></li>
             <li class="pull-right no-text-shadow">
                 <div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive"
-                    data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
+                     data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
                     <i class="icon-calendar"></i><span></span><i class="icon-angle-down"></i>
                 </div>
             </li>

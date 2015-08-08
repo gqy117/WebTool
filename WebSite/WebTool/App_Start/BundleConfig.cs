@@ -62,6 +62,8 @@ namespace WebTool
         {
             bundles.Add(new ScriptBundle("~/Content/Head").Include(
             "~/Views/Shared/main.app.js",
+            "~/Views/Shared/HeaderPanel/headerPanel.service.js",
+            "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
             "~/Views/Sidebar/sidebar.service.js",
             "~/Views/Sidebar/sidebar.controller.js",
             "~/Views/Head/head.service.js",
@@ -91,7 +93,7 @@ namespace WebTool
         private static void RegisterJSWol(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Wol").Include(
-            "~/Views/WOL/wol.js"));
+            "~/Views/WOL/wol.service.js"));
         }
 
         private static void RegisterJSTable(BundleCollection bundles)
