@@ -789,8 +789,8 @@
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont_162a16fe.eot" />
     <Content Include="Views\Account\Login\_loginLayout.cshtml" />
     <Content Include="Views\Shared\_indexLayout.cshtml" />
-    <Content Include="Views\Home\IndexHead.cshtml" />
-    <Content Include="Views\Home\IndexFooter.cshtml" />
+    <Content Include="Views\Head\Head.cshtml" />
+    <Content Include="Views\Head\Footer.cshtml" />
     <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_bootstrapLayout.cshtml" />
     <Content Include="Content\font\fontawesome-webfont.eot" />
@@ -810,7 +810,7 @@
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Shared\HeaderPanel.cshtml" />
     <Content Include="Views\WOL\WOL.cshtml" />
-    <Content Include="Views\Home\LanguageBar.cshtml" />
+    <Content Include="Views\Head\LanguageBar.cshtml" />
     <Content Include="Views\Shared\JS\Localization.cshtml" />
     <Content Include="Views\Account\Login\Captcha.cshtml" />
     <Content Include="Views\Shared\JS\AntiForgeryToken.cshtml" />
