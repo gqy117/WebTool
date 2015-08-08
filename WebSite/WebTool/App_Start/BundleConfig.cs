@@ -18,11 +18,13 @@ namespace WebTool
         {
             RegisterJSMain(bundles);
             RegisterJSHead(bundles);
+            RegisterJSRoot(bundles);
             RegisterJSLogin(bundles);
             RegisterJSHome(bundles);
             RegisterJSWol(bundles);
             RegisterJSTable(bundles);
             RegisterJSRegister(bundles);
+            RegisterJSBottom(bundles);
         }
 
         private static void RegisterJSMain(BundleCollection bundles)
@@ -38,6 +40,21 @@ namespace WebTool
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
             "~/Scripts/WebTool.js"));
+        }
+
+        private static void RegisterJSRoot(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Root").Include(
+            "~/Views/Shared/JS/pageStart.js",
+            "~/Views/Shared/JS/GoogleAnalytics.js",
+            "~/Views/Shared/JS/HeadJS.js"));
+        }
+
+        private static void RegisterJSBottom(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Bottom").Include(
+            "~/Views/Shared/JS/BottomJS.js",
+            "~/Views/Shared/JS/PageEnd.js"));
         }
 
         private static void RegisterJSHead(BundleCollection bundles)
