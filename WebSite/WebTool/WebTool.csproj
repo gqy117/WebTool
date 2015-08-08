@@ -709,6 +709,7 @@
     <Content Include="Views\Account\register.js" />
     <Content Include="Views\Head\Language\languageBar.controller.js" />
     <Content Include="Views\Head\Language\languageBar.service.js" />
+    <Content Include="Views\Shared\HeaderPanel\headerPanel.service.js" />
     <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Home\home.js" />
     <Content Include="Views\Head\head.controller.js" />
@@ -720,7 +721,8 @@
     <Content Include="Views\Shared\JS\pageStart.js" />
     <Content Include="Views\Sidebar\sidebar.controller.js" />
     <Content Include="Views\Sidebar\sidebar.service.js" />
-    <Content Include="Views\WOL\wol.js" />
+    <Content Include="Views\Shared\HeaderPanel\headerPanel.controller.js" />
+    <Content Include="Views\WOL\wol.service.js" />
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -814,7 +816,7 @@
     <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
-    <Content Include="Views\Shared\HeaderPanel.cshtml" />
+    <Content Include="Views\Shared\HeaderPanel\HeaderPanel.cshtml" />
     <Content Include="Views\WOL\WOL.cshtml" />
     <Content Include="Views\Head\Language\LanguageBar.cshtml" />
     <Content Include="Views\Shared\JS\Localization.cshtml" />
