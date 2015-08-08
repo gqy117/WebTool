@@ -5,7 +5,7 @@
 
 <div ng-controller="registerController as register" class="content">
     <!-- BEGIN LOGIN FORM -->
-    <form id="FormRegister" ng-submit="register.submit()" class="form-vertical login-form" action="@Url.Content("~/Register/Index")" method="POST">
+    <form id="FormRegister" class="form-vertical login-form" action="@Url.Content("~/Register/Index")" method="POST">
         <h3 class="form-title">
             @UIResource.Register
         </h3>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="form-actions">
-            <a ng-submit="register.submit()" type="submit" id="login-btn" class="btn green pull-right">
+            <a ng-click="register.submit()" type="submit" id="login-btn" class="btn green pull-right">
                 @UIResource.Register <i class="m-icon-swapright m-icon-white"></i>
             </a>
         </div>

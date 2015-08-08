@@ -1,10 +1,10 @@
 ﻿(function () {
     angular
         .module('mainApp')
-        .factory('wakeUpPanelService', wakeUpPanelService);
+        .factory('wakeUpPanelService', ['$http', wakeUpPanelService]);
 
 
-    function wakeUpPanelService() {
+    function wakeUpPanelService($http) {
         return {
 
             hideMessage: function _hideMessage() {
@@ -13,18 +13,12 @@
 
             wakeUp: function _wakeUp() {
                 var context = this;
-
                 Track('Index', 'Panel3_ViewMore');
 
-                Post(
-                    {
-                        url: App.baseUrl + 'Tool/WakeUp',
-                        //data: JSON.stringify(WOL),
-                        success: function (message) {
-                            context.isShowAlertWakeUpSuccess = true;
-                        }
-                    }
-                );
+                $http.post(App.baseUrl + 'Tool/WakeUp')
+                    .success(function (message) {
+                        context.isShowAlertWakeUpSuccess = true;
+                    });
             }
         }
     }
