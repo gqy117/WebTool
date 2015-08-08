@@ -12,7 +12,7 @@
 
             formRegister_Password_keyup: function _formRegister_Password_keyup($event) {
                 if ($event.keyCode === 13) {
-                    this.formRegister_Submit();
+                    this.submit();
                 }
             }
         }
