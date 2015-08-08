@@ -1,12 +1,5 @@
 ﻿@{ Layout = "~/Views/Shared/_indexLayout.cshtml"; }
-<script>
-    function WOL_Click() {
-        Track('WOL', 'WOL');
-    }
 
-    Add_JS_Content('ActiveCurrentPanel("WOL");');
-
-</script>
 @System.Web.Optimization.Scripts.Render("~/Content/JSTable")
 @{
     HeaderCaption HeaderCaption = new HeaderCaption()
@@ -55,9 +48,4 @@
     </div>
 </div>
 
-
-<script>
-    CreateTable("#WOLTable", '@Url.Content("~/Tool/WOLTable")');
-
-</script>
-
+@System.Web.Optimization.Scripts.Render("~/Content/Wol")

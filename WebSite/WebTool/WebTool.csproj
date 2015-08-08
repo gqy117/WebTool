@@ -704,7 +704,20 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="WebTool.Publish.xml" />
+    <Content Include="Views\Account\login.js" />
+    <Content Include="Views\Account\register.js" />
+    <Content Include="Views\Home\home.js" />
+    <Content Include="Views\Head\head.js" />
+    <Content Include="Views\Head\languageBar.js" />
+    <Content Include="Views\Shared\JS\BottomJS.js" />
+    <Content Include="Views\Shared\JS\GoogleAnalytics.js" />
+    <Content Include="Views\Shared\JS\HeadJS.js" />
+    <Content Include="Views\Shared\JS\PageEnd.js" />
+    <Content Include="Views\Shared\JS\pageStart.js" />
+    <Content Include="Views\WOL\wol.js" />
+    <Content Include="WebTool.Publish.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\ui-modals.js" />
@@ -780,8 +793,6 @@
     <Content Include="Views\Home\IndexFooter.cshtml" />
     <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_bootstrapLayout.cshtml" />
-    <Content Include="Views\Shared\JS\HeadJS.cshtml" />
-    <Content Include="Views\Shared\JS\BottomJS.cshtml" />
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <Content Include="Content\font\fontawesome-webfont.ttf" />
     <Content Include="Content\font\fontawesome-webfont.woff" />
@@ -792,7 +803,6 @@
     <Content Include="Content\assets\plugins\bootstrap-modal\LICENSE" />
     <Content Include="Content\assets\plugins\bootstrap-modal\params.json" />
     <Content Include="Content\assets\plugins\bootstrap-modal\README.md" />
-    <Content Include="Views\Shared\JS\PageStart.cshtml" />
     <Content Include="Views\Shared\JS\PageEnd.cshtml" />
     <Content Include="Views\Home\Panel\WakeUpPanel.cshtml" />
     <Content Include="Scripts\jquery.cookie.js" />
@@ -811,8 +821,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\Amazon.pubxml" />
+    <None Include="Properties\PublishProfiles\FS.pubxml" />
     <None Include="Properties\PublishProfiles\WebDeploy.pubxml" />
     <Content Include="Settings.StyleCop" />
+    <None Include="Properties\PublishProfiles\WebToolFTP.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

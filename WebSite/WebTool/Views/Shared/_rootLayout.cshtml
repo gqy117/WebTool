@@ -1,21 +1,21 @@
+@using System.Web.Optimization
 <!DOCTYPE html>
 <html>
 <head>
     <title>@ViewBag.Title</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    @Html.Partial("~/Views/Shared/JS/PageStart.cshtml")
-    @Html.Partial("~/Views/Shared/GoogleAnalytics.cshtml")
+    @Scripts.Render("~/Content/Root")
+
     @Html.Partial("~/Views/Shared/JS/Localization.cshtml")
-    @Html.Partial("~/Views/Shared/JS/HeadJS.cshtml")
 @*    @Html.Partial("~/Views/Shared/JS/AntiForgeryToken.cshtml")*@
     <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")"/>
     @System.Web.Optimization.Styles.Render("~/Content/AllCSS")
 </head>
-<body>
-    @RenderBody()
-</body>
-@Html.Partial("~/Views/Shared/JS/BottomJS.cshtml")
+    <body>
+        @RenderBody()
+    </body>
 
+@Scripts.Render("~/Content/Bottom")
 
 @Html.Partial("~/Views/Shared/JS/PageEnd.cshtml")
 </html>

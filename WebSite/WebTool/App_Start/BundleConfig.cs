@@ -17,7 +17,14 @@ namespace WebTool
         public static void RegisterJS(BundleCollection bundles)
         {
             RegisterJSMain(bundles);
+            RegisterJSHead(bundles);
+            RegisterJSRoot(bundles);
+            RegisterJSLogin(bundles);
+            RegisterJSHome(bundles);
+            RegisterJSWol(bundles);
             RegisterJSTable(bundles);
+            RegisterJSRegister(bundles);
+            RegisterJSBottom(bundles);
         }
 
         private static void RegisterJSMain(BundleCollection bundles)
@@ -33,6 +40,52 @@ namespace WebTool
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
             "~/Scripts/WebTool.js"));
+        }
+
+        private static void RegisterJSRoot(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Root").Include(
+            "~/Views/Shared/JS/pageStart.js",
+            "~/Views/Shared/JS/GoogleAnalytics.js",
+            "~/Views/Shared/JS/HeadJS.js"));
+        }
+
+        private static void RegisterJSBottom(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Bottom").Include(
+            "~/Views/Shared/JS/BottomJS.js",
+            "~/Views/Shared/JS/PageEnd.js"));
+        }
+
+        private static void RegisterJSHead(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Head").Include(
+            "~/Views/Head/head.js",
+            "~/Views/Head/languageBar.js"));
+        }
+
+        private static void RegisterJSRegister(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Register").Include(
+            "~/Views/Account/register.js"));
+        }
+
+        private static void RegisterJSHome(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Home").Include(
+            "~/Views/Home/home.js"));
+        }
+
+        private static void RegisterJSLogin(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Login").Include(
+            "~/Views/Account/login.js"));
+        }
+
+        private static void RegisterJSWol(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Wol").Include(
+            "~/Views/WOL/wol.js"));
         }
 
         private static void RegisterJSTable(BundleCollection bundles)
