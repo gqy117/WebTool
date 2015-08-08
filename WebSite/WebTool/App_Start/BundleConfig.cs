@@ -22,6 +22,7 @@ namespace WebTool
             RegisterJSHome(bundles);
             RegisterJSWol(bundles);
             RegisterJSTable(bundles);
+            RegisterJSRegister(bundles);
         }
 
         private static void RegisterJSMain(BundleCollection bundles)
@@ -44,6 +45,12 @@ namespace WebTool
             bundles.Add(new ScriptBundle("~/Content/Head").Include(
             "~/Views/Head/head.js",
             "~/Views/Head/languageBar.js"));
+        }
+
+        private static void RegisterJSRegister(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Register").Include(
+            "~/Views/Account/register.js"));
         }
 
         private static void RegisterJSHome(BundleCollection bundles)
