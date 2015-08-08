@@ -1,14 +1,4 @@
 ﻿@model WebToolService.LanguageModel
-<script>
-    function ChangeLanguage(languageCode) {
-        Track('IndexHead', 'ChangeLanguage');
-        $.cookie("@ConstParameter.WebToolLanguage", languageCode, {
-            expires: 10000,
-            path: '/'
-        });
-        location.reload();
-    }
-</script>
 <li class="dropdown language" style="line-height: 16px;">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
         <img alt="" src="@Url.Content(String.Format("~/Content/assets/img/flags/{0}", Model.CurrentLanguage.PictureName))" />
