@@ -81,7 +81,9 @@ namespace WebTool
             bundles.Add(new ScriptBundle("~/Content/Home").Include(
             "~/Views/Home/headerPanel.service.js",
             "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
-            "~/Views/Home/home.js"));
+            "~/Views/Home/home.js",
+            "~/Views/Home/Panel/wakeUpPanel.service.js",
+            "~/Views/Home/Panel/wakeUpPanel.controller.js"));
         }
 
         private static void RegisterJSLogin(BundleCollection bundles)

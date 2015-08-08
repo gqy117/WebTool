@@ -710,6 +710,8 @@
     <Content Include="Views\Head\Language\languageBar.controller.js" />
     <Content Include="Views\Head\Language\languageBar.service.js" />
     <Content Include="Views\Home\headerPanel.service.js" />
+    <Content Include="Views\Home\Panel\wakeUpPanel.controller.js" />
+    <Content Include="Views\Home\Panel\wakeUpPanel.service.js" />
     <Content Include="Views\WOL\headerPanel.service.js" />
     <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Home\home.js" />
