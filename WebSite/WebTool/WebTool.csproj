@@ -704,7 +704,11 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="WebTool.Publish.xml" />
+    <Content Include="Views\Home\home.js" />
+    <Content Include="Views\Home\homeHead.js" />
+    <Content Include="WebTool.Publish.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\ui-modals.js" />
@@ -811,8 +815,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\Amazon.pubxml" />
+    <None Include="Properties\PublishProfiles\FS.pubxml" />
     <None Include="Properties\PublishProfiles\WebDeploy.pubxml" />
     <Content Include="Settings.StyleCop" />
+    <None Include="Properties\PublishProfiles\WebToolFTP.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
