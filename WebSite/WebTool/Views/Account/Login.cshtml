@@ -1,9 +1,7 @@
 @{ Layout = "~/Views/Account/Login/_loginLayout.cshtml"; }
 @using CaptchaMvc.HtmlHelpers
+@using System.Web.Optimization
 @model WebToolService.LoginModel
-
-
-
 
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
@@ -49,27 +47,4 @@
     </form>
 
 </div>
-<script>
-    function FormLogin_Submit() {
-        Track('Login', 'Login');
-        $('#FormLogin').submit();
-    }
-
-
-    function Login_On_Ready() {
-        $("#FormLogin_Password").keyup(function (event) {
-            if (event.keyCode == 13) {
-                FormLogin_Submit();
-            }
-        });
-    }
-    function FormLogin_forgetpassword_Click() {
-        Track('Login', 'SignUpNow');
-        window.location.href = "@Url.Content("~/Register/Index")";
-    }
-
-
-
-    Add_JS_Content('Login_On_Ready();');
-
-</script>
+@Scripts.Render("~/Content/Login")

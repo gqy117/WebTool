@@ -1,17 +1,7 @@
+@using System.Web.Optimization
+
 @{ Layout = "~/Views/Shared/_indexLayout.cshtml"; }
-<script>
-    function Dashboard_Click() {
-        Track('Index', 'Dashboard');
-    }
 
-    function Home_Click() {
-        Track('Index', 'Home');
-    }
-
-    Add_JS_Content('ActiveCurrentPanel("Dashboard");');
-    
-
-</script>
 @{
     HeaderCaption HeaderCaption = new HeaderCaption()
     {
@@ -29,3 +19,5 @@
         @Html.Partial("~/Views/Home/Panel/WakeUpPanel.cshtml")
     </div>
 </div>
+
+@Scripts.Render("~/Content/Home")
