@@ -1,4 +1,6 @@
 ﻿<script>
+    var pageStartTime = new Date().getTime();
+
     var GA_AccountID = "UA-44048426-1";
     var MyDomain = "cloudapp.net";
 
@@ -31,7 +33,5 @@
     function Track(Category, Action) {
         _gaq.push(['_trackEvent', Category, Action]);
     }
-
-
 
 </script>
