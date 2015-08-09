@@ -1,7 +1,7 @@
 ﻿<div ng-controller="sidebarController as sidebar" class="page-sidebar nav-collapse collapse">
     <!-- BEGIN SIDEBAR MENU -->
     <ul class="page-sidebar-menu">
-        <li id="Dashboard">
+        <li id="Dashboard" ng-class="{active: sidebar.activePanel.dashboard}">
             <a ng-click="sidebar.LeftPanel_Dashboard_Click()">
                 <i class="icon-home"></i>@UIResource.Dashboard
                 <span class="selected"></span>
@@ -10,7 +10,7 @@
         </li>
     </ul>
     <ul class="page-sidebar-menu">
-        <li id="WOL">
+        <li id="WOL" ng-class="{active: sidebar.activePanel.wol}">
             <a ng-click="sidebar.LeftPanel_WOL_Click()">
                 <i class="icon-th-list"></i>@UIResource.WOL
                 <span class="selected"></span>
