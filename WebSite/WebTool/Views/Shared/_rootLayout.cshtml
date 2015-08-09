@@ -4,18 +4,17 @@
 <head>
     <title>@ViewBag.Title</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    @Scripts.Render("~/Content/Root")
+    @Html.Partial("~/Views/Shared/JS/PageStart.cshtml")
 
-    @Html.Partial("~/Views/Shared/JS/Localization.cshtml")
+    @Html.Partial("~/Views/Shared/JS/BackendResource.cshtml")
+
     @*    @Html.Partial("~/Views/Shared/JS/AntiForgeryToken.cshtml")*@
     <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" />
-    @System.Web.Optimization.Styles.Render("~/Content/AllCSS")
+    @Styles.Render("~/Content/AllCSS")
 </head>
 <body ng-app="mainApp">
     @RenderBody()
 </body>
-
-@Scripts.Render("~/Content/Bottom")
 
 @Html.Partial("~/Views/Shared/JS/PageEnd.cshtml")
 </html>

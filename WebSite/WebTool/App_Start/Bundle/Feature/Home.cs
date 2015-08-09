@@ -11,7 +11,8 @@
         {
             "~/Views/Home/headerPanel.service.js",
             "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
-            "~/Views/Home/home.js",
+            "~/Views/Home/home.service.js",
+            "~/Views/Home/home.controller.js",
             "~/Views/Home/Panel/wakeUpPanel.service.js",
             "~/Views/Home/Panel/wakeUpPanel.controller.js"
         };

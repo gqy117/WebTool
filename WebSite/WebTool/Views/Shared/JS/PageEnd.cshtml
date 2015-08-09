@@ -1,7 +1,12 @@
-﻿@{
-    string controller = Request.Get(x => x.RequestContext.RouteData.Values["controller"]).ToStringN();
-    string action = Request.Get(x => x.RequestContext.RouteData.Values["action"]).ToStringN();
-}
-<script type="text/javascript">
-    Add_JS_Content('SendPageSpeedTimings("@controller","@action");');
+﻿<script>
+(function () {
+    function SendPageSpeedTimings(controller, action) {
+
+        var pageEndTime = new Date().getTime();
+        var timeSpent = pageEndTime - pageStartTime;
+        ga('send', 'timing', controller, action, timeSpent);
+    }
+
+    SendPageSpeedTimings(window.controller, window.action);
+}());
 </script>

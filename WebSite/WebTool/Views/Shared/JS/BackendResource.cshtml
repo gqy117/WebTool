@@ -1,0 +1,12 @@
+﻿@using WebTool
+@{
+    var resourceString = Html.Raw(((BaseController)ViewContext.Controller).ResourceJson);
+
+    string controller = Request.Get(x => x.RequestContext.RouteData.Values["controller"]).ToStringN();
+    string action = Request.Get(x => x.RequestContext.RouteData.Values["action"]).ToStringN();
+}
+<script>
+window.UIResource = @(resourceString);
+window.controller = '@controller';
+window.action = '@action';
+</script>
