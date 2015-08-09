@@ -7,7 +7,7 @@
 
     public class Register
     {
-        public static readonly string[] Files =
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Views/Account/Register/register.service.js",
             "~/Views/Account/Register/register.controller.js"
