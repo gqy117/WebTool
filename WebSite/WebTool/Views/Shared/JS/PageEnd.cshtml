@@ -1,7 +1,0 @@
-﻿@{
-    string controller = Request.Get(x => x.RequestContext.RouteData.Values["controller"]).ToStringN();
-    string action = Request.Get(x => x.RequestContext.RouteData.Values["action"]).ToStringN();
-}
-<script type="text/javascript">
-    Add_JS_Content('SendPageSpeedTimings("@controller","@action");');
-</script>
