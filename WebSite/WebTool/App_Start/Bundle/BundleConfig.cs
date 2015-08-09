@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Linq;
+using System.Web;
 using System.Web.Optimization;
 using WebGrease.Css.Visitor;
 using WebTool.Bundle;
@@ -30,47 +31,62 @@ namespace WebTool
 
         private static void RegisterJSMain(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/MainJS").Include(BundleMainJs.Files));
+            bundles.Add(new ScriptBundle("~/Content/MainJS").Include(MainJs.Files.ToArray()));
         }
 
         private static void RegisterJSRoot(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Root").Include(Root.Files));
+            bundles.Add(new ScriptBundle("~/Content/Root").Include(Root.Files.ToArray()));
         }
 
         private static void RegisterJSBottom(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Bottom").Include(Bottom.Files));
+            bundles.Add(new ScriptBundle("~/Content/Bottom").Include(Bottom.Files.ToArray()));
         }
 
         private static void RegisterJSHead(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Head").Include(Head.Files));
+            bundles.Add(new ScriptBundle("~/Content/Head").Include(Head.Files.ToArray()));
         }
 
         private static void RegisterJSRegister(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Register").Include(Register.Files));
+            bundles.Add(new ScriptBundle("~/Content/Register").Include(
+                MainJs.Files
+                .Concat(Register.Files)
+                .ToArray()));
         }
 
         private static void RegisterJSHome(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Home").Include(Home.Files));
+            bundles.Add(new ScriptBundle("~/Content/Home").Include(
+                MainJs.Files
+                .Concat(Head.Files)
+                .Concat(Home.Files)
+                .ToArray()));
         }
 
         private static void RegisterJSLogin(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Login").Include(Login.Files));
+            bundles.Add(new ScriptBundle("~/Content/Login").Include(
+                MainJs.Files
+                .Concat(Login.Files)
+                    .ToArray()));
         }
 
         private static void RegisterJSWol(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Wol").Include(Wol.Files));
+            bundles.Add(new ScriptBundle("~/Content/Wol").Include(
+                MainJs.Files
+                .Concat(Head.Files)
+                .Concat(JqTable.Files)
+                .Concat(Wol.Files)
+                .ToArray()));
         }
 
         private static void RegisterJSTable(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/JSTable").Include(JqTable.Files));
+            bundles.Add(new ScriptBundle("~/Content/JSTable").Include(JqTable.Files.ToArray()));
         }
         #endregion
 

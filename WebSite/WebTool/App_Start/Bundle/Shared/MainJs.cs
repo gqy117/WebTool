@@ -5,9 +5,9 @@
     using System.Linq;
     using System.Web;
 
-    public class BundleMainJs
+    public class MainJs
     {
-        public static readonly string[] Files = 
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Content/assets/js/jquery-1.8.3.min.js",
             "~/Scripts/angular.min.js",

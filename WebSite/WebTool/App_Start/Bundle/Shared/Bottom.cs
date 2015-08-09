@@ -7,7 +7,7 @@
 
     public class Bottom
     {
-        public static readonly string[] Files =
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Views/Shared/JS/BottomJS.js",
             "~/Views/Shared/JS/PageEnd.js"

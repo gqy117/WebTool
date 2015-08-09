@@ -7,7 +7,7 @@
 
     public class Home
     {
-        public static readonly string[] Files =
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Views/Home/headerPanel.service.js",
             "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
