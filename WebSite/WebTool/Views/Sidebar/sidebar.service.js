@@ -5,6 +5,8 @@
 
     function sidebarService() {
         return {
+            activePanel: { dashboard: false, wol: false },
+
             LeftPanel_Dashboard: function _LeftPanel_Dashboard() {
                 Track('Index', 'LeftPanel_Dashboard');
                 window.location.href = App.baseUrl + 'Home/Index';
