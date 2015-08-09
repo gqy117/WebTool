@@ -18,20 +18,12 @@ namespace WebTool
         #region JS
         public static void RegisterJS(BundleCollection bundles)
         {
-            RegisterJSMain(bundles);
-            RegisterJSHead(bundles);
             RegisterJSRoot(bundles);
             RegisterJSLogin(bundles);
             RegisterJSHome(bundles);
             RegisterJSWol(bundles);
-            RegisterJSTable(bundles);
             RegisterJSRegister(bundles);
             RegisterJSBottom(bundles);
-        }
-
-        private static void RegisterJSMain(BundleCollection bundles)
-        {
-            bundles.Add(new ScriptBundle("~/Content/MainJS").Include(MainJs.Files.ToArray()));
         }
 
         private static void RegisterJSRoot(BundleCollection bundles)
@@ -42,11 +34,6 @@ namespace WebTool
         private static void RegisterJSBottom(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Bottom").Include(Bottom.Files.ToArray()));
-        }
-
-        private static void RegisterJSHead(BundleCollection bundles)
-        {
-            bundles.Add(new ScriptBundle("~/Content/Head").Include(Head.Files.ToArray()));
         }
 
         private static void RegisterJSRegister(BundleCollection bundles)
@@ -82,11 +69,6 @@ namespace WebTool
                 .Concat(JqTable.Files)
                 .Concat(Wol.Files)
                 .ToArray()));
-        }
-
-        private static void RegisterJSTable(BundleCollection bundles)
-        {
-            bundles.Add(new ScriptBundle("~/Content/JSTable").Include(JqTable.Files.ToArray()));
         }
         #endregion
 
