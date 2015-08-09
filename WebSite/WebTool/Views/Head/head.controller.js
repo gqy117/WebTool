@@ -17,5 +17,5 @@ function _indexLayout_On_Ready() {
         UIModals.init();
     });
 }
-Add_JS_Content('_indexLayout_On_Ready();');
+_indexLayout_On_Ready();
 
