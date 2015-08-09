@@ -4,7 +4,7 @@
 <head>
     <title>@ViewBag.Title</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    @Scripts.Render("~/Content/Root")
+    @Html.Partial("~/Views/Shared/JS/PageStart.cshtml")
 
     @Html.Partial("~/Views/Shared/JS/BackendResource.cshtml")
 
@@ -16,5 +16,5 @@
     @RenderBody()
 </body>
 
-@Scripts.Render("~/Content/Bottom")
+@Html.Partial("~/Views/Shared/JS/PageEnd.cshtml")
 </html>
