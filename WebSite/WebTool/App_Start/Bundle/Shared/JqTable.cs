@@ -7,7 +7,7 @@
 
     public class JqTable
     {
-        public static readonly string[] Files =
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Content/assets/data-tables/jquery.dataTables.js",
             "~/Content/assets/data-tables/DT_bootstrap.js"

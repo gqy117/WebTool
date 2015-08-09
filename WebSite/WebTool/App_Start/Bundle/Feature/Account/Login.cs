@@ -7,7 +7,7 @@
 
     public class Login
     {
-        public static readonly string[] Files =
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Views/Account/Login/login.service.js",
             "~/Views/Account/Login/login.controller.js"
