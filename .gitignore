@@ -89,3 +89,6 @@ publish
 WebSite/TestResults/
 WebSite/.JustCode/WebTool.solution-user.settings.xml
 WebSite/WebTool/StyleCop.Cache
+WebSite/WebTool/Properties/PublishProfiles/FS.pubxml
+WebSite/WebTool/Properties/PublishProfiles/WebDeploy.pubxml
+WebSite/WebTool/Properties/PublishProfiles/WebToolFTP.pubxml
