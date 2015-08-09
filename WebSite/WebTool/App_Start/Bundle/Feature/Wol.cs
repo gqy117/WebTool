@@ -11,7 +11,8 @@
         {
             "~/Views/WOL/headerPanel.service.js",
             "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
-            "~/Views/WOL/wol.js"
+            "~/Views/WOL/wol.service.js",
+            "~/Views/WOL/wol.controller.js"
         };
     }
 }

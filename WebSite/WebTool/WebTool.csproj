@@ -714,12 +714,12 @@
     <Content Include="Views\Home\headerPanel.service.js" />
     <Content Include="Views\Home\Panel\wakeUpPanel.controller.js" />
     <Content Include="Views\Home\Panel\wakeUpPanel.service.js" />
+    <Content Include="Views\Home\home.controller.js" />
+    <Content Include="Views\Home\home.service.js" />
     <Content Include="Views\WOL\headerPanel.service.js" />
     <Content Include="Views\Shared\main.app.js" />
-    <Content Include="Views\Home\home.js" />
     <Content Include="Views\Head\head.controller.js" />
     <Content Include="Views\Head\Language\languageBar.js" />
-    <Content Include="Views\Shared\JS\BottomJS.js" />
     <Content Include="Views\Shared\JS\GoogleAnalytics.js" />
     <Content Include="Views\Shared\JS\HeadJS.js" />
     <Content Include="Views\Shared\JS\PageEnd.js" />
@@ -727,7 +727,8 @@
     <Content Include="Views\Sidebar\sidebar.controller.js" />
     <Content Include="Views\Sidebar\sidebar.service.js" />
     <Content Include="Views\Shared\HeaderPanel\headerPanel.controller.js" />
-    <Content Include="Views\WOL\wol.js" />
+    <Content Include="Views\WOL\wol.controller.js" />
+    <Content Include="Views\WOL\wol.service.js" />
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -785,12 +786,6 @@
     <Content Include="Views\Account\Register\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\LogOnPartialView.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_lightLayout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\_rootLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -813,7 +808,6 @@
     <Content Include="Views\Shared\_indexLayout.cshtml" />
     <Content Include="Views\Head\Head.cshtml" />
     <Content Include="Views\Head\Footer.cshtml" />
-    <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_bootstrapLayout.cshtml" />
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <Content Include="Content\font\fontawesome-webfont.ttf" />
@@ -825,7 +819,6 @@
     <Content Include="Content\assets\plugins\bootstrap-modal\LICENSE" />
     <Content Include="Content\assets\plugins\bootstrap-modal\params.json" />
     <Content Include="Content\assets\plugins\bootstrap-modal\README.md" />
-    <Content Include="Views\Shared\JS\PageEnd.cshtml" />
     <Content Include="Views\Home\Panel\WakeUpPanel.cshtml" />
     <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Views\Error\NotFound.cshtml" />
@@ -833,7 +826,7 @@
     <Content Include="Views\Shared\HeaderPanel\HeaderPanel.cshtml" />
     <Content Include="Views\WOL\WOL.cshtml" />
     <Content Include="Views\Head\Language\LanguageBar.cshtml" />
-    <Content Include="Views\Shared\JS\Localization.cshtml" />
+    <Content Include="Views\Shared\JS\BackendResource.cshtml" />
     <Content Include="Views\Account\Login\Captcha.cshtml" />
     <Content Include="Views\Shared\JS\AntiForgeryToken.cshtml" />
     <Content Include="NLog.config">
