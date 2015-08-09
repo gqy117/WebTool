@@ -7,7 +7,7 @@
 
     public class Root
     {
-        public static readonly string[] Files =
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Views/Shared/JS/pageStart.js",
             "~/Views/Shared/JS/GoogleAnalytics.js",

@@ -7,7 +7,7 @@
 
     public class Wol
     {
-        public static readonly string[] Files =
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Views/WOL/headerPanel.service.js",
             "~/Views/Shared/HeaderPanel/headerPanel.controller.js",

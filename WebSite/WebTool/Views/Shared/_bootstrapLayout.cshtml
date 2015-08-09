@@ -1,10 +1,7 @@
 ﻿@using System.Web.Optimization;
 
-
-@Scripts.Render("~/Content/MainJS")
-
 <script>
-    App.baseUrl = '@Url.Content("~")';
+    window.baseUrl = '@Url.Content("~")';
 </script>
 
 

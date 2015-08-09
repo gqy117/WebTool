@@ -7,7 +7,7 @@
 
     public class Head
     {
-        public static readonly string[] Files =
+        public static readonly IEnumerable<string> Files = new List<string>
         {
             "~/Views/Sidebar/sidebar.service.js",
             "~/Views/Sidebar/sidebar.controller.js",
