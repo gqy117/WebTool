@@ -720,10 +720,6 @@
     <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Head\head.controller.js" />
     <Content Include="Views\Head\Language\languageBar.js" />
-    <Content Include="Views\Shared\JS\GoogleAnalytics.js" />
-    <Content Include="Views\Shared\JS\HeadJS.js" />
-    <Content Include="Views\Shared\JS\PageEnd.js" />
-    <Content Include="Views\Shared\JS\pageStart.js" />
     <Content Include="Views\Sidebar\sidebar.controller.js" />
     <Content Include="Views\Sidebar\sidebar.service.js" />
     <Content Include="Views\Shared\HeaderPanel\headerPanel.controller.js" />
@@ -748,12 +744,10 @@
     <Compile Include="App_Start\Bundle\Feature\Account\Login.cs" />
     <Compile Include="App_Start\Bundle\Feature\Home.cs" />
     <Compile Include="App_Start\Bundle\Feature\Account\Register.cs" />
-    <Compile Include="App_Start\Bundle\Shared\Bottom.cs" />
     <Compile Include="App_Start\Bundle\BundleConfig.cs" />
     <Compile Include="App_Start\Bundle\Shared\Head.cs" />
     <Compile Include="App_Start\Bundle\Shared\MainJs.cs" />
     <Compile Include="App_Start\Bundle\Shared\JqTable.cs" />
-    <Compile Include="App_Start\Bundle\Shared\Root.cs" />
     <Compile Include="Code\Base\BaseController.cs" />
     <Compile Include="Code\Base\TableBaseController.cs" />
     <Compile Include="App_Start\BootStrap.cs" />
@@ -842,6 +836,8 @@
     <None Include="Properties\PublishProfiles\WebToolFTP.pubxml" />
     <Content Include="Views\Head\head.service.js" />
     <Content Include="Views\Sidebar\Sidebar.cshtml" />
+    <Content Include="Views\Shared\JS\PageEnd.cshtml" />
+    <Content Include="Views\Shared\JS\PageStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
