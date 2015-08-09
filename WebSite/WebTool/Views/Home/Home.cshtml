@@ -13,7 +13,7 @@
         Navigation2Click = "Dashboard_Click();",
     };
 }
-<div id="dashboard">
+<div id="dashboard" ng-controller="homeController as home">
     @Html.Partial("~/Views/Shared/HeaderPanel/HeaderPanel.cshtml", HeaderCaption)
     <div class="row-fluid">
         @Html.Partial("~/Views/Home/Panel/WakeUpPanel.cshtml")

@@ -18,22 +18,10 @@ namespace WebTool
         #region JS
         public static void RegisterJS(BundleCollection bundles)
         {
-            RegisterJSRoot(bundles);
             RegisterJSLogin(bundles);
             RegisterJSHome(bundles);
             RegisterJSWol(bundles);
             RegisterJSRegister(bundles);
-            RegisterJSBottom(bundles);
-        }
-
-        private static void RegisterJSRoot(BundleCollection bundles)
-        {
-            bundles.Add(new ScriptBundle("~/Content/Root").Include(Root.Files.ToArray()));
-        }
-
-        private static void RegisterJSBottom(BundleCollection bundles)
-        {
-            bundles.Add(new ScriptBundle("~/Content/Bottom").Include(Bottom.Files.ToArray()));
         }
 
         private static void RegisterJSRegister(BundleCollection bundles)
