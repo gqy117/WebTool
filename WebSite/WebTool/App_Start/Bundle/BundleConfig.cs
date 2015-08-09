@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 using WebGrease.Css.Visitor;
+using WebTool.Bundle;
 
 namespace WebTool
 {
@@ -29,84 +30,47 @@ namespace WebTool
 
         private static void RegisterJSMain(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/AllJS").Include(
-            "~/Content/assets/js/jquery-1.8.3.min.js",
-            "~/Scripts/angular.min.js",
-            "~/Content/assets/uniform/jquery.uniform.min.js",
-            "~/Content/assets/breakpoints/breakpoints.js",
-            "~/Content/assets/bootstrap/js/bootstrap.min.js",
-            "~/Scripts/jquery.cookie.js",
-            "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modal.js",
-            "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
-            "~/Content/assets/js/app.js",
-            "~/Scripts/ui-modals.js",
-            "~/Scripts/WebTool.js",
-            "~/Views/Shared/main.app.js"));
+            bundles.Add(new ScriptBundle("~/Content/MainJS").Include(BundleMainJs.Files));
         }
 
         private static void RegisterJSRoot(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Root").Include(
-            "~/Views/Shared/JS/pageStart.js",
-            "~/Views/Shared/JS/GoogleAnalytics.js",
-            "~/Views/Shared/JS/HeadJS.js"));
+            bundles.Add(new ScriptBundle("~/Content/Root").Include(Root.Files));
         }
 
         private static void RegisterJSBottom(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Bottom").Include(
-            "~/Views/Shared/JS/BottomJS.js",
-            "~/Views/Shared/JS/PageEnd.js"));
+            bundles.Add(new ScriptBundle("~/Content/Bottom").Include(Bottom.Files));
         }
 
         private static void RegisterJSHead(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Head").Include(
-            "~/Views/Sidebar/sidebar.service.js",
-            "~/Views/Sidebar/sidebar.controller.js",
-            "~/Views/Head/head.service.js",
-            "~/Views/Head/head.controller.js",
-            "~/Views/Head/Language/languageBar.service.js",
-            "~/Views/Head/Language/languageBar.controller.js"));
+            bundles.Add(new ScriptBundle("~/Content/Head").Include(Head.Files));
         }
 
         private static void RegisterJSRegister(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Register").Include(
-            "~/Views/Account/Register/register.service.js",
-            "~/Views/Account/Register/register.controller.js"));
+            bundles.Add(new ScriptBundle("~/Content/Register").Include(Register.Files));
         }
 
         private static void RegisterJSHome(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Home").Include(
-            "~/Views/Home/headerPanel.service.js",
-            "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
-            "~/Views/Home/home.js",
-            "~/Views/Home/Panel/wakeUpPanel.service.js",
-            "~/Views/Home/Panel/wakeUpPanel.controller.js"));
+            bundles.Add(new ScriptBundle("~/Content/Home").Include(Home.Files));
         }
 
         private static void RegisterJSLogin(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Login").Include(
-            "~/Views/Account/Login/login.service.js",
-            "~/Views/Account/Login/login.controller.js"));
+            bundles.Add(new ScriptBundle("~/Content/Login").Include(Login.Files));
         }
 
         private static void RegisterJSWol(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Wol").Include(
-            "~/Views/WOL/headerPanel.service.js",
-            "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
-            "~/Views/WOL/wol.js"));
+            bundles.Add(new ScriptBundle("~/Content/Wol").Include(Wol.Files));
         }
 
         private static void RegisterJSTable(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/JSTable").Include(
-            "~/Content/assets/data-tables/jquery.dataTables.js",
-            "~/Content/assets/data-tables/DT_bootstrap.js"));
+            bundles.Add(new ScriptBundle("~/Content/JSTable").Include(JqTable.Files));
         }
         #endregion
 
