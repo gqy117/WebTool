@@ -743,7 +743,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Bundle\Feature\Wol.cs" />
+    <Compile Include="App_Start\Bundle\Feature\Account\Login.cs" />
+    <Compile Include="App_Start\Bundle\Feature\Home.cs" />
+    <Compile Include="App_Start\Bundle\Feature\Account\Register.cs" />
+    <Compile Include="App_Start\Bundle\Shared\Bottom.cs" />
+    <Compile Include="App_Start\Bundle\BundleConfig.cs" />
+    <Compile Include="App_Start\Bundle\Shared\Head.cs" />
+    <Compile Include="App_Start\Bundle\Shared\MainJs.cs" />
+    <Compile Include="App_Start\Bundle\Shared\JqTable.cs" />
+    <Compile Include="App_Start\Bundle\Shared\Root.cs" />
     <Compile Include="Code\Base\BaseController.cs" />
     <Compile Include="Code\Base\TableBaseController.cs" />
     <Compile Include="App_Start\BootStrap.cs" />
