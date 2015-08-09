@@ -3,6 +3,7 @@ var App = function () {
     var isIE8 = false; // IE8 mode
     var currentPage = ''; // current page
 
+
     // this function handles responsive layout on screen size resize or mobile device rotate.
     var handleResponsive = function () {
         if (jQuery.browser.msie && jQuery.browser.version.substr(0, 1) == 8) {
@@ -2366,6 +2367,8 @@ var App = function () {
         hadleResponsiveElements: function () {
 
         },
+
+        baseUrl: window.baseUrl,
 
         // login page setup
         initLogin: function () {
