@@ -1,37 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using Autofac.Core.Lifetime;
-using WebToolService;
-
-namespace WebTool
+﻿namespace WebTool
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Web;
+    using System.Web.Mvc;
+    using Autofac.Core.Lifetime;
+    using WebToolService;
+
     public class ErrorLoggerAttribute : HandleErrorAttribute
     {
         #region Properties
-        private static NLog.Logger _LogHelper = NLog.LogManager.GetCurrentClassLogger();
+        private static NLog.Logger logHelper = NLog.LogManager.GetCurrentClassLogger();
 
         public static NLog.Logger LogHelper
         {
             get
             {
-                return _LogHelper;
+                return logHelper;
             }
         }
         #endregion
         public override void OnException(ExceptionContext filterContext)
         {
-            LogError(filterContext.Exception);
+            this.LogError(filterContext.Exception);
             base.OnException(filterContext);
         }
 
         public void LogError(Exception ex)
         {
-            LogHelper.ErrorException(String.Empty, ex);
+            LogHelper.ErrorException(string.Empty, ex);
         }
     }
 }

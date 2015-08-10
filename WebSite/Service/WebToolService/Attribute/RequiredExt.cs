@@ -1,29 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WebToolService
+﻿namespace WebToolService
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)]
     public class RequiredExtAttribute : System.ComponentModel.DataAnnotations.RequiredAttribute
     {
-        #region Properties
-        private bool _Enabled = true;
-        public bool Enabled { get { return _Enabled; } set { _Enabled = value; } }
-        #endregion
+        private bool enabled = true;
 
-        #region Constructors
         public RequiredExtAttribute(bool enabled = true)
             : base()
         {
             this.Enabled = enabled;
         }
-        #endregion
+
+        public bool Enabled 
+        { 
+            get { return this.enabled; } 
+
+            set { this.enabled = value; } 
+        }
+
         #region Methods
         public override bool IsValid(object value)
         {
             bool res = !this.Enabled ? true : base.IsValid(value);
+
             return res;
         }
         #endregion

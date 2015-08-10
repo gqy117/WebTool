@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using WebToolCulture.Resource;
-
-namespace WebToolService
+﻿namespace WebToolService
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Text;
+    using WebToolCulture.Resource;
+
     [Serializable]
     public class LoginModel : LoginBaseModel
     {
+        private bool rememberMe = true;
+
         [RequiredExt(ErrorMessageResourceType = typeof(UIResource), ErrorMessageResourceName = "UserNameIsRequired")]
         [StringLength(10, ErrorMessageResourceType = typeof(UIResource), ErrorMessageResourceName = ("UserNameCannotBeLongerThan10Characters"))]
         public override string UserName
@@ -27,13 +29,12 @@ namespace WebToolService
             set;
         }
 
-        private bool _RememberMe = true;
         public bool RememberMe
         {
-            get { return _RememberMe; }
-            set { _RememberMe = value; }
-        }
+            get { return this.rememberMe; }
 
+            set { this.rememberMe = value; }
+        }
 
         public string ErrorMessage { get; set; }
     }

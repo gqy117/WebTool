@@ -1,27 +1,29 @@
-﻿using System;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using WebTool;
-using WebToolService;
-
-namespace UnitTestProject
+﻿namespace UnitTestProject
 {
+    using System;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+    using WebTool;
+    using WebToolCulture;
+    using WebToolService;
+
     [TestClass]
     public class AccountControllerTest : BaseControllerTest
     {
         #region Properties
-        private LoginModel LoginModel = new LoginModel() { UserName = "1", Password = "1" };
+        private LoginModel loginModel = new LoginModel() { UserName = "1", Password = "1" };
         #endregion
         #region Methods
         #region Override
         public override void InitRequest()
         {
             base.InitRequest();
-            this.Request.SetupGet(r => r.Cookies).Returns(new HttpCookieCollection() { new HttpCookie(ConstParameter.WebToolUserName,"") });
+            this.Request.SetupGet(r => r.Cookies).Returns(new HttpCookieCollection() { new HttpCookie(ConstParameter.WebToolUserName, string.Empty) });
         }
+
         public override void InitMainController()
         {
             this.MainController = new AccountController() { UserService = new UserService() };
@@ -32,10 +34,11 @@ namespace UnitTestProject
         {
             MainController.Login();
         }
+
         [TestMethod]
         public void LoginPost()
         {
-            MainController.Login(this.LoginModel);
+            MainController.Login(this.loginModel);
         }
         #endregion
     }
