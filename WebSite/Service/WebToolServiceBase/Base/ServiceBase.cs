@@ -1,58 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using Autofac;
-using Enyim.Caching;
-using Enyim.Caching.Memcached;
-using WebToolRepository;
-using WebToolService;
-
-namespace WebToolService
+﻿namespace WebToolService
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Linq;
+    using System.Runtime.Remoting.Contexts;
+    using System.Text;
+    using Autofac;
+    using Enyim.Caching;
+    using Enyim.Caching.Memcached;
+    using WebToolRepository;
+    using WebToolService;
+
     public class ServiceBase : IServiceBase
     {
         #region Properties
-        private WebToolEntities _context = null;
+        private WebToolEntities context = null;
+
+        private List<ValidationResult> validationResults = new List<ValidationResult>();
+
+        private bool isValid = true;
+
+        private ICacheHelper cacheHelper = WebToolService.BootStrap.Container.Resolve<ICacheHelper>();
+
         public virtual WebToolEntities Context
         {
             get
             {
-                _context = _context ?? new WebToolEntities();
-                return _context;
+                this.context = this.context ?? new WebToolEntities();
+
+                return this.context;
             }
         }
+
         public virtual int Count { get; set; }
-        #region Cache
-        public ICacheHelper CacheHelper = WebToolService.BootStrap.Container.Resolve<ICacheHelper>();
-        #endregion
-        #region Validation
+
+        public ICacheHelper CacheHelper
+        {
+            get { return this.cacheHelper; }
+
+            set { this.cacheHelper = value; }
+        }
+
         public ValidationContext ValidationContext { get; set; }
-        public List<ValidationResult> ValidationResults = new List<ValidationResult>();
-        private bool _IsValid = true;
+
+        public List<ValidationResult> ValidationResults
+        {
+            get { return this.validationResults; }
+
+            set { this.validationResults = value; }
+        }
+
         public bool IsValid
         {
-            get { return _IsValid; }
-            set { _IsValid = value; }
-        }
-        #endregion
-        #endregion
-        #region Constructors
-        public ServiceBase()
-        {
+            get { return this.isValid; }
 
+            set { this.isValid = value; }
         }
+
         #endregion
+
         #region Methods
         public void CommitChanges()
         {
-            Context.SaveChanges();
+            this.Context.SaveChanges();
         }
+
         public void Validate(object[] arg)
         {
             this.ValidationResults = new List<ValidationResult>();
@@ -65,8 +81,6 @@ namespace WebToolService
                 this.ValidationResults.AddRange(validationResults);
             }
         }
-
-
         #endregion
     }
 }

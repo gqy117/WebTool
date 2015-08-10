@@ -1,30 +1,34 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using DataHelperLibrary;
-using Enyim.Caching;
-using Enyim.Caching.Memcached;
-using Newtonsoft.Json;
-using WebToolCulture.Resource;
-using WebToolService;
-
-namespace WebTool
+﻿namespace WebTool
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Resources;
+    using System.Text;
+    using System.Web;
+    using System.Web.Mvc;
+    using DataHelperLibrary;
+    using Enyim.Caching;
+    using Enyim.Caching.Memcached;
+    using Newtonsoft.Json;
+    using WebToolCulture;
+    using WebToolCulture.Resource;
+    using WebToolService;
+
     public abstract class BaseController : Controller
     {
         #region Properties
         public string ResourceJson { get; set; }
+
         public UserService UserService { get; set; }
+
         public LanguageService LanguageService { get; set; }
+
         public virtual string MainCshtmlName
         {
-            get { return String.Empty; }
+            get { return string.Empty; }
         }
 
         public UserModel CurrentUserModel { get; set; }
@@ -37,9 +41,10 @@ namespace WebTool
             string userName = Request.Cookies[ConstParameter.WebToolUserName].Get(x => x.Value).ToStringN();
             this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
+
         public bool IsLogin()
         {
-            SetMasterCookie();
+            this.SetMasterCookie();
             bool res = (Request.Cookies[ConstParameter.WebToolUserName] == null) ? false : true;
 
             return res;
@@ -47,12 +52,12 @@ namespace WebTool
 
         public ActionResult RedirectToLoginPage()
         {
-            return RedirectToAction("Login", "Account");
+            return this.RedirectToAction("Login", "Account");
         }
 
         public ActionResult JSON(object data)
         {
-            return Json(data, JsonRequestBehavior.AllowGet);
+            return this.Json(data, JsonRequestBehavior.AllowGet);
         }
 
         #region Resource
@@ -64,12 +69,12 @@ namespace WebTool
 
             var result = resourceSet.Cast<DictionaryEntry>().ToDictionary(x => x.Key.ToString(), x => x.Value.ToString());
 
-            ResourceJson = JsonConvert.SerializeObject(result);
+            this.ResourceJson = JsonConvert.SerializeObject(result);
         }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            GetResourceJson();
+            this.GetResourceJson();
             base.OnActionExecuting(filterContext);
         }
 

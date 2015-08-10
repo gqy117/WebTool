@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Web;
-using DataHelperLibrary;
-using WebToolRepository;
-using WebToolCulture;
-
-
-
-namespace WebToolService
+﻿namespace WebToolService
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Runtime.Remoting.Contexts;
+    using System.Text;
+    using System.Web;
+    using DataHelperLibrary;
+    using WebToolCulture;
+    using WebToolRepository;
+
     public class WOLService : ServiceBase
     {
         #region Properties
@@ -26,11 +24,13 @@ namespace WebToolService
 
         public List<WOLModel> GetWOLById(int userId)
         {
-            return GetWOLById(userId, new JQueryTable());
+            return this.GetWOLById(userId, new JQueryTable());
         }
+
         public List<WOLModel> GetWOLById(int userId, JQueryTable model)
         {
-            var res = this.Context.SelectWOL(userId, model.iDisplayLength, model.iDisplayStart, model.OrderBy, model.sSearch).ToList<SelectWOL_Result,WOLModel>();
+            var res = this.Context.SelectWOL(userId, model.iDisplayLength, model.iDisplayStart, model.OrderBy, model.sSearch).ToList<SelectWOL_Result, WOLModel>();
+            
             return res;
         }
         #endregion
@@ -38,8 +38,8 @@ namespace WebToolService
         public void Insert(WOLModel loginModel)
         {
             WOL wol = loginModel.To<WOLModel, WOL>();
-            Context.WOLs.Add(wol);
-            CommitChanges();
+            this.Context.WOLs.Add(wol);
+            this.CommitChanges();
         }
         #endregion
         #endregion
