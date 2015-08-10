@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Web;
-
-namespace WebToolService
+﻿namespace WebToolCulture
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Text;
+    using System.Threading;
+    using System.Web;
+
     public class CultureHelper
     {
-        private static Dictionary<string, string> LanguageDictionary = new Dictionary<string, string>()
-            {
-                {ConstParameter.Chinese, ConstParameter.SimplifiedChinese},
-            };
+        private static Dictionary<string, string> languageDictionary = new Dictionary<string, string>()
+        {
+            { ConstParameter.Chinese, ConstParameter.SimplifiedChinese },
+        };
 
         public static void SetCurrentCulture(CultureInfo culture)
         {
@@ -32,21 +32,24 @@ namespace WebToolService
             System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(lang);
             SetCurrentCulture(culture);
         }
+
         public static string GetLang(string[] userLanguages)
         {
             string lang = ConstParameter.English;
+
             if (userLanguages != null && userLanguages.Length != 0)
             {
                 foreach (string s in userLanguages)
                 {
                     string shortLang = s.Substring(0, 2);
-                    if (LanguageDictionary.ContainsKey(shortLang))
+                    if (languageDictionary.ContainsKey(shortLang))
                     {
-                        lang = LanguageDictionary[shortLang];
+                        lang = languageDictionary[shortLang];
                         break;
                     }
                 }
             }
+
             return lang;
         }
 

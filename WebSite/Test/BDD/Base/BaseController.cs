@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using Moq;
-
-namespace BDD
+﻿namespace BDD
 {
-    public abstract class BaseController
-    {
-        #region Properties
-        public dynamic MainController { get; set; }
-        public Mock<HttpContextBase> HttpContext { get; set; }
-        public Mock<HttpRequestBase> Request { get; set; }
-        public Mock<HttpResponseBase> Response { get; set; }
-        public Mock<ControllerContext> ControllerContext { get; set; }
-        public Mock<ActionExecutingContext> ActionExecutingContext { get; set; }
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Web;
+    using System.Web.Mvc;
+    using Moq;
 
-        #endregion
+    public abstract class BaseController
+    {        
         #region Constructors
         public BaseController()
         {
@@ -30,6 +21,22 @@ namespace BDD
             this.InitActionExecutingContext();
         }
         #endregion
+
+        #region Properties
+        public dynamic MainController { get; set; }
+
+        public Mock<HttpContextBase> HttpContext { get; set; }
+
+        public Mock<HttpRequestBase> Request { get; set; }
+
+        public Mock<HttpResponseBase> Response { get; set; }
+
+        public Mock<ControllerContext> ControllerContext { get; set; }
+
+        public Mock<ActionExecutingContext> ActionExecutingContext { get; set; }
+
+        #endregion
+
         #region Methods
         #region InitDI
         public virtual void InitDI()
@@ -68,17 +75,20 @@ namespace BDD
         #region MainController
         public virtual void InitController()
         {
-            InitControllerContext();
-            InitMainController();
-            BindControllerContext();
+            this.InitControllerContext();
+            this.InitMainController();
+            this.BindControllerContext();
         }
+
         public virtual void InitControllerContext()
         {
             this.ControllerContext = new Mock<ControllerContext>();
             this.ControllerContext.SetupGet(x => x.HttpContext)
-                                 .Returns(HttpContext.Object);
+                                 .Returns(this.HttpContext.Object);
         }
+
         public abstract void InitMainController();
+
         public virtual void BindControllerContext()
         {
             this.MainController.ControllerContext = this.ControllerContext.Object;

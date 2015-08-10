@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.UI.WebControls.Expressions;
-using WebToolService;
-using DataHelperLibrary;
-
-namespace WebTool
+﻿namespace WebTool
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using System.Text;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.UI.WebControls.Expressions;
+    using DataHelperLibrary;
+    using WebToolService;
+
     public class TableBaseController<TMain> : BaseController where TMain : ITotalRecords
     {
         #region Properties
@@ -19,6 +19,7 @@ namespace WebTool
             get;
             set;
         }
+
         public virtual List<TMain> MainList
         {
             get;
@@ -36,8 +37,8 @@ namespace WebTool
         #region Methods
         public virtual ActionResult JsonTable(JQueryTable model)
         {
-            GetTotalRecords();
-            return JSON(new
+            this.GetTotalRecords();
+            return this.JSON(new
             {
                 sEcho = model.sEcho,
                 iTotalRecords = this.TotalRecords,
@@ -45,34 +46,40 @@ namespace WebTool
                 aaData = this.MainList.Select(this.MainResultColumn),
             });
         }
+
         public virtual void GetTotalRecords()
         {
             this.TotalRecords = (this.MainList != null && this.MainList.Count > 0) ? this.MainList.FirstOrDefault().TotalRecords : 0;
         }
+
         public virtual void GetMainResultColumn()
         {
-            this.MainResultColumn = ((TMain x) =>
+            this.MainResultColumn = (TMain x) =>
             {
                 string[] res = new string[this.PropertyList.Count];
                 for (int i = 0; i < this.PropertyList.Count; i++)
                 {
                     res[i] = DataHelperLibrary.DataHelper.GetPropertyValue(x, this.PropertyList[i]);
                 }
+
                 return res;
-            });
+            };
         }
 
         public virtual ActionResult GetJsonTable(JQueryTable model, Action action)
         {
-            ReBindJQueryTable(model);
+            this.ReBindJQueryTable(model);
             action();
-            return JsonTable(model);
+
+            return this.JsonTable(model);
         }
+
         public virtual void ReBindJQueryTable(JQueryTable model)
         {
-            GetMainResultColumn();
+            this.GetMainResultColumn();
             ReadOnlyCollection<SortedColumn> res = model.GetSortedColumns();
             StringBuilder sb = new StringBuilder();
+
             foreach (SortedColumn sortedColumn in res)
             {
                 sb.Append(this.PropertyList[sortedColumn.PropertyName.ToInt32()]);
@@ -80,6 +87,7 @@ namespace WebTool
                 sb.Append(sortedColumn.Direction.ToString());
                 sb.Append(",");
             }
+
             model.OrderBy = sb.ToString().Substring(0, sb.Length - 1);
         }
         #endregion

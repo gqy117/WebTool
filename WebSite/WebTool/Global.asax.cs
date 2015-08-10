@@ -1,17 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Threading;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-using System.Web.SessionState;
-using WebToolService;
-
 namespace WebTool
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Threading;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Optimization;
+    using System.Web.Routing;
+    using System.Web.SessionState;
+    using WebToolCulture;
+    using WebToolService;
+
     public class MvcApplication : System.Web.HttpApplication
     {
         #region Application
@@ -20,6 +21,7 @@ namespace WebTool
             filters.Add(new ErrorLoggerAttribute());
             filters.Add(new AntiForgeryAttribute());
         }
+
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -30,16 +32,12 @@ namespace WebTool
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
+
         public void Application_OnBeginRequest(object sender, EventArgs e)
         {
-            SetLanguage();
+            this.SetLanguage();
         }
 
-        private void RegisterBinders()
-        {
-            ModelBinders.Binders.DefaultBinder = new DefaultModelBinder();
-            ModelBinders.Binders.Add(typeof(JQueryTable), new JQueryDataTablesModelBinder());
-        }
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -47,11 +45,17 @@ namespace WebTool
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            RegisterBinders();
+            this.RegisterBinders();
             BootStrap bootstrap = new BootStrap();
             bootstrap.Configure();
         }
-        
+
+        private void RegisterBinders()
+        {
+            ModelBinders.Binders.DefaultBinder = new DefaultModelBinder();
+            ModelBinders.Binders.Add(typeof(JQueryTable), new JQueryDataTablesModelBinder());
+        }
+
         #endregion
 
         #region Other Methods
