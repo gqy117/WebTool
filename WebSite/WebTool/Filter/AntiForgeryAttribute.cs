@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Web.Mvc;
-using DataHelperLibrary;
-
-namespace WebTool
+﻿namespace WebTool
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Linq;
+    using System.Reflection;
+    using System.Text;
+    using System.Web.Mvc;
+    using DataHelperLibrary;
+
     public class AntiForgeryAttribute : ActionFilterAttribute
     {
         #region Properties
@@ -16,25 +16,13 @@ namespace WebTool
 
         #endregion
         #region Methods
-        private bool IsUrlReferrerNull()
-        {
-            return String.IsNullOrEmpty(this.CurrentContext.Get(x => x.HttpContext.Request.UrlReferrer.Host));
-        }
-        private bool IsUrlReferrerSameDomain()
-        {
-            return this.CurrentContext.Get(x => x.HttpContext.Request.UrlReferrer.Host) !=
-                   this.CurrentContext.Get(x => x.HttpContext.Request.Url.Host);
-        }
-        private bool IsPost()
-        {
-            return "POST" == this.CurrentContext.HttpContext.Request.HttpMethod.ToUpper();
-        }
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             this.CurrentContext = filterContext;
-            if (!IsUrlReferrerNull() && 
-                IsUrlReferrerSameDomain() && 
-                IsPost())
+
+            if (!this.IsUrlReferrerNull() &&
+                this.IsUrlReferrerSameDomain() &&
+                this.IsPost())
             {
                 filterContext.Result = new EmptyResult();
             }
@@ -43,6 +31,23 @@ namespace WebTool
                 base.OnActionExecuting(filterContext);
             }
         }
+
+        private bool IsUrlReferrerNull()
+        {
+            return string.IsNullOrEmpty(this.CurrentContext.Get(x => x.HttpContext.Request.UrlReferrer.Host));
+        }
+
+        private bool IsUrlReferrerSameDomain()
+        {
+            return this.CurrentContext.Get(x => x.HttpContext.Request.UrlReferrer.Host) !=
+                   this.CurrentContext.Get(x => x.HttpContext.Request.Url.Host);
+        }
+
+        private bool IsPost()
+        {
+            return "POST" == this.CurrentContext.HttpContext.Request.HttpMethod.ToUpper();
+        }
+
         #endregion
     }
 }
