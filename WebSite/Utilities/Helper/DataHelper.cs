@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Web;
-using System.Web.Script.Serialization;
-
-namespace WebToolService
+﻿namespace WebToolService
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Diagnostics;
+    using System.Globalization;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Reflection;
+    using System.Web;
+    using System.Web.Script.Serialization;
+
     public static class DataHelper
     {
-
         #region Attribute
         public static T GetAttribute<T>(this MemberInfo member, bool isRequired)
             where T : Attribute
@@ -34,9 +33,11 @@ namespace WebToolService
 
             return (T)attribute;
         }
+
         public static string DisplayName<T>(this Expression<Func<T, object>> propertyExpression)
         {
             var memberInfo = GetPropertyInformation(propertyExpression.Body);
+
             if (memberInfo == null)
             {
                 throw new ArgumentException(
@@ -45,6 +46,7 @@ namespace WebToolService
             }
 
             var attr = memberInfo.GetAttribute<DisplayNameAttribute>(false);
+
             if (attr == null)
             {
                 return memberInfo.Name;
@@ -52,10 +54,12 @@ namespace WebToolService
 
             return attr.DisplayName;
         }
+
         public static MemberInfo GetPropertyInformation(Expression propertyExpression)
         {
             Debug.Assert(propertyExpression != null, "propertyExpression != null");
             MemberExpression memberExpr = propertyExpression as MemberExpression;
+
             if (memberExpr == null)
             {
                 UnaryExpression unaryExpr = propertyExpression as UnaryExpression;
@@ -72,9 +76,10 @@ namespace WebToolService
 
             return null;
         }
-        public static object GetValue<TSource>(this TSource tSource, Expression<Func<TSource, object>> expression)
+
+        public static object GetValue<TSource>(this TSource source, Expression<Func<TSource, object>> expression)
         {
-            return expression.Compile()(tSource);
+            return expression.Compile()(source);
         }
         #endregion
     }

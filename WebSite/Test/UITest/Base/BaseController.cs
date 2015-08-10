@@ -1,85 +1,90 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.IE;
-using OpenQA.Selenium.Remote;
-
-namespace UITest
+﻿namespace UITest
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using OpenQA.Selenium.Chrome;
+    using OpenQA.Selenium.IE;
+    using OpenQA.Selenium.Remote;
+
     public abstract class BaseController
     {
         #region Properties
-        #region MainSite
-        private string _MainSite = "http://gqy115.cloudapp.net/";
-        public string MainSite
+        private InternetExplorerDriver ie;
+
+        private string mainSite = "http://gqy115.cloudapp.net/";
+
+        private ChromeDriver chrome;
+
+        private List<RemoteWebDriver> broswers;
+
+        #region Constructors
+        public BaseController()
         {
-            get { return _MainSite; }
-            set { _MainSite = value; }
+            this.Broswers.Add(this.IE);
+            this.Broswers.Add(this.Chrome);
+            this.Init();
         }
         #endregion
-        #region Broswer
-        #region IE
 
-        private InternetExplorerDriver _IE;
+        public string MainSite
+        {
+            get { return this.mainSite; }
+            set { this.mainSite = value; }
+        }
+
         public InternetExplorerDriver IE
         {
             get
             {
-                _IE = _IE ?? new InternetExplorerDriver();
-                return _IE;
+                this.ie = this.ie ?? new InternetExplorerDriver();
+
+                return this.ie;
             }
         }
-        #endregion
-        #region Chrome
-        private ChromeDriver _Chrome;
+
         public ChromeDriver Chrome
         {
             get
             {
-                _Chrome = _Chrome ?? new ChromeDriver();
-                return _Chrome;
+                this.chrome = this.chrome ?? new ChromeDriver();
+
+                return this.chrome;
             }
         }
         #endregion
         public RemoteWebDriver CurrentBroswer { get; set; }
-        private List<RemoteWebDriver> _Broswers;
+
         public List<RemoteWebDriver> Broswers
         {
             get
             {
-                _Broswers = _Broswers ?? new List<RemoteWebDriver>();
-                return _Broswers;
+                this.broswers = this.broswers ?? new List<RemoteWebDriver>();
+
+                return this.broswers;
             }
         }
-        #endregion
-        #endregion
-        #region Constructors
-        public BaseController()
-        {
-            Broswers.Add(IE);
-            Broswers.Add(Chrome);
-            Init();
-        }
-        #endregion
+
         #region Methods
         public abstract void Init();
         #region Run
         public void Run(Action action)
         {
-            foreach (RemoteWebDriver broswer in Broswers)
+            foreach (RemoteWebDriver broswer in this.Broswers)
             {
-                SetCurrentBroswer(broswer);
+                this.SetCurrentBroswer(broswer);
                 action();
-                CloseBroswer();
+                this.CloseBroswer();
             }
         }
+
         public virtual void SetCurrentBroswer(RemoteWebDriver broswer)
         {
             this.CurrentBroswer = broswer;
         }
+
         public virtual void CloseBroswer()
         {
             this.CurrentBroswer.Quit();

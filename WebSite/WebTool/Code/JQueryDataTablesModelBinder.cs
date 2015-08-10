@@ -1,33 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using WebToolService;
-
-namespace WebTool
+﻿namespace WebTool
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using WebToolService;
+
     public class JQueryDataTablesModelBinder : IModelBinder
     {
         #region Private Variables (Request Keys)
 
-        private const string iDisplayStartKey = "iDisplayStart";
-        private const string iDisplayLengthKey = "iDisplayLength";
-        private const string iColumnsKey = "iColumns";
-        private const string sSearchKey = "sSearch";
-        private const string bEscapeRegexKey = "bRegex";
-        private const string bSortable_Key = "bSortable_";
-        private const string bSearchable_Key = "bSearchable_";
-        private const string sSearch_Key = "sSearch_";
-        private const string bEscapeRegex_Key = "bRegex_";
-        private const string iSortingColsKey = "iSortingCols";
-        private const string iSortCol_Key = "iSortCol_";
-        private const string sSortDir_Key = "sSortDir_";
-        private const string sEchoKey = "sEcho";
-        private const string mDataProp_Key = "mDataProp_";
+        private const string DisplayStartKey = "iDisplayStart";
 
-        private ModelBindingContext _bindingContext;
+        private const string DisplayLengthKey = "iDisplayLength";
+
+        private const string ColumnsKey = "iColumns";
+
+        private const string Search = "sSearch";
+
+        private const string EscapeRegex = "bRegex";
+
+        private const string SortableKey = "bSortable_";
+
+        private const string SearchableKey = "bSearchable_";
+
+        private const string SearchKey = "sSearch_";
+
+        private const string EscapeRegexKey = "bRegex_";
+
+        private const string SortingColsKey = "iSortingCols";
+
+        private const string SortColKey = "iSortCol_";
+
+        private const string SortDirKey = "sSortDir_";
+
+        private const string EchoKey = "sEcho";
+
+        private const string DataPropKey = "mDataProp_";
+
+        private ModelBindingContext bindingContext;
 
         #endregion
 
@@ -39,29 +52,30 @@ namespace WebTool
             {
                 throw new ArgumentNullException("bindingContext");
             }
-            _bindingContext = bindingContext;
+
+            this.bindingContext = bindingContext;
 
             ////Bind Model
             var dataTablesRequest = new JQueryTable();
-            dataTablesRequest.sEcho = GetA<int>(sEchoKey);
+            dataTablesRequest.sEcho = this.GetA<int>(EchoKey);
             if (dataTablesRequest.sEcho <= 0)
             {
                 throw new InvalidOperationException("Expected the request to have a sEcho value greater than 0");
             }
 
-            dataTablesRequest.iColumns = GetA<int>(iColumnsKey);
-            dataTablesRequest.bRegex = GetA<bool>(bEscapeRegexKey);
-            dataTablesRequest.bRegex_ = GetAList<bool>(bEscapeRegex_Key);
-            dataTablesRequest.bSearchable_ = GetAList<bool>(bSearchable_Key);
-            dataTablesRequest.bSortable_ = GetAList<bool>(bSortable_Key);
-            dataTablesRequest.iDisplayLength = GetA<int>(iDisplayLengthKey);
-            dataTablesRequest.iDisplayStart = GetA<int>(iDisplayStartKey);
-            dataTablesRequest.iSortingCols = GetANullableValue<int>(iSortingColsKey);
+            dataTablesRequest.iColumns = this.GetA<int>(ColumnsKey);
+            dataTablesRequest.bRegex = this.GetA<bool>(EscapeRegex);
+            dataTablesRequest.bRegex_ = this.GetAList<bool>(EscapeRegexKey);
+            dataTablesRequest.bSearchable_ = this.GetAList<bool>(SearchableKey);
+            dataTablesRequest.bSortable_ = this.GetAList<bool>(SortableKey);
+            dataTablesRequest.iDisplayLength = this.GetA<int>(DisplayLengthKey);
+            dataTablesRequest.iDisplayStart = this.GetA<int>(DisplayStartKey);
+            dataTablesRequest.iSortingCols = this.GetANullableValue<int>(SortingColsKey);
 
             if (dataTablesRequest.iSortingCols.HasValue)
             {
-                dataTablesRequest.iSortCol_ = GetAList<int>(iSortCol_Key);
-                dataTablesRequest.sSortDir_ = GetStringList(sSortDir_Key);
+                dataTablesRequest.iSortCol_ = this.GetAList<int>(SortColKey);
+                dataTablesRequest.sSortDir_ = this.GetStringList(SortDirKey);
 
                 if (dataTablesRequest.iSortingCols.Value
                     != dataTablesRequest.iSortCol_.Count)
@@ -75,9 +89,10 @@ namespace WebTool
                     throw new InvalidOperationException(string.Format("Amount of items contained in sSortDir_ {0} do not match the amount specified in iSortingCols which is {1}", dataTablesRequest.sSortDir_.Count, dataTablesRequest.iSortingCols.Value));
                 }
             }
-            dataTablesRequest.sSearch = GetString(sSearchKey);
-            dataTablesRequest.sSearch_ = GetStringList(sSearch_Key);
-            dataTablesRequest.mDataProp_ = GetStringList(mDataProp_Key);
+
+            dataTablesRequest.sSearch = this.GetString(Search);
+            dataTablesRequest.sSearch_ = this.GetStringList(SearchKey);
+            dataTablesRequest.mDataProp_ = this.GetStringList(DataPropKey);
 
             return dataTablesRequest;
         }
@@ -98,10 +113,10 @@ namespace WebTool
             int i = 0;
             while (hasMore)
             {
-                var newKey = (key + i.ToString());
+                var newKey = key + i.ToString();
 
                 // No need to use a prefix since data tables will not prefix the request names        
-                var valueResult = _bindingContext.ValueProvider.GetValue(newKey);
+                var valueResult = this.bindingContext.ValueProvider.GetValue(newKey);
 
                 if (valueResult == null)
                 {
@@ -126,9 +141,9 @@ namespace WebTool
             int i = 0;
             while (hasMore)
             {
-                var newKey = (key + i.ToString());
+                var newKey = key + i.ToString();
 
-                var valueResult = _bindingContext.ValueProvider.GetValue(newKey);
+                var valueResult = this.bindingContext.ValueProvider.GetValue(newKey);
 
                 if (valueResult == null)
                 {
@@ -152,7 +167,7 @@ namespace WebTool
         /// <returns></returns>
         private string GetString(string key)
         {
-            var valueResult = _bindingContext.ValueProvider.GetValue(key);
+            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
 
             if (valueResult == null)
             {
@@ -164,7 +179,7 @@ namespace WebTool
 
         private T GetA<T>(string key) where T : struct
         {
-            var valueResult = _bindingContext.ValueProvider.GetValue(key);
+            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
 
             if (valueResult == null)
             {
@@ -176,7 +191,7 @@ namespace WebTool
 
         private T? GetANullableValue<T>(string key) where T : struct
         {
-            var valueResult = _bindingContext.ValueProvider.GetValue(key);
+            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
 
             if (valueResult == null)
             {
