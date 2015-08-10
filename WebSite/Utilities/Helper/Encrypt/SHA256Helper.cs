@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-
-namespace WebToolService
+﻿namespace WebToolService
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Cryptography;
+    using System.Text;
+
     public static class SHA256Helper
     {
-        private static byte[] SALT = new byte[] { 21, 62, 3, 95, 22 };
+        private static byte[] salt = new byte[] { 21, 62, 3, 95, 22 };
+
         public static string Hash(this string plainText)
         {
-            return ComputeHash(plainText, "SHA256", SALT);
+            return ComputeHash(plainText, "SHA256", salt);
         }
+
         public static string Hash(this string plainText, byte[] saltBytes)
         {
             return ComputeHash(plainText, "SHA256", saltBytes);
@@ -50,11 +52,15 @@ namespace WebToolService
 
             // Copy plain text bytes into resulting array.
             for (int i = 0; i < plainTextBytes.Length; i++)
+            {
                 plainTextWithSaltBytes[i] = plainTextBytes[i];
+            }
 
             // Append salt bytes to the resulting array.
             for (int i = 0; i < saltBytes.Length; i++)
+            {
                 plainTextWithSaltBytes[plainTextBytes.Length + i] = saltBytes[i];
+            }
 
             // Because we support multiple hashing algorithms, we must define
             // hash object as a common (abstract) base class. We will specify the
@@ -63,7 +69,9 @@ namespace WebToolService
 
             // Make sure hashing algorithm name is specified.
             if (hashAlgorithm == null)
-                hashAlgorithm = "";
+            {
+                hashAlgorithm = string.Empty;
+            }
 
             // Initialize appropriate hashing algorithm class.
             switch (hashAlgorithm.ToUpper())
@@ -98,11 +106,15 @@ namespace WebToolService
 
             // Copy hash bytes into resulting array.
             for (int i = 0; i < hashBytes.Length; i++)
+            {
                 hashWithSaltBytes[i] = hashBytes[i];
+            }
 
             // Append salt bytes to the result.
             for (int i = 0; i < saltBytes.Length; i++)
+            {
                 hashWithSaltBytes[hashBytes.Length + i] = saltBytes[i];
+            }
 
             // Convert result into a base64-encoded string.
             string hashValue = Convert.ToBase64String(hashWithSaltBytes);
@@ -110,7 +122,6 @@ namespace WebToolService
             // Return the result.
             return hashValue;
         }
-
 
         public static bool VerifyHash(this string plainText, string hashValue)
         {
@@ -127,7 +138,9 @@ namespace WebToolService
 
             // Make sure that hashing algorithm name is specified.
             if (hashAlgorithm == null)
-                hashAlgorithm = "";
+            {
+                hashAlgorithm = string.Empty;
+            }
 
             // Size of hash is based on the specified algorithm.
             switch (hashAlgorithm.ToUpper())
@@ -158,7 +171,9 @@ namespace WebToolService
 
             // Make sure that the specified hash value is long enough.
             if (hashWithSaltBytes.Length < hashSizeInBytes)
+            {
                 return false;
+            }
 
             // Allocate array to hold original salt bytes retrieved from hash.
             byte[] saltBytes = new byte[hashWithSaltBytes.Length -
@@ -166,16 +181,16 @@ namespace WebToolService
 
             // Copy salt from the end of the hash to the new array.
             for (int i = 0; i < saltBytes.Length; i++)
+            {
                 saltBytes[i] = hashWithSaltBytes[hashSizeInBytes + i];
+            }
 
             // Compute a new hash string.
-            string expectedHashString =
-                        ComputeHash(plainText, hashAlgorithm, saltBytes);
+            string expectedHashString = ComputeHash(plainText, hashAlgorithm, saltBytes);
 
             // If the computed hash matches the specified hash,
             // the plain text value must be correct.
-            return (hashValue == expectedHashString);
+            return hashValue == expectedHashString;
         }
-
     }
 }

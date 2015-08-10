@@ -1,42 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using WebToolCulture.Resource;
-using WebToolService;
-
-namespace WebTool
+﻿namespace WebTool
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using System.Text;
+    using System.Web;
+    using System.Web.Mvc;
+    using WebToolCulture.Resource;
+    using WebToolService;
+
     [LoginCheck]
     public class ToolController : TableBaseController<WOLModel>
     {
         #region Properties
-        private CMDHelper _CMDHelper = new CMDHelper();
+        private CMDHelper cmdHelper = new CMDHelper();
+
+        private string fileName = string.Empty;
 
         public CMDHelper CMDHelper
         {
             get
             {
-                return _CMDHelper;
+                return this.cmdHelper;
             }
         }
 
         public WOLService WOLService { get; set; }
+
         public WOLModel WOLModel { get; set; }
-        private string _FileName = String.Empty;
+
         public string FileName
         {
             get
             {
-                _FileName = 0 == _FileName.Length ? Server.MapPath("~/bin/WOL/WolCmd.exe") : _FileName;
-                return _FileName;
+                this.fileName = 0 == this.fileName.Length ? Server.MapPath("~/bin/WOL/WolCmd.exe") : this.fileName;
+                return this.fileName;
             }
+
             set
             {
-                _FileName = value;
+                this.fileName = value;
             }
         }
         #region MainResultColumn
@@ -56,7 +60,7 @@ namespace WebTool
         [HttpGet]
         public ActionResult WOL()
         {
-            return View("~/Views/WOL/WOL.cshtml");
+            return this.View("~/Views/WOL/WOL.cshtml");
         }
 
         ////[HttpPost, ValidateAntiForgeryToken]
@@ -71,12 +75,12 @@ namespace WebTool
                 this.WOLModel.Wake();
             }
 
-            return Json(UIResource.Done);
+            return this.Json(UIResource.Done);
         }
 
         public ActionResult WOLTable(JQueryTable model)
         {
-            return base.GetJsonTable(model, () => { this.MainList = this.WOLService.GetWOLById(this.CurrentUserModel.UserId, model); });
+            return this.GetJsonTable(model, () => { this.MainList = this.WOLService.GetWOLById(this.CurrentUserModel.UserId, model); });
         }
 
         #endregion
