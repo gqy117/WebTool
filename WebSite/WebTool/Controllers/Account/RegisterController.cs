@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using WebToolService;
-
-namespace WebTool
+﻿namespace WebTool
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using WebToolService;
+
     public class RegisterController : AccountBaseController
     {
         #region Properties
@@ -21,7 +21,7 @@ namespace WebTool
         #region Methods
         public ActionResult Index()
         {
-            return View(this.MainCshtmlName, new RegisterModel());
+            return this.View(this.MainCshtmlName, new RegisterModel());
         }
 
         [HttpPost]
@@ -34,17 +34,17 @@ namespace WebTool
             if (ModelState.IsValid)
             {
                 success = UserService.Insert(registerModel);
-                base.AddModelError(registerModel);
+                this.AddModelError(registerModel);
             }
 
             if (success)
             {
-                base.DoLogin(registerModel);
-                result = base.RedirectToHomePage();
+                this.DoLogin(registerModel);
+                result = this.RedirectToHomePage();
             }
             else
             {
-                result = View(this.MainCshtmlName, registerModel);
+                result = this.View(this.MainCshtmlName, registerModel);
             }
 
             return result;

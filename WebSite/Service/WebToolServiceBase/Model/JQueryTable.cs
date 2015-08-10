@@ -1,14 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-
-namespace WebToolService
+﻿namespace WebToolService
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using System.Text;
+
+    /// <summary>
+    /// Represents the direction of sorting for a column.
+    /// </summary>
+    public enum SortingDirection
+    {
+        ASC,
+        DESC
+    }
 
     public class JQueryTable
     {
+        private int _iDisplayStart = 0;
+
+        private int _iDisplayLength = 10;
+
         /// <summary>
         /// Gets or sets the information for DataTables to use for rendering.
         /// </summary>
@@ -17,21 +29,21 @@ namespace WebToolService
         /// <summary>
         /// Gets or sets the display start point.
         /// </summary>
-        private int _iDisplayStart = 0;
         public int iDisplayStart
         {
-            get { return _iDisplayStart; }
-            set { _iDisplayStart = value; }
+            get { return this._iDisplayStart; }
+
+            set { this._iDisplayStart = value; }
         }
 
         /// <summary>
         /// Gets or sets the number of records to display.
         /// </summary>
-        private int _iDisplayLength = 10;
         public int iDisplayLength
         {
-            get { return _iDisplayLength; }
-            set { _iDisplayLength = value; }
+            get { return this._iDisplayLength; }
+
+            set { this._iDisplayLength = value; }
         }
 
         /// <summary>
@@ -91,82 +103,25 @@ namespace WebToolService
         /// </summary>
         public ReadOnlyCollection<string> mDataProp_ { get; set; }
 
+        public string OrderBy { get; set; }
+
         public ReadOnlyCollection<SortedColumn> GetSortedColumns()
         {
-            if (!iSortingCols.HasValue)
+            if (!this.iSortingCols.HasValue)
             {
                 // Return an empty collection since it's easier to work with when verifying against
                 return new ReadOnlyCollection<SortedColumn>(new List<SortedColumn>());
             }
+
             StringBuilder sb = new StringBuilder();
             var sortedColumns = new List<SortedColumn>();
-            for (int i = 0; i < iSortingCols.Value; i++)
+
+            for (int i = 0; i < this.iSortingCols.Value; i++)
             {
-                sortedColumns.Add(new SortedColumn(mDataProp_[iSortCol_[i]], sSortDir_[i]));
+                sortedColumns.Add(new SortedColumn(this.mDataProp_[this.iSortCol_[i]], this.sSortDir_[i]));
             }
 
             return sortedColumns.AsReadOnly();
         }
-
-        public string OrderBy { get; set; }
-    }
-
-
-    /// <summary>
-    /// Represents a sorted column from DataTables.
-    /// </summary>
-    public class SortedColumn
-    {
-        private const string Ascending = "asc";
-
-        public SortedColumn(string propertyName, string sortingDirection)
-        {
-            PropertyName = propertyName;
-            Direction = sortingDirection.Equals(Ascending) ? SortingDirection.ASC : SortingDirection.DESC;
-        }
-
-        /// <summary>
-        /// Gets the name of the Property on the class to sort on.
-        /// </summary>
-        public string PropertyName { get; private set; }
-
-        public SortingDirection Direction { get; private set; }
-
-        public override int GetHashCode()
-        {
-            var directionHashCode = Direction.GetHashCode();
-            return PropertyName != null ? PropertyName.GetHashCode() + directionHashCode : directionHashCode;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-            {
-                return false;
-            }
-
-            if (GetType() != obj.GetType())
-            {
-                return false;
-            }
-
-            var other = (SortedColumn)obj;
-
-            if (other.Direction != Direction)
-            {
-                return false;
-            }
-
-            return other.PropertyName == PropertyName;
-        }
-    }
-
-    /// <summary>
-    /// Represents the direction of sorting for a column.
-    /// </summary>
-    public enum SortingDirection
-    {
-        ASC,
-        DESC
     }
 }

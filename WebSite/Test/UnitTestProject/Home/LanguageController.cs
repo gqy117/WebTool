@@ -1,11 +1,12 @@
-﻿using System;
-using System.Web;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebTool;
-using WebToolService;
-
-namespace UnitTestProject.Home
+﻿namespace UnitTestProject.Home
 {
+    using System;
+    using System.Web;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using WebTool;
+    using WebToolCulture;
+    using WebToolService;
+
     [TestClass]
     public class LanguageControllerTest : BaseControllerTest
     {
@@ -15,11 +16,14 @@ namespace UnitTestProject.Home
             base.InitRequest();
             this.Request.SetupGet(r => r.Cookies).Returns(new HttpCookieCollection() { new HttpCookie(ConstParameter.WebToolLanguage, "en") });
         }
+
         public override void InitMainController()
         {
-            this.MainController = new LanguageController() { LanguageService = new LanguageService()};
+            this.MainController = new LanguageController() { LanguageService = new LanguageService() };
         }
+
         #endregion
+
         [TestMethod]
         public void Index()
         {
