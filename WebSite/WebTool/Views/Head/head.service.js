@@ -3,7 +3,6 @@
     .module('mainApp')
     .factory('headService', headService);
 
-
     function headService() {
         return {
             brand: function _brand_() {

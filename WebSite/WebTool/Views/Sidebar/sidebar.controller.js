@@ -1,6 +1,8 @@
 ﻿(function () {
     angular.module("mainApp")
-         .controller('sidebarController', ['sidebarService', sidebarController]);
+         .controller('sidebarController', sidebarController);
+
+    sidebarController.$inject = ['sidebarService'];
 
     function sidebarController(sidebarService) {
 
