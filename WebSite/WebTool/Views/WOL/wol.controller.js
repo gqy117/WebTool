@@ -9,6 +9,6 @@
         this.activePanel = sidebarService.activePanel;
         this.activePanel.wol = true;
     }
-}());
 
-CreateTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
+    CreateTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
+}());
