@@ -1,6 +1,8 @@
 ﻿(function () {
     angular.module("mainApp")
-         .controller('languageBarController', ['languageBarService', languageBarController]);
+         .controller('languageBarController', languageBarController);
+
+    languageBarController.$inject = ['languageBarService'];
 
     function languageBarController(languageBarService) {
 

@@ -1,6 +1,8 @@
 ﻿(function () {
     angular.module("mainApp")
-         .controller('homeController', ['homeService', 'sidebarService', homeController]);
+         .controller('homeController', homeController);
+
+    homeController.$inject = ['homeService', 'sidebarService'];
 
     function homeController(homeService, sidebarService) {
 
