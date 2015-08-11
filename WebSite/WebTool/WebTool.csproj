@@ -719,7 +719,6 @@
     <Content Include="Views\WOL\headerPanel.service.js" />
     <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Head\head.controller.js" />
-    <Content Include="Views\Head\Language\languageBar.js" />
     <Content Include="Views\Sidebar\sidebar.controller.js" />
     <Content Include="Views\Sidebar\sidebar.service.js" />
     <Content Include="Views\Shared\HeaderPanel\headerPanel.controller.js" />

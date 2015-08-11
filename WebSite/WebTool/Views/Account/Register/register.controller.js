@@ -1,6 +1,8 @@
 ﻿(function () {
     angular.module("mainApp")
-         .controller('registerController', ['registerService', registerController]);
+         .controller('registerController', registerController);
+
+    registerController.$inject = ['registerService'];
 
     function registerController(registerService) {
         this.submit = registerService.submit;
@@ -9,6 +11,7 @@
 
     angular.module("mainApp")
         .directive('form', function () {
+
         return {
             require: 'form',
             restrict: 'E',
