@@ -1,6 +1,8 @@
 ﻿(function () {
     angular.module("mainApp")
-         .controller('wakeUpPanelController', ['wakeUpPanelService', wakeUpPanelController]);
+         .controller('wakeUpPanelController', wakeUpPanelController);
+
+    wakeUpPanelController.$inject = ['wakeUpPanelService'];
 
     function wakeUpPanelController(wakeUpPanelService) {
         this.isShowAlertWakeUpSuccess = false;

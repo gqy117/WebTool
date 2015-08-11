@@ -1,6 +1,8 @@
 ﻿(function () {
     angular.module("mainApp")
-         .controller('headController', ['headService', headController]);
+         .controller('headController', headController);
+
+    headController.$inject = ['headService'];
 
     function headController(headService) {
 

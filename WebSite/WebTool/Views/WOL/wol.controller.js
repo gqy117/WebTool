@@ -1,6 +1,8 @@
 ﻿(function () {
     angular.module("mainApp")
-         .controller('wolController', ['wolService', 'sidebarService', wolController]);
+         .controller('wolController', wolController);
+
+    wolController.$inject = ['wolService', 'sidebarService'];
 
     function wolController(wolService, sidebarService) {
 
