@@ -1,7 +1,9 @@
 ﻿(function () {
     angular
     .module("mainApp")
-    .controller('headerPanelController', ['headerPanelService', headerPanelController]);
+    .controller('headerPanelController', headerPanelController);
+
+    headerPanelController.$inject = ['headerPanelService'];
 
     function headerPanelController(headerPanelService) {
         this.navigation1Click = headerPanelService.navigation1;

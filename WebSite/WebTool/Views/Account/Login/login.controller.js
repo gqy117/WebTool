@@ -1,6 +1,8 @@
 ﻿(function () {
     angular.module("mainApp")
-         .controller('loginController', ['loginService', loginController]);
+         .controller('loginController', loginController);
+
+    loginController.$inject = ['loginService'];
 
     function loginController(loginService) {
 
