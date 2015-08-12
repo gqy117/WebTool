@@ -790,6 +790,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".jscsrc" />
+    <Content Include=".jshintrc" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.eot" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.ttf" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.woff" />
