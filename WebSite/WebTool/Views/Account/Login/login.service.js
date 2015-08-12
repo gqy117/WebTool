@@ -1,26 +1,27 @@
-﻿(function () {
+﻿(function (angular, $, app, window) {
+    'use strict';
+
     angular
         .module('mainApp')
         .factory('loginService', loginService);
 
     function loginService() {
         return {
-
-            formLogin_Submit: function _formLogin_Submit() {
-                Track('Login', 'Login');
+            formLoginSubmit: function formLoginSubmit() {
+                window.Track('Login', 'Login');
                 $('#FormLogin').submit();
             },
 
-            formLogin_Password_keyup: function _formLogin_Password_keyup($event) {
+            formLoginPasswordKeyup: function formLoginPasswordKeyup($event) {
                 if ($event.keyCode === 13) {
-                    this.formLogin_Submit();
+                    this.formLoginSubmit();
                 }
             },
 
-            signUpNow: function _signUpNow() {
-                Track('Login', 'SignUpNow');
-                window.location.href = App.baseUrl + 'Register/Index';
+            signUpNow: function signUpNow() {
+                window.Track('Login', 'SignUpNow');
+                window.location.href = app.baseUrl + 'Register/Index';
             }
-        }
+        };
     }
-}());
+}(angular, jQuery, App, window));

@@ -9,7 +9,7 @@
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {
-            "~/Views/Home/headerPanel.service.js",
+            "~/Views/Home/homeHeaderPanel.service.js",
             "~/Views/Shared/HeaderPanel/headerPanel.controller.js",
             "~/Views/Home/home.service.js",
             "~/Views/Home/home.controller.js",
