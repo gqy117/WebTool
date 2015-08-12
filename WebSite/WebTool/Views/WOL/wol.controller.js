@@ -1,4 +1,6 @@
-﻿(function () {
+﻿(function (window) {
+    "use strict";
+
     angular.module("mainApp")
          .controller('wolController', wolController);
 
@@ -10,5 +12,5 @@
         this.activePanel.wol = true;
     }
 
-    CreateTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
-}());
+    window.CreateTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
+}(window));

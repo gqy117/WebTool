@@ -21,7 +21,7 @@
             <div class="controls">
                 <div class="input-icon left">
                     <i class="icon-lock"></i>
-                    <input id="FormLogin_Password" ng-keyup="login.formLogin_Password_keyup($event)" name="Password" class="m-wrap" type="password" style=""
+                    <input id="FormLogin_Password" ng-keyup="login.formLoginPasswordKeyup($event)" name="Password" class="m-wrap" type="password" style=""
                            placeholder="@UIResource.Password" />
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 @Html.CheckBoxFor(x => x.RememberMe)
                 @UIResource.RememberMe
             </label>
-            <a ng-click="login.formLogin_Submit()" id="login-btn" class="btn green pull-right">
+            <a ng-click="login.formLoginSubmit()" id="login-btn" class="btn green pull-right">
                 @UIResource.Login <i class="m-icon-swapright m-icon-white"></i>
             </a>
         </div>

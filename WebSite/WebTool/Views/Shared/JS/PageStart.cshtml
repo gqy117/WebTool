@@ -1,5 +1,6 @@
 ﻿<script>
-    var pageStartTime = new Date().getTime();
+(function () {
+    window.pageStartTime = new Date().getTime();
 
     var GA_AccountID = "UA-44048426-1";
     var MyDomain = "cloudapp.net";
@@ -9,14 +10,13 @@
         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date(); a = s.createElement(o),
-         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    function AddGA() {
+    (function AddGA() {
         ga('create', GA_AccountID, MyDomain);
         ga('send', 'pageview');
-    }
-    AddGA();
+    })();
 
 
     var _gaq = _gaq || [];
@@ -30,8 +30,8 @@
     })();
 
 
-    function Track(Category, Action) {
+    window.Track = function Track(Category, Action) {
         _gaq.push(['_trackEvent', Category, Action]);
     }
-
+})();
 </script>

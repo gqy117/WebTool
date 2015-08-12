@@ -711,12 +711,12 @@
     <Content Include="Views\Account\Register\register.service.js" />
     <Content Include="Views\Head\Language\languageBar.controller.js" />
     <Content Include="Views\Head\Language\languageBar.service.js" />
-    <Content Include="Views\Home\headerPanel.service.js" />
+    <Content Include="Views\Home\homeHeaderPanel.service.js" />
     <Content Include="Views\Home\Panel\wakeUpPanel.controller.js" />
     <Content Include="Views\Home\Panel\wakeUpPanel.service.js" />
     <Content Include="Views\Home\home.controller.js" />
     <Content Include="Views\Home\home.service.js" />
-    <Content Include="Views\WOL\headerPanel.service.js" />
+    <Content Include="Views\WOL\wolHeaderPanel.service.js" />
     <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Head\head.controller.js" />
     <Content Include="Views\Sidebar\sidebar.controller.js" />
@@ -790,6 +790,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".jscsrc" />
+    <Content Include=".jshintrc" />
+    <Content Include=".jshintignore" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.eot" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.ttf" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.woff" />
