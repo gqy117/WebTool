@@ -16,11 +16,13 @@ Main website.
 
 (5) Use **bootstrap** as UI framework.
 
-(6) Use **knockout.js** to bind json data to the UI.
+(6) Use **angular.js** to bind json data to the UI.
 
-(7) Use **JqueryDataTables** as table control.
+(8) Use **jsHint** to make javascript code clean and strong.
 
-(8) Use **Google Analytics** to analyze users' behaviour.
+(9) Use **JqueryDataTables** as table control.
+
+(10) Use **Google Analytics** to analyze users' behaviour.
 
 ### 2.Tests
 (1) BDD
