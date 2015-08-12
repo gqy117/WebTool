@@ -16,7 +16,7 @@ Main website.
 
 (5) Use **bootstrap** as UI framework.
 
-(6) Use **angular.js** to bind json data to the UI.
+(6) Use **angular.js** as the js framework.
 
 (8) Use **jsHint** to make javascript code clean and strong.
 
