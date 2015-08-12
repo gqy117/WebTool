@@ -1,4 +1,6 @@
-﻿(function () {
+﻿(function (angular, app, document) {
+    'use strict';
+
     angular.module("mainApp")
          .controller('loginController', loginController);
 
@@ -6,12 +8,12 @@
 
     function loginController(loginService) {
 
-        this.formLogin_Submit = loginService.formLogin_Submit;
-        this.formLogin_Password_keyup = loginService.formLogin_Password_keyup;
+        this.formLoginSubmit = loginService.formLoginSubmit;
+        this.formLoginPasswordKeyup = loginService.formLoginPasswordKeyup;
         this.signUpNow = loginService.signUpNow;
 
         angular.element(document).ready(function () {
-            App.initLogin();
+            app.initLogin();
         });
     }
-}());
+}(angular, App, document));
