@@ -1,20 +1,22 @@
-﻿(function () {
+﻿(function (window) {
+    "use strict";
+
     angular
         .module('mainApp')
         .factory('registerService', registerService);
 
     function registerService() {
         return {
-            submit: function _submit() {
+            submit: function submit() {
                 $('#FormRegister').submit();
-                Track('Register', 'Register');
+                window.Track('Register', 'Register');
             },
 
-            formRegister_Password_keyup: function _formRegister_Password_keyup($event) {
+            formRegister_Password_keyup: function formRegisterPasswordKeyup($event) {
                 if ($event.keyCode === 13) {
                     this.submit();
                 }
             }
-        }
+        };
     }
-}());
+}(window));

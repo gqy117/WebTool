@@ -1,4 +1,6 @@
 ﻿(function () {
+    "use strict";
+
     angular
     .module("mainApp")
     .controller('headerPanelController', headerPanelController);
