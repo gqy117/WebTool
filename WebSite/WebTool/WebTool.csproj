@@ -837,6 +837,7 @@
     <Content Include="Views\Sidebar\Sidebar.cshtml" />
     <Content Include="Views\Shared\JS\PageEnd.cshtml" />
     <Content Include="Views\Shared\JS\PageStart.cshtml" />
+    <Content Include="runJsLint.cmd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
