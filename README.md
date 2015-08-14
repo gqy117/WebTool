@@ -44,14 +44,17 @@ Use **MSTest** and **Moq** to do the unit tests.
 ### 3. Utilities
 Common utilities such as **NLog**, **JSON.net**, **Enyim.Caching**(**Memcached** C# implementation).
 
-### 4. Reporitory layer
+### 4. Repository layer
 WebToolRepository
-Reporitory layer: using **EntityFramework** as ORM.
+Repository layer: using **EntityFramework** as ORM.
 
-### 5. WebToolCulture
+### 5. WebToolDB.sln
+Use **Db Project** to control versions of all the tables and stored procedure.
+
+### 6. WebToolCulture
 Multilanguage project, display different language depending on browser settings and user selection.
 
-### 6. Service Layer
+### 7. Service Layer
 (1) WebToolServiceBase
 Base service layer of other services.
 
