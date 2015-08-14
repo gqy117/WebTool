@@ -730,7 +730,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\ui-modals.js" />
-    <Content Include="Views\Shared\myDataTable.js" />
+    <Content Include="Views\Shared\Datatable\myDataTable.service.js" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
