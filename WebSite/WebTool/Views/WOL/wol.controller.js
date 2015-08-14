@@ -4,13 +4,13 @@
     angular.module("mainApp")
          .controller('wolController', wolController);
 
-    wolController.$inject = ['wolService', 'sidebarService'];
+    wolController.$inject = ['wolService', 'sidebarService', 'myDataTableService'];
 
-    function wolController(wolService, sidebarService) {
+    function wolController(wolService, sidebarService, myDataTableService) {
 
         this.activePanel = sidebarService.activePanel;
         this.activePanel.wol = true;
-    }
 
-    window.myDataTable.createTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
+        myDataTableService.createTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
+    }
 }());
