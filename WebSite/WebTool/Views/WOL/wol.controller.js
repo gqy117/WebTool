@@ -1,4 +1,4 @@
-﻿(function (window) {
+﻿(function (myDataTable) {
     "use strict";
 
     angular.module("mainApp")
@@ -12,5 +12,5 @@
         this.activePanel.wol = true;
     }
 
-    window.CreateTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
-}(window));
+    myDataTable.createTable("#WOLTable", App.baseUrl + 'Tool/WOLTable');
+}(myDataTable));
