@@ -19,7 +19,7 @@
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
             "~/Content/assets/js/app.js",
             "~/Scripts/ui-modals.js",
-            "~/Scripts/WebTool.js",
+            "~/Views/Shared/myDataTable.js",
             "~/Views/Shared/main.app.js"
         };
     }
