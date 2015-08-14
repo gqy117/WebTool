@@ -1,4 +1,6 @@
-﻿(function (UIResource) {
+﻿(function () {
+    "use strict";
+
     window.myDataTable = {
         fcmcAddRows: function fcmcAddRows(obj, numberColumns, targetRows) {
             var tableRows = obj.find('tbody tr'); // grab the existing data rows
@@ -28,10 +30,10 @@
              * be used for the HTML of each row. Another iterator inside creates the desired
              * number of columns, adding the sorting class to the appropriate TD.
              */
-            for (i = 0; i < numberNeeded; i++) {
+            for (var i = 0; i < numberNeeded; i++) {
                 cellString = "";
-                for (j = 0; j < numberColumns; j++) {
-                    if (j == highlightColumn) {
+                for (var j = 0; j < numberColumns; j++) {
+                    if (j === highlightColumn) {
                         cellString += '<td class="sorting_1">&nbsp;</td>';
                     } else {
                         cellString += '<td>&nbsp;</td>';
@@ -41,20 +43,20 @@
                 // Add the TR and its contents to the DOM, then toggle the even/odd class
                 // in preparation for the next.
                 lastRow.after('<tr class="' + rowClass + '">' + cellString + '</tr>');
-                rowClass = (rowClass == "even") ? "odd" : "even";
+                rowClass = (rowClass === "even") ? "odd" : "even";
             }
         },
         createTable: function CreateTable(tableName, sAjaxSource, isProcessing) {
             var context = this;
 
-            if (typeof isProcessing == "undefined") {
+            if (!isProcessing) {
                 isProcessing = false;
             }
             var sProcessing = "<div class='modal-backdrop fade in' style='z-index: 10049;'></div>";
             sProcessing += "<div class='modal-scrollable' style='z-index: 10050;'>";
             sProcessing += "<div class='loading-spinner fade in' style='width: 200px; margin-left: -100px; z-index: 10050;'>";
             sProcessing += "<img src='/Content/assets/img/ajax-modal-loading.gif' align='middle'>&nbsp;";
-            sProcessing += "<span style='font-weight:300; color: #eee; font-size: 18px; font-family:Open Sans;'>&nbsp;" + UIResource.Loading + "...</span>";
+            sProcessing += "<span style='font-weight:300; color: #eee; font-size: 18px; font-family:Open Sans;'>&nbsp;" + window.UIResource.Loading + "...</span>";
             sProcessing += "</div>";
             sProcessing += "</div>";
 
@@ -62,13 +64,13 @@
                 "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
-                    "sLengthMenu": "_MENU_" + UIResource.RecordsPerPage,//" records per page",
+                    "sLengthMenu": "_MENU_" + window.window.UIResource.RecordsPerPage,//" records per page",
                     "oPaginate": {
-                        "sPrevious": UIResource.Prev,
-                        "sNext": UIResource.Next
+                        "sPrevious": window.UIResource.Prev,
+                        "sNext": window.UIResource.Next
                     },
                     "sProcessing": sProcessing,
-                    "sSearch": UIResource.Search + ":",
+                    "sSearch": window.UIResource.Search + ":",
                 },
                 /*"aoColumnDefs": [{
                     'bSortable': false,
@@ -80,9 +82,9 @@
                 "bServerSide": true,
                 "bFilter": true,
                 'sAjaxSource': sAjaxSource,
-                "fnInfoCallback": function (oSettings, iStart, iEnd, iMax, iTotal, sPre) {
+                "fnInfoCallback": function (oSettings, iStart, iEnd, iMax, iTotal) {
                     //ShowLoading();
-                    return UIResource.Showing + " " + iStart + " " + UIResource.to + " " + iEnd + " " + UIResource.Paging_of + " " + iTotal + " " + UIResource.record;
+                    return window.UIResource.Showing + " " + iStart + " " + window.UIResource.to + " " + iEnd + " " + window.UIResource.Paging_of + " " + iTotal + " " + window.UIResource.record;
                 },
                 "fnPreDrawCallback": function () {
                     // gather info to compose a message
@@ -114,7 +116,7 @@
             $('.dataTables_filter input')
             .unbind('keypress keyup')
             .bind('keypress keyup', function (e) {
-                if (e.keyCode != 13) return;
+                if (e.keyCode !== 13) return;
                 myTable.fnFilter($(this).val());
             });
 
@@ -124,4 +126,4 @@
             $(tableName).css("width", "100%");
         }
     };
-})(UIResource);
+})();
