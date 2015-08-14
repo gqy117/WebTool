@@ -1,3 +1,3 @@
 SET currentLocation=%~dp0
 
-jshint "%currentLocation%WebTool"
+jshint "%currentLocation%WebTool\Views"
