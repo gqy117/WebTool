@@ -14,15 +14,17 @@ Main website.
 
 (4) Use **StyleCop** to keep codes clean.
 
-(5) Use **bootstrap** as UI framework.
+(5) Use **Code Analysis/ Fxcop** to prevent the high Cyclomatic Complexity or something like that.
 
-(6) Use **angular.js** as the js framework.
+(6) Use **bootstrap** as UI framework.
 
-(8) Use **jsHint** to make javascript code clean and strong.
+(7) Use **angular.js** as the js framework.
 
-(9) Use **JqueryDataTables** as table control.
+(9) Use **jsHint** to make javascript code clean and strong.
 
-(10) Use **Google Analytics** to analyze users' behaviour.
+(10) Use **JqueryDataTables** as table control.
+
+(11) Use **Google Analytics** to analyze users' behaviour.
 
 ### 2.Tests
 (1) BDD
