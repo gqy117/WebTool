@@ -8,7 +8,7 @@
     using WebToolCulture.Resource;
 
     [Serializable]
-    public class LoginModel : LoginBaseModel
+    public class LogOnModel : LogOnBaseModel
     {
         private bool rememberMe = true;
 

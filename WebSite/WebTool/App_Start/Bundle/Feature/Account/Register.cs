@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Web;
 
-    public class Register
+    public static class Register
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {

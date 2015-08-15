@@ -7,7 +7,7 @@
     using System.Web.Mvc;
     using WebToolService;
 
-    [LoginCheck]
+    [LogOnCheck]
     public class IndexHeadController : BaseController
     {
         [HttpGet]

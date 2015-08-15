@@ -20,7 +20,7 @@
             set;
         }
 
-        public virtual List<TMain> MainList
+        public virtual IList<TMain> MainList
         {
             get;
             set;
@@ -28,7 +28,7 @@
 
         public int TotalRecords { get; set; }
 
-        public virtual List<string> PropertyList
+        public virtual IList<string> PropertyList
         {
             get;
             set;
@@ -37,7 +37,7 @@
         #region Methods
         public virtual ActionResult JsonTable(JQueryTable model)
         {
-            this.GetTotalRecords();
+            this.SetTotalRecords();
             return this.JSON(new
             {
                 sEcho = model.sEcho,
@@ -47,12 +47,12 @@
             });
         }
 
-        public virtual void GetTotalRecords()
+        public virtual void SetTotalRecords()
         {
             this.TotalRecords = (this.MainList != null && this.MainList.Count > 0) ? this.MainList.FirstOrDefault().TotalRecords : 0;
         }
 
-        public virtual void GetMainResultColumn()
+        public virtual void SetMainResultColumn()
         {
             this.MainResultColumn = (TMain x) =>
             {
@@ -76,8 +76,8 @@
 
         public virtual void ReBindJQueryTable(JQueryTable model)
         {
-            this.GetMainResultColumn();
-            ReadOnlyCollection<SortedColumn> res = model.GetSortedColumns();
+            this.SetMainResultColumn();
+            ReadOnlyCollection<SortedColumn> res = model.SortedColumns();
             StringBuilder sb = new StringBuilder();
 
             foreach (SortedColumn sortedColumn in res)

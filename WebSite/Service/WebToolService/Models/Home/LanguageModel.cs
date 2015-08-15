@@ -10,6 +10,6 @@
     {
         public Language CurrentLanguage { get; set; }
 
-        public List<Language> ListLanguage { get; set; }
+        public IList<Language> ListLanguage { get; set; }
     }
 }

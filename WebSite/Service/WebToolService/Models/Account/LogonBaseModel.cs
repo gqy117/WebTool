@@ -6,7 +6,7 @@
     using System.Text;
 
     [Serializable]
-    public class LoginBaseModel
+    public class LogOnBaseModel
     {
         public virtual string UserName
         {

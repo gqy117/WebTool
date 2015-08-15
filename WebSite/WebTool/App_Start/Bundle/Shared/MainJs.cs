@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Web;
 
-    public class MainJs
+    public static class MainJs
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {
