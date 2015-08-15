@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("mainApp")
-         .controller('headController', headController);
+        .controller('headController', headController);
 
     headController.$inject = ['headService'];
 
@@ -12,11 +12,4 @@
         this.myProfile_Click = headService.myProfile;
         this.logOut_Click = headService.logOut;
     }
-
-
-    jQuery(document).ready(function () {
-        App.init(); // init the rest of plugins and elements
-        UIModals.init();
-    });
-
 }());

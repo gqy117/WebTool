@@ -1,6 +1,6 @@
 ﻿@using System.Web.Optimization
 @{ Layout = "~/Views/Shared/_rootLayout.cshtml"; }
-<div class="fixed-top">
+<div class="fixed-top" ng-controller="mainController as main">
     <!-- BEGIN HEADER -->
     @Html.Action("Index", "IndexHead")
     @Html.Partial("~/Views/Shared/_bootstrapLayout.cshtml")
@@ -22,7 +22,6 @@
     </div>
     <!-- END CONTAINER -->
     <!-- BEGIN FOOTER -->
-
     @RenderSection("scripts", false)
     @Html.Partial("~/Views/Head/Footer.cshtml")
     <!-- END FOOTER -->
