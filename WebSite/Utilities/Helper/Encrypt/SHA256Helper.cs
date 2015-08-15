@@ -10,17 +10,18 @@
     {
         private static byte[] salt = new byte[] { 21, 62, 3, 95, 22 };
 
-        public static string Hash(this string plainText)
+        public static string Hash(this string plaintext)
         {
-            return ComputeHash(plainText, "SHA256", salt);
+            return ComputeHash(plaintext, "SHA256", salt);
         }
 
-        public static string Hash(this string plainText, byte[] saltBytes)
+        public static string Hash(this string plaintext, byte[] saltBytes)
         {
-            return ComputeHash(plainText, "SHA256", saltBytes);
+            return ComputeHash(plaintext, "SHA256", saltBytes);
         }
 
-        public static string ComputeHash(string plainText, string hashAlgorithm, byte[] saltBytes)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Justification")]
+        public static string ComputeHash(string plaintext, string hashAlgorithm, byte[] saltBytes)
         {
             // If salt is not specified, generate it on the fly.
             if (saltBytes == null)
@@ -37,14 +38,15 @@
                 saltBytes = new byte[saltSize];
 
                 // Initialize a random number generator.
-                RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-
-                // Fill the salt with cryptographically strong byte values.
-                rng.GetNonZeroBytes(saltBytes);
+                using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+                {
+                    // Fill the salt with cryptographically strong byte values.
+                    rng.GetNonZeroBytes(saltBytes);
+                }
             }
 
             // Convert plain text into a byte array.
-            byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(plaintext);
 
             // Allocate array, which will hold plain text and salt.
             byte[] plainTextWithSaltBytes =
@@ -123,12 +125,12 @@
             return hashValue;
         }
 
-        public static bool VerifyHash(this string plainText, string hashValue)
+        public static bool VerifyHash(this string plaintext, string hashValue)
         {
-            return VerifyHash(plainText, "SHA256", hashValue);
+            return VerifyHash(plaintext, "SHA256", hashValue);
         }
 
-        public static bool VerifyHash(string plainText, string hashAlgorithm, string hashValue)
+        public static bool VerifyHash(string plaintext, string hashAlgorithm, string hashValue)
         {
             // Convert base64-encoded hash value into a byte array.
             byte[] hashWithSaltBytes = Convert.FromBase64String(hashValue);
@@ -186,7 +188,7 @@
             }
 
             // Compute a new hash string.
-            string expectedHashString = ComputeHash(plainText, hashAlgorithm, saltBytes);
+            string expectedHashString = ComputeHash(plaintext, hashAlgorithm, saltBytes);
 
             // If the computed hash matches the specified hash,
             // the plain text value must be correct.

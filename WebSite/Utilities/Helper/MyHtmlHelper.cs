@@ -9,7 +9,12 @@
 
     public static class MyHtmlHelper
     {
-        public static MvcHtmlString MyValidationSummary(this HtmlHelper helper, string validationMessage = "")
+        public static MvcHtmlString MyValidationSummary(this HtmlHelper helper)
+        {
+            return MyValidationSummary(helper, string.Empty);
+        }
+
+        public static MvcHtmlString MyValidationSummary(this HtmlHelper helper, string validationMessage)
         {
             StringBuilder sb = new StringBuilder();
 

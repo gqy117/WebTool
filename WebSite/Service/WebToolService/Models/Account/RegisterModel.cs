@@ -7,7 +7,7 @@
     using System.Text;
     using WebToolCulture.Resource;
 
-    public class RegisterModel : LoginModel
+    public class RegisterModel : LogOnModel
     {
         [Required(ErrorMessageResourceType = typeof(UIResource), ErrorMessageResourceName = "ConfirmPasswordIsRequired")]
         [DataType(DataType.Password)]

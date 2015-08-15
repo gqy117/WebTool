@@ -10,6 +10,7 @@
     using Autofac.Core.Lifetime;
     using WebToolService;
 
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class ErrorLoggerAttribute : HandleErrorAttribute
     {
         #region Properties

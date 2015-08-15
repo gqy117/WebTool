@@ -1,5 +1,5 @@
 ﻿[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(WebTool.BootStrap), "PostStart")]
-////[assembly: PreApplicationStartMethod(typeof(WebTool.BootStrap), "PostStart")]
+////[assembly: PreApplicationStartMethod(typeof(WebTool.Bootstrap), "PostStart")]
 namespace WebTool
 {
     using System;

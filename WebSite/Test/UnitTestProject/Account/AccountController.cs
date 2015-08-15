@@ -14,7 +14,7 @@
     public class AccountControllerTest : BaseControllerTest
     {
         #region Properties
-        private LoginModel loginModel = new LoginModel() { UserName = "1", Password = "1" };
+        private LogOnModel logOnModel = new LogOnModel() { UserName = "1", Password = "1" };
         #endregion
         #region Methods
         #region Override
@@ -38,7 +38,7 @@
         [TestMethod]
         public void LoginPost()
         {
-            MainController.Login(this.loginModel);
+            MainController.Login(this.logOnModel);
         }
         #endregion
     }
