@@ -7,14 +7,14 @@
 
     function loginService() {
         return {
-            formLoginSubmit: function formLoginSubmit() {
+            formLogOnSubmit: function formLogOnSubmit() {
                 window.Track('LogOn', 'LogOn');
                 $('#FormLogin').submit();
             },
 
-            formLoginPasswordKeyup: function formLoginPasswordKeyup($event) {
+            formLogOnPasswordKeyup: function formLogOnPasswordKeyup($event) {
                 if ($event.keyCode === 13) {
-                    this.formLoginSubmit();
+                    this.formLogOnSubmit();
                 }
             },
 
