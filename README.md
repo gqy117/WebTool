@@ -14,11 +14,11 @@ Main website.
 
 (4) Use **StyleCop** to keep codes clean.
 
-(5) Use **Code Analysis/ Fxcop** to prevent the high Cyclomatic Complexity or something like that.
+(5) Use **Code Analysis/ Fxcop** to prevent the high **Cyclomatic Complexity** or something like that.
 
 (6) Use **bootstrap** as UI framework.
 
-(7) Use **angular.js** as the js framework.
+(7) Use **angular.js** as the javascript framework.
 
 (9) Use **jsHint** to make javascript code clean and strong.
 
