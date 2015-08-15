@@ -15,6 +15,7 @@
     using WebToolRepository;
     using WebToolService;
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Justification = "Justification")]
     public class ServiceBase : IServiceBase
     {
         #region Properties
@@ -24,7 +25,7 @@
 
         private bool isValid = true;
 
-        private ICacheHelper cacheHelper = WebToolService.BootStrap.Container.Resolve<ICacheHelper>();
+        private ICacheHelper cacheHelper = WebToolService.Bootstrap.Container.Resolve<ICacheHelper>();
 
         public virtual WebToolEntities Context
         {
@@ -47,6 +48,7 @@
 
         public ValidationContext ValidationContext { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Justification")]
         public List<ValidationResult> ValidationResults
         {
             get { return this.validationResults; }
@@ -76,9 +78,9 @@
             foreach (var o in arg)
             {
                 this.ValidationContext = new ValidationContext(o, null, null);
-                List<ValidationResult> validationResults = new List<ValidationResult>();
-                this.IsValid = this.IsValid == false ? false : Validator.TryValidateObject(o, this.ValidationContext, validationResults, true);
-                this.ValidationResults.AddRange(validationResults);
+                List<ValidationResult> currentResults = new List<ValidationResult>();
+                this.IsValid = this.IsValid == false ? false : Validator.TryValidateObject(o, this.ValidationContext, this.validationResults, true);
+                this.ValidationResults.AddRange(currentResults);
             }
         }
         #endregion

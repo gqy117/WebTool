@@ -7,7 +7,7 @@
     using System.Web.Mvc;
     using WebToolCulture.Resource;
 
-    public class ConstParameter
+    public static class ConstParameter
     {
         public const string WebToolUserName = "WebToolUserName";
 
@@ -19,7 +19,7 @@
 
         public const string English = "en";
 
-        private static List<Language> languageList = new List<Language>() 
+        private static IList<Language> languageList = new List<Language>() 
         {
             new Language()
             {
@@ -35,7 +35,7 @@
             },
         };
 
-        public static List<Language> LanguageList
+        public static IList<Language> LanguageList
         {
             get
             {

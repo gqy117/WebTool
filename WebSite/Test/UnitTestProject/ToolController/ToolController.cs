@@ -21,7 +21,7 @@
         #region Override
         public override void InitMainController()
         {
-            this.MainController = new ToolController() { WOLService = new WOLService(), CurrentUserModel = new UserModel() { UserId = 1 }, FileName = AppDomain.CurrentDomain.BaseDirectory + @"\WOL\WolCmd.exe" };
+            this.MainController = new ToolController() { WOLService = new WolService(), CurrentUserModel = new UserModel() { UserId = 1 }, FileName = AppDomain.CurrentDomain.BaseDirectory + @"\WOL\WolCmd.exe" };
         }
         #endregion
 

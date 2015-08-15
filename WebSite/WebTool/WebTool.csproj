@@ -46,6 +46,8 @@
     <PackageAsSingleFile>true</PackageAsSingleFile>
     <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
     <PublishDatabases>true</PublishDatabases>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -740,7 +742,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Bundle\Feature\Wol.cs" />
-    <Compile Include="App_Start\Bundle\Feature\Account\Login.cs" />
+    <Compile Include="App_Start\Bundle\Feature\Account\LogOn.cs" />
     <Compile Include="App_Start\Bundle\Feature\Home.cs" />
     <Compile Include="App_Start\Bundle\Feature\Account\Register.cs" />
     <Compile Include="App_Start\Bundle\BundleConfig.cs" />

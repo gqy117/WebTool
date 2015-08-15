@@ -25,28 +25,28 @@
         #endregion
         #region Methods
         #region Select
-        public UserModel GetUserModelByName(string userNameEncryped)
+        public UserModel GetUserModelByName(string encryptedUserName)
         {
-            string userName = Utility.AESHelper.DecryptStringFromBytes(userNameEncryped);
+            string userName = Utility.AESHelper.DecryptStringFromBytes(encryptedUserName);
 
             return this.CacheHelper.GetCache(userName, () => Context.Users.FirstOrDefault(x => x.UserName == userName).To<User, UserModel>());
         }
         #endregion
         #region Insert
-        public bool Insert(LoginModel loginModel)
+        public bool Insert(LogOnModel logOnModel)
         {
             bool res = true;
 
-            if (!this.IsExist(loginModel))
+            if (!this.IsExist(logOnModel))
             {
-                User user = this.ConvertUser(loginModel);
+                User user = this.ConvertUser(logOnModel);
                 user.CreationDate = DateTime.Now;
                 Context.Users.Add(user);
                 this.CommitChanges();
             }
             else
             {
-                loginModel.ErrorMessage = WebToolCulture.Resource.UIResource.UserAlreadyExist;
+                logOnModel.ErrorMessage = WebToolCulture.Resource.UIResource.UserAlreadyExist;
                 res = false;
             }
 
@@ -54,12 +54,12 @@
         }
         #endregion
         #region Check
-        public bool IsExist(LoginModel userModel)
+        public bool IsExist(LogOnModel userModel)
         {
             return this.Context.Users.Any(x => x.UserName == userModel.UserName);
         }
 
-        public bool IsLoginAllowed(LoginModel userModel)
+        public bool IsLogOnAllowed(LogOnModel userModel)
         {
             bool res = true;
             string encryptedPassword = userModel.Password.Hash();
@@ -74,11 +74,11 @@
             return res;
         }
         #endregion
-        private User ConvertUser(LoginModel loginModel)
+        private User ConvertUser(LogOnModel logOnModel)
         {
             User user = new User();
-            user = loginModel.To<LoginModel, User>();
-            user.Password = loginModel.Password.Hash();
+            user = logOnModel.To<LogOnModel, User>();
+            user.Password = logOnModel.Password.Hash();
 
             return user;
         }

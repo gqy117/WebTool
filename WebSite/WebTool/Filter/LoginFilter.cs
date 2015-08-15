@@ -8,7 +8,8 @@
     using System.Web.Mvc;
     using System.Web.Routing;
 
-    public class LoginCheckAttribute : BaseAttribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+    public class LogOnCheckAttribute : BaseAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -19,9 +20,9 @@
                 return;
             }
 
-            if (!this.CurrentBaseController.IsLogin())
+            if (!this.CurrentBaseController.IsLogOn())
             {
-                filterContext.Result = this.CurrentBaseController.RedirectToLoginPage();
+                filterContext.Result = this.CurrentBaseController.RedirectToLogOnPage();
             }
             else
             {

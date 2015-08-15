@@ -8,7 +8,7 @@
     function loginService() {
         return {
             formLoginSubmit: function formLoginSubmit() {
-                window.Track('Login', 'Login');
+                window.Track('LogOn', 'LogOn');
                 $('#FormLogin').submit();
             },
 
@@ -19,7 +19,7 @@
             },
 
             signUpNow: function signUpNow() {
-                window.Track('Login', 'SignUpNow');
+                window.Track('LogOn', 'SignUpNow');
                 window.location.href = app.baseUrl + 'Register/Index';
             }
         };

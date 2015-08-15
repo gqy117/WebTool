@@ -9,6 +9,7 @@
     using System.Web.Mvc;
     using DataHelperLibrary;
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1018:MarkAttributesWithAttributeUsage", Justification = "Justification ")]
     public class AntiForgeryAttribute : ActionFilterAttribute
     {
         #region Properties

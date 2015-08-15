@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Web;
 
-    public class WOLModel : ITotalRecords
+    public class WolModel : ITotalRecords
     {
         #region Properties
 
@@ -19,13 +19,13 @@
 
         private string macAddress = string.Empty;
 
-        private CMDHelper cmdHelper = new CMDHelper();
+        private CmdHelper cmdHelper = new CmdHelper();
 
         public string Protocol { get; set; }
 
-        public string WOLName { get; set; }
+        public string WolName { get; set; }
 
-        public int WOLID { get; set; }
+        public int WolId { get; set; }
 
         public string Arguments { get; set; }
 
@@ -51,7 +51,7 @@
             }
         }
 
-        public string MACAddress
+        public string MacAddress
         {
             get { return this.macAddress; }
 
@@ -84,7 +84,7 @@
             }
         }
 
-        public CMDHelper CMDHelper
+        public CmdHelper CmdHelper
         {
             get { return this.cmdHelper; }
 
@@ -99,16 +99,16 @@
         public void Wake()
         {
             this.PrepareArgument();
-            this.CMDHelper.FileName = this.FileName;
-            this.CMDHelper.Arguments = this.Arguments;
-            this.CMDHelper.Run();
+            this.CmdHelper.FileName = this.FileName;
+            this.CmdHelper.Arguments = this.Arguments;
+            this.CmdHelper.Run();
         }
 
         private void PrepareArgument()
         {
             List<string> argumentList = new List<string>();
 
-            argumentList.Add(string.Format("\"{0}\"", this.MACAddress));
+            argumentList.Add(string.Format("\"{0}\"", this.MacAddress));
             argumentList.Add(string.Format("\"{0}\"", this.HostName));
             argumentList.Add(string.Format("\"{0}\"", this.SubnetMask));
             argumentList.Add(string.Format("\"{0}\"", this.Port));
