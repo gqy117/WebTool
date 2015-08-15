@@ -8,8 +8,8 @@
 
     function loginController(loginService) {
 
-        this.formLoginSubmit = loginService.formLoginSubmit;
-        this.formLoginPasswordKeyup = loginService.formLoginPasswordKeyup;
+        this.formLogOnSubmit = loginService.formLogOnSubmit;
+        this.formLogOnPasswordKeyup = loginService.formLogOnPasswordKeyup;
         this.signUpNow = loginService.signUpNow;
 
         angular.element(document).ready(function () {
