@@ -14,7 +14,7 @@
         #region Properties
         private InternetExplorerDriver ie;
 
-        private string mainSite = "http://gqy115.cloudapp.net/";
+        private string mainSite = "http://localhost:12599/";
 
         private ChromeDriver chrome;
 
