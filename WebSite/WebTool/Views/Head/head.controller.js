@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("mainApp")
-         .controller('headController', headController);
+        .controller('headController', headController);
 
     headController.$inject = ['headService'];
 
@@ -14,9 +14,9 @@
     }
 
 
-    jQuery(document).ready(function () {
-        App.init(); // init the rest of plugins and elements
-        UIModals.init();
-    });
+    //angular.element(document).ready(function () {
+    //    App.init(); // init the rest of plugins and elements
+    //    //UIModals.init();
+    //});
 
 }());
