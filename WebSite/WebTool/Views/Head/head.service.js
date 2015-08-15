@@ -17,7 +17,7 @@
 
             logOut: function _logOut() {
                 window.Track('IndexHead', 'LogOut');
-                window.location.href = App.baseUrl + "Account/LogOn";
+                window.location.href = App.baseUrl + "Account/Login";
             }
         };
     }
