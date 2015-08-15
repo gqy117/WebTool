@@ -65,11 +65,11 @@ namespace BDD.Account
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login page")]
+        [NUnit.Framework.DescriptionAttribute("LogOn page")]
         [NUnit.Framework.CategoryAttribute("mytag")]
         public virtual void LoginPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login page", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LogOn page", new string[] {
                         "mytag"});
 #line 4
 this.ScenarioSetup(scenarioInfo);

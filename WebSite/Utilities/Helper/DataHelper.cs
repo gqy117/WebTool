@@ -34,6 +34,7 @@
             return (T)attribute;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Justification")]
         public static string DisplayName<T>(this Expression<Func<T, object>> propertyExpression)
         {
             var memberInfo = GetPropertyInformation(propertyExpression.Body);

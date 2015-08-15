@@ -10,15 +10,15 @@
     using WebToolCulture.Resource;
     using WebToolService;
 
-    [LoginCheck]
-    public class ToolController : TableBaseController<WOLModel>
+    [LogOnCheck]
+    public class ToolController : TableBaseController<WolModel>
     {
         #region Properties
-        private CMDHelper cmdHelper = new CMDHelper();
+        private CmdHelper cmdHelper = new CmdHelper();
 
         private string fileName = string.Empty;
 
-        public CMDHelper CMDHelper
+        public CmdHelper CMDHelper
         {
             get
             {
@@ -26,9 +26,9 @@
             }
         }
 
-        public WOLService WOLService { get; set; }
+        public WolService WOLService { get; set; }
 
-        public WOLModel WOLModel { get; set; }
+        public WolModel WOLModel { get; set; }
 
         public string FileName
         {
@@ -45,11 +45,11 @@
         }
         #region MainResultColumn
 
-        public override List<string> PropertyList
+        public override IList<string> PropertyList
         {
             get
             {
-                return new List<string>() { "WOLID", "WOLName", "HostName", "MACAddress", "SubnetMask", "Port", "Protocol" };
+                return new List<string>() { "WolId", "WolName", "HostName", "MacAddress", "SubnetMask", "Port", "Protocol" };
             }
         }
         #endregion
@@ -67,8 +67,8 @@
         [HttpPost]
         public ActionResult WakeUp()
         {
-            this.WOLModel = this.WOLService.GetWOLById(this.CurrentUserModel.UserId).FirstOrDefault();
-            
+            this.WOLModel = this.WOLService.GetWolById(this.CurrentUserModel.UserId).FirstOrDefault();
+
             if (this.WOLModel != null)
             {
                 this.WOLModel.FileName = this.FileName;
@@ -80,7 +80,12 @@
 
         public ActionResult WOLTable(JQueryTable model)
         {
-            return this.GetJsonTable(model, () => { this.MainList = this.WOLService.GetWOLById(this.CurrentUserModel.UserId, model); });
+            return this.GetJsonTable(
+                model,
+                () =>
+                {
+                    this.MainList = this.WOLService.GetWolById(this.CurrentUserModel.UserId, model);
+                });
         }
 
         #endregion

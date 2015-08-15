@@ -11,7 +11,7 @@
 
     public abstract class AccountBaseController : BaseController
     {
-        public virtual void AddModelError(LoginModel userModel)
+        public virtual void AddModelError(LogOnModel userModel)
         {
             if (!string.IsNullOrEmpty(userModel.Get(x => x.ErrorMessage)))
             {
@@ -24,38 +24,38 @@
             return this.RedirectToAction("Index", "Home");
         }
 
-        public ActionResult DoLogin(LoginModel loginModel)
+        public ActionResult DoLogOn(LogOnModel logOnModel)
         {
             bool isAllowed = false;
             if (ModelState.IsValid)
             {
-                isAllowed = this.UserService.IsLoginAllowed(loginModel);
-                this.AddModelError(loginModel);
+                isAllowed = this.UserService.IsLogOnAllowed(logOnModel);
+                this.AddModelError(logOnModel);
             }
 
             if (isAllowed)
             {
-                this.SetLoginCookie(loginModel);
+                this.SetLogOnCookie(logOnModel);
 
                 return this.RedirectToHomePage();
             }
             else
             {
-                return this.View(this.MainCshtmlName, loginModel);
+                return this.View(this.MainCshtmlName, logOnModel);
             }
         }
         #endregion
 
         #region Cookies
-        public void SetLoginCookie(LoginModel loginModel)
+        public void SetLogOnCookie(LogOnModel logOnModel)
         {
-            string encryptedUsername = Utility.AESHelper.EncryptStringToBytes(loginModel.UserName);
+            string encryptedUsername = Utility.AESHelper.EncryptStringToBytes(logOnModel.UserName);
             HttpCookie cookie = new HttpCookie(ConstParameter.WebToolUserName, encryptedUsername);
-            this.SetLoginCookieExpires(cookie, loginModel.RememberMe);
+            this.SetLoginCookieExpires(cookie, logOnModel.RememberMe);
             Response.Cookies.Add(cookie);
         }
 
-        public void DoLogout()
+        public void DoLogOff()
         {
             if (Request.Cookies[ConstParameter.WebToolUserName] != null)
             {

@@ -8,7 +8,7 @@
     using System.Threading;
     using System.Web;
 
-    public class CultureHelper
+    public static class CultureHelper
     {
         private static Dictionary<string, string> languageDictionary = new Dictionary<string, string>()
         {

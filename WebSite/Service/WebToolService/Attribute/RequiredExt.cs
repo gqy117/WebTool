@@ -8,20 +8,18 @@
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)]
     public class RequiredExtAttribute : System.ComponentModel.DataAnnotations.RequiredAttribute
     {
-        private bool enabled = true;
+        public RequiredExtAttribute()
+            : this(true)
+        {
+        }
 
-        public RequiredExtAttribute(bool enabled = true)
+        public RequiredExtAttribute(bool enabled)
             : base()
         {
             this.Enabled = enabled;
         }
 
-        public bool Enabled 
-        { 
-            get { return this.enabled; } 
-
-            set { this.enabled = value; } 
-        }
+        public bool Enabled { get; protected set; }
 
         #region Methods
         public override bool IsValid(object value)
