@@ -688,7 +688,6 @@
     <Content Include="Content\Site.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\AjaxLogin.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
@@ -716,6 +715,8 @@
     <Content Include="Views\Home\Panel\wakeUpPanel.service.js" />
     <Content Include="Views\Home\home.controller.js" />
     <Content Include="Views\Home\home.service.js" />
+    <Content Include="Views\Shared\Init\main.controller.js" />
+    <Content Include="Views\Shared\Init\uiModel.service.js" />
     <Content Include="Views\WOL\wolHeaderPanel.service.js" />
     <Content Include="Views\Shared\main.app.js" />
     <Content Include="Views\Head\head.controller.js" />
@@ -729,8 +730,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\ui-modals.js" />
-    <Content Include="Views\Shared\myDataTable.js" />
+    <Content Include="Views\Shared\Datatable\myDataTable.service.js" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>

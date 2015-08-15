@@ -18,9 +18,9 @@
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modal.js",
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
             "~/Content/assets/js/app.js",
-            "~/Scripts/ui-modals.js",
-            "~/Views/Shared/myDataTable.js",
-            "~/Views/Shared/main.app.js"
+            "~/Views/Shared/main.app.js",
+            "~/Views/Shared/Init/uiModel.service.js",
+            "~/Views/Shared/Init/main.controller.js"
         };
     }
 }
