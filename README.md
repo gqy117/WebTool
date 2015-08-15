@@ -6,23 +6,23 @@ A demo website contains many best practices.
 ### 1. WebTool
 Main website.
 
-(1) Use **Autofac** as **DI** framework.
+(1) Use **angular.js** as the javascript framework.
 
-(2) Use **Castle.Core** as **AOP** framework.
+(2) Use **JqueryDataTables** as table control.
 
-(3) Use **Glimpse** to debug.
+(3) Use **Autofac** as **DI** framework.
 
-(4) Use **StyleCop** to keep codes clean.
+(4) Use **bootstrap** as UI framework.
 
 (5) Use **Code Analysis/ Fxcop** to prevent the high **Cyclomatic Complexity** or something like that.
 
-(6) Use **bootstrap** as UI framework.
+(6) Use **StyleCop** to keep codes clean.
 
-(7) Use **angular.js** as the javascript framework.
+(7) Use **jsHint** to make javascript code clean and strong.
 
-(9) Use **jsHint** to make javascript code clean and strong.
+(9) Use **Castle.Core** as **AOP** framework.
 
-(10) Use **JqueryDataTables** as table control.
+(10) Use **Glimpse** to debug.
 
 (11) Use **Google Analytics** to analyze users' behaviour.
 
