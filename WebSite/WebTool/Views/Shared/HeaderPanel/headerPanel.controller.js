@@ -1,9 +1,8 @@
 ﻿(function () {
     "use strict";
 
-    angular
-    .module("mainApp")
-    .controller('headerPanelController', headerPanelController);
+    angular.module("mainApp")
+        .controller('headerPanelController', headerPanelController);
 
     headerPanelController.$inject = ['headerPanelService'];
 
