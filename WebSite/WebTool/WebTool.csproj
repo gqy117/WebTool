@@ -706,8 +706,8 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Views\Account\Login\login.controller.js" />
-    <Content Include="Views\Account\Login\login.service.js" />
+    <Content Include="Views\Account\LogOn\login.controller.js" />
+    <Content Include="Views\Account\LogOn\login.service.js" />
     <Content Include="Views\Account\Register\register.controller.js" />
     <Content Include="Views\Account\Register\register.service.js" />
     <Content Include="Views\Head\Language\languageBar.controller.js" />
@@ -772,7 +772,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\Login\Login.cshtml" />
+    <Content Include="Views\Account\LogOn\LogOn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Register\Register.cshtml" />
@@ -799,7 +799,7 @@
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.ttf" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont.woff" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont_162a16fe.eot" />
-    <Content Include="Views\Account\Login\_loginLayout.cshtml" />
+    <Content Include="Views\Account\LogOn\_loginLayout.cshtml" />
     <Content Include="Views\Shared\_indexLayout.cshtml" />
     <Content Include="Views\Head\Head.cshtml" />
     <Content Include="Views\Head\Footer.cshtml" />
@@ -822,7 +822,7 @@
     <Content Include="Views\WOL\WOL.cshtml" />
     <Content Include="Views\Head\Language\LanguageBar.cshtml" />
     <Content Include="Views\Shared\JS\BackendResource.cshtml" />
-    <Content Include="Views\Account\Login\Captcha.cshtml" />
+    <Content Include="Views\Account\LogOn\Captcha.cshtml" />
     <Content Include="Views\Shared\JS\AntiForgeryToken.cshtml" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
