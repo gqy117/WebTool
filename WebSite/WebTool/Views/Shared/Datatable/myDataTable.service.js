@@ -108,9 +108,9 @@
                     },
 
                     /*"aoColumns": [
-                        { "sName": "WOLName" },
+                        { "sName": "WolName" },
                         { "sName": "HostName" },
-                        { "sName": "MACAddress" },
+                        { "sName": "MacAddress" },
                         { "sName": "SubnetMask" },
                          { "sName": "Port" },
                          { "sName": "Protocol" },

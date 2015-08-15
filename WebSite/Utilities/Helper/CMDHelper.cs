@@ -8,7 +8,7 @@
     using System.Security.Policy;
     using System.Text;
 
-    public class CMDHelper
+    public class CmdHelper
     {
         #region Properties
         public string FileName { get; set; }
@@ -19,13 +19,16 @@
 
         public void Run()
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = this.FileName;
             startInfo.Arguments = this.Arguments;
-            process.StartInfo = startInfo;
-            process.Start();
+
+            using (System.Diagnostics.Process process = new System.Diagnostics.Process())
+            {
+                process.StartInfo = startInfo;
+                process.Start();
+            }
         }
     }
 }

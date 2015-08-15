@@ -6,7 +6,7 @@
     using System.Text;
 
     [Serializable]
-    public class UserModel : LoginModel
+    public class UserModel : LogOnModel
     {
         public int UserId { get; set; }
 

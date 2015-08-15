@@ -15,7 +15,7 @@
         public SortedColumn(string propertyName, string sortingDirection)
         {
             this.PropertyName = propertyName;
-            this.Direction = sortingDirection.Equals(Ascending) ? SortingDirection.ASC : SortingDirection.DESC;
+            this.Direction = sortingDirection.Equals(Ascending) ? SortingDirection.Asc : SortingDirection.Desc;
         }
 
         /// <summary>

@@ -11,7 +11,7 @@
     using WebToolCulture;
     using WebToolRepository;
 
-    public class WOLService : ServiceBase
+    public class WolService : ServiceBase
     {
         #region Properties
 
@@ -22,22 +22,22 @@
         #region Methods
         #region Select
 
-        public List<WOLModel> GetWOLById(int userId)
+        public IList<WolModel> GetWolById(int userId)
         {
-            return this.GetWOLById(userId, new JQueryTable());
+            return this.GetWolById(userId, new JQueryTable());
         }
 
-        public List<WOLModel> GetWOLById(int userId, JQueryTable model)
+        public IList<WolModel> GetWolById(int userId, JQueryTable model)
         {
-            var res = this.Context.SelectWOL(userId, model.iDisplayLength, model.iDisplayStart, model.OrderBy, model.sSearch).ToList<SelectWOL_Result, WOLModel>();
+            var res = this.Context.SelectWOL(userId, model.iDisplayLength, model.iDisplayStart, model.OrderBy, model.sSearch).ToList<SelectWOL_Result, WolModel>();
             
             return res;
         }
         #endregion
         #region Insert
-        public void Insert(WOLModel loginModel)
+        public void Insert(WolModel logOnModel)
         {
-            WOL wol = loginModel.To<WOLModel, WOL>();
+            WOL wol = logOnModel.To<WolModel, WOL>();
             this.Context.WOLs.Add(wol);
             this.CommitChanges();
         }

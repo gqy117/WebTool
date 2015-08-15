@@ -19,23 +19,25 @@ namespace WebTool
 
         public override string MainCshtmlName
         {
-            get { return "~/Views/Account/Login/Login.cshtml"; }
+            get { return "~/Views/Account/LogOn/LogOn.cshtml"; }
         }
         #endregion
 
         #region Methods
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Login", Justification = "Justification ")]
         [HttpGet]
         public ActionResult Login()
         {
-            this.DoLogout();
-            return this.View(this.MainCshtmlName, new LoginModel());
+            this.DoLogOff();
+            return this.View(this.MainCshtmlName, new LogOnModel());
         }
 
         ////[CaptchaVerify("Captchaisnotvalid", typeof(UIResource))]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Login", Justification = "Justification ")]
         [HttpPost]
-        public ActionResult Login(LoginModel loginModel)
+        public ActionResult Login(LogOnModel logOnModel)
         {
-            return this.DoLogin(loginModel);
+            return this.DoLogOn(logOnModel);
         }
         #endregion
     }
