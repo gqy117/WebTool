@@ -42,7 +42,7 @@
             this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
 
-        public bool IsLogin()
+        public bool IsLogOn()
         {
             this.SetMasterCookie();
             bool res = (Request.Cookies[ConstParameter.WebToolUserName] == null) ? false : true;
@@ -50,7 +50,7 @@
             return res;
         }
 
-        public ActionResult RedirectToLoginPage()
+        public ActionResult RedirectToLogOnPage()
         {
             return this.RedirectToAction("Login", "Account");
         }
@@ -63,7 +63,7 @@
         #region Resource
 
         [NonAction]
-        protected virtual void GetResourceJson()
+        protected virtual void SetResourceJson()
         {
             ResourceSet resourceSet = UIResource.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
 
@@ -74,7 +74,7 @@
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            this.GetResourceJson();
+            this.SetResourceJson();
             base.OnActionExecuting(filterContext);
         }
 

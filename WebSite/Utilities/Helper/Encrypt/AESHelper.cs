@@ -14,6 +14,7 @@
         private byte[] rijnKey = null; 
         private byte[] rijnIv = null;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Justification")]
         public byte[] RijnKey
         {
             get
@@ -22,8 +23,9 @@
 
                 return this.rijnKey;
             }
-        } 
+        }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Justification")]
         public byte[] RijnIv
         {
             get
@@ -34,12 +36,12 @@
             }
         }
 
-        public string EncryptStringToBytes(string plainText)
+        public string EncryptStringToBytes(string plaintext)
         {
             // Check arguments. 
-            if (plainText == null || plainText.Length <= 0)
+            if (plaintext == null || plaintext.Length <= 0)
             {
-                throw new ArgumentNullException("plainText");
+                throw new ArgumentNullException("plaintext");
             }
 
             if (this.RijnKey == null || this.RijnKey.Length <= 0)
@@ -71,7 +73,7 @@
                         using (StreamWriter streamWriterEncrypt = new StreamWriter(cryptoStreamEncrypt))
                         {
                             // Write all data to the stream.
-                            streamWriterEncrypt.Write(plainText);
+                            streamWriterEncrypt.Write(plaintext);
                         }
 
                         encrypted = memoryStreamEncrypt.ToArray();

@@ -46,6 +46,7 @@
 
         #region IModelBinder Members
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1500:VariableNamesShouldNotMatchFieldNames", MessageId = "bindingContext", Justification = "Justification"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", Justification = "Justification ")]
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
             if (bindingContext == null)

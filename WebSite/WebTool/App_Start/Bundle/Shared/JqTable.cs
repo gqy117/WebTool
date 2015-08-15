@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Web;
 
-    public class JqTable
+    public static class JqTable
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {

@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Web;
 
-    public class Wol
+    public static class Wol
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {

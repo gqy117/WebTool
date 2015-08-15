@@ -5,12 +5,12 @@
     using System.Linq;
     using System.Web;
 
-    public class Login
+    public static class LogOn
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {
-            "~/Views/Account/Login/login.service.js",
-            "~/Views/Account/Login/login.controller.js"
+            "~/Views/Account/LogOn/login.service.js",
+            "~/Views/Account/LogOn/login.controller.js"
         };
     }
 }
