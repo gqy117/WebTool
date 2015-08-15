@@ -27,6 +27,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\..\AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -83,8 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attribute\RequiredExt.cs" />
-    <Compile Include="Models\Account\LoginBaseModel.cs" />
-    <Compile Include="Models\Account\LoginModel.cs" />
+    <Compile Include="Models\Account\LogonBaseModel.cs" />
+    <Compile Include="Models\Account\LogonModel.cs" />
     <Compile Include="Models\Account\RegisterModel.cs" />
     <Compile Include="Models\Account\UserModel.cs" />
     <Compile Include="Models\Home\LanguageModel.cs" />

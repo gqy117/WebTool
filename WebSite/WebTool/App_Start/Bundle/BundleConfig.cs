@@ -6,7 +6,7 @@
     using WebGrease.Css.Visitor;
     using WebTool.Bundle;
 
-    public class BundleConfig
+    public static class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
@@ -62,9 +62,9 @@
 
         private static void RegisterJSLogin(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/Login").Include(
+            bundles.Add(new ScriptBundle("~/Content/LogOn").Include(
                 MainJs.Files
-                .Concat(Login.Files)
+                .Concat(LogOn.Files)
                     .ToArray()));
         }
 

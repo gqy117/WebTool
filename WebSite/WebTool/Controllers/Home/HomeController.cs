@@ -13,7 +13,7 @@ namespace WebTool
     using WebToolCulture.Resource;
     using WebToolService;
 
-    [LoginCheck]
+    [LogOnCheck]
     public class HomeController : BaseController
     {
         public ActionResult Index()

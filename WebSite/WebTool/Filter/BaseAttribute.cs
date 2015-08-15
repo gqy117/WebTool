@@ -7,6 +7,7 @@
     using System.Web;
     using System.Web.Mvc;
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1018:MarkAttributesWithAttributeUsage", Justification = "Justification ")]
     public class BaseAttribute : ActionFilterAttribute
     {
         #region Properties

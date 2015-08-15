@@ -7,19 +7,19 @@
 
     function loginService() {
         return {
-            formLoginSubmit: function formLoginSubmit() {
-                window.Track('Login', 'Login');
+            formLogOnSubmit: function formLogOnSubmit() {
+                window.Track('LogOn', 'LogOn');
                 $('#FormLogin').submit();
             },
 
-            formLoginPasswordKeyup: function formLoginPasswordKeyup($event) {
+            formLogOnPasswordKeyup: function formLogOnPasswordKeyup($event) {
                 if ($event.keyCode === 13) {
-                    this.formLoginSubmit();
+                    this.formLogOnSubmit();
                 }
             },
 
             signUpNow: function signUpNow() {
-                window.Track('Login', 'SignUpNow');
+                window.Track('LogOn', 'SignUpNow');
                 window.location.href = app.baseUrl + 'Register/Index';
             }
         };

@@ -20,7 +20,7 @@
             return languageModel;
         }
 
-        public List<Language> GetLanguageList(string languageCode)
+        public IList<Language> GetLanguageList(string languageCode)
         {
             return (from language in ConstParameter.LanguageList
                     where language.Code != languageCode
