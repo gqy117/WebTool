@@ -6,13 +6,13 @@
     using System.Text;
     using Autofac;
 
-    public class BootStrap
+    public static class Bootstrap
     {
         public static ContainerBuilder Builder { get; set; }
 
         public static Autofac.IContainer Container { get; private set; }
 
-        public static void StartUp()
+        public static void Startup()
         {
             Builder = new ContainerBuilder();
             OnConfigure();

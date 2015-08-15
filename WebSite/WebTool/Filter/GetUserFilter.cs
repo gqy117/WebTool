@@ -7,6 +7,7 @@
     using System.Text;
     using System.Web.Mvc;
 
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class GetUserAttribute : BaseAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)

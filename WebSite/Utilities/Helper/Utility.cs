@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Web;
 
-    public class Utility
+    public static class Utility
     {
         private static AESHelper aesHelper = new AESHelper();
 

@@ -1,7 +1,7 @@
-@{ Layout = "~/Views/Account/Login/_loginLayout.cshtml"; }
+@{ Layout = "~/Views/Account/LogOn/_loginLayout.cshtml"; }
 @using CaptchaMvc.HtmlHelpers
 @using System.Web.Optimization
-@model WebToolService.LoginModel
+@model WebToolService.LogOnModel
 
 <div ng-app="mainApp" class="content">
     <!-- BEGIN LOGIN FORM -->
@@ -21,12 +21,12 @@
             <div class="controls">
                 <div class="input-icon left">
                     <i class="icon-lock"></i>
-                    <input id="FormLogin_Password" ng-keyup="login.formLoginPasswordKeyup($event)" name="Password" class="m-wrap" type="password" style=""
+                    <input id="FormLogin_Password" ng-keyup="login.formLogOnPasswordKeyup($event)" name="Password" class="m-wrap" type="password" style=""
                            placeholder="@UIResource.Password" />
                 </div>
             </div>
         </div>
-        @*@Html.Partial("~/Views/Account/Login/Captcha.cshtml")*@
+        @*@Html.Partial("~/Views/Account/LogOn/Captcha.cshtml")*@
 
         @Html.MyValidationSummary()
         <div class="form-actions">
@@ -34,7 +34,7 @@
                 @Html.CheckBoxFor(x => x.RememberMe)
                 @UIResource.RememberMe
             </label>
-            <a ng-click="login.formLoginSubmit()" id="login-btn" class="btn green pull-right">
+            <a ng-click="login.formLogOnSubmit()" id="login-btn" class="btn green pull-right">
                 @UIResource.Login <i class="m-icon-swapright m-icon-white"></i>
             </a>
         </div>
@@ -52,5 +52,5 @@
 </div>
 
 @section scripts{
-    @Scripts.Render("~/Content/Login")
+    @Scripts.Render("~/Content/LogOn")
 }

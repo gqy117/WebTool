@@ -11,8 +11,8 @@
     /// </summary>
     public enum SortingDirection
     {
-        ASC,
-        DESC
+        Asc,
+        Desc
     }
 
     public class JQueryTable
@@ -21,9 +21,6 @@
 
         private int _iDisplayLength = 10;
 
-        /// <summary>
-        /// Gets or sets the information for DataTables to use for rendering.
-        /// </summary>
         public int sEcho { get; set; }
 
         /// <summary>
@@ -105,7 +102,7 @@
 
         public string OrderBy { get; set; }
 
-        public ReadOnlyCollection<SortedColumn> GetSortedColumns()
+        public ReadOnlyCollection<SortedColumn> SortedColumns()
         {
             if (!this.iSortingCols.HasValue)
             {
@@ -113,7 +110,6 @@
                 return new ReadOnlyCollection<SortedColumn>(new List<SortedColumn>());
             }
 
-            StringBuilder sb = new StringBuilder();
             var sortedColumns = new List<SortedColumn>();
 
             for (int i = 0; i < this.iSortingCols.Value; i++)

@@ -24,6 +24,7 @@
             return this.View(this.MainCshtmlName, new RegisterModel());
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Justification ")]
         [HttpPost]
         public ActionResult Index(RegisterModel registerModel)
         {
@@ -39,7 +40,7 @@
 
             if (success)
             {
-                this.DoLogin(registerModel);
+                this.DoLogOn(registerModel);
                 result = this.RedirectToHomePage();
             }
             else
