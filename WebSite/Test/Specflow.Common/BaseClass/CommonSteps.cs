@@ -34,6 +34,7 @@
         [When(@"I open the page '(.*)'")]
         public void WhenIOpenPage(string url)
         {
+            url = this.AddBaseUrl(url);
             this.OpenPage(url);
         }
 
@@ -83,6 +84,7 @@
         [Then(@"the current url should be '(.*)'")]
         public void ThenTheCurrentUrlShouldBe(string expectedUrl)
         {
+            expectedUrl = this.AddBaseUrl(expectedUrl);
             var actualUrl = this.Browser.Url;
 
             Assert.AreEqual(expectedUrl, actualUrl);
