@@ -12,6 +12,6 @@ Scenario: LogOn to the website
 	|UserName	|Password	|
 	|UserName	|Password	|
 
-	And I click the submit button by id 'login-btn'
+	And I click the button by id 'login-btn'
 
 	Then the current url should be '~/'

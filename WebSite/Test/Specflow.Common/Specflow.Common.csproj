@@ -63,7 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClass\ChromeOptionsWithPrefs.cs" />
-    <Compile Include="BaseClass\CommonSteps.cs" />
+    <Compile Include="BaseClass\CommonSteps\CommonSteps.cs" />
+    <Compile Include="BaseClass\CommonSteps\CommonSteps_Assert.cs" />
     <Compile Include="BaseClass\WebDriverFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseClass\TestBase.cs" />
