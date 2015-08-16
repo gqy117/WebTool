@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BDD.Account
+namespace BDD.Base
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,20 @@ namespace BDD.Account
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LonOn")]
-    public partial class LonOnFeature
+    [NUnit.Framework.DescriptionAttribute("AlreadyLogOn")]
+    public partial class AlreadyLogOnFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "LonOn.feature"
+#line 1 "AlreadyLogOn.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LonOn", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AlreadyLogOn", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,38 +65,16 @@ namespace BDD.Account
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("LogOn to the website")]
-        [NUnit.Framework.CategoryAttribute("LonOn")]
-        public virtual void LogOnToTheWebsite()
+        [NUnit.Framework.DescriptionAttribute("One-step LogOn")]
+        [NUnit.Framework.CategoryAttribute("AlreadyLogOn")]
+        public virtual void One_StepLogOn()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LogOn to the website", new string[] {
-                        "LonOn"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("One-step LogOn", new string[] {
+                        "AlreadyLogOn"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "UserName",
-                        "Password"});
-            table1.AddRow(new string[] {
-                        "1",
-                        "1"});
 #line 5
- testRunner.Given("the information", ((string)(null)), table1, "Given ");
-#line 9
- testRunner.When("I open the page \'~/Account/Login\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "UserName",
-                        "Password"});
-            table2.AddRow(new string[] {
-                        "UserName",
-                        "Password"});
-#line 11
- testRunner.And("I fill all the following elements by name", ((string)(null)), table2, "And ");
-#line 15
- testRunner.And("I click the button by id \'login-btn\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 17
- testRunner.Then("the current url should be \'~/\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I already LogOn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
