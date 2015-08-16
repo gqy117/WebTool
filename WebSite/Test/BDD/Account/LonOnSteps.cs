@@ -6,12 +6,16 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using OpenQA.Selenium.Remote;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
     [Binding]
-    [Scope(Feature = "LonOn")]
     public class LonOnSteps : StepsBase
     {
+        public LonOnSteps(RemoteWebDriver browser)
+        {
+            this.Browser = browser;
+        }
     }
 }
