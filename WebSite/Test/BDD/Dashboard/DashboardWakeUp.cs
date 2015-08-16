@@ -5,11 +5,11 @@
     using System.Linq;
     using System.Text;
     using Account;
+    using OpenQA.Selenium.Remote;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
     [Binding]
-    [Scope(Feature = "DashboardWakeUp", Tag = "LogOn")]
     public class DashboardWakeUp : StepsBase
     {
     }

@@ -13,9 +13,5 @@
     [Binding]
     public class LonOnSteps : StepsBase
     {
-        public LonOnSteps(RemoteWebDriver browser)
-        {
-            this.Browser = browser;
-        }
     }
 }

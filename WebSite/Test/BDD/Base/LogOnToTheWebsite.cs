@@ -1,18 +1,23 @@
 ﻿namespace BDD.Base
 {
-    /*using System;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using OpenQA.Selenium.Remote;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
     [Binding]
-    [Scope(Tag = "AlreadyLogOn")]
-    public class AlreadyLogOn : StepsBase
+    public class LogOnToTheWebsite : StepsBase
     {
-        [When(@"I already LogOn")]
+        public LogOnToTheWebsite(RemoteWebDriver browser)
+        {
+            this.Browser = browser;
+        }
+
+        [When(@"LogOn to the website")]
         public void WhenIAlreadyLogOn()
         {
             this.GivenUserNameAndPassword();
@@ -22,11 +27,13 @@
             this.FillUserNameAndPassword();
 
             this.StartLogOn();
+
+            this.WaitFor(1000);
         }
 
         private void StartLogOn()
         {
-            this.WhenIClickSubmitById("login-btn");
+            this.ClickById("login-btn");
         }
 
         private void FillUserNameAndPassword()
@@ -34,12 +41,12 @@
             Table tableElementName = new Table(new string[] { "UserName", "Password" });
             tableElementName.AddRow(new string[] { "UserName", "Password" });
 
-            this.WhenIFillFollowingElementsByName(tableElementName);
+            this.FillTheFormByName(tableElementName, this.UserInfo);
         }
 
         private void GotoLogOnPage()
         {
-            this.WhenIOpenPage("~/Account/Login");
+            this.OpenPage("~/Account/Login");
         }
 
         private void GivenUserNameAndPassword()
@@ -47,7 +54,7 @@
             Table tableElementValue = new Table(new string[] { "UserName", "Password" });
             tableElementValue.AddRow(new string[] { "1", "1" });
 
-            this.GivenInformation(tableElementValue);
+            this.UserInfo = tableElementValue.Rows.First();
         }
-    }*/
+    }
 }

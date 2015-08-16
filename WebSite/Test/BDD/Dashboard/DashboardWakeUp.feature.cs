@@ -76,7 +76,7 @@ namespace BDD.Dashboard
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
-testRunner.When("I open the page \'~\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
 testRunner.And("I click the button by id \'home-wake-up\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
