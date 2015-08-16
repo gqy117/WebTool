@@ -3,6 +3,7 @@
 @DashboardWakeUp
 @AlreadyLogOn
 Scenario: Wake Up
-When I already LogOn
-And I click the button by name 'home-wake-up'
+When I open the page '~'
+And I click the button by id 'home-wake-up'
+And I wait for '2500'
 Then I should see by id 'alertWakeUpSuccess'
