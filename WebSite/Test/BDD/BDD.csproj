@@ -66,7 +66,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\LonOnSteps.cs" />
     <Compile Include="Account\LonOn.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,13 +78,17 @@
       <DependentUpon>LogOnToTheWebsite.feature</DependentUpon>
     </Compile>
     <Compile Include="Base\StepBases.cs" />
-    <Compile Include="Dashboard\DashboardWakeUp.cs" />
     <Compile Include="Dashboard\DashboardWakeUp.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DashboardWakeUp.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wol\Wol.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Wol.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Account\LonOn.feature">
@@ -103,6 +106,10 @@
     </None>
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
+    <None Include="Wol\Wol.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Wol.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="chromedriver.exe">
