@@ -1,4 +1,4 @@
-﻿namespace Specflow.Common.BaseClass
+﻿namespace Specflow.Common
 {
     using System;
     using System.Collections.Generic;
