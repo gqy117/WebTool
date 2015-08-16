@@ -33,12 +33,6 @@
 
         #endregion
 
-        [AfterScenario]
-        public virtual void TearDown()
-        {
-            this.Browser.Quit();
-        }
-
         protected virtual void FillTheFormByName(Table tableKey, TableRow rowValue)
         {
             var firstRow = tableKey.Rows.First();

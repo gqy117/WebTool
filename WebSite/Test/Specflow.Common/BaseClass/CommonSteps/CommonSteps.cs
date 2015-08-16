@@ -5,7 +5,9 @@
     using System.Configuration;
     using System.Linq;
     using System.Text;
+    using System.Threading;
     using System.Threading.Tasks;
+    using BoDi;
     using CsQuery;
     using NUnit.Framework;
     using NUnit.Framework.Constraints;
@@ -18,12 +20,29 @@
     [Binding]
     public partial class CommonSteps : TestBase
     {
-        public CommonSteps()
+        private readonly IObjectContainer _objectContainer;
+
+        private string baseUrl = ConfigurationManager.AppSettings["BaseUrl"];
+
+        public override string BaseUrl
         {
-            this.Browser = WebDriverFactory.CreateWebDriver();
+            get { return this.baseUrl; }
+            set { this.baseUrl = value; }
         }
 
-        public override RemoteWebDriver Browser { get; set; }
+        public CommonSteps(IObjectContainer objectContainer)
+        {
+            _objectContainer = objectContainer;
+        }
+
+        [BeforeScenario]
+        public void InitializeWebDriver()
+        {
+            var webDriver = WebDriverFactory.CreateWebDriver();
+            _objectContainer.RegisterInstanceAs<RemoteWebDriver>(webDriver);
+
+            this.Browser = webDriver;
+        }
 
         [Given(@"the information")]
         public void GivenInformation(Table table)
@@ -66,6 +85,12 @@
         public void WhenIClickSubmitById(string buttonId)
         {
             this.ClickById(buttonId);
+        }
+
+        [When(@"I wait for '(.*)'")]
+        public void ThenIShouldSeeById(int millionSeconds)
+        {
+            Thread.Sleep(millionSeconds);
         }
     }
 }
