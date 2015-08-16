@@ -72,7 +72,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LonOn.feature</DependentUpon>
     </Compile>
+    <Compile Include="Base\AlreadyLogOn.cs" />
+    <Compile Include="Base\AlreadyLogOn.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlreadyLogOn.feature</DependentUpon>
+    </Compile>
     <Compile Include="Base\StepBases.cs" />
+    <Compile Include="Dashboard\DashboardWakeUp.cs" />
+    <Compile Include="Dashboard\DashboardWakeUp.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DashboardWakeUp.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +93,14 @@
       <LastGenOutput>LonOn.feature.cs</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Base\AlreadyLogOn.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AlreadyLogOn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Dashboard\DashboardWakeUp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DashboardWakeUp.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
   </ItemGroup>
