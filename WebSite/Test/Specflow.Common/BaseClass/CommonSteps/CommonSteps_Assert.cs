@@ -14,7 +14,7 @@
         [Then(@"the result should be the same as the html '(.*)', and the element '(.*)'")]
         public void ThenTheResultShouldBeTheSameAsTheHtmlFile(string fileName, string selector)
         {
-            var expected = CQ.Create(this.ReadFileString(fileName)).Html();
+            var expected = this.ReadFileString(fileName);
 
             var actual = CQ.Create(this.Browser.PageSource).Select(selector).Html();
 
