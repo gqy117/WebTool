@@ -28,6 +28,9 @@
         {
             get { return Encoding.UTF8; }
         }
+
+        public virtual string BaseUrl { get; set; }
+
         #endregion
 
         [AfterScenario]
@@ -86,6 +89,17 @@
         protected string RemoveWhiteSpace(string actual)
         {
             return Regex.Replace(actual, @"\s+", string.Empty);
+        }
+
+        protected string AddBaseUrl(string url)
+        {
+            if (url.StartsWith("~"))
+            {
+                url = url.Replace("~", string.Empty);
+                url = this.BaseUrl + url;
+            }
+
+            return url;
         }
     }
 }
