@@ -1,7 +1,9 @@
 ﻿Feature: LonOn
 
 @LonOn
+
 Scenario: LogOn to the website
+
 	Given the information
 	|UserName	|Password	|
 	|1			|1			|

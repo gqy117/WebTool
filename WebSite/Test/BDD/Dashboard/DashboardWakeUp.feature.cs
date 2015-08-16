@@ -73,15 +73,15 @@ namespace BDD.Dashboard
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Wake Up", new string[] {
                         "DashboardWakeUp",
                         "AlreadyLogOn"});
-#line 5
-this.ScenarioSetup(scenarioInfo);
 #line 6
-testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 7
-testRunner.And("I click the button by id \'home-wake-up\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 8
-testRunner.And("I wait for \'2500\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
+testRunner.And("I click the button by id \'home-wake-up\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+testRunner.And("I wait for \'2500\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
 testRunner.Then("I should see by id \'alertWakeUpSuccess\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
