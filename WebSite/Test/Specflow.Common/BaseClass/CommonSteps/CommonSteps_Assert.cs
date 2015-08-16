@@ -34,7 +34,7 @@
         }
 
         [Then(@"I should see by id '(.*)'")]
-        public void ThenIShouldSeeById(string expectedElementId)
+        public void WhenIWaitFor(string expectedElementId)
         {
             var expectedElement = this.Browser.FindElementById(expectedElementId);
 

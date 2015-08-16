@@ -53,7 +53,6 @@
         [When(@"I open the page '(.*)'")]
         public void WhenIOpenPage(string url)
         {
-            url = this.AddBaseUrl(url);
             this.OpenPage(url);
         }
 
@@ -88,9 +87,9 @@
         }
 
         [When(@"I wait for '(.*)'")]
-        public void ThenIShouldSeeById(int millionSeconds)
+        public void WhenIWaitFor(int millionSeconds)
         {
-            Thread.Sleep(millionSeconds);
+            this.WaitFor(millionSeconds);
         }
     }
 }
