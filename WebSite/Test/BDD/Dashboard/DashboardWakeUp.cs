@@ -1,4 +1,4 @@
-﻿namespace BDD.Dashboard
+﻿namespace BDD
 {
     using System;
     using System.Collections.Generic;
@@ -9,20 +9,8 @@
     using TechTalk.SpecFlow;
 
     [Binding]
-    [Scope(Feature = "DashboardWakeUp", Tag = "AlreadyLogOn")]
+    [Scope(Feature = "DashboardWakeUp", Tag = "LogOn")]
     public class DashboardWakeUp : StepsBase
     {
-        private LonOnFeature lonOnFeature;
-
-        public DashboardWakeUp(LonOnFeature lonOnFeature)
-        {
-            this.lonOnFeature = lonOnFeature;
-        }
-
-        [When(@"I logOn to the website")]
-        public void WhenIlogOnToTheWebsite()
-        {
-            this.lonOnFeature.LogOnToTheWebsite();
-        }
     }
 }

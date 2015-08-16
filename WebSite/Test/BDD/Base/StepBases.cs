@@ -8,7 +8,7 @@
     using System.Threading.Tasks;
     using OpenQA.Selenium.Chrome;
 
-    public class StepsBase : CommonSteps
+    public class StepsBase : TestBase
     {
         private string baseUrl = ConfigurationManager.AppSettings["BaseUrl"];
 
