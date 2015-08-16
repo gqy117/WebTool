@@ -6,7 +6,7 @@ Scenario: LogOn to the website
 	|UserName	|Password	|
 	|1			|1			|
 
-	When I open the page '/Account/Login'
+	When I open the page '~/Account/Login'
 
 	And I fill all the following elements by name
 	|UserName	|Password	|
@@ -14,4 +14,4 @@ Scenario: LogOn to the website
 
 	And I click the submit button by id 'login-btn'
 
-	Then the current url should be '/'
+	Then the current url should be '~/'
