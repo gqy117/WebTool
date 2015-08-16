@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BDD.Account
+namespace BDD.Wol
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,20 @@ namespace BDD.Account
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SpecFlowFeature")]
-    public partial class SpecFlowFeatureFeature
+    [NUnit.Framework.DescriptionAttribute("Wol")]
+    public partial class WolFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "AccountFlowFeature.feature"
+#line 1 "Wol.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpecFlowFeature", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Wol", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,18 +65,21 @@ namespace BDD.Account
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login page")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void LoginPage()
+        [NUnit.Framework.DescriptionAttribute("Check Wol Tables")]
+        [NUnit.Framework.CategoryAttribute("Wol")]
+        public virtual void CheckWolTables()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login page", new string[] {
-                        "mytag"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Wol Tables", new string[] {
+                        "Wol"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
-#line 5
- testRunner.When("I open login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
- testRunner.Then("I see no exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+testRunner.And("I open the page \'~/Tool/WOL\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+testRunner.Then("the result should be the same as the html \'Wol\\WolTable.html\', and the element \'#" +
+                    "WOLTable\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
