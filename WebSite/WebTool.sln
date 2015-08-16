@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D1D49
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specflow.Common", "Specflow.Common\Specflow.Common.csproj", "{E3495109-C2AA-4383-B968-235F994F5095}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specflow.Common", "Test\Specflow.Common\Specflow.Common.csproj", "{E3495109-C2AA-4383-B968-235F994F5095}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
