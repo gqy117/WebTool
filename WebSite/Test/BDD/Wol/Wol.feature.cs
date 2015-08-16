@@ -77,6 +77,9 @@ this.ScenarioSetup(scenarioInfo);
 testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
 testRunner.And("I open the page \'~/Tool/WOL\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+testRunner.Then("the result should be the same as the html \'Wol\\WolTable.html\', and the element \'#" +
+                    "WOLTable\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
