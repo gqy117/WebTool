@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -77,6 +78,14 @@
             expected = this.RemoveWhiteSpace(expected);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [Then(@"the current url should be '(.*)'")]
+        public void ThenTheCurrentUrlShouldBe(string expectedUrl)
+        {
+            var actualUrl = this.Browser.Url;
+
+            Assert.AreEqual(expectedUrl, actualUrl);
         }
     }
 }
