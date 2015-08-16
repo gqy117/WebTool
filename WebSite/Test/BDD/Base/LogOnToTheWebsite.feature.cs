@@ -19,20 +19,20 @@ namespace BDD.Base
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AlreadyLogOn")]
-    public partial class AlreadyLogOnFeature
+    [NUnit.Framework.DescriptionAttribute("LogOnToTheWebsite")]
+    public partial class LogOnToTheWebsiteFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "AlreadyLogOn.feature"
+#line 1 "LogOnToTheWebsite.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AlreadyLogOn", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LogOnToTheWebsite", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -66,15 +66,15 @@ namespace BDD.Base
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("One-step LogOn")]
-        [NUnit.Framework.CategoryAttribute("AlreadyLogOn")]
+        [NUnit.Framework.CategoryAttribute("LogOnToTheWebsite")]
         public virtual void One_StepLogOn()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("One-step LogOn", new string[] {
-                        "AlreadyLogOn"});
+                        "LogOnToTheWebsite"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
-testRunner.When("I already LogOn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }

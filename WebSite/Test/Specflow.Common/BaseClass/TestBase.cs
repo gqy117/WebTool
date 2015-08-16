@@ -6,6 +6,7 @@
     using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
+    using System.Threading;
     using System.Threading.Tasks;
     using NUnit.Framework;
     using OpenQA.Selenium.Chrome;
@@ -55,6 +56,8 @@
 
         protected void OpenPage(string url)
         {
+            url = this.AddBaseUrl(url);
+
             this.Browser.Navigate().GoToUrl(url);
         }
 
@@ -78,6 +81,11 @@
             }
 
             return fileString;
+        }
+
+        protected void WaitFor(int millionSeconds)
+        {
+            Thread.Sleep(millionSeconds);
         }
 
         protected string RemoveWhiteSpace(string actual)
