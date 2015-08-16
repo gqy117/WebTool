@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BDD.Account
+namespace BDD.Wol
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,20 @@ namespace BDD.Account
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LonOn")]
-    public partial class LonOnFeature
+    [NUnit.Framework.DescriptionAttribute("Wol")]
+    public partial class WolFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "LonOn.feature"
+#line 1 "Wol.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LonOn", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Wol", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,38 +65,18 @@ namespace BDD.Account
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("LogOn to the website")]
-        [NUnit.Framework.CategoryAttribute("LonOn")]
-        public virtual void LogOnToTheWebsite()
+        [NUnit.Framework.DescriptionAttribute("Check Wol Tables")]
+        [NUnit.Framework.CategoryAttribute("Wol")]
+        public virtual void CheckWolTables()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LogOn to the website", new string[] {
-                        "LonOn"});
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Wol Tables", new string[] {
+                        "Wol"});
+#line 4
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "UserName",
-                        "Password"});
-            table1.AddRow(new string[] {
-                        "1",
-                        "1"});
+#line 6
+testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
- testRunner.Given("the information", ((string)(null)), table1, "Given ");
-#line 11
- testRunner.When("I open the page \'~/Account/Login\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "UserName",
-                        "Password"});
-            table2.AddRow(new string[] {
-                        "UserName",
-                        "Password"});
-#line 13
- testRunner.And("I fill all the following elements by name", ((string)(null)), table2, "And ");
-#line 17
- testRunner.And("I click the button by id \'login-btn\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
- testRunner.Then("the current url should be \'~/\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I open the page \'~/Tool/WOL\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
