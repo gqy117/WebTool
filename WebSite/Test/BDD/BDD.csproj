@@ -84,6 +84,11 @@
       <DependentUpon>DashboardWakeUp.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register\Register.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Register.feature</DependentUpon>
+    </Compile>
     <Compile Include="Wol\Wol.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,6 +110,10 @@
       <LastGenOutput>DashboardWakeUp.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Register\Register.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Register.feature.cs</LastGenOutput>
+    </None>
     <None Include="Settings.StyleCop" />
     <None Include="Wol\Wol.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
