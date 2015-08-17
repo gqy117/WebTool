@@ -24,6 +24,19 @@
             Assert.AreEqual(expected, actual);
         }
 
+        [Then(@"the result of the element '(.*)' should be the same as '(.*)'")]
+        public void ThenTheResultShouldBeTheSameAs(string selector, string content)
+        {
+            var expected = content;
+
+            var actual = CQ.Create(this.Browser.PageSource).Select(selector).Html();
+
+            actual = this.RemoveWhiteSpace(actual);
+            expected = this.RemoveWhiteSpace(expected);
+
+            Assert.AreEqual(expected, actual);
+        }
+
         [Then(@"the current url should be '(.*)'")]
         public void ThenTheCurrentUrlShouldBe(string expectedUrl)
         {

@@ -1,6 +1,7 @@
 ﻿Feature: Wol
 
 @Wol
+
 Scenario: Check Wol Tables
 
 When LogOn to the website
