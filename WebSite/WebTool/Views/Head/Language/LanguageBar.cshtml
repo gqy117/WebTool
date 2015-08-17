@@ -1,24 +1,23 @@
 ﻿@model WebToolService.LanguageModel
 <li ng-controller="languageBarController as languageBar" class="dropdown language" style="line-height: 16px;">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+    <a id="change-language-dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
         <img alt="" src="@Url.Content(String.Format("~/Content/assets/img/flags/{0}", Model.CurrentLanguage.PictureName))" />
-        <span class="username">
+        <span name="current-language-text" class="username">
             @Model.CurrentLanguage.Name
-    </span>
-    <i class="fa fa-angle-down"></i>
-</a>
-@foreach (var language in Model.ListLanguage)
-{
-    <ul class="dropdown-menu">
-        <li>
-            <a ng-click="languageBar.changeLanguage('@language.Code');">
-                <img alt="" src="@Url.Content(String.Format("~/Content/assets/img/flags/{0}", language.PictureName))" />
-                @language.Name
-            </a>
-        </li>
-    </ul>
+        </span>
+        <i class="fa fa-angle-down"></i>
+    </a>
+    @foreach (var language in Model.ListLanguage)
+    {
+        <ul class="dropdown-menu">
+            <li>
+                <a id="language-icon" ng-click="languageBar.changeLanguage('@language.Code');">
+                    <img alt="" src="@Url.Content(String.Format("~/Content/assets/img/flags/{0}", language.PictureName))" />
+                    @language.Name
+                </a>
+            </li>
+        </ul>
 
-}
+    }
 
 </li>
-
