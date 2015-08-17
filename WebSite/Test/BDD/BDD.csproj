@@ -83,6 +83,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DashboardWakeUp.feature</DependentUpon>
     </Compile>
+    <Compile Include="Head\LanguageBar.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageBar.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register\Register.feature.cs">
       <AutoGen>True</AutoGen>
@@ -108,6 +113,10 @@
     <None Include="Dashboard\DashboardWakeUp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DashboardWakeUp.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Head\LanguageBar.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LanguageBar.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Register\Register.feature">
