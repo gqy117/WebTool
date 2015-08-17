@@ -23,7 +23,7 @@
                 return new MvcHtmlString(string.Empty);
             }
 
-            sb.Append("<div class='alert alert-error'><span>");
+            sb.Append("<div name='alert-error' class='alert alert-error'><span>");
 
             if (!string.IsNullOrEmpty(validationMessage))
             {
