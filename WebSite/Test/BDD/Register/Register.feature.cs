@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BDD.Wol
+namespace BDD.Register
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,20 @@ namespace BDD.Wol
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Wol")]
-    public partial class WolFeature
+    [NUnit.Framework.DescriptionAttribute("Register")]
+    public partial class RegisterFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Wol.feature"
+#line 1 "Register.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Wol", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Register", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,21 +65,44 @@ namespace BDD.Wol
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check Wol Tables")]
-        [NUnit.Framework.CategoryAttribute("Wol")]
-        public virtual void CheckWolTables()
+        [NUnit.Framework.DescriptionAttribute("Try to register an existing user")]
+        [NUnit.Framework.CategoryAttribute("Register")]
+        public virtual void TryToRegisterAnExistingUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Wol Tables", new string[] {
-                        "Wol"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Try to register an existing user", new string[] {
+                        "Register"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "UserName",
+                        "Password",
+                        "ConfirmPassword"});
+            table1.AddRow(new string[] {
+                        "1",
+                        "1",
+                        "1"});
 #line 7
-testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
-testRunner.And("I open the page \'~/Tool/WOL\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
-testRunner.Then("the result of the element \'#WOLTable\' should be the same as the html \'Wol\\WolTabl" +
-                    "e.html\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("the information", ((string)(null)), table1, "Given ");
+#line 11
+ testRunner.When("I open the page \'~/Register/Index\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "UserName",
+                        "Password",
+                        "ConfirmPassword"});
+            table2.AddRow(new string[] {
+                        "UserName",
+                        "Password",
+                        "ConfirmPassword"});
+#line 13
+ testRunner.And("I fill all the following elements by name", ((string)(null)), table2, "And ");
+#line 17
+ testRunner.And("I click the button by id \'login-btn\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("I wait for \'1000\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.Then("I should see by name \'alert-error\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
