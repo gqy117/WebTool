@@ -11,8 +11,8 @@
 
     public partial class CommonSteps : TestBase
     {
-        [Then(@"the result should be the same as the html '(.*)', and the element '(.*)'")]
-        public void ThenTheResultShouldBeTheSameAsTheHtmlFile(string fileName, string selector)
+        [Then(@"the result of the element '(.*)' should be the same as the html '(.*)'")]
+        public void ThenTheResultShouldBeTheSameAsTheHtmlFile(string selector, string fileName)
         {
             var expected = this.ReadFileString(fileName);
 
