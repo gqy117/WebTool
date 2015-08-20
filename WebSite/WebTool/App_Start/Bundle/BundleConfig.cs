@@ -13,7 +13,9 @@
             bundles.IgnoreList.Clear();
             RegisterJS(bundles);
             RegisteCSS(bundles);
-            ////BundleTable.EnableOptimizations = true;
+#if !DEBUG
+            BundleTable.EnableOptimizations = true;
+#endif
         }
 
         public static void RegisteCSS(BundleCollection bundles)
@@ -24,7 +26,7 @@
             "~/Content/assets/font-awesome/css/font-awesome.css",
             "~/Content/assets/css/style.css",
             "~/Content/assets/css/themes/default.css",
-            ////"~/Content/assets/css/themes/light.css",
+                ////"~/Content/assets/css/themes/light.css",
             "~/Content/assets/uniform/css/uniform.default.css",
             "~/Content/assets/bootstrap/css/bootstrap-responsive.min.css",
             "~/Content/Site.css",
