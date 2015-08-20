@@ -13,25 +13,25 @@
             bundles.IgnoreList.Clear();
             RegisterJS(bundles);
             RegisteCSS(bundles);
-            BundleTable.EnableOptimizations = true;
+            ////BundleTable.EnableOptimizations = true;
         }
 
         public static void RegisteCSS(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/AllCSS").Include(
+            bundles.Add(new StyleBundle("~/Content/AllCSS").IncludeWithCssRewriteUrlTransform(
             "~/Content/assets/bootstrap/css/bootstrap.min.css",
             "~/Content/assets/css/metro.css",
             "~/Content/assets/font-awesome/css/font-awesome.min.css",
             "~/Content/assets/css/style.css",
             "~/Content/assets/css/themes/default.css",
-                ////"~/Content/assets/css/themes/light.css",
+            ////"~/Content/assets/css/themes/light.css",
             "~/Content/assets/uniform/css/uniform.default.css",
             "~/Content/assets/bootstrap/css/bootstrap-responsive.min.css",
             "~/Content/Site.css",
             "~/Content/assets/css/style_responsive.css",
             "~/Content/assets/data-tables/DT_bootstrap.css",
-             "~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.css",
-             "~/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"));
+            "~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.css",
+            "~/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"));
         }
 
         #region JS

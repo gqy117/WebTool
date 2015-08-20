@@ -741,6 +741,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Bundle\BundleExt.cs" />
     <Compile Include="App_Start\Bundle\Feature\Wol.cs" />
     <Compile Include="App_Start\Bundle\Feature\Account\LogOn.cs" />
     <Compile Include="App_Start\Bundle\Feature\Home.cs" />
