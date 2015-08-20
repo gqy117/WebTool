@@ -797,9 +797,9 @@
     <Content Include=".jscsrc" />
     <Content Include=".jshintrc" />
     <Content Include=".jshintignore" />
-    <None Include="Content\assets\font-awesome\font\fontawesome-webfont.eot" />
-    <None Include="Content\assets\font-awesome\font\fontawesome-webfont.ttf" />
-    <None Include="Content\assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.woff" />
     <None Include="Content\assets\font-awesome\font\fontawesome-webfont_162a16fe.eot" />
     <Content Include="Views\Account\LogOn\_loginLayout.cshtml" />
     <Content Include="Views\Shared\_indexLayout.cshtml" />
