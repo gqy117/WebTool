@@ -690,6 +690,7 @@
     <Content Include="Content\Site.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
@@ -741,6 +742,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Bundle\BundleExt.cs" />
     <Compile Include="App_Start\Bundle\Feature\Wol.cs" />
     <Compile Include="App_Start\Bundle\Feature\Account\LogOn.cs" />
     <Compile Include="App_Start\Bundle\Feature\Home.cs" />
