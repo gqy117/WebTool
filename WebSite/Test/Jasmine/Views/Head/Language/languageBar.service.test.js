@@ -2,7 +2,7 @@
 
     sharedSetup();
 
-    it("changeLanguage should set cookie to 'en'", inject(function (languageBarService) {
+    it("changeLanguage() should set cookie to 'en'", inject(function (languageBarService) {
         var service = languageBarService;
 
         service.changeLanguage('en');

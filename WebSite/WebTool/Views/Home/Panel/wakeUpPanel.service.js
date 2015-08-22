@@ -17,7 +17,7 @@
                 var context = this;
                 $window.Track('Index', 'Panel3_ViewMore');
 
-                $http.post(App.baseUrl + 'Tool/WakeUp')
+                $http.post($window.App.baseUrl + 'Tool/WakeUp')
                     .success(function () {
                         context.isShowAlertWakeUpSuccess = true;
                     });
