@@ -1,4 +1,4 @@
-﻿var $window;
+﻿var $window, $http;
 
 function sharedSetup() {
 
@@ -8,6 +8,7 @@ function sharedSetup() {
     // before
     beforeEach(function () {
         module(mockUpWindow);
+        module(mockUpHttp);
     });
 
     // after
@@ -16,7 +17,7 @@ function sharedSetup() {
 
 
 
-    // window
+    // $window
     function mockUpWindow($provide) {
         $window = {
             Track: jasmine.createSpy('Track'),
@@ -33,5 +34,21 @@ function sharedSetup() {
         };
 
         $provide.value('$window', $window);
+    }
+
+    // $http
+    function mockUpHttp($provide) {
+        $http = {
+            post: function () { }
+        };
+
+
+        spyOn($http, 'post').and.callFake(function () {
+            return {
+                success: function (callback) { callback({ things: 'and stuff' }) }
+            };
+        });
+
+        $provide.value('$http', $http);
     }
 };
