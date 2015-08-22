@@ -50,6 +50,7 @@
     <Content Include="Views\Head\Language\languageBar.service.test.js" />
     <Content Include="Views\Head\head.service.test.js" />
     <Content Include="Views\Home\homeHeaderPanel.service.test.js" />
+    <Content Include="Views\Home\Panel\wakeUpPanel.service.test.js" />
     <Content Include="Views\Sidebar\sidebar.service.test.js" />
     <Content Include="webTool.conf.js" />
   </ItemGroup>
