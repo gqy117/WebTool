@@ -18,7 +18,8 @@
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modal.js",
             "~/Content/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
             "~/Content/assets/js/app.js",
-            "~/Views/Shared/main.app.js",
+            "~/Views/Shared/Library/main.app.js",
+            "~/Views/Shared/Library/jQuery.service.js",
             "~/Views/Shared/Init/uiModel.service.js",
             "~/Views/Shared/Init/main.controller.js"
         };

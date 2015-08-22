@@ -10,7 +10,7 @@
     function registerService($window) {
         return {
             submit: function submit() {
-                $('#FormRegister').submit();
+                $window.jQuery('#FormRegister').submit();
                 $window.Track('Register', 'Register');
             },
 
