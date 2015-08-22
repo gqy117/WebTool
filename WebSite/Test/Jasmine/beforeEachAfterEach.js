@@ -22,6 +22,9 @@ function sharedSetup() {
             Track: jasmine.createSpy('Track'),
             location: {
                 reload: jasmine.createSpy('reload')
+            },
+            jQuery: {
+                cookie: jasmine.createSpy('cookie')
             }
         };
 

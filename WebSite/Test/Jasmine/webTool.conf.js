@@ -16,7 +16,8 @@ module.exports = function (config) {
     ];
 
     includedFiles = [
-        webToolPath + 'Views/Shared/main.app.js',
+        webToolPath + 'Views/Shared/Library/main.app.js',
+        webToolPath + 'Views/Shared/Library/jQuery.service.js',
         webToolPath + 'Views/Head/Language/languageBar.service.js',
         webToolPath + 'Views/Head/Language/languageBar.controller.js'
     ];
