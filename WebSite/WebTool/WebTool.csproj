@@ -690,6 +690,7 @@
     <Content Include="Content\Site.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Scripts\angular.intellisense.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
@@ -719,8 +720,9 @@
     <Content Include="Views\Home\home.service.js" />
     <Content Include="Views\Shared\Init\main.controller.js" />
     <Content Include="Views\Shared\Init\uiModel.service.js" />
+    <Content Include="Views\Shared\Library\jQuery.service.js" />
     <Content Include="Views\WOL\wolHeaderPanel.service.js" />
-    <Content Include="Views\Shared\main.app.js" />
+    <Content Include="Views\Shared\Library\main.app.js" />
     <Content Include="Views\Head\head.controller.js" />
     <Content Include="Views\Sidebar\sidebar.controller.js" />
     <Content Include="Views\Sidebar\sidebar.service.js" />
