@@ -35,11 +35,15 @@ Use **SpecFlow** as BDD framework.
 
 Use **Selenium** as Functional test framework.
 
-(3) UnitTestProject
+(3) Jasmine
+
+Use **Jasmine** and **Karma** to test javascript code.
+
+(4) UnitTestProject
 
 Use **MSTest** and **Moq** to do the unit tests.
 
-(4) WebAndLoadTestProject
+(5) WebAndLoadTestProject
 
 **Load tests** project.
 
