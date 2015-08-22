@@ -41,13 +41,15 @@
     <None Include="App.config" />
     <None Include="runJasmine.bat" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Account\Register\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="angular-mocks.js" />
     <Content Include="beforeEachAfterEach.js" />
     <Content Include="Views\Head\Language\languageBar.service.test.js" />
+    <Content Include="Views\Sidebar\sidebar.service.test.js" />
     <Content Include="webTool.conf.js" />
-    <Content Include="Views\Account\Register\register.service.test.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
