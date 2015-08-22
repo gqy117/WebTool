@@ -12,19 +12,22 @@ module.exports = function (config) {
         webToolPath + 'Content/assets/js/jquery-1.8.3.min.js',
         webToolPath + 'Scripts/jquery.cookie.js',
         webToolPath + 'Scripts/angular.js',
-        'angular-mocks.js'
+        'angular-mocks.js',
+        webToolPath + 'Content/assets/js/app.js'
     ];
 
     includedFiles = [
         webToolPath + 'Views/Shared/Library/main.app.js',
         webToolPath + 'Views/Shared/Library/jQuery.service.js',
         webToolPath + 'Views/Head/Language/languageBar.service.js',
-        webToolPath + 'Views/Head/Language/languageBar.controller.js'
+        webToolPath + 'Views/Head/Language/languageBar.controller.js',
+        webToolPath + 'Views/Sidebar/sidebar.service.js'
     ];
 
     testFiles = [
         'beforeEachAfterEach.js',
-        'Views/Head/Language/languageBar.service.test.js'
+        'Views/Head/Language/languageBar.service.test.js',
+        'Views/Sidebar/sidebar.service.test.js'
     ];
 
     files = [].concat(frameworkFiles, includedFiles, testFiles);
