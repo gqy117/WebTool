@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{79C37AC4-9BD1-4D15-898A-F17E8B423728}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Jasmine</RootNamespace>
     <AssemblyName>Jasmine</AssemblyName>
@@ -31,16 +31,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <None Include=".jscsrc" />
+    <None Include=".jshintignore" />
+    <None Include=".jshintrc" />
     <None Include="App.config" />
+    <None Include="runJasmine.bat" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Account\Register\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="angular-mocks.js" />
     <Content Include="beforeEachAfterEach.js" />
     <Content Include="Views\Head\Language\languageBar.service.test.js" />
+    <Content Include="Views\Head\head.service.test.js" />
+    <Content Include="Views\Home\homeHeaderPanel.service.test.js" />
+    <Content Include="Views\Home\Panel\wakeUpPanel.service.test.js" />
+    <Content Include="Views\Sidebar\sidebar.service.test.js" />
     <Content Include="webTool.conf.js" />
-    <Content Include="Views\Account\Register\register.service.test.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

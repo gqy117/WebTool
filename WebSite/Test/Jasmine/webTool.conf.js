@@ -12,18 +12,28 @@ module.exports = function (config) {
         webToolPath + 'Content/assets/js/jquery-1.8.3.min.js',
         webToolPath + 'Scripts/jquery.cookie.js',
         webToolPath + 'Scripts/angular.js',
-        'angular-mocks.js'
+        'angular-mocks.js',
+        webToolPath + 'Content/assets/js/app.js'
     ];
 
     includedFiles = [
-        webToolPath + 'Views/Shared/main.app.js',
+        webToolPath + 'Views/Shared/Library/main.app.js',
+        webToolPath + 'Views/Shared/Library/jQuery.service.js',
         webToolPath + 'Views/Head/Language/languageBar.service.js',
-        webToolPath + 'Views/Head/Language/languageBar.controller.js'
+        webToolPath + 'Views/Head/Language/languageBar.controller.js',
+        webToolPath + 'Views/Sidebar/sidebar.service.js',
+        webToolPath + 'Views/Head/head.service.js',
+        webToolPath + 'Views/Home/homeHeaderPanel.service.js',
+        webToolPath + 'Views/Home/Panel/wakeUpPanel.service.js'
     ];
 
     testFiles = [
         'beforeEachAfterEach.js',
-        'Views/Head/Language/languageBar.service.test.js'
+        'Views/Head/Language/languageBar.service.test.js',
+        'Views/Sidebar/sidebar.service.test.js',
+        'Views/Head/head.service.test.js',
+        'Views/Home/homeHeaderPanel.service.test.js',
+        'Views/Home/Panel/wakeUpPanel.service.test.js'
     ];
 
     files = [].concat(frameworkFiles, includedFiles, testFiles);
@@ -70,7 +80,7 @@ module.exports = function (config) {
 
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: false,
+        autoWatch: true,
 
 
         // start these browsers
@@ -80,7 +90,7 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false,
+        singleRun: false
 
-    })
+    });
 }
