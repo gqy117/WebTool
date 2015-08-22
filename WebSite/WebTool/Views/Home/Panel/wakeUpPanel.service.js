@@ -1,12 +1,13 @@
-﻿(function (window) {
+﻿(function () {
     "use strict";
 
     angular
         .module('mainApp')
-        .factory('wakeUpPanelService', ['$http', wakeUpPanelService]);
+        .factory('wakeUpPanelService', wakeUpPanelService);
 
+    wakeUpPanelService.$inject = ['$window', '$http'];
 
-    function wakeUpPanelService($http) {
+    function wakeUpPanelService($window, $http) {
         return {
             hideMessage: function _hideMessage() {
                 this.isShowAlertWakeUpSuccess = false;
@@ -14,13 +15,13 @@
 
             wakeUp: function _wakeUp() {
                 var context = this;
-                window.Track('Index', 'Panel3_ViewMore');
+                $window.Track('Index', 'Panel3_ViewMore');
 
                 $http.post(App.baseUrl + 'Tool/WakeUp')
-                    .success(function() {
+                    .success(function () {
                         context.isShowAlertWakeUpSuccess = true;
                     });
             }
         };
     }
-}(window));
+}());
