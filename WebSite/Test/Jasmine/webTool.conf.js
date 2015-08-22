@@ -22,14 +22,16 @@ module.exports = function (config) {
         webToolPath + 'Views/Head/Language/languageBar.service.js',
         webToolPath + 'Views/Head/Language/languageBar.controller.js',
         webToolPath + 'Views/Sidebar/sidebar.service.js',
-        webToolPath + 'Views/Head/head.service.js'
+        webToolPath + 'Views/Head/head.service.js',
+        webToolPath + 'Views/Home/homeHeaderPanel.service.js'
     ];
 
     testFiles = [
         'beforeEachAfterEach.js',
         'Views/Head/Language/languageBar.service.test.js',
         'Views/Sidebar/sidebar.service.test.js',
-        'Views/Head/head.service.test.js'
+        'Views/Head/head.service.test.js',
+        'Views/Home/homeHeaderPanel.service.test.js'
     ];
 
     files = [].concat(frameworkFiles, includedFiles, testFiles);
