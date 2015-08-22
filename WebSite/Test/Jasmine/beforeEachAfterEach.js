@@ -21,7 +21,11 @@ function sharedSetup() {
         $window = {
             Track: jasmine.createSpy('Track'),
             location: {
-                reload: jasmine.createSpy('reload')
+                reload: jasmine.createSpy('reload'),
+                href: jasmine.createSpy('href')
+            },
+            App: {
+                baseUrl: '/'
             },
             jQuery: {
                 cookie: jasmine.createSpy('cookie')
