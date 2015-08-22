@@ -23,7 +23,8 @@ module.exports = function (config) {
         webToolPath + 'Views/Head/Language/languageBar.controller.js',
         webToolPath + 'Views/Sidebar/sidebar.service.js',
         webToolPath + 'Views/Head/head.service.js',
-        webToolPath + 'Views/Home/homeHeaderPanel.service.js'
+        webToolPath + 'Views/Home/homeHeaderPanel.service.js',
+        webToolPath + 'Views/Home/Panel/wakeUpPanel.service.js'
     ];
 
     testFiles = [
@@ -31,7 +32,8 @@ module.exports = function (config) {
         'Views/Head/Language/languageBar.service.test.js',
         'Views/Sidebar/sidebar.service.test.js',
         'Views/Head/head.service.test.js',
-        'Views/Home/homeHeaderPanel.service.test.js'
+        'Views/Home/homeHeaderPanel.service.test.js',
+        'Views/Home/Panel/wakeUpPanel.service.test.js'
     ];
 
     files = [].concat(frameworkFiles, includedFiles, testFiles);
@@ -78,7 +80,7 @@ module.exports = function (config) {
 
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: false,
+        autoWatch: true,
 
 
         // start these browsers
@@ -88,7 +90,7 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false,
+        singleRun: false
 
-    })
+    });
 }
