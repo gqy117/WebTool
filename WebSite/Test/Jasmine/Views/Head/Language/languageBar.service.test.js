@@ -3,9 +3,9 @@
     sharedSetup();
 
     it("changeLanguage should set cookie to 'en'", inject(function (languageBarService) {
-        var controller = languageBarService;
+        var service = languageBarService;
 
-        controller.changeLanguage('en');
+        service.changeLanguage('en');
 
         expect($window.Track).toHaveBeenCalled();
         expect($window.location.reload).toHaveBeenCalled();
