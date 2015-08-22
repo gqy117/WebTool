@@ -39,6 +39,7 @@
     <None Include=".jshintignore" />
     <None Include=".jshintrc" />
     <None Include="App.config" />
+    <None Include="runJasmine.bat" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
