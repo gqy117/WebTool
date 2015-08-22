@@ -14,7 +14,7 @@
         #region Properties
         private InternetExplorerDriver ie;
 
-        private string mainSite = "http://localhost:12599/";
+        private string mainSite = "http://localhost:12598/";
 
         private ChromeDriver chrome;
 
