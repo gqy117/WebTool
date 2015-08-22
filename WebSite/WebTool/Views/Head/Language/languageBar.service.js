@@ -13,7 +13,7 @@
                 $window.Track('IndexHead', 'ChangeLanguage');
                 console.log('Tracking ChangeLanguage...');
 
-                $.cookie("WebToolLanguage", languageCode, {
+                $window.jQuery.cookie("WebToolLanguage", languageCode, {
                     expires: 10000,
                     path: '/'
                 });
