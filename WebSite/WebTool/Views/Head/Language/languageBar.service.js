@@ -18,7 +18,7 @@
                     path: '/'
                 });
 
-                location.reload();
+                $window.location.reload();
             }
         };
     }
