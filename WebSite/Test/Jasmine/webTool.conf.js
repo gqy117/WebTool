@@ -12,7 +12,7 @@ module.exports = function (config) {
         webToolPath + 'Content/assets/js/jquery-1.8.3.min.js',
         webToolPath + 'Scripts/jquery.cookie.js',
         webToolPath + 'Scripts/angular.js',
-        'angular-mocks.js',
+        'lib/angular-mocks.js',
         webToolPath + 'Content/assets/js/app.js'
     ];
 
