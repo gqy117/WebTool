@@ -1,25 +1,22 @@
-﻿var $window, $http;
-
-function sharedSetup() {
+﻿(function () {
 
     // mainApp
     beforeEach(module('mainApp'));
 
-    // before
-    beforeEach(function () {
-        module(mockUpWindow);
-        module(mockUpHttp);
-    });
+    // window
+    // TODO move it to the constructor
+    beforeEach(module(mockUpWindow));
+
 
     // after
     afterEach(function () {
     });
 
-    
+
 
     // $window
     function mockUpWindow($provide) {
-        $window = {
+        window.$window = {
             Track: jasmine.createSpy('Track'),
             location: {
                 reload: jasmine.createSpy('reload'),
@@ -35,21 +32,4 @@ function sharedSetup() {
 
         $provide.value('$window', $window);
     }
-
-
-    // $http
-    function mockUpHttp($provide) {
-        $http = {
-            post: function () { }
-        };
-
-        // post
-        spyOn($http, 'post').and.callFake(function () {
-            return {
-                success: function (callback) { callback({ things: 'and stuff' }) }
-            };
-        });
-
-        $provide.value('$http', $http);
-    }
-};
+}());
