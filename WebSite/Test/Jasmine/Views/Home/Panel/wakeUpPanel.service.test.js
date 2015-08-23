@@ -1,20 +1,32 @@
 ﻿describe("wakeUpPanel.service.test", function () {
+    var $httpBackend, service;
 
-    sharedSetup();
+    // setup
+    beforeEach(inject(function (wakeUpPanelService, _$httpBackend_) {
+        service = wakeUpPanelService;
 
-    it("hideMessage() should set isShowAlertWakeUpSuccess to false", inject(function (wakeUpPanelService) {
-        var service = wakeUpPanelService;
+        $httpBackend = _$httpBackend_;
+    }));
 
+    // $httpBackend
+    beforeEach(function () {
+        $httpBackend.whenPOST('/Tool/WakeUp')
+            .respond(200, "Done");
+    });
+
+
+    // test cases
+    it("hideMessage() should set isShowAlertWakeUpSuccess to false", function () {
         service.hideMessage();
         expect(service.isShowAlertWakeUpSuccess).toEqual(false);
-    }));
+    });
 
-    it("wakeUp() should post '/Tool/WakeUp' as url, and call 'Track'", inject(function (wakeUpPanelService) {
-        var service = wakeUpPanelService;
-
+    it("wakeUp() should post '/Tool/WakeUp' as url, and call 'Track'", function () {
         service.wakeUp();
 
-        expect($http.post).toHaveBeenCalledWith('/Tool/WakeUp');
+        $httpBackend.flush();
+
+        expect(service.isShowAlertWakeUpSuccess).toEqual(true);
         expect($window.Track).toHaveBeenCalled();
-    }));
+    });
 });
