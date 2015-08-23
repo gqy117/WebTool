@@ -45,14 +45,16 @@
     <Folder Include="Views\Account\Register\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="angular-mocks.js" />
+    <Content Include="lib\angular-mocks.js" />
     <Content Include="beforeEachAfterEach.js" />
+    <Content Include="lib\jasmine.js" />
     <Content Include="Views\Head\Language\languageBar.service.test.js" />
     <Content Include="Views\Head\head.service.test.js" />
     <Content Include="Views\Home\homeHeaderPanel.service.test.js" />
     <Content Include="Views\Home\Panel\wakeUpPanel.service.test.js" />
     <Content Include="Views\Sidebar\sidebar.service.test.js" />
     <Content Include="webTool.conf.js" />
+    <Content Include="lib\_references.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
