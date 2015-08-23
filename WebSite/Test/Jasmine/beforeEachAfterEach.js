@@ -15,7 +15,7 @@ function sharedSetup() {
     afterEach(function () {
     });
 
-
+    
 
     // $window
     function mockUpWindow($provide) {
@@ -36,13 +36,14 @@ function sharedSetup() {
         $provide.value('$window', $window);
     }
 
+
     // $http
     function mockUpHttp($provide) {
         $http = {
             post: function () { }
         };
 
-
+        // post
         spyOn($http, 'post').and.callFake(function () {
             return {
                 success: function (callback) { callback({ things: 'and stuff' }) }
