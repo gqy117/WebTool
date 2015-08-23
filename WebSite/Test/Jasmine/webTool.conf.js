@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sat Aug 22 2015 13:17:30 GMT+0800 (China Standard Time)
+// Generated on Sat Aug 22 2015 13:17:30
 
 module.exports = function (config) {
     var webToolPath = '../../WebTool/',
