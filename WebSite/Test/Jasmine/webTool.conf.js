@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sat Aug 22 2015 13:17:30 GMT+0800 (China Standard Time)
+// Generated on Sat Aug 22 2015 13:17:30
 
 module.exports = function (config) {
     var webToolPath = '../../WebTool/',
@@ -12,7 +12,7 @@ module.exports = function (config) {
         webToolPath + 'Content/assets/js/jquery-1.8.3.min.js',
         webToolPath + 'Scripts/jquery.cookie.js',
         webToolPath + 'Scripts/angular.js',
-        'angular-mocks.js',
+        'lib/angular-mocks.js',
         webToolPath + 'Content/assets/js/app.js'
     ];
 
