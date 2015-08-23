@@ -1,21 +1,24 @@
-﻿var $window, $http;
+﻿var $window;
 
 function sharedSetup() {
 
     // mainApp
     beforeEach(module('mainApp'));
 
-    // before
+    // before each
+    beforeEach(module('mainApp').$inject = ['ngMock']);
+
+    // window
     beforeEach(function () {
         module(mockUpWindow);
-        module(mockUpHttp);
     });
+
 
     // after
     afterEach(function () {
     });
 
-    
+
 
     // $window
     function mockUpWindow($provide) {
@@ -36,20 +39,4 @@ function sharedSetup() {
         $provide.value('$window', $window);
     }
 
-
-    // $http
-    function mockUpHttp($provide) {
-        $http = {
-            post: function () { }
-        };
-
-        // post
-        spyOn($http, 'post').and.callFake(function () {
-            return {
-                success: function (callback) { callback({ things: 'and stuff' }) }
-            };
-        });
-
-        $provide.value('$http', $http);
-    }
 };
