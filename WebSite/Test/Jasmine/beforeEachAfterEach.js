@@ -1,17 +1,11 @@
-﻿var $window;
-
-function sharedSetup() {
+﻿(function () {
 
     // mainApp
     beforeEach(module('mainApp'));
 
-    // before each
-    beforeEach(module('mainApp').$inject = ['ngMock']);
-
     // window
-    beforeEach(function () {
-        module(mockUpWindow);
-    });
+    // TODO move it to the constructor
+    beforeEach(module(mockUpWindow));
 
 
     // after
@@ -22,7 +16,7 @@ function sharedSetup() {
 
     // $window
     function mockUpWindow($provide) {
-        $window = {
+        window.$window = {
             Track: jasmine.createSpy('Track'),
             location: {
                 reload: jasmine.createSpy('reload'),
@@ -38,5 +32,4 @@ function sharedSetup() {
 
         $provide.value('$window', $window);
     }
-
-};
+}());
