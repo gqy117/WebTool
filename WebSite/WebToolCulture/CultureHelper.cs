@@ -41,11 +41,14 @@
             {
                 foreach (string s in userLanguages)
                 {
-                    string shortLang = s.Substring(0, 2);
-                    if (languageDictionary.ContainsKey(shortLang))
+                    if (s.Length >= 2)
                     {
-                        lang = languageDictionary[shortLang];
-                        break;
+                        string shortLang = s.Substring(0, 2);
+                        if (languageDictionary.ContainsKey(shortLang))
+                        {
+                            lang = languageDictionary[shortLang];
+                            break;
+                        }
                     }
                 }
             }
