@@ -23,7 +23,8 @@ module.exports = function (config) {
     ];
 
     testFiles = [
-        'beforeEachAfterEach.js',
+        'BeforeEach/beforeEachAfterEach.js',
+        'BeforeEach/httpBackend/**/*.js',
         'Views/**/*.js'
     ];
 
