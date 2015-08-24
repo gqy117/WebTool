@@ -45,8 +45,9 @@
     <Folder Include="Views\Account\Register\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="beforeEachAfterEach.js" />
+    <Content Include="Views\BeforeEach\beforeEachAfterEach.js" />
     <Content Include="lib\jasmine.js" />
+    <Content Include="Views\BeforeEach\httpBackend\Tool\httpBackend.tool.js" />
     <Content Include="Views\Head\Language\languageBar.service.test.js" />
     <Content Include="Views\Head\head.service.test.js" />
     <Content Include="Views\Home\homeHeaderPanel.service.test.js" />
