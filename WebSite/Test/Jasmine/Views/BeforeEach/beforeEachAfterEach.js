@@ -1,12 +1,14 @@
 ﻿(function () {
-
     // mainApp
     beforeEach(module('mainApp'));
 
     // window
-    // TODO move it to the constructor
     beforeEach(module(mockUpWindow));
 
+    // setup
+    beforeEach(inject(function (_$httpBackend_) {
+        window.$httpBackend = _$httpBackend_;
+    }));
 
     // after
     afterEach(function () {

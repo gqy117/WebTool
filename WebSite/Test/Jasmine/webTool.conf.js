@@ -19,21 +19,13 @@ module.exports = function (config) {
     includedFiles = [
         webToolPath + 'Views/Shared/Library/main.app.js',
         webToolPath + 'Views/Shared/Library/jQuery.service.js',
-        webToolPath + 'Views/Head/Language/languageBar.service.js',
-        webToolPath + 'Views/Head/Language/languageBar.controller.js',
-        webToolPath + 'Views/Sidebar/sidebar.service.js',
-        webToolPath + 'Views/Head/head.service.js',
-        webToolPath + 'Views/Home/homeHeaderPanel.service.js',
-        webToolPath + 'Views/Home/Panel/wakeUpPanel.service.js'
+        webToolPath + 'Views/**/*.js'
     ];
 
     testFiles = [
-        'beforeEachAfterEach.js',
-        'Views/Head/Language/languageBar.service.test.js',
-        'Views/Sidebar/sidebar.service.test.js',
-        'Views/Head/head.service.test.js',
-        'Views/Home/homeHeaderPanel.service.test.js',
-        'Views/Home/Panel/wakeUpPanel.service.test.js'
+        'BeforeEach/beforeEachAfterEach.js',
+        'BeforeEach/httpBackend/**/*.js',
+        'Views/**/*.js'
     ];
 
     files = [].concat(frameworkFiles, includedFiles, testFiles);
