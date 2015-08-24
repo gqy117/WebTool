@@ -1,18 +1,10 @@
 ﻿describe("wakeUpPanel.service.test", function () {
-    var $httpBackend, service;
+    var service;
 
     // setup
-    beforeEach(inject(function (wakeUpPanelService, _$httpBackend_) {
+    beforeEach(inject(function (wakeUpPanelService) {
         service = wakeUpPanelService;
-
-        $httpBackend = _$httpBackend_;
     }));
-
-    // $httpBackend
-    beforeEach(function () {
-        $httpBackend.whenPOST('/Tool/WakeUp')
-            .respond(200, "Done");
-    });
 
 
     // test cases
