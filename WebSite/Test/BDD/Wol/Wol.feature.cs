@@ -78,8 +78,8 @@ testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Ta
 #line 8
 testRunner.And("I open the page \'~/Tool/WOL\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.Then("the result of the element \'#WOLTable\' should be the same as the html \'Wol\\WolTabl" +
-                    "e.html\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result of the element \'#WOLTable tbody tr:nth-child(1)\' should be the same as" +
+                    " the html \'Wol\\WolTable.html\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
