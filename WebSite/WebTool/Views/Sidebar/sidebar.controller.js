@@ -23,5 +23,5 @@ var M;
 })(M || (M = {}));
 
 // init
-angular.module('mainApp').factory('sidebarController', M.sidebarController);
+angular.module('mainApp').controller('sidebarController', M.sidebarController);
 //# sourceMappingURL=sidebar.controller.js.map

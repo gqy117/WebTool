@@ -26,4 +26,4 @@ module M {
 
 // init
 angular.module("mainApp")
-    .factory("headService", M.headService);
+    .service("headService", M.headService);
