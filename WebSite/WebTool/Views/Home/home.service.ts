@@ -1,12 +1,10 @@
-﻿(function () {
-    "use strict";
+﻿"use strict";
 
-    // Init
-    angular.module("mainApp")
-        .factory("homeService", homeService);
-
-    // Class
-    function homeService() {
-        return {};
+module M {
+    export class homeService {
     }
-} ());
+}
+
+// Init
+angular.module("mainApp")
+    .factory("homeService", M.homeService);
