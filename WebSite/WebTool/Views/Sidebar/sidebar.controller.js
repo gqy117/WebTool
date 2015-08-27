@@ -1,16 +1,27 @@
-﻿(function () {
-    "use strict";
+﻿"use strict";
+var M;
+(function (M) {
+    var sidebarController = (function () {
+        // constructor
+        function sidebarController(sidebarService) {
+            this.sidebarService = sidebarService;
+            // properties
+            this.activePanel = new M.activePanel();
+        }
+        // methods
+        sidebarController.prototype.LeftPanel_Dashboard_Click = function () {
+            this.sidebarService.LeftPanel_Dashboard();
+        };
 
-    angular.module("mainApp")
-         .controller('sidebarController', sidebarController);
+        sidebarController.prototype.LeftPanel_WOL_Click = function () {
+            this.sidebarService.LeftPanel_WOL();
+        };
+        sidebarController.$inject = ["sidebarService"];
+        return sidebarController;
+    })();
+    M.sidebarController = sidebarController;
+})(M || (M = {}));
 
-    sidebarController.$inject = ['sidebarService'];
-
-    function sidebarController(sidebarService) {
-
-        this.activePanel = sidebarService.activePanel;
-
-        this.LeftPanel_Dashboard_Click = sidebarService.LeftPanel_Dashboard;
-        this.LeftPanel_WOL_Click = sidebarService.LeftPanel_WOL;
-    }
-}());
+// init
+angular.module('mainApp').factory('sidebarController', M.sidebarController);
+//# sourceMappingURL=sidebar.controller.js.map

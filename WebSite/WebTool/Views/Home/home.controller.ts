@@ -1,17 +1,24 @@
-﻿(function () {
-    "use strict";
+﻿"use strict";
 
-    // init
-    angular.module("mainApp")
-        .controller('homeController', homeController);
+module M {
+    export class homeController {
+        // inject
+        static $inject = ["homeService", "sidebarService"];
 
-    // inject
-    homeController.$inject = ['homeService', 'sidebarService'];
+        // properties
+        public activePanel: activePanel;
 
-    // class
-    function homeController(homeService, sidebarService) {
-
-        this.activePanel = sidebarService.activePanel;
-        this.activePanel.dashboard = true;
+        // constructor
+        constructor(
+            public homeService: homeService,
+            public sidebarService: sidebarService
+        ) {
+            this.activePanel = new activePanel();
+            this.activePanel.dashboard = true;
+        }
     }
-} ());
+}
+
+// init
+angular.module("mainApp")
+    .controller("homeController", M.homeController);
