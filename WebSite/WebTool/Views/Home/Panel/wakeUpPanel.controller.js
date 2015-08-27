@@ -1,16 +1,27 @@
-﻿(function () {
-    "use strict";
+﻿"use strict";
+var M;
+(function (M) {
+    var wakeUpPanelController = (function () {
+        // constructor
+        function wakeUpPanelController(wakeUpPanelService) {
+            this.wakeUpPanelService = wakeUpPanelService;
+            // properties
+            this.isShowAlertWakeUpSuccess = false;
+        }
+        // methods
+        wakeUpPanelController.prototype.wakeUp_Click = function () {
+            this.wakeUpPanelService.wakeUp();
+        };
 
-    angular.module("mainApp")
-         .controller('wakeUpPanelController', wakeUpPanelController);
+        wakeUpPanelController.prototype.hideSuccessMessage = function () {
+            this.wakeUpPanelService.hideMessage();
+        };
+        wakeUpPanelController.$inject = ["wakeUpPanelService"];
+        return wakeUpPanelController;
+    })();
+    M.wakeUpPanelController = wakeUpPanelController;
 
-    wakeUpPanelController.$inject = ['wakeUpPanelService'];
-
-    function wakeUpPanelController(wakeUpPanelService) {
-        this.isShowAlertWakeUpSuccess = false;
-
-        this.wakeUp_Click = wakeUpPanelService.wakeUp;
-
-        this.hideSuccessMessage = wakeUpPanelService.hideMessage;
-    }
-}());
+    // init
+    angular.module("mainApp").controller('wakeUpPanelController', wakeUpPanelController);
+})(M || (M = {}));
+//# sourceMappingURL=wakeUpPanel.controller.js.map

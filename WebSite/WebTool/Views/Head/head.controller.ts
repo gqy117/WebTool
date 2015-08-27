@@ -1,5 +1,4 @@
-﻿/// <reference path="head.service.ts" />
-"use strict";
+﻿"use strict";
 
 module M {
     export class headController {
