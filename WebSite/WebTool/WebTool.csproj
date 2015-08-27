@@ -714,7 +714,6 @@
     <Content Include="Views\Account\LogOn\login.service.js" />
     <Content Include="Views\Account\Register\register.controller.js" />
     <Content Include="Views\Account\Register\register.service.js" />
-    <Content Include="Views\Head\head.service - Copy.js" />
     <Content Include="Views\Head\Language\languageBar.controller.js" />
     <Content Include="Views\Head\Language\languageBar.service.js" />
     <Content Include="Views\Home\homeHeaderPanel.service.js" />
@@ -849,6 +848,8 @@
     <Content Include="runJsLint.cmd" />
     <Content Include="Views\Home\home.service.js.map" />
     <Content Include="Views\Home\home.controller.js.map" />
+    <Content Include="Views\Head\head.service.js.map" />
+    <Content Include="Views\Head\head.controller.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -884,6 +885,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\jquery.d.ts" />
+    <TypeScriptCompile Include="Views\Head\head.controller.ts" />
     <TypeScriptCompile Include="Views\Head\head.service.ts" />
     <TypeScriptCompile Include="Views\Home\home.controller.ts" />
     <TypeScriptCompile Include="Views\Home\home.service.ts" />
