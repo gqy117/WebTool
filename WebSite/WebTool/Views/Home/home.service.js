@@ -1,5 +1,4 @@
-﻿/// <reference path='../../Scripts/angular.d.ts'/>
-(function () {
+﻿(function () {
     "use strict";
 
     // Init
