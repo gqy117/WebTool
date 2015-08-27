@@ -23,4 +23,4 @@ module M {
 
 // init
 angular.module('mainApp')
-    .factory('sidebarService', M.sidebarService);
+    .service('sidebarService', M.sidebarService);

@@ -26,5 +26,5 @@ var M;
 })(M || (M = {}));
 
 // init
-angular.module("mainApp").factory("headService", M.headService);
+angular.module("mainApp").service("headService", M.headService);
 //# sourceMappingURL=head.service.js.map
