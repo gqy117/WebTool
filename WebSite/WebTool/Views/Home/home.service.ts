@@ -1,13 +1,14 @@
 ﻿/// <reference path='../../Scripts/angular.d.ts'/>
+
 (function () {
     "use strict";
 
     // Init
-    angular.module("mainApp").factory("homeService", homeService);
+    angular.module("mainApp")
+        .factory("homeService", homeService);
 
     // Class
     function homeService() {
         return {};
     }
-}());
-//# sourceMappingURL=home.service.js.map
+} ());
