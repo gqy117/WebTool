@@ -1,12 +1,14 @@
-﻿(function () {
-    "use strict";
+﻿"use strict";
+var M;
+(function (M) {
+    var homeService = (function () {
+        function homeService() {
+        }
+        return homeService;
+    })();
+    M.homeService = homeService;
+})(M || (M = {}));
 
-    // Init
-    angular.module("mainApp").factory("homeService", homeService);
-
-    // Class
-    function homeService() {
-        return {};
-    }
-}());
+// Init
+angular.module("mainApp").factory("homeService", M.homeService);
 //# sourceMappingURL=home.service.js.map
