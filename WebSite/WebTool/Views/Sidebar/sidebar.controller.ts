@@ -25,4 +25,4 @@ module M {
 
 // init
 angular.module('mainApp')
-    .factory('sidebarController', M.sidebarController);
+    .controller('sidebarController', M.sidebarController);

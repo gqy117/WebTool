@@ -27,6 +27,6 @@ var M;
     M.wakeUpPanelService = wakeUpPanelService;
 
     // init
-    angular.module("mainApp").factory("wakeUpPanelService", wakeUpPanelService);
+    angular.module("mainApp").service("wakeUpPanelService", wakeUpPanelService);
 })(M || (M = {}));
 //# sourceMappingURL=wakeUpPanel.service.js.map
