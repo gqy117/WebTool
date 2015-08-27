@@ -7,4 +7,4 @@ module M {
 
 // Init
 angular.module("mainApp")
-    .factory("homeService", M.homeService);
+    .service("homeService", M.homeService);

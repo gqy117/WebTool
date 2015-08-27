@@ -23,5 +23,5 @@ var M;
 })(M || (M = {}));
 
 // init
-angular.module('mainApp').factory('sidebarService', M.sidebarService);
+angular.module('mainApp').service('sidebarService', M.sidebarService);
 //# sourceMappingURL=sidebar.service.js.map

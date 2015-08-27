@@ -9,7 +9,7 @@ module M {
         public isShowAlertWakeUpSuccess: boolean;
 
         // constructor
-        constructor(public $window, public $http) { }
+        constructor(private $window, private $http) { }
 
         // methods
         public hideMessage(): void {
@@ -30,5 +30,5 @@ module M {
 
     // init
     angular.module("mainApp")
-        .factory("wakeUpPanelService", wakeUpPanelService);
+        .service("wakeUpPanelService", wakeUpPanelService);
 }

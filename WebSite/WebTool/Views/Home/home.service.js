@@ -10,5 +10,5 @@ var M;
 })(M || (M = {}));
 
 // Init
-angular.module("mainApp").factory("homeService", M.homeService);
+angular.module("mainApp").service("homeService", M.homeService);
 //# sourceMappingURL=home.service.js.map
