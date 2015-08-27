@@ -100,7 +100,7 @@
     "GzipMinifiedFiles": false,
     "LintOnBuild": false,
     "LintOnSave": false,
-    "LintResultLocation": "Error",
+    "LintResultLocation": "Message",
     "MakeMinified": true,
     "OutputDirectory": null,
     "RootDirectory": "/Scripts/",
