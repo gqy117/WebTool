@@ -17,7 +17,7 @@ module M {
             
             this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
                 .then(() => {
-                    afterWakeUp();
+                    afterWakeUp(true);
                 });
         }
     }
