@@ -728,6 +728,9 @@
     <Content Include="Views\Home\home.service.js">
       <DependentUpon>home.service.ts</DependentUpon>
     </Content>
+    <Content Include="Views\Home\Panel\wakeUpPanel.module.js">
+      <DependentUpon>wakeUpPanel.module.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Home\Panel\wakeUpPanel.service.js">
       <DependentUpon>wakeUpPanel.service.ts</DependentUpon>
     </Content>
@@ -910,6 +913,7 @@
     <TypeScriptCompile Include="Views\Home\home.service.ts" />
     <TypeScriptCompile Include="Views\Home\homeHeaderPanel.service.ts" />
     <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.controller.ts" />
+    <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.module.ts" />
     <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.service.ts" />
     <TypeScriptCompile Include="Views\Shared\HeaderPanel\headerPanel.controller.ts" />
     <TypeScriptCompile Include="Views\Sidebar\activePanel.module.ts" />
