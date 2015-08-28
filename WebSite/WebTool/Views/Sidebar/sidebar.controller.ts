@@ -6,10 +6,11 @@ module M {
         static $inject = ["sidebarService"];
 
         // properties
-        public activePanel: activePanel = new activePanel();
+        public activePanel: activePanel;
 
         // constructor
         constructor(public sidebarService: sidebarService) {
+            this.activePanel = this.sidebarService.activePanel;
         }
 
         // methods
