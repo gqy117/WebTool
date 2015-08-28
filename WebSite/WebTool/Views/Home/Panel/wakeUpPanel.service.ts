@@ -16,13 +16,15 @@ module M {
             this.isShowAlertWakeUpSuccess = false;
         }
 
-        public wakeUp(): void {
-            var context: wakeUpPanelService = this;
+        public wakeUp(context: wakeUpPanelController): void {
+
+            //var context: wakeUpPanelController = this;
 
             this.$window.Track("Index", "Panel3_ViewMore");
-
+            
             this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
-                .then( () => {
+                .then(() => {
+                    console.log('Waking up...');
                     context.isShowAlertWakeUpSuccess = true;
                 });
         }

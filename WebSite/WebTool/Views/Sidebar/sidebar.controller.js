@@ -5,8 +5,7 @@ var M;
         // constructor
         function sidebarController(sidebarService) {
             this.sidebarService = sidebarService;
-            // properties
-            this.activePanel = new M.activePanel();
+            this.activePanel = this.sidebarService.activePanel;
         }
         // methods
         sidebarController.prototype.LeftPanel_Dashboard_Click = function () {

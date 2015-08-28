@@ -13,7 +13,7 @@ module M {
 
         // methods
         public wakeUp_Click(): void {
-            this.wakeUpPanelService.wakeUp();
+            this.wakeUpPanelService.wakeUp(this);
         }
 
         public hideSuccessMessage(): void {
