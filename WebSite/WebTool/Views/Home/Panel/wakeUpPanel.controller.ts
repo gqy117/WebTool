@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 module M {
-    export class wakeUpPanelController {
+    export class wakeUpPanelController implements  IWakeUpStatus {
         // inject
         static $inject = ["wakeUpPanelService"];
 
@@ -13,20 +13,21 @@ module M {
 
         // methods
         public wakeUp_Click(): void {
-            var context: wakeUpPanelController = this;
+            var context: IWakeUpStatus = this;
 
-            this.wakeUpPanelService.wakeUp(
-                (isShow: boolean): void => {
-                    context.isShowAlertWakeUpSuccess = isShow;
-                });
+            this.wakeUpPanelService.wakeUp(context);
         }
 
         public hideSuccessMessage(): void {
-            this.isShowAlertWakeUpSuccess = false;
+            var context: IWakeUpStatus = this;
+
+            this.wakeUpPanelService.hideSuccessMessage(context);
         }
 
         public showSuccessMessage(): void {
-            this.isShowAlertWakeUpSuccess = true;
+            var context: IWakeUpStatus = this;
+
+            this.wakeUpPanelService.showSuccessMessage(context);
         }
     }
 

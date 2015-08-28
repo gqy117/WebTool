@@ -11,15 +11,15 @@ var M;
         // methods
         wakeUpPanelController.prototype.wakeUp_Click = function () {
             var context = this;
-            this.wakeUpPanelService.wakeUp(function (isShow) {
-                context.isShowAlertWakeUpSuccess = isShow;
-            });
+            this.wakeUpPanelService.wakeUp(context);
         };
         wakeUpPanelController.prototype.hideSuccessMessage = function () {
-            this.isShowAlertWakeUpSuccess = false;
+            var context = this;
+            this.wakeUpPanelService.hideSuccessMessage(context);
         };
         wakeUpPanelController.prototype.showSuccessMessage = function () {
-            this.isShowAlertWakeUpSuccess = true;
+            var context = this;
+            this.wakeUpPanelService.showSuccessMessage(context);
         };
         // inject
         wakeUpPanelController.$inject = ["wakeUpPanelService"];
