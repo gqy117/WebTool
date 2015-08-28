@@ -8,12 +8,18 @@ var M;
             this.$http = $http;
         }
         // methods
-        wakeUpPanelService.prototype.wakeUp = function (afterWakeUp) {
+        wakeUpPanelService.prototype.wakeUp = function (wakeUpStatus) {
             this.$window.Track("Index", "Panel3_ViewMore");
             this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
                 .then(function () {
-                afterWakeUp(true);
+                wakeUpStatus.isShowAlertWakeUpSuccess = true;
             });
+        };
+        wakeUpPanelService.prototype.showSuccessMessage = function (wakeUpStatus) {
+            wakeUpStatus.isShowAlertWakeUpSuccess = true;
+        };
+        wakeUpPanelService.prototype.hideSuccessMessage = function (wakeUpStatus) {
+            wakeUpStatus.isShowAlertWakeUpSuccess = false;
         };
         // inject
         wakeUpPanelService.$inject = ["$window", "$http"];
