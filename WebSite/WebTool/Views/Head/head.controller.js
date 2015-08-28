@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var M;
 (function (M) {
     var headController = (function () {
@@ -10,20 +10,18 @@ var M;
         headController.prototype.brand_Click = function () {
             this.headService.brand();
         };
-
         headController.prototype.myProfile_Click = function () {
             this.headService.myProfile();
         };
-
         headController.prototype.logOut_Click = function () {
             this.headService.logOut();
         };
+        // inject
         headController.$inject = ["headService"];
         return headController;
     })();
     M.headController = headController;
 })(M || (M = {}));
-
 // init
-angular.module("mainApp").controller("headController", M.headController);
-//# sourceMappingURL=head.controller.js.map
+angular.module("mainApp")
+    .controller("headController", M.headController);

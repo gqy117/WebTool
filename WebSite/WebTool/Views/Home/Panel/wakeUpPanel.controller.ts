@@ -13,7 +13,11 @@ module M {
 
         // methods
         public wakeUp_Click(): void {
-            this.wakeUpPanelService.wakeUp(this.showSuccessMessage);
+            var context: wakeUpPanelController = this;
+
+            this.wakeUpPanelService.wakeUp(
+                (isShow: boolean) => context.isShowAlertWakeUpSuccess = isShow
+                );
         }
 
         public hideSuccessMessage(): void {

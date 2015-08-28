@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var M;
 (function (M) {
     var activePanel = (function () {
@@ -11,4 +11,3 @@ var M;
     })();
     M.activePanel = activePanel;
 })(M || (M = {}));
-//# sourceMappingURL=activePanel.module.js.map

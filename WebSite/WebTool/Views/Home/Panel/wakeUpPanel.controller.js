@@ -10,7 +10,8 @@ var M;
         }
         // methods
         wakeUpPanelController.prototype.wakeUp_Click = function () {
-            this.wakeUpPanelService.wakeUp(this.showSuccessMessage);
+            var context = this;
+            this.wakeUpPanelService.wakeUp(function (isShow) { return context.isShowAlertWakeUpSuccess = isShow; });
         };
         wakeUpPanelController.prototype.hideSuccessMessage = function () {
             this.isShowAlertWakeUpSuccess = false;
@@ -24,5 +25,6 @@ var M;
     })();
     M.wakeUpPanelController = wakeUpPanelController;
     // init
-    angular.module("mainApp").controller('wakeUpPanelController', wakeUpPanelController);
+    angular.module("mainApp")
+        .controller('wakeUpPanelController', wakeUpPanelController);
 })(M || (M = {}));

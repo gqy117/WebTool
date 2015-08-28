@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var M;
 (function (M) {
     var sidebarController = (function () {
@@ -11,16 +11,15 @@ var M;
         sidebarController.prototype.LeftPanel_Dashboard_Click = function () {
             this.sidebarService.LeftPanel_Dashboard();
         };
-
         sidebarController.prototype.LeftPanel_WOL_Click = function () {
             this.sidebarService.LeftPanel_WOL();
         };
+        // inject
         sidebarController.$inject = ["sidebarService"];
         return sidebarController;
     })();
     M.sidebarController = sidebarController;
 })(M || (M = {}));
-
 // init
-angular.module('mainApp').controller('sidebarController', M.sidebarController);
-//# sourceMappingURL=sidebar.controller.js.map
+angular.module('mainApp')
+    .controller('sidebarController', M.sidebarController);
