@@ -10,7 +10,7 @@ var M;
         }
         // methods
         wakeUpPanelController.prototype.wakeUp_Click = function () {
-            this.wakeUpPanelService.wakeUp();
+            this.wakeUpPanelService.wakeUp(this);
         };
 
         wakeUpPanelController.prototype.hideSuccessMessage = function () {

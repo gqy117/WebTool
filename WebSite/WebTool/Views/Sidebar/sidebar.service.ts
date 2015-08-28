@@ -5,6 +5,9 @@ module M {
         // inject
         static $inject = ["$window"];
 
+        // properties
+        public activePanel: activePanel = new activePanel();
+
         // constructor
         constructor(public $window) { }
 

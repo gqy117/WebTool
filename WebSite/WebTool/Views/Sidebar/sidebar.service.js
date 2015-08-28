@@ -5,6 +5,8 @@ var M;
         // constructor
         function sidebarService($window) {
             this.$window = $window;
+            // properties
+            this.activePanel = new M.activePanel();
         }
         // methods
         sidebarService.prototype.LeftPanel_Dashboard = function () {
