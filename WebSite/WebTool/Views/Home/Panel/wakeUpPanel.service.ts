@@ -12,20 +12,12 @@ module M {
         constructor(private $window, private $http) { }
 
         // methods
-        public hideMessage(): void {
-            this.isShowAlertWakeUpSuccess = false;
-        }
-
-        public wakeUp(context: wakeUpPanelController): void {
-
-            //var context: wakeUpPanelController = this;
-
+        public wakeUp(afterWakeUp: Function): void {
             this.$window.Track("Index", "Panel3_ViewMore");
             
             this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
                 .then(() => {
-                    console.log('Waking up...');
-                    context.isShowAlertWakeUpSuccess = true;
+                    afterWakeUp();
                 });
         }
     }
