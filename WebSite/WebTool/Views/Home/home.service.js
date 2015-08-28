@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var M;
 (function (M) {
     var homeService = (function () {
@@ -8,7 +8,6 @@ var M;
     })();
     M.homeService = homeService;
 })(M || (M = {}));
-
 // Init
-angular.module("mainApp").service("homeService", M.homeService);
-//# sourceMappingURL=home.service.js.map
+angular.module("mainApp")
+    .service("homeService", M.homeService);

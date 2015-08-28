@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var M;
 (function (M) {
     var sidebarService = (function () {
@@ -13,17 +13,16 @@ var M;
             this.$window.Track('Index', 'LeftPanel_Dashboard');
             this.$window.location.href = this.$window.App.baseUrl + 'Home/Index';
         };
-
         sidebarService.prototype.LeftPanel_WOL = function () {
             this.$window.Track('Index', 'LeftPanel_WOL');
             this.$window.location.href = this.$window.App.baseUrl + 'Tool/WOL';
         };
+        // inject
         sidebarService.$inject = ["$window"];
         return sidebarService;
     })();
     M.sidebarService = sidebarService;
 })(M || (M = {}));
-
 // init
-angular.module('mainApp').service('sidebarService', M.sidebarService);
-//# sourceMappingURL=sidebar.service.js.map
+angular.module('mainApp')
+    .service('sidebarService', M.sidebarService);

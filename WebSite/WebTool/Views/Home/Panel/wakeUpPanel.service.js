@@ -10,8 +10,9 @@ var M;
         // methods
         wakeUpPanelService.prototype.wakeUp = function (afterWakeUp) {
             this.$window.Track("Index", "Panel3_ViewMore");
-            this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp").then(function () {
-                afterWakeUp();
+            this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
+                .then(function () {
+                afterWakeUp(true);
             });
         };
         // inject
@@ -20,5 +21,6 @@ var M;
     })();
     M.wakeUpPanelService = wakeUpPanelService;
     // init
-    angular.module("mainApp").service("wakeUpPanelService", wakeUpPanelService);
+    angular.module("mainApp")
+        .service("wakeUpPanelService", wakeUpPanelService);
 })(M || (M = {}));
