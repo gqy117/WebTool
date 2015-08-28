@@ -11,7 +11,9 @@ var M;
         // methods
         wakeUpPanelController.prototype.wakeUp_Click = function () {
             var context = this;
-            this.wakeUpPanelService.wakeUp(function (isShow) { return context.isShowAlertWakeUpSuccess = isShow; });
+            this.wakeUpPanelService.wakeUp(function (isShow) {
+                context.isShowAlertWakeUpSuccess = isShow;
+            });
         };
         wakeUpPanelController.prototype.hideSuccessMessage = function () {
             this.isShowAlertWakeUpSuccess = false;
