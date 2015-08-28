@@ -16,8 +16,9 @@ module M {
             var context: wakeUpPanelController = this;
 
             this.wakeUpPanelService.wakeUp(
-                (isShow: boolean) => context.isShowAlertWakeUpSuccess = isShow
-                );
+                (isShow: boolean): void => {
+                    context.isShowAlertWakeUpSuccess = isShow;
+                });
         }
 
         public hideSuccessMessage(): void {
