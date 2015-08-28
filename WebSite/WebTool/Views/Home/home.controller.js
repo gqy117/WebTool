@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var M;
 (function (M) {
     var homeController = (function () {
@@ -9,12 +9,12 @@ var M;
             this.activePanel = this.sidebarService.activePanel;
             this.activePanel.dashboard = true;
         }
+        // inject
         homeController.$inject = ["homeService", "sidebarService"];
         return homeController;
     })();
     M.homeController = homeController;
-
     // init
-    angular.module("mainApp").controller("homeController", homeController);
+    angular.module("mainApp")
+        .controller("homeController", homeController);
 })(M || (M = {}));
-//# sourceMappingURL=home.controller.js.map
