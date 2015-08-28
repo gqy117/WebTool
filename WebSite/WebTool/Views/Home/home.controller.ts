@@ -13,12 +13,12 @@ module M {
             public homeService: homeService,
             public sidebarService: sidebarService
         ) {
-            this.activePanel = new activePanel();
+            this.activePanel = this.sidebarService.activePanel;
             this.activePanel.dashboard = true;
         }
     }
-}
 
-// init
-angular.module("mainApp")
-    .controller("homeController", M.homeController);
+    // init
+    angular.module("mainApp")
+        .controller("homeController", homeController);
+}

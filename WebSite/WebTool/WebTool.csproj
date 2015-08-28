@@ -717,10 +717,14 @@
     <Content Include="Views\Head\Language\languageBar.controller.js" />
     <Content Include="Views\Head\Language\languageBar.service.js" />
     <Content Include="Views\Home\homeHeaderPanel.service.js" />
-    <Content Include="Views\Home\Panel\wakeUpPanel.controller.js" />
-    <Content Include="Views\Home\Panel\wakeUpPanel.service.js" />
+    <Content Include="Views\Home\Panel\wakeUpPanel.controller.js">
+      <DependentUpon>wakeUpPanel.controller.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Home\home.controller.js" />
     <Content Include="Views\Home\home.service.js" />
+    <Content Include="Views\Home\Panel\wakeUpPanel.service.js">
+      <DependentUpon>wakeUpPanel.service.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Shared\Init\main.controller.js" />
     <Content Include="Views\Shared\Init\uiModel.service.js" />
     <Content Include="Views\Shared\Library\jQuery.service.js" />
@@ -886,8 +890,10 @@
     <TypeScriptCompile Include="Views\Head\head.service.ts" />
     <TypeScriptCompile Include="Views\Home\home.controller.ts" />
     <TypeScriptCompile Include="Views\Home\home.service.ts" />
+    <TypeScriptCompile Include="Views\Home\homeHeaderPanel.service.ts" />
     <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.controller.ts" />
     <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.service.ts" />
+    <TypeScriptCompile Include="Views\Shared\HeaderPanel\headerPanel.controller.ts" />
     <TypeScriptCompile Include="Views\Sidebar\activePanel.module.ts" />
     <TypeScriptCompile Include="Views\Sidebar\sidebar.controller.ts" />
     <TypeScriptCompile Include="Views\Sidebar\sidebar.service.ts" />

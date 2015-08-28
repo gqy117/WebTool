@@ -12,12 +12,12 @@ var M;
             this.isShowAlertWakeUpSuccess = false;
         };
 
-        wakeUpPanelService.prototype.wakeUp = function () {
-            var context = this;
-
+        wakeUpPanelService.prototype.wakeUp = function (context) {
+            //var context: wakeUpPanelController = this;
             this.$window.Track("Index", "Panel3_ViewMore");
 
             this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp").then(function () {
+                console.log('Waking up...');
                 context.isShowAlertWakeUpSuccess = true;
             });
         };

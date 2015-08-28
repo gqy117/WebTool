@@ -1,13 +1,25 @@
-﻿(function () {
-    "use strict";
+﻿"use strict";
+var M;
+(function (M) {
+    var headerPanelController = (function () {
+        // constructor
+        function headerPanelController(headerPanelService) {
+            this.headerPanelService = headerPanelService;
+        }
+        // methods
+        headerPanelController.prototype.navigation1Click = function () {
+            this.headerPanelService.navigation1();
+        };
 
-    angular.module("mainApp")
-        .controller('headerPanelController', headerPanelController);
+        headerPanelController.prototype.navigation2Click = function () {
+            this.headerPanelService.navigation2();
+        };
+        headerPanelController.$inject = ["headerPanelService"];
+        return headerPanelController;
+    })();
+    M.headerPanelController = headerPanelController;
 
-    headerPanelController.$inject = ['headerPanelService'];
-
-    function headerPanelController(headerPanelService) {
-        this.navigation1Click = headerPanelService.navigation1;
-        this.navigation2Click = headerPanelService.navigation2;
-    }
-}());
+    // init
+    angular.module('mainApp').service('headerPanelController', headerPanelController);
+})(M || (M = {}));
+//# sourceMappingURL=headerPanel.controller.js.map
