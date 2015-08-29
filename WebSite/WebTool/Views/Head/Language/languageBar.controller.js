@@ -17,5 +17,5 @@ var M;
     M.languageBarController = languageBarController;
     // init
     angular.module("mainApp")
-        .controller('languageBarController', languageBarController);
+        .controller("languageBarController", languageBarController);
 })(M || (M = {}));

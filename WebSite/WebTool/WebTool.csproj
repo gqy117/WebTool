@@ -692,6 +692,7 @@
     <Content Include="Content\Site.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="tslint.json" />
     <None Include="Scripts\angular.intellisense.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
