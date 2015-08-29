@@ -714,8 +714,12 @@
     <Content Include="Views\Account\LogOn\login.service.js" />
     <Content Include="Views\Account\Register\register.controller.js" />
     <Content Include="Views\Account\Register\register.service.js" />
-    <Content Include="Views\Head\Language\languageBar.controller.js" />
-    <Content Include="Views\Head\Language\languageBar.service.js" />
+    <Content Include="Views\Head\Language\languageBar.controller.js">
+      <DependentUpon>languageBar.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Head\Language\languageBar.service.js">
+      <DependentUpon>languageBar.service.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Home\homeHeaderPanel.service.js">
       <DependentUpon>homeHeaderPanel.service.ts</DependentUpon>
     </Content>
@@ -923,6 +927,8 @@
     <TypeScriptCompile Include="Scripts\jquery.d.ts" />
     <TypeScriptCompile Include="Views\Head\head.controller.ts" />
     <TypeScriptCompile Include="Views\Head\head.service.ts" />
+    <TypeScriptCompile Include="Views\Head\Language\languageBar.controller.ts" />
+    <TypeScriptCompile Include="Views\Head\Language\languageBar.service.ts" />
     <TypeScriptCompile Include="Views\Home\home.controller.ts" />
     <TypeScriptCompile Include="Views\Home\home.service.ts" />
     <TypeScriptCompile Include="Views\Home\homeHeaderPanel.service.ts" />
