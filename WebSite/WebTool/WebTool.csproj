@@ -736,12 +736,18 @@
     </Content>
     <Content Include="Views\Shared\Init\main.controller.js" />
     <Content Include="Views\Shared\Init\uiModel.service.js" />
-    <Content Include="Views\Shared\Library\jQuery.service.js" />
+    <Content Include="Views\Shared\Library\jQuery.service.js">
+      <DependentUpon>jQuery.service.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Sidebar\activePanel.module.js">
       <DependentUpon>activePanel.module.ts</DependentUpon>
     </Content>
-    <Content Include="Views\WOL\wolHeaderPanel.service.js" />
-    <Content Include="Views\Shared\Library\main.app.js" />
+    <Content Include="Views\WOL\wolHeaderPanel.service.js">
+      <DependentUpon>wolHeaderPanel.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\Library\main.app.js">
+      <DependentUpon>main.app.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Head\head.controller.js">
       <DependentUpon>head.controller.ts</DependentUpon>
     </Content>
@@ -921,6 +927,8 @@
     <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.service.ts" />
     <TypeScriptCompile Include="Views\Shared\HeaderPanel\headerPanel.controller.ts" />
     <TypeScriptCompile Include="Views\Shared\HeaderPanel\headPanel.service.ts" />
+    <TypeScriptCompile Include="Views\Shared\Library\jQuery.service.ts" />
+    <TypeScriptCompile Include="Views\Shared\Library\main.app.ts" />
     <TypeScriptCompile Include="Views\Sidebar\activePanel.module.ts" />
     <TypeScriptCompile Include="Views\Sidebar\sidebar.controller.ts" />
     <TypeScriptCompile Include="Views\Sidebar\sidebar.service.ts" />
