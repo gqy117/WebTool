@@ -3,8 +3,8 @@
 module M {
     export class homeService {
     }
-}
 
-// Init
-angular.module("mainApp")
-    .service("homeService", M.homeService);
+    // Init
+    angular.module("mainApp")
+        .service("homeService", homeService);
+}
