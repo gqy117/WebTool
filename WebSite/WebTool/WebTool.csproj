@@ -734,7 +734,9 @@
     <Content Include="Views\Home\Panel\wakeUpPanel.service.js">
       <DependentUpon>wakeUpPanel.service.ts</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\Init\main.controller.js" />
+    <Content Include="Views\Shared\Init\main.controller.js">
+      <DependentUpon>main.controller.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Shared\Init\uiModel.service.js">
       <DependentUpon>uiModel.service.ts</DependentUpon>
     </Content>
@@ -929,6 +931,7 @@
     <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.service.ts" />
     <TypeScriptCompile Include="Views\Shared\HeaderPanel\headerPanel.controller.ts" />
     <TypeScriptCompile Include="Views\Shared\HeaderPanel\headPanel.service.ts" />
+    <TypeScriptCompile Include="Views\Shared\Init\main.controller.ts" />
     <TypeScriptCompile Include="Views\Shared\Init\uiModel.service.ts" />
     <TypeScriptCompile Include="Views\Shared\Library\jQuery.service.ts" />
     <TypeScriptCompile Include="Views\Shared\Library\main.app.ts" />
