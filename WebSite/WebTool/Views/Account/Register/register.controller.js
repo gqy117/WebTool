@@ -1,28 +1,24 @@
-﻿(function () {
-    "use strict";
-
-    angular.module("mainApp")
-         .controller('registerController', registerController);
-
-    registerController.$inject = ['registerService'];
-
-    function registerController(registerService) {
-        this.submit = registerService.submit;
-        this.formRegister_Password_keyup = registerService.formRegister_Password_keyup;
-    }
-
-    angular.module("mainApp")
-        .directive('form', function () {
-
-        return {
-            require: 'form',
-            restrict: 'E',
-            link: function (scope, elem, attrs, form) {
-                form.$submit = function () {
-                    form.$setSubmitted();
-                    scope.$eval(attrs.ngSubmit);
-                };
-            }
+"use strict";
+var M;
+(function (M) {
+    var registerController = (function () {
+        // constructor
+        function registerController(registerService) {
+            this.registerService = registerService;
+        }
+        // methods
+        registerController.prototype.submit = function () {
+            this.registerService.submit();
         };
-    });
-}());
+        registerController.prototype.formRegister_Password_keyup = function ($event) {
+            this.registerService.formRegister_Password_keyup($event);
+        };
+        // inject
+        registerController.$inject = ["registerService"];
+        return registerController;
+    })();
+    M.registerController = registerController;
+    // init
+    angular.module("mainApp")
+        .controller('registerController', registerController);
+})(M || (M = {}));

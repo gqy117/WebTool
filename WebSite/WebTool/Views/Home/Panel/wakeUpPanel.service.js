@@ -1,27 +1,32 @@
-﻿(function () {
-    "use strict";
-
-    angular
-        .module('mainApp')
-        .factory('wakeUpPanelService', wakeUpPanelService);
-
-    wakeUpPanelService.$inject = ['$window', '$http'];
-
-    function wakeUpPanelService($window, $http) {
-        return {
-            hideMessage: function _hideMessage() {
-                this.isShowAlertWakeUpSuccess = false;
-            },
-
-            wakeUp: function _wakeUp() {
-                var context = this;
-                $window.Track('Index', 'Panel3_ViewMore');
-
-                $http.post($window.App.baseUrl + 'Tool/WakeUp')
-                    .then(function () {
-                        context.isShowAlertWakeUpSuccess = true;
-                    });
-            }
+"use strict";
+var M;
+(function (M) {
+    var wakeUpPanelService = (function () {
+        // constructor
+        function wakeUpPanelService($window, $http) {
+            this.$window = $window;
+            this.$http = $http;
+        }
+        // methods
+        wakeUpPanelService.prototype.wakeUp = function (wakeUpStatus) {
+            this.$window.Track("Index", "Panel3_ViewMore");
+            this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
+                .then(function () {
+                wakeUpStatus.isShowAlertWakeUpSuccess = true;
+            });
         };
-    }
-}());
+        wakeUpPanelService.prototype.showSuccessMessage = function (wakeUpStatus) {
+            wakeUpStatus.isShowAlertWakeUpSuccess = true;
+        };
+        wakeUpPanelService.prototype.hideSuccessMessage = function (wakeUpStatus) {
+            wakeUpStatus.isShowAlertWakeUpSuccess = false;
+        };
+        // inject
+        wakeUpPanelService.$inject = ["$window", "$http"];
+        return wakeUpPanelService;
+    })();
+    M.wakeUpPanelService = wakeUpPanelService;
+    // init
+    angular.module("mainApp")
+        .service("wakeUpPanelService", wakeUpPanelService);
+})(M || (M = {}));
