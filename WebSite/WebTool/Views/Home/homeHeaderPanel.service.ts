@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 module M {
-    export class headerPanelService {
+    export class homeHeaderPanelService implements IHeadPanelService {
         // inject
         static $inject = ["$window"];
 
@@ -22,5 +22,5 @@ module M {
 
     // init
     angular.module('mainApp')
-        .service('headerPanelService', headerPanelService); 
+        .service('headerPanelService', homeHeaderPanelService); 
 }
