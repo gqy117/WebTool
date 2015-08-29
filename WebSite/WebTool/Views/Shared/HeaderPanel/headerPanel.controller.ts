@@ -6,7 +6,7 @@ module M {
         static $inject = ["headerPanelService"];
 
         // constructor
-        constructor(private headerPanelService: headerPanelService) { }
+        constructor(private headerPanelService: IHeadPanelService) { }
 
         // methods
         public navigation1Click(): void {

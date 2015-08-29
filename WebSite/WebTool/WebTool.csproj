@@ -754,8 +754,12 @@
     <Content Include="Views\Shared\HeaderPanel\headerPanel.controller.js">
       <DependentUpon>headerPanel.controller.ts</DependentUpon>
     </Content>
-    <Content Include="Views\WOL\wol.controller.js" />
-    <Content Include="Views\WOL\wol.service.js" />
+    <Content Include="Views\WOL\wol.controller.js">
+      <DependentUpon>wol.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\WOL\wol.service.js">
+      <DependentUpon>wol.service.ts</DependentUpon>
+    </Content>
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -916,9 +920,13 @@
     <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.module.ts" />
     <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.service.ts" />
     <TypeScriptCompile Include="Views\Shared\HeaderPanel\headerPanel.controller.ts" />
+    <TypeScriptCompile Include="Views\Shared\HeaderPanel\headPanel.service.ts" />
     <TypeScriptCompile Include="Views\Sidebar\activePanel.module.ts" />
     <TypeScriptCompile Include="Views\Sidebar\sidebar.controller.ts" />
     <TypeScriptCompile Include="Views\Sidebar\sidebar.service.ts" />
+    <TypeScriptCompile Include="Views\WOL\wol.controller.ts" />
+    <TypeScriptCompile Include="Views\WOL\wol.service.ts" />
+    <TypeScriptCompile Include="Views\WOL\wolHeaderPanel.service.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
