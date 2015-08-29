@@ -6,7 +6,7 @@ module M {
         static $inject = ["headService"];
 
         // constructor
-        constructor(public headService: headService) { }
+        constructor(private  headService: headService) { }
 
         // methods
         public brand_Click(): void {
@@ -21,8 +21,8 @@ module M {
             this.headService.logOut();
         }
     }
+    
+    // init
+    angular.module("mainApp")
+        .controller("headController", headController);
 }
-
-// init
-angular.module("mainApp")
-    .controller("headController", M.headController);

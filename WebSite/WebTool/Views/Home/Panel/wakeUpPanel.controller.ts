@@ -9,7 +9,7 @@ module M {
         public isShowAlertWakeUpSuccess: boolean = false;
 
         // constructor
-        constructor(public wakeUpPanelService: wakeUpPanelService) { }
+        constructor(private  wakeUpPanelService: wakeUpPanelService) { }
 
         // methods
         public wakeUp_Click(): void {

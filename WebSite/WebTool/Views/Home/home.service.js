@@ -7,7 +7,7 @@ var M;
         return homeService;
     })();
     M.homeService = homeService;
+    // Init
+    angular.module("mainApp")
+        .service("homeService", homeService);
 })(M || (M = {}));
-// Init
-angular.module("mainApp")
-    .service("homeService", M.homeService);

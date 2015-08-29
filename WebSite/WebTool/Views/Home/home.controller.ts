@@ -10,8 +10,8 @@ module M {
 
         // constructor
         constructor(
-            public homeService: homeService,
-            public sidebarService: sidebarService
+            private  homeService: homeService,
+            private sidebarService: sidebarService
         ) {
             this.activePanel = this.sidebarService.activePanel;
             this.activePanel.dashboard = true;
