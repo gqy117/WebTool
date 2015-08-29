@@ -20,6 +20,6 @@ var M;
     })();
     M.sidebarController = sidebarController;
     // init
-    angular.module('mainApp')
-        .controller('sidebarController', sidebarController);
+    angular.module("mainApp")
+        .controller("sidebarController", sidebarController);
 })(M || (M = {}));

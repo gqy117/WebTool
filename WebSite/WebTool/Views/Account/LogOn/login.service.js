@@ -8,8 +8,8 @@ var M;
         }
         //  methods
         loginService.prototype.formLogOnSubmit = function () {
-            this.$window.Track('LogOn', 'LogOn');
-            this.$window.jQuery('#FormLogin').submit();
+            this.$window.Track("LogOn", "LogOn");
+            this.$window.jQuery("#FormLogin").submit();
         };
         loginService.prototype.formLogOnPasswordKeyup = function ($event) {
             if ($event.keyCode === 13) {
@@ -17,8 +17,8 @@ var M;
             }
         };
         loginService.prototype.signUpNow = function () {
-            this.$window.Track('LogOn', 'SignUpNow');
-            this.$window.location.href = this.$window.App.baseUrl + 'Register/Index';
+            this.$window.Track("LogOn", "SignUpNow");
+            this.$window.location.href = this.$window.App.baseUrl + "Register/Index";
         };
         // inject
         loginService.$inject = ["$window"];
@@ -26,6 +26,6 @@ var M;
     })();
     M.loginService = loginService;
     // init
-    angular.module('mainApp')
-        .service('loginService', loginService);
+    angular.module("mainApp")
+        .service("loginService", loginService);
 })(M || (M = {}));

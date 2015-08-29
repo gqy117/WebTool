@@ -19,6 +19,6 @@ var M;
     })();
     M.headerPanelController = headerPanelController;
     // init
-    angular.module('mainApp')
-        .service('headerPanelController', headerPanelController);
+    angular.module("mainApp")
+        .service("headerPanelController", headerPanelController);
 })(M || (M = {}));

@@ -27,5 +27,5 @@ var M;
     M.loginController = loginController;
     // init
     angular.module("mainApp")
-        .controller('loginController', loginController);
+        .controller("loginController", loginController);
 })(M || (M = {}));

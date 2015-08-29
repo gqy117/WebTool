@@ -19,6 +19,6 @@ module M {
     }
 
     // init
-    angular.module('mainApp')
-        .service('headerPanelController', headerPanelController);
+    angular.module("mainApp")
+        .service("headerPanelController", headerPanelController);
 }

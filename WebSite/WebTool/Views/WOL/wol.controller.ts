@@ -13,7 +13,7 @@ module M {
             this.activePanel = this.sidebarService.activePanel;
             this.activePanel.wol = true;
 
-            this.myDataTableService.createTable("#WOLTable", this.$window.App.baseUrl + 'Tool/WOLTable');
+            this.myDataTableService.createTable("#WOLTable", this.$window.App.baseUrl + "Tool/WOLTable");
         }
     }
 
