@@ -1,3 +1,4 @@
+/* tslint:disable */ 
 // Type definitions for Angular JS 1.4+
 // Project: http://angularjs.org
 // Definitions by: Diego Vilar <http://github.com/diegovilar>
@@ -709,6 +710,7 @@ declare module angular {
     ///////////////////////////////////////////////////////////////////////////
     interface IWindowService extends Window {
         [key: string]: any;
+        App;
     }
 
     ///////////////////////////////////////////////////////////////////////////

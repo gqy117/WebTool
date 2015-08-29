@@ -24,6 +24,6 @@ module M {
     }
 
     // init
-    angular.module('mainApp')
-        .controller('sidebarController', sidebarController);
+    angular.module("mainApp")
+        .controller("sidebarController", sidebarController);
 }

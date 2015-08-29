@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var registerController = (function () {
         // constructor
         function registerController(registerService) {
@@ -20,5 +20,5 @@ var M;
     M.registerController = registerController;
     // init
     angular.module("mainApp")
-        .controller('registerController', registerController);
+        .controller("registerController", registerController);
 })(M || (M = {}));

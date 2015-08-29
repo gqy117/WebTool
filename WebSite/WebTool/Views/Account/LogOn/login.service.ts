@@ -10,8 +10,8 @@ module M {
 
         //  methods
         public formLogOnSubmit(): void {
-            this.$window.Track('LogOn', 'LogOn');
-            this.$window.jQuery('#FormLogin').submit();
+            this.$window.Track("LogOn", "LogOn");
+            this.$window.jQuery("#FormLogin").submit();
         }
 
         public formLogOnPasswordKeyup($event): void {
@@ -21,12 +21,12 @@ module M {
         }
 
         public signUpNow(): void{
-            this.$window.Track('LogOn', 'SignUpNow');
-            this.$window.location.href = this.$window.App.baseUrl + 'Register/Index';
+            this.$window.Track("LogOn", "SignUpNow");
+            this.$window.location.href = this.$window.App.baseUrl + "Register/Index";
         }
     }
 
     // init
-    angular.module('mainApp')
-        .service('loginService', loginService);
+    angular.module("mainApp")
+        .service("loginService", loginService);
 }

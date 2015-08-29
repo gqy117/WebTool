@@ -17,6 +17,6 @@ var M;
     })();
     M.mainController = mainController;
     // init
-    angular.module('mainApp')
-        .controller('mainController', mainController);
+    angular.module("mainApp")
+        .controller("mainController", mainController);
 })(M || (M = {}));

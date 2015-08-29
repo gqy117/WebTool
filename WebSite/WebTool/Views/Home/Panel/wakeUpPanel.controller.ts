@@ -33,5 +33,5 @@ module M {
 
     // init
     angular.module("mainApp")
-        .controller('wakeUpPanelController', wakeUpPanelController);
+        .controller("wakeUpPanelController", wakeUpPanelController);
 }
