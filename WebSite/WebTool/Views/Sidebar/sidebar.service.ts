@@ -9,7 +9,7 @@ module M {
         public activePanel: activePanel = new activePanel();
 
         // constructor
-        constructor(public $window) { }
+        constructor(private $window) { }
 
         // methods
         public LeftPanel_Dashboard(): void {
@@ -22,8 +22,8 @@ module M {
             this.$window.location.href = this.$window.App.baseUrl + 'Tool/WOL';
         }
     }
-}
 
-// init
-angular.module('mainApp')
-    .service('sidebarService', M.sidebarService);
+    // init
+    angular.module('mainApp')
+        .service('sidebarService', sidebarService);
+}

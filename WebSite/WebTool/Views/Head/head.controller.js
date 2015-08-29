@@ -21,7 +21,7 @@ var M;
         return headController;
     })();
     M.headController = headController;
+    // init
+    angular.module("mainApp")
+        .controller("headController", headController);
 })(M || (M = {}));
-// init
-angular.module("mainApp")
-    .controller("headController", M.headController);

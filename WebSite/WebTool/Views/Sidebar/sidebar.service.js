@@ -22,7 +22,7 @@ var M;
         return sidebarService;
     })();
     M.sidebarService = sidebarService;
+    // init
+    angular.module('mainApp')
+        .service('sidebarService', sidebarService);
 })(M || (M = {}));
-// init
-angular.module('mainApp')
-    .service('sidebarService', M.sidebarService);

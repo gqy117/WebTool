@@ -6,7 +6,7 @@ module M {
         static $inject = ["$window"];
 
         // constructor
-        constructor(public $window) { }
+        constructor(private $window) { }
 
         // methods
         public brand(): void {
@@ -22,8 +22,8 @@ module M {
             this.$window.location.href = this.$window.App.baseUrl + "Account/Login";
         }
     }
-}
 
-// init
-angular.module("mainApp")
-    .service("headService", M.headService);
+    // init
+    angular.module("mainApp")
+        .service("headService", headService);
+}
