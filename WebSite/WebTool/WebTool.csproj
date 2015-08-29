@@ -710,8 +710,12 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Views\Account\LogOn\login.controller.js" />
-    <Content Include="Views\Account\LogOn\login.service.js" />
+    <Content Include="Views\Account\LogOn\login.controller.js">
+      <DependentUpon>login.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Account\LogOn\login.service.js">
+      <DependentUpon>login.service.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Account\Register\register.controller.js" />
     <Content Include="Views\Account\Register\register.service.js" />
     <Content Include="Views\Head\Language\languageBar.controller.js">
@@ -925,6 +929,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\jquery.d.ts" />
+    <TypeScriptCompile Include="Views\Account\LogOn\login.controller.ts" />
+    <TypeScriptCompile Include="Views\Account\LogOn\login.service.ts" />
     <TypeScriptCompile Include="Views\Head\head.controller.ts" />
     <TypeScriptCompile Include="Views\Head\head.service.ts" />
     <TypeScriptCompile Include="Views\Head\Language\languageBar.controller.ts" />

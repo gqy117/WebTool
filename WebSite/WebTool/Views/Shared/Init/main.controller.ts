@@ -6,7 +6,7 @@ module M {
         static $inject = ["$window", "uiModelService"];
 
         // constructor
-        constructor(private $window, private uiModelService) {
+        constructor(private $window, private uiModelService: uiModelService) {
             angular.element(document).ready(() => {
                 $window.App.init();
                 uiModelService.init();
