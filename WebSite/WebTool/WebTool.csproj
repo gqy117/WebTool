@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,6 +32,7 @@
     <IISExpressUseClassicPipelineMode />
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
     <NuGetPackageImportStamp>d1d7c917</NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -708,28 +710,78 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Views\Account\LogOn\login.controller.js" />
-    <Content Include="Views\Account\LogOn\login.service.js" />
-    <Content Include="Views\Account\Register\register.controller.js" />
-    <Content Include="Views\Account\Register\register.service.js" />
-    <Content Include="Views\Head\Language\languageBar.controller.js" />
-    <Content Include="Views\Head\Language\languageBar.service.js" />
-    <Content Include="Views\Home\homeHeaderPanel.service.js" />
-    <Content Include="Views\Home\Panel\wakeUpPanel.controller.js" />
-    <Content Include="Views\Home\Panel\wakeUpPanel.service.js" />
-    <Content Include="Views\Home\home.controller.js" />
-    <Content Include="Views\Home\home.service.js" />
-    <Content Include="Views\Shared\Init\main.controller.js" />
-    <Content Include="Views\Shared\Init\uiModel.service.js" />
-    <Content Include="Views\Shared\Library\jQuery.service.js" />
-    <Content Include="Views\WOL\wolHeaderPanel.service.js" />
-    <Content Include="Views\Shared\Library\main.app.js" />
-    <Content Include="Views\Head\head.controller.js" />
-    <Content Include="Views\Sidebar\sidebar.controller.js" />
-    <Content Include="Views\Sidebar\sidebar.service.js" />
-    <Content Include="Views\Shared\HeaderPanel\headerPanel.controller.js" />
-    <Content Include="Views\WOL\wol.controller.js" />
-    <Content Include="Views\WOL\wol.service.js" />
+    <Content Include="Views\Account\LogOn\login.controller.js">
+      <DependentUpon>login.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Account\LogOn\login.service.js">
+      <DependentUpon>login.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Account\Register\register.controller.js">
+      <DependentUpon>register.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Account\Register\register.service.js">
+      <DependentUpon>register.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Head\Language\languageBar.controller.js">
+      <DependentUpon>languageBar.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Head\Language\languageBar.service.js">
+      <DependentUpon>languageBar.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\homeHeaderPanel.service.js">
+      <DependentUpon>homeHeaderPanel.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\Panel\wakeUpPanel.controller.js">
+      <DependentUpon>wakeUpPanel.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\home.controller.js">
+      <DependentUpon>home.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\home.service.js">
+      <DependentUpon>home.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\Panel\wakeUpPanel.module.js">
+      <DependentUpon>wakeUpPanel.module.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\Panel\wakeUpPanel.service.js">
+      <DependentUpon>wakeUpPanel.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\Init\main.controller.js">
+      <DependentUpon>main.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\Init\uiModel.service.js">
+      <DependentUpon>uiModel.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\Library\jQuery.service.js">
+      <DependentUpon>jQuery.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Sidebar\activePanel.module.js">
+      <DependentUpon>activePanel.module.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\WOL\wolHeaderPanel.service.js">
+      <DependentUpon>wolHeaderPanel.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\Library\main.app.js">
+      <DependentUpon>main.app.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Head\head.controller.js">
+      <DependentUpon>head.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Sidebar\sidebar.controller.js">
+      <DependentUpon>sidebar.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Sidebar\sidebar.service.js">
+      <DependentUpon>sidebar.service.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\HeaderPanel\headerPanel.controller.js">
+      <DependentUpon>headerPanel.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\WOL\wol.controller.js">
+      <DependentUpon>wol.controller.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\WOL\wol.service.js">
+      <DependentUpon>wol.service.ts</DependentUpon>
+    </Content>
     <Content Include="WebTool.Publish.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -839,7 +891,9 @@
     <None Include="Properties\PublishProfiles\WebDeploy.pubxml" />
     <Content Include="Settings.StyleCop" />
     <None Include="Properties\PublishProfiles\WebToolFTP.pubxml" />
-    <Content Include="Views\Head\head.service.js" />
+    <Content Include="Views\Head\head.service.js">
+      <DependentUpon>head.service.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Sidebar\Sidebar.cshtml" />
     <Content Include="Views\Shared\JS\PageEnd.cshtml" />
     <Content Include="Views\Shared\JS\PageStart.cshtml" />
@@ -873,15 +927,49 @@
       <Name>WebToolCulture</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\jquery.d.ts" />
+    <TypeScriptCompile Include="Views\Account\LogOn\login.controller.ts" />
+    <TypeScriptCompile Include="Views\Account\LogOn\login.service.ts" />
+    <TypeScriptCompile Include="Views\Account\Register\register.controller.ts" />
+    <TypeScriptCompile Include="Views\Account\Register\register.service.ts" />
+    <TypeScriptCompile Include="Views\Head\head.controller.ts" />
+    <TypeScriptCompile Include="Views\Head\head.service.ts" />
+    <TypeScriptCompile Include="Views\Head\Language\languageBar.controller.ts" />
+    <TypeScriptCompile Include="Views\Head\Language\languageBar.service.ts" />
+    <TypeScriptCompile Include="Views\Home\home.controller.ts" />
+    <TypeScriptCompile Include="Views\Home\home.service.ts" />
+    <TypeScriptCompile Include="Views\Home\homeHeaderPanel.service.ts" />
+    <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.controller.ts" />
+    <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.module.ts" />
+    <TypeScriptCompile Include="Views\Home\Panel\wakeUpPanel.service.ts" />
+    <TypeScriptCompile Include="Views\Shared\HeaderPanel\headerPanel.controller.ts" />
+    <TypeScriptCompile Include="Views\Shared\HeaderPanel\headPanel.service.ts" />
+    <TypeScriptCompile Include="Views\Shared\Init\main.controller.ts" />
+    <TypeScriptCompile Include="Views\Shared\Init\uiModel.service.ts" />
+    <TypeScriptCompile Include="Views\Shared\Library\jQuery.service.ts" />
+    <TypeScriptCompile Include="Views\Shared\Library\main.app.ts" />
+    <TypeScriptCompile Include="Views\Sidebar\activePanel.module.ts" />
+    <TypeScriptCompile Include="Views\Sidebar\sidebar.controller.ts" />
+    <TypeScriptCompile Include="Views\Sidebar\sidebar.service.ts" />
+    <TypeScriptCompile Include="Views\WOL\wol.controller.ts" />
+    <TypeScriptCompile Include="Views\WOL\wol.service.ts" />
+    <TypeScriptCompile Include="Views\WOL\wolHeaderPanel.service.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
