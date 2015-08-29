@@ -1,11 +1,11 @@
 ﻿(function () {
-    'use strict';
+    "use strict";
 
-    angular.module('mainApp')
-        .factory('jQuery', jQueryService);
+    angular.module("mainApp")
+        .factory("jQuery", jQueryService);
 
 
-    jQueryService.$inject = ['$window'];
+    jQueryService.$inject = ["$window"];
 
 
     function jQueryService($window) {

@@ -3,19 +3,19 @@
 module M {
     export class languageBarService {
         // inject
-        static $inject = ['$window'];
+        static $inject = ["$window"];
 
         // constructor
         constructor(private $window) { }
 
         // methods
         public changeLanguage(languageCode: string): void {
-            this.$window.Track('IndexHead', 'ChangeLanguage');
-            console.log('Tracking ChangeLanguage...');
+            this.$window.Track("IndexHead", "ChangeLanguage");
+            console.log("Tracking ChangeLanguage...");
 
             this.$window.jQuery.cookie("WebToolLanguage", languageCode, {
                 expires: 10000,
-                path: '/'
+                path: "/"
             });
 
             this.$window.location.reload();
@@ -23,6 +23,6 @@ module M {
     }
 
     // init
-    angular.module('mainApp')
-        .service('languageBarService', languageBarService);
+    angular.module("mainApp")
+        .service("languageBarService", languageBarService);
 }

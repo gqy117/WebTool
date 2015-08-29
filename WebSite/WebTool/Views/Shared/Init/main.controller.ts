@@ -15,6 +15,6 @@ module M {
     }
 
     // init
-    angular.module('mainApp')
-        .controller('mainController', mainController);
+    angular.module("mainApp")
+        .controller("mainController", mainController);
 }

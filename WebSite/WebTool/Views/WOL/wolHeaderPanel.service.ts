@@ -10,13 +10,13 @@ module M {
 
         // methods
         public navigation1(): void {
-            this.$window.Track('WOL', 'WOL');
-            console.log('Tracking WOL...');
+            this.$window.Track("WOL", "WOL");
+            console.log("Tracking WOL...");
         }
 
         public navigation2(): void {
-            this.$window.Track('WOL', 'WOL');
-            console.log('Tracking WOL...');
+            this.$window.Track("WOL", "WOL");
+            console.log("Tracking WOL...");
         }
     }
 

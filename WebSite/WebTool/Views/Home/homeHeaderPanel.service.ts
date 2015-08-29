@@ -10,17 +10,17 @@ module M {
 
         // methods
         public navigation1(): void {
-            this.$window.Track('Index', 'Home');
-            console.log('Tracking Home...');
+            this.$window.Track("Index", "Home");
+            console.log("Tracking Home...");
         }
 
         public navigation2(): void {
-            this.$window.Track('Index', 'Dashboard');
-            console.log('Tracking Dashboard...');
+            this.$window.Track("Index", "Dashboard");
+            console.log("Tracking Dashboard...");
         }
     }
 
     // init
-    angular.module('mainApp')
-        .service('headerPanelService', homeHeaderPanelService); 
+    angular.module("mainApp")
+        .service("headerPanelService", homeHeaderPanelService); 
 }

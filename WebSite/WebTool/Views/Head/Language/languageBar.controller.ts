@@ -16,5 +16,5 @@ module M {
 
     // init
     angular.module("mainApp")
-        .controller('languageBarController', languageBarController);
+        .controller("languageBarController", languageBarController);
 }
