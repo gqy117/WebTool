@@ -22,8 +22,8 @@ module M {
             this.sidebarService.LeftPanel_WOL();
         }
     }
-}
 
-// init
-angular.module('mainApp')
-    .controller('sidebarController', M.sidebarController);
+    // init
+    angular.module('mainApp')
+        .controller('sidebarController', sidebarController);
+}

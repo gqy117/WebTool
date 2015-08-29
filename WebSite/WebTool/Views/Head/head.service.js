@@ -22,7 +22,7 @@ var M;
         return headService;
     })();
     M.headService = headService;
+    // init
+    angular.module("mainApp")
+        .service("headService", headService);
 })(M || (M = {}));
-// init
-angular.module("mainApp")
-    .service("headService", M.headService);
