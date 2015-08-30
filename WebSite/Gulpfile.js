@@ -5,23 +5,15 @@ var gulp = require('gulp'),
     tslint = require('gulp-tslint'),
     jsPath = './WebTool/Views/**/*.js',
     tsPath = './WebTool/**/*.ts',
-    tsLintPath = './WebTool/Views/**/*.ts',
-    exitOnJshintError;
+    tsLintPath = './WebTool/Views/**/*.ts';
 
-// On Jshint Error
-exitOnJshintError = map(function(file, cb) {
-    if (!file.jshint.success) {
-        console.error('jshint failed');
-        process.exit(1);
-    }
-});
 
 // jshint
 gulp.task('jshint', function() {
     return gulp.src(jsPath)
         .pipe(jshint())
-        .pipe(jshint.reporter('default')
-            .pipe(exitOnJshintError));
+        .pipe(jshint.reporter('default'))
+    	.pipe(jshint.reporter('fail'));
 });
 
 // ts
@@ -41,10 +33,6 @@ gulp.task('tslint', function() {
     var tsResult = gulp.src(tsLintPath)
         .pipe(tslint())
         .pipe(tslint.report('prose'));
-
-    return tsResult.js.pipe(gulp.dest(function(f) {
-        return f.base;
-    }));
 });
 
 // watch

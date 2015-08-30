@@ -4,7 +4,7 @@
     export class homeService {
     }
 
-    // Init
+    // init
     angular.module("mainApp")
         .service("homeService", homeService);
 }

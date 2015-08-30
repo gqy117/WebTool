@@ -10,7 +10,11 @@
         public activePanel: activePanel;
 
         // constructor
-        constructor(private $window: WindowService, private wolService: wolService, private sidebarService: sidebarService, private myDataTableService: any) {
+        constructor(private $window: WindowService,
+            private wolService: wolService,
+            private sidebarService: sidebarService,
+            private myDataTableService: any) {
+
             this.activePanel = this.sidebarService.activePanel;
             this.activePanel.wol = true;
 
