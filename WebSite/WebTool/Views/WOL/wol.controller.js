@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var wolController = (function () {
         // constructor
         function wolController($window, wolService, sidebarService, myDataTableService) {
@@ -10,7 +10,7 @@ var M;
             this.myDataTableService = myDataTableService;
             this.activePanel = this.sidebarService.activePanel;
             this.activePanel.wol = true;
-            this.myDataTableService.createTable("#WOLTable", this.$window.App.baseUrl + 'Tool/WOLTable');
+            this.myDataTableService.createTable("#WOLTable", this.$window.App.baseUrl + "Tool/WOLTable");
         }
         // inject
         wolController.$inject = ["$window", "wolService", "sidebarService", "myDataTableService"];

@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class languageBarController {
         // inject
         static $inject = ["languageBarService"];
@@ -16,5 +16,5 @@ module M {
 
     // init
     angular.module("mainApp")
-        .controller('languageBarController', languageBarController);
+        .controller("languageBarController", languageBarController);
 }

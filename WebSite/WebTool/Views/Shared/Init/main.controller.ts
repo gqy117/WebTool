@@ -1,12 +1,13 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
+    import WindowService = angular.IWindowService;
 
-module M {
     export class mainController {
         // inject
         static $inject = ["$window", "uiModelService"];
 
         // constructor
-        constructor(private $window, private uiModelService: uiModelService) {
+        constructor(private $window: WindowService, private uiModelService: uiModelService) {
             angular.element(document).ready(() => {
                 $window.App.init();
                 uiModelService.init();
@@ -15,6 +16,6 @@ module M {
     }
 
     // init
-    angular.module('mainApp')
-        .controller('mainController', mainController);
+    angular.module("mainApp")
+        .controller("mainController", mainController);
 }

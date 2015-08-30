@@ -1,26 +1,27 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
+    import WindowService = angular.IWindowService;
 
-module M {
     export class homeHeaderPanelService implements IHeadPanelService {
         // inject
         static $inject = ["$window"];
 
         // constructor
-        constructor(private $window) { }
+        constructor(private $window: WindowService) { }
 
         // methods
         public navigation1(): void {
-            this.$window.Track('Index', 'Home');
-            console.log('Tracking Home...');
+            this.$window.Track("Index", "Home");
+            console.log("Tracking Home...");
         }
 
         public navigation2(): void {
-            this.$window.Track('Index', 'Dashboard');
-            console.log('Tracking Dashboard...');
+            this.$window.Track("Index", "Dashboard");
+            console.log("Tracking Dashboard...");
         }
     }
 
     // init
-    angular.module('mainApp')
-        .service('headerPanelService', homeHeaderPanelService); 
+    angular.module("mainApp")
+        .service("headerPanelService", homeHeaderPanelService);
 }
