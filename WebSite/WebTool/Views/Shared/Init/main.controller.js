@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var mainController = (function () {
         // constructor
         function mainController($window, uiModelService) {

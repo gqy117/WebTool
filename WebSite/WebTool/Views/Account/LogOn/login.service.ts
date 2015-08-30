@@ -1,4 +1,5 @@
 ﻿module M {
+    import AngularEvent = angular.IAngularEvent;
     "use strict";
 
     export class loginService {
@@ -14,7 +15,7 @@
             this.$window.jQuery("#FormLogin").submit();
         }
 
-        public formLogOnPasswordKeyup($event): void {
+        public formLogOnPasswordKeyup($event: AngularEvent): void {
             if ($event.keyCode === 13) {
                 this.formLogOnSubmit();
             }
