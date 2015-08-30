@@ -8,23 +8,27 @@ Main website.
 
 (1) Use **angular.js** as the javascript framework.
 
-(2) Use **JqueryDataTables** as table control.
+(2) Use **TypeScript** as a superset of javascript.
 
-(3) Use **Autofac** as **DI** framework.
+(3) Use **JqueryDataTables** as table control.
 
-(4) Use **bootstrap** as UI framework.
+(4) Use **Autofac** as **DI** framework.
 
-(5) Use **Code Analysis/ Fxcop** to prevent the high **Cyclomatic Complexity** or something like that.
+(5) Use **bootstrap** as UI framework.
 
-(6) Use **StyleCop** to keep codes clean.
+(6) Use **Code Analysis/ Fxcop** to prevent the high **Cyclomatic Complexity** or something like that.
 
-(7) Use **jsHint** to make javascript code clean and strong.
+(7) Use **StyleCop** to keep codes clean.
 
-(9) Use **Castle.Core** as **AOP** framework.
+(8) Use **jsHint** and **tsLint** to make javascript/TypeScript code clean and strong.
 
-(10) Use **Glimpse** to debug.
+(9) Use some **Node.js** plugin such as **grunt**/**gulp** to auto watch file changes.
 
-(11) Use **Google Analytics** to analyze users' behaviour.
+(10) Use **Castle.Core** as **AOP** framework.
+
+(11) Use **Glimpse** to debug.
+
+(12) Use **Google Analytics** to analyze users' behaviour.
 
 ### 2.Tests
 (1) BDD
