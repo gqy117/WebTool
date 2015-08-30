@@ -22,7 +22,7 @@
             }
         }
 
-        public signUpNow(): void{
+        public signUpNow(): void {
             this.$window.Track("LogOn", "SignUpNow");
             this.$window.location.href = this.$window.App.baseUrl + "Register/Index";
         }

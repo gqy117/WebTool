@@ -23,5 +23,5 @@
 
     // init
     angular.module("mainApp")
-        .service("headerPanelService", homeHeaderPanelService); 
+        .service("headerPanelService", homeHeaderPanelService);
 }
