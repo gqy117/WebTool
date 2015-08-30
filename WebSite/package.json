@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "gulp": "*",
+    "map-stream": "*",
     "gulp-jshint": "*",
     "gulp-typescript": "*"
   }
