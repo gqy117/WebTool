@@ -4,7 +4,7 @@
 
     export class wolHeaderPanelService implements IHeadPanelService {
         // inject
-        static inject = ["$window"];
+        static $inject = ["$window"];
 
         // constructor
         constructor(private $window: WindowService) { }

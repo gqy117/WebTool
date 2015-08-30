@@ -16,7 +16,7 @@ var M;
             console.log("Tracking WOL...");
         };
         // inject
-        wolHeaderPanelService.inject = ["$window"];
+        wolHeaderPanelService.$inject = ["$window"];
         return wolHeaderPanelService;
     })();
     M.wolHeaderPanelService = wolHeaderPanelService;
