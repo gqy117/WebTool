@@ -1,13 +1,14 @@
 ﻿module M {
-    import AngularEvent = angular.IAngularEvent;
     "use strict";
+    import AngularEvent = angular.IAngularEvent;
+    import WindowService = angular.IWindowService;
 
     export class loginService {
         // inject
         static $inject = ["$window"];
 
         // constructor
-        constructor(private $window) { }
+        constructor(private $window: WindowService) { }
 
         //  methods
         public formLogOnSubmit(): void {

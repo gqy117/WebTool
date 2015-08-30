@@ -8,7 +8,7 @@
     jQueryService.$inject = ["$window"];
 
 
-    function jQueryService($window) {
+    function jQueryService($window: angular.IWindowService) {
         return $window.jQuery;
     }
 }());
