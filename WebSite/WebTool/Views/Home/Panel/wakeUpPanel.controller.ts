@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class wakeUpPanelController implements  IWakeUpStatus {
         // inject
         static $inject = ["wakeUpPanelService"];
