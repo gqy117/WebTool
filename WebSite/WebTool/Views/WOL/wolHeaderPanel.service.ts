@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class wolHeaderPanelService implements IHeadPanelService {
         // inject
         static inject = ["$window"];

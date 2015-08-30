@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     import WindowService = angular.IWindowService;
 
     export class loginController {
