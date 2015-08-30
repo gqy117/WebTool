@@ -1,5 +1,6 @@
 ﻿module M {
     "use strict";
+    import WindowService = angular.IWindowService;
 
     export class sidebarService {
         // inject
@@ -9,7 +10,7 @@
         public activePanel: activePanel = new activePanel();
 
         // constructor
-        constructor(private $window) { }
+        constructor(private $window: WindowService) { }
 
         // methods
         public LeftPanel_Dashboard(): void {

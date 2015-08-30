@@ -1,12 +1,13 @@
 ﻿module M {
     "use strict";
+    import WindowService = angular.IWindowService;
 
     export class wolHeaderPanelService implements IHeadPanelService {
         // inject
         static inject = ["$window"];
 
         // constructor
-        constructor(private $window) { }
+        constructor(private $window: WindowService) { }
 
         // methods
         public navigation1(): void {
