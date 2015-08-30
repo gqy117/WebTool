@@ -1,3 +1,4 @@
+/* tslint: disable */ 
 // Type definitions for Angular JS 1.4+
 // Project: http://angularjs.org
 // Definitions by: Diego Vilar <http://github.com/diegovilar>
@@ -701,6 +702,7 @@ declare module angular {
          * true if preventDefault was called.
          */
         defaultPrevented: boolean;
+        keyCode: number;
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -709,6 +711,9 @@ declare module angular {
     ///////////////////////////////////////////////////////////////////////////
     interface IWindowService extends Window {
         [key: string]: any;
+        App: any;
+        Track(logon: string, logon1: string): void;
+        jQuery: any;
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -1287,6 +1292,7 @@ declare module angular {
          * @param config Optional configuration object
          */
         post<T>(url: string, data: any, config?: IRequestShortcutConfig): IHttpPromise<T>;
+        post<T>(url: string): IHttpPromise<T>;
 
         /**
          * Shortcut method to perform PUT request.

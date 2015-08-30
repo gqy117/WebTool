@@ -1,12 +1,13 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
+    import WindowService = angular.IWindowService;
 
-module M {
     export class headService {
         // inject
         static $inject = ["$window"];
 
         // constructor
-        constructor(private $window) { }
+        constructor(private $window: WindowService) { }
 
         // methods
         public brand(): void {

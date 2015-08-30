@@ -1,20 +1,22 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
+    import WindowService = angular.IWindowService;
+    import AngularEvent = angular.IAngularEvent;
 
-module M {
     export class registerService {
         // inject
-        static $inject = ['$window'];
+        static $inject = ["$window"];
 
         // constructor
-        constructor(private $window) { }
+        constructor(private $window: WindowService) { }
 
         // methods
         public submit(): void {
-            this.$window.jQuery('#FormRegister').submit();
-            this.$window.Track('Register', 'Register');
+            this.$window.jQuery("#FormRegister").submit();
+            this.$window.Track("Register", "Register");
         }
 
-        public formRegister_Password_keyup($event): void {
+        public formRegister_Password_keyup($event: AngularEvent): void {
             if ($event.keyCode === 13) {
                 this.submit();
             }
@@ -22,6 +24,6 @@ module M {
     }
 
     // init
-    angular.module('mainApp')
-        .service('registerService', registerService);
+    angular.module("mainApp")
+        .service("registerService", registerService);
 }

@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var homeController = (function () {
         // constructor
         function homeController(homeService, sidebarService) {

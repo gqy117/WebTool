@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var registerService = (function () {
         // constructor
         function registerService($window) {
@@ -8,8 +8,8 @@ var M;
         }
         // methods
         registerService.prototype.submit = function () {
-            this.$window.jQuery('#FormRegister').submit();
-            this.$window.Track('Register', 'Register');
+            this.$window.jQuery("#FormRegister").submit();
+            this.$window.Track("Register", "Register");
         };
         registerService.prototype.formRegister_Password_keyup = function ($event) {
             if ($event.keyCode === 13) {
@@ -17,11 +17,11 @@ var M;
             }
         };
         // inject
-        registerService.$inject = ['$window'];
+        registerService.$inject = ["$window"];
         return registerService;
     })();
     M.registerService = registerService;
     // init
-    angular.module('mainApp')
-        .service('registerService', registerService);
+    angular.module("mainApp")
+        .service("registerService", registerService);
 })(M || (M = {}));

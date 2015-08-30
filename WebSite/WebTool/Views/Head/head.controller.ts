@@ -1,12 +1,12 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class headController {
         // inject
         static $inject = ["headService"];
 
         // constructor
-        constructor(private  headService: headService) { }
+        constructor(private headService: headService) { }
 
         // methods
         public brand_Click(): void {
@@ -21,7 +21,7 @@ module M {
             this.headService.logOut();
         }
     }
-    
+
     // init
     angular.module("mainApp")
         .controller("headController", headController);

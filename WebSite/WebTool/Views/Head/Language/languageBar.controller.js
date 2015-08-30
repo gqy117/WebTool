@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var languageBarController = (function () {
         // constructor
         function languageBarController(languageBarService) {
@@ -17,5 +17,5 @@ var M;
     M.languageBarController = languageBarController;
     // init
     angular.module("mainApp")
-        .controller('languageBarController', languageBarController);
+        .controller("languageBarController", languageBarController);
 })(M || (M = {}));

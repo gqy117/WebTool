@@ -1,12 +1,14 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
+    import WindowService = angular.IWindowService;
+    import HttpService = angular.IHttpService;
 
-module M {
     export class wakeUpPanelService {
         // inject
         static $inject = ["$window", "$http"];
 
         // constructor
-        constructor(private $window, private $http) { }
+        constructor(private $window: WindowService, private $http: HttpService) { }
 
         // methods
         public wakeUp(wakeUpStatus: IWakeUpStatus): void {
