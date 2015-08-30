@@ -1,10 +1,19 @@
 var gulp = require('gulp'),
+    jshint = require('gulp-jshint'),
     ts = require('gulp-typescript'),
-    path = './WebTool/**/*.ts';
+    jsPath = './WebTool/Views/**/*.js',
+tsPath = './WebTool/**/*.ts';
+
+// jshint
+gulp.task('jshint', function() {
+    return gulp.src(jsPath)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
+});
 
 // ts
 gulp.task('ts', function() {
-    var tsResult = gulp.src(path)
+    var tsResult = gulp.src(tsPath)
         .pipe(ts({
             noImplicitAny: true
         }));
@@ -14,9 +23,11 @@ gulp.task('ts', function() {
     }));
 });
 
-gulp.task('watch', function(){
-	gulp.watch(path, ['ts']);
+// watch
+gulp.task('watch', function() {
+	gulp.watch(jsPath, ['jshint']);
+    gulp.watch(tsPath, ['ts']);
 });
 
 // init
-gulp.task('default', ['ts', 'watch']);
+gulp.task('default', ['jshint', 'ts', 'watch']);
