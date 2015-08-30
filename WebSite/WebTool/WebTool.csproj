@@ -747,6 +747,9 @@
     <Content Include="Views\Home\Panel\wakeUpPanel.service.js">
       <DependentUpon>wakeUpPanel.service.ts</DependentUpon>
     </Content>
+    <Content Include="Views\Shared\HeaderPanel\headPanel.service.js">
+      <DependentUpon>headPanel.service.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Shared\Init\main.controller.js">
       <DependentUpon>main.controller.ts</DependentUpon>
     </Content>

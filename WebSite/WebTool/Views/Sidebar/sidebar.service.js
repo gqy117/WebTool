@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var sidebarService = (function () {
         // constructor
         function sidebarService($window) {

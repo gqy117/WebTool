@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var languageBarController = (function () {
         // constructor
         function languageBarController(languageBarService) {
