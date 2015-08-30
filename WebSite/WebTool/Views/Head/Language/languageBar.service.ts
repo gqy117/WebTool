@@ -1,12 +1,13 @@
 ﻿module M {
     "use strict";
-
+    import WindowService = angular.IWindowService;
+    
     export class languageBarService {
         // inject
         static $inject = ["$window"];
 
         // constructor
-        constructor(private $window) { }
+        constructor(private $window: WindowService) { }
 
         // methods
         public changeLanguage(languageCode: string): void {
