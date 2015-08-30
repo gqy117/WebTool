@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var mainController = (function () {
         // constructor
         function mainController($window, uiModelService) {
@@ -17,6 +17,6 @@ var M;
     })();
     M.mainController = mainController;
     // init
-    angular.module('mainApp')
-        .controller('mainController', mainController);
+    angular.module("mainApp")
+        .controller("mainController", mainController);
 })(M || (M = {}));

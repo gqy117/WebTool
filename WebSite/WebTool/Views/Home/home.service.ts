@@ -1,10 +1,10 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class homeService {
     }
 
-    // Init
+    // init
     angular.module("mainApp")
         .service("homeService", homeService);
 }

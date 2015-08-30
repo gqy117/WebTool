@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class headerPanelController {
         // inject
         static $inject = ["headerPanelService"];
@@ -19,6 +19,6 @@ module M {
     }
 
     // init
-    angular.module('mainApp')
-        .service('headerPanelController', headerPanelController);
+    angular.module("mainApp")
+        .service("headerPanelController", headerPanelController);
 }

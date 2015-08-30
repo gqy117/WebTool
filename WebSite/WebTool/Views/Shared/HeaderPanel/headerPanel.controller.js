@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var headerPanelController = (function () {
         // constructor
         function headerPanelController(headerPanelService) {
@@ -19,6 +19,6 @@ var M;
     })();
     M.headerPanelController = headerPanelController;
     // init
-    angular.module('mainApp')
-        .service('headerPanelController', headerPanelController);
+    angular.module("mainApp")
+        .service("headerPanelController", headerPanelController);
 })(M || (M = {}));

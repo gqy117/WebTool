@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var wolHeaderPanelService = (function () {
         // constructor
         function wolHeaderPanelService($window) {
@@ -8,12 +8,12 @@ var M;
         }
         // methods
         wolHeaderPanelService.prototype.navigation1 = function () {
-            this.$window.Track('WOL', 'WOL');
-            console.log('Tracking WOL...');
+            this.$window.Track("WOL", "WOL");
+            console.log("Tracking WOL...");
         };
         wolHeaderPanelService.prototype.navigation2 = function () {
-            this.$window.Track('WOL', 'WOL');
-            console.log('Tracking WOL...');
+            this.$window.Track("WOL", "WOL");
+            console.log("Tracking WOL...");
         };
         // inject
         wolHeaderPanelService.inject = ["$window"];

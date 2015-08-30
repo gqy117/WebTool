@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var sidebarService = (function () {
         // constructor
         function sidebarService($window) {
@@ -10,12 +10,12 @@ var M;
         }
         // methods
         sidebarService.prototype.LeftPanel_Dashboard = function () {
-            this.$window.Track('Index', 'LeftPanel_Dashboard');
-            this.$window.location.href = this.$window.App.baseUrl + 'Home/Index';
+            this.$window.Track("Index", "LeftPanel_Dashboard");
+            this.$window.location.href = this.$window.App.baseUrl + "Home/Index";
         };
         sidebarService.prototype.LeftPanel_WOL = function () {
-            this.$window.Track('Index', 'LeftPanel_WOL');
-            this.$window.location.href = this.$window.App.baseUrl + 'Tool/WOL';
+            this.$window.Track("Index", "LeftPanel_WOL");
+            this.$window.location.href = this.$window.App.baseUrl + "Tool/WOL";
         };
         // inject
         sidebarService.$inject = ["$window"];
@@ -23,6 +23,6 @@ var M;
     })();
     M.sidebarService = sidebarService;
     // init
-    angular.module('mainApp')
-        .service('sidebarService', sidebarService);
+    angular.module("mainApp")
+        .service("sidebarService", sidebarService);
 })(M || (M = {}));

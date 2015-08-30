@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var wakeUpPanelController = (function () {
         // constructor
         function wakeUpPanelController(wakeUpPanelService) {
@@ -28,5 +28,5 @@ var M;
     M.wakeUpPanelController = wakeUpPanelController;
     // init
     angular.module("mainApp")
-        .controller('wakeUpPanelController', wakeUpPanelController);
+        .controller("wakeUpPanelController", wakeUpPanelController);
 })(M || (M = {}));

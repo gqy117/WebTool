@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var homeHeaderPanelService = (function () {
         // constructor
         function homeHeaderPanelService($window) {
@@ -8,12 +8,12 @@ var M;
         }
         // methods
         homeHeaderPanelService.prototype.navigation1 = function () {
-            this.$window.Track('Index', 'Home');
-            console.log('Tracking Home...');
+            this.$window.Track("Index", "Home");
+            console.log("Tracking Home...");
         };
         homeHeaderPanelService.prototype.navigation2 = function () {
-            this.$window.Track('Index', 'Dashboard');
-            console.log('Tracking Dashboard...');
+            this.$window.Track("Index", "Dashboard");
+            console.log("Tracking Dashboard...");
         };
         // inject
         homeHeaderPanelService.$inject = ["$window"];
@@ -21,6 +21,6 @@ var M;
     })();
     M.homeHeaderPanelService = homeHeaderPanelService;
     // init
-    angular.module('mainApp')
-        .service('headerPanelService', homeHeaderPanelService);
+    angular.module("mainApp")
+        .service("headerPanelService", homeHeaderPanelService);
 })(M || (M = {}));

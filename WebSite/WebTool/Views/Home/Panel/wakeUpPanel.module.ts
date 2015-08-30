@@ -1,7 +1,6 @@
-﻿"use strict";
-
- module M {
-     export interface IWakeUpStatus {
-         isShowAlertWakeUpSuccess: boolean;
-     }
- }
+﻿/* tslint:disable */
+module M {
+    export interface IWakeUpStatus {
+        isShowAlertWakeUpSuccess: boolean;
+    }
+}
