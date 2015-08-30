@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var registerService = (function () {
         // constructor
         function registerService($window) {
