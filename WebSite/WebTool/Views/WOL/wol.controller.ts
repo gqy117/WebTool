@@ -1,5 +1,6 @@
 ﻿module M {
     "use strict";
+    import WindowService = angular.IWindowService;
 
     export class wolController {
         // inject
@@ -9,7 +10,7 @@
         public activePanel: activePanel;
 
         // constructor
-        constructor(private $window, private wolService: wolService, private sidebarService: sidebarService, private myDataTableService) {
+        constructor(private $window: WindowService, private wolService: wolService, private sidebarService: sidebarService, private myDataTableService: any) {
             this.activePanel = this.sidebarService.activePanel;
             this.activePanel.wol = true;
 
