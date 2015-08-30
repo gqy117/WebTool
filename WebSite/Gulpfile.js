@@ -2,8 +2,10 @@ var gulp = require('gulp'),
     map = require('map-stream'),
     jshint = require('gulp-jshint'),
     ts = require('gulp-typescript'),
+    tslint = require('gulp-tslint'),
     jsPath = './WebTool/Views/**/*.js',
     tsPath = './WebTool/**/*.ts',
+    tsLintPath = './WebTool/Views/**/*.ts',
     exitOnJshintError;
 
 // On Jshint Error
@@ -34,11 +36,23 @@ gulp.task('ts', function() {
     }));
 });
 
+// tsLint
+gulp.task('tslint', function() {
+    var tsResult = gulp.src(tsLintPath)
+        .pipe(tslint())
+        .pipe(tslint.report('prose'));
+
+    return tsResult.js.pipe(gulp.dest(function(f) {
+        return f.base;
+    }));
+});
+
 // watch
 gulp.task('watch', function() {
     gulp.watch(jsPath, ['jshint']);
     gulp.watch(tsPath, ['ts']);
+    gulp.watch(tsPath, ['tslint']);
 });
 
 // init
-gulp.task('default', ['jshint', 'ts']);
+gulp.task('default', ['jshint', 'ts', 'tslint']);

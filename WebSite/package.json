@@ -6,6 +6,7 @@
     "gulp": "*",
     "map-stream": "*",
     "gulp-jshint": "*",
-    "gulp-typescript": "*"
+    "gulp-typescript": "*",
+    "gulp-tslint": "*"
   }
 }
