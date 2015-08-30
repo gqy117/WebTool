@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var sidebarController = (function () {
         // constructor
         function sidebarController(sidebarService) {
@@ -20,6 +20,6 @@ var M;
     })();
     M.sidebarController = sidebarController;
     // init
-    angular.module('mainApp')
-        .controller('sidebarController', sidebarController);
+    angular.module("mainApp")
+        .controller("sidebarController", sidebarController);
 })(M || (M = {}));

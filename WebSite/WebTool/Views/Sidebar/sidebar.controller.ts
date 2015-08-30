@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class sidebarController {
         // inject
         static $inject = ["sidebarService"];
@@ -24,6 +24,6 @@ module M {
     }
 
     // init
-    angular.module('mainApp')
-        .controller('sidebarController', sidebarController);
+    angular.module("mainApp")
+        .controller("sidebarController", sidebarController);
 }

@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class wakeUpPanelController implements  IWakeUpStatus {
         // inject
         static $inject = ["wakeUpPanelService"];
@@ -33,5 +33,5 @@ module M {
 
     // init
     angular.module("mainApp")
-        .controller('wakeUpPanelController', wakeUpPanelController);
+        .controller("wakeUpPanelController", wakeUpPanelController);
 }
