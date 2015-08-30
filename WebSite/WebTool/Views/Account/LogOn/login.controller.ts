@@ -2,6 +2,7 @@
     "use strict";
 
     import WindowService = angular.IWindowService;
+    import AngularEvent = angular.IAngularEvent;
 
     export class loginController {
         // inject
@@ -19,7 +20,7 @@
             this.loginService.formLogOnSubmit();
         }
 
-        public formLogOnPasswordKeyup($event): void {
+        public formLogOnPasswordKeyup($event: AngularEvent): void {
             this.loginService.formLogOnPasswordKeyup($event);
         }
 

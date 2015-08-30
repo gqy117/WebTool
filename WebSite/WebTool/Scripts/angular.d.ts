@@ -702,6 +702,7 @@ declare module angular {
          * true if preventDefault was called.
          */
         defaultPrevented: boolean;
+        keyCode;
     }
 
     ///////////////////////////////////////////////////////////////////////////
