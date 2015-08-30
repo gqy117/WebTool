@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var homeService = (function () {
         function homeService() {
         }

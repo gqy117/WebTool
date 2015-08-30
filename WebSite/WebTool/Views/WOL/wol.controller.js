@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var wolController = (function () {
         // constructor
         function wolController($window, wolService, sidebarService, myDataTableService) {

@@ -1,6 +1,6 @@
-"use strict";
 var M;
 (function (M) {
+    "use strict";
     var uiModelService = (function () {
         function uiModelService() {
         }

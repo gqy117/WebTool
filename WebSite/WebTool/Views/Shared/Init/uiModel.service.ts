@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿module M {
+    "use strict";
 
-module M {
     export class uiModelService{
         // methods
         public init(): void {
