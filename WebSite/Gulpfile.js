@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    eol = require('gulp-eol'),
     map = require('map-stream'),
     jshint = require('gulp-jshint'),
     ts = require('gulp-typescript'),
@@ -13,7 +14,7 @@ gulp.task('jshint', function() {
     return gulp.src(jsPath)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
-    	.pipe(jshint.reporter('fail'));
+        .pipe(jshint.reporter('fail'));
 });
 
 // ts
@@ -23,9 +24,11 @@ gulp.task('ts', function() {
             noImplicitAny: true
         }));
 
-    return tsResult.js.pipe(gulp.dest(function(f) {
-        return f.base;
-    }));
+    return tsResult.js
+        .pipe(eol())
+        .pipe(gulp.dest(function(f) {
+            return f.base;
+        }));
 });
 
 // tsLint
