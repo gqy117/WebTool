@@ -5,14 +5,14 @@
 
     export class registerService {
         // inject
-        static $inject = ["$window"];
+        static $inject = ["$window", "jQuery"];
 
         // constructor
-        constructor(private $window: WindowService) { }
+        constructor(private $window: WindowService, private jQuery: JQueryStatic) { }
 
         // methods
         public submit(): void {
-            this.$window.jQuery("#FormRegister").submit();
+            this.jQuery("#FormRegister").submit();
             this.$window.Track("Register", "Register");
         }
 
