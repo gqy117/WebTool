@@ -5,15 +5,15 @@
 
     export class loginService {
         // inject
-        static $inject = ["$window"];
+        static $inject = ["$window", "jQuery"];
 
         // constructor
-        constructor(private $window: WindowService) { }
+        constructor(private $window: WindowService, private jQuery: JQueryStatic) { }
 
         //  methods
         public formLogOnSubmit(): void {
             this.$window.Track("LogOn", "LogOn");
-            this.$window.jQuery("#FormLogin").submit();
+            this.jQuery("#FormLogin").submit();
         }
 
         public formLogOnPasswordKeyup($event: AngularEvent): void {

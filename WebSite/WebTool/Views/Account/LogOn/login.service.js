@@ -3,13 +3,14 @@ var M;
     "use strict";
     var loginService = (function () {
         // constructor
-        function loginService($window) {
+        function loginService($window, jQuery) {
             this.$window = $window;
+            this.jQuery = jQuery;
         }
         //  methods
         loginService.prototype.formLogOnSubmit = function () {
             this.$window.Track("LogOn", "LogOn");
-            this.$window.jQuery("#FormLogin").submit();
+            this.jQuery("#FormLogin").submit();
         };
         loginService.prototype.formLogOnPasswordKeyup = function ($event) {
             if ($event.keyCode === 13) {
@@ -21,7 +22,7 @@ var M;
             this.$window.location.href = this.$window.App.baseUrl + "Register/Index";
         };
         // inject
-        loginService.$inject = ["$window"];
+        loginService.$inject = ["$window", "jQuery"];
         return loginService;
     })();
     M.loginService = loginService;
