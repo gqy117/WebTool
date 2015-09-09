@@ -1,4 +1,6 @@
 ﻿describe("languageBar.service.test", function () {
+    "use strict";
+
     var service;
 
     beforeEach(inject(function (languageBarService) {
