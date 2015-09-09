@@ -1,4 +1,6 @@
 ﻿describe("wakeUpPanel.service.test", function () {
+    "use strict";
+
     var service,
         wakeUpStatus;
 
