@@ -1,4 +1,6 @@
 ﻿describe("head.service.test", function () {
+    "use strict";
+
     var service;
 
     // setup

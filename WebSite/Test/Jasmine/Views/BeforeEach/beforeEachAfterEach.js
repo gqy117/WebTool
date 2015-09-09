@@ -1,4 +1,6 @@
 ﻿(function () {
+    "use strict";
+
     // mainApp
     beforeEach(module('mainApp'));
 
