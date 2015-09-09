@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     ts = require('gulp-typescript'),
     tslint = require('gulp-tslint'),
-    jsPath = './WebTool/Views/**/*.js',
+    jsPath = ['./WebTool/Views/**/*.js', './Test/Jasmine/Views/**/*.js'],
     tsPath = './WebTool/**/*.ts',
     tsLintPath = './WebTool/Views/**/*.ts';
 
