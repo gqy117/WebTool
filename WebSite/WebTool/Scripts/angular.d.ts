@@ -714,6 +714,7 @@ declare module angular {
         App: any;
         Track(logon: string, logon1: string): void;
         jQuery: any;
+        _gaq: any;
     }
 
     ///////////////////////////////////////////////////////////////////////////

@@ -19,7 +19,7 @@
     })();
 
 
-    var _gaq = _gaq || [];
+    window._gaq = window._gaq || [];
     _gaq.push(['_setAccount', GA_AccountID]);
     _gaq.push(['_trackPageview']);
 
@@ -29,9 +29,5 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 
-
-    window.Track = function Track(Category, Action) {
-        _gaq.push(['_trackEvent', Category, Action]);
-    }
 })();
 </script>

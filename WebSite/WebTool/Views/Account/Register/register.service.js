@@ -3,14 +3,15 @@ var M;
     "use strict";
     var registerService = (function () {
         // constructor
-        function registerService($window, jQuery) {
+        function registerService($window, jQuery, gaService) {
             this.$window = $window;
             this.jQuery = jQuery;
+            this.gaService = gaService;
         }
         // methods
         registerService.prototype.submit = function () {
             this.jQuery("#FormRegister").submit();
-            this.$window.Track("Register", "Register");
+            this.gaService.Track("Register", "Register");
         };
         registerService.prototype.formRegister_Password_keyup = function ($event) {
             if ($event.keyCode === 13) {
@@ -18,7 +19,7 @@ var M;
             }
         };
         // inject
-        registerService.$inject = ["$window", "jQuery"];
+        registerService.$inject = ["$window", "jQuery", "gaService"];
         return registerService;
     })();
     M.registerService = registerService;
