@@ -1,22 +1,21 @@
 ﻿module M {
     "use strict";
-    import WindowService = angular.IWindowService;
 
     export class wolHeaderPanelService implements IHeadPanelService {
         // inject
-        static $inject = ["$window"];
+        static $inject = ["gaService"];
 
         // constructor
-        constructor(private $window: WindowService) { }
+        constructor(private gaService: gaService) { }
 
         // methods
         public navigation1(): void {
-            this.$window.Track("WOL", "WOL");
+            this.gaService.Track("WOL", "WOL");
             console.log("Tracking WOL...");
         }
 
         public navigation2(): void {
-            this.$window.Track("WOL", "WOL");
+            this.gaService.Track("WOL", "WOL");
             console.log("Tracking WOL...");
         }
     }

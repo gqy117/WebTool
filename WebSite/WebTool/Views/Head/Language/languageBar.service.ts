@@ -4,14 +4,14 @@
 
     export class languageBarService {
         // inject
-        static $inject = ["$window", "jQuery"];
+        static $inject = ["$window", "jQuery", "gaService"];
 
         // constructor
-        constructor(private $window: WindowService, private jQuery: JQueryStatic) { }
+        constructor(private $window: WindowService, private jQuery: JQueryStatic, private gaService: gaService) { }
 
         // methods
         public changeLanguage(languageCode: string): void {
-            this.$window.Track("IndexHead", "ChangeLanguage");
+            this.gaService.Track("IndexHead", "ChangeLanguage");
             console.log("Tracking ChangeLanguage...");
 
             this.jQuery.cookie("WebToolLanguage", languageCode, {
