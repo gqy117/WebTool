@@ -5,15 +5,15 @@
 
     export class registerService {
         // inject
-        static $inject = ["$window", "jQuery"];
+        static $inject = ["$window", "jQuery", "gaService"];
 
         // constructor
-        constructor(private $window: WindowService, private jQuery: JQueryStatic) { }
+        constructor(private $window: WindowService, private jQuery: JQueryStatic, private gaService: gaService) { }
 
         // methods
         public submit(): void {
             this.jQuery("#FormRegister").submit();
-            this.$window.Track("Register", "Register");
+            this.gaService.Track("Register", "Register");
         }
 
         public formRegister_Password_keyup($event: AngularEvent): void {
