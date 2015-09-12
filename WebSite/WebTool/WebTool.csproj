@@ -756,6 +756,9 @@
     <Content Include="Views\Shared\Init\uiModel.service.js">
       <DependentUpon>uiModel.service.ts</DependentUpon>
     </Content>
+    <Content Include="Views\Shared\Library\ga.service.js">
+      <DependentUpon>ga.service.ts</DependentUpon>
+    </Content>
     <Content Include="Views\Shared\Library\jQuery.service.js">
       <DependentUpon>jQuery.service.ts</DependentUpon>
     </Content>
@@ -785,9 +788,6 @@
     </Content>
     <Content Include="Views\WOL\wol.service.js">
       <DependentUpon>wol.service.ts</DependentUpon>
-    </Content>
-    <Content Include="WebTool.Publish.xml">
-      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
