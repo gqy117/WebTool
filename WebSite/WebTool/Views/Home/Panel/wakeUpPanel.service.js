@@ -3,13 +3,14 @@ var M;
     "use strict";
     var wakeUpPanelService = (function () {
         // constructor
-        function wakeUpPanelService($window, $http) {
+        function wakeUpPanelService($window, $http, gaService) {
             this.$window = $window;
             this.$http = $http;
+            this.gaService = gaService;
         }
         // methods
         wakeUpPanelService.prototype.wakeUp = function (wakeUpStatus) {
-            this.$window.Track("Index", "Panel3_ViewMore");
+            this.gaService.Track("Index", "Panel3_ViewMore");
             this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
                 .then(function () {
                 wakeUpStatus.isShowAlertWakeUpSuccess = true;
@@ -22,7 +23,7 @@ var M;
             wakeUpStatus.isShowAlertWakeUpSuccess = false;
         };
         // inject
-        wakeUpPanelService.$inject = ["$window", "$http"];
+        wakeUpPanelService.$inject = ["$window", "$http", "gaService"];
         return wakeUpPanelService;
     })();
     M.wakeUpPanelService = wakeUpPanelService;

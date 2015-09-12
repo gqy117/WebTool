@@ -4,22 +4,22 @@
 
     export class headService {
         // inject
-        static $inject = ["$window"];
+        static $inject = ["$window", "gaService"];
 
         // constructor
-        constructor(private $window: WindowService) { }
+        constructor(private $window: WindowService, private gaService: gaService) { }
 
         // methods
         public brand(): void {
-            this.$window.Track("IndexHead", "brand");
+            this.gaService.Track("IndexHead", "brand");
         }
 
         public myProfile(): void {
-            this.$window.Track("IndexHead", "MyProfile");
+            this.gaService.Track("IndexHead", "MyProfile");
         }
 
         public logOut(): void {
-            this.$window.Track("IndexHead", "LogOut");
+            this.gaService.Track("IndexHead", "LogOut");
             this.$window.location.href = this.$window.App.baseUrl + "Account/Login";
         }
     }
