@@ -3,20 +3,20 @@ var M;
     "use strict";
     var homeHeaderPanelService = (function () {
         // constructor
-        function homeHeaderPanelService($window) {
-            this.$window = $window;
+        function homeHeaderPanelService(gaService) {
+            this.gaService = gaService;
         }
         // methods
         homeHeaderPanelService.prototype.navigation1 = function () {
-            this.$window.Track("Index", "Home");
+            this.gaService.Track("Index", "Home");
             console.log("Tracking Home...");
         };
         homeHeaderPanelService.prototype.navigation2 = function () {
-            this.$window.Track("Index", "Dashboard");
+            this.gaService.Track("Index", "Dashboard");
             console.log("Tracking Dashboard...");
         };
         // inject
-        homeHeaderPanelService.$inject = ["$window"];
+        homeHeaderPanelService.$inject = ["gaService"];
         return homeHeaderPanelService;
     })();
     M.homeHeaderPanelService = homeHeaderPanelService;

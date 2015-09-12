@@ -4,22 +4,22 @@
 
     export class sidebarService {
         // inject
-        static $inject = ["$window"];
+        static $inject = ["$window", "gaService"];
 
         // properties
         public activePanel: activePanel = new activePanel();
 
         // constructor
-        constructor(private $window: WindowService) { }
+        constructor(private $window: WindowService, private gaService: gaService) { }
 
         // methods
         public LeftPanel_Dashboard(): void {
-            this.$window.Track("Index", "LeftPanel_Dashboard");
+            this.gaService.Track("Index", "LeftPanel_Dashboard");
             this.$window.location.href = this.$window.App.baseUrl + "Home/Index";
         }
 
         public LeftPanel_WOL(): void {
-            this.$window.Track("Index", "LeftPanel_WOL");
+            this.gaService.Track("Index", "LeftPanel_WOL");
             this.$window.location.href = this.$window.App.baseUrl + "Tool/WOL";
         }
     }
