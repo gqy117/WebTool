@@ -3,22 +3,23 @@ var M;
     "use strict";
     var headService = (function () {
         // constructor
-        function headService($window) {
+        function headService($window, gaService) {
             this.$window = $window;
+            this.gaService = gaService;
         }
         // methods
         headService.prototype.brand = function () {
-            this.$window.Track("IndexHead", "brand");
+            this.gaService.Track("IndexHead", "brand");
         };
         headService.prototype.myProfile = function () {
-            this.$window.Track("IndexHead", "MyProfile");
+            this.gaService.Track("IndexHead", "MyProfile");
         };
         headService.prototype.logOut = function () {
-            this.$window.Track("IndexHead", "LogOut");
+            this.gaService.Track("IndexHead", "LogOut");
             this.$window.location.href = this.$window.App.baseUrl + "Account/Login";
         };
         // inject
-        headService.$inject = ["$window"];
+        headService.$inject = ["$window", "gaService"];
         return headService;
     })();
     M.headService = headService;

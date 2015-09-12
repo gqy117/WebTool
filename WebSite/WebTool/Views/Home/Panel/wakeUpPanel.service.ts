@@ -5,14 +5,14 @@
 
     export class wakeUpPanelService {
         // inject
-        static $inject = ["$window", "$http"];
+        static $inject = ["$window", "$http", "gaService"];
 
         // constructor
-        constructor(private $window: WindowService, private $http: HttpService) { }
+        constructor(private $window: WindowService, private $http: HttpService, private gaService: gaService) { }
 
         // methods
         public wakeUp(wakeUpStatus: IWakeUpStatus): void {
-            this.$window.Track("Index", "Panel3_ViewMore");
+            this.gaService.Track("Index", "Panel3_ViewMore");
 
             this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
                 .then(() => {
