@@ -17,7 +17,7 @@
 
         $httpBackend.flush();
         expect(wakeUpStatus.isShowAlertWakeUpSuccess).toEqual(true);
-        expect($window.Track).toHaveBeenCalled();
+        expect(service.gaService.Track).toHaveBeenCalled();
     });
 
     it("showSuccessMessage() should set isShowAlertWakeUpSuccess = true", function () {
