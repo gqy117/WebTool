@@ -12,12 +12,12 @@
     it("navigation1() should call 'Track'", inject(function () {
         service.navigation1();
 
-        expect($window.Track).toHaveBeenCalled();
+        expect(service.gaService.Track).toHaveBeenCalled();
     }));
 
     it("navigation2() hould call 'Track'", inject(function () {
         service.navigation2();
 
-        expect($window.Track).toHaveBeenCalled();
+        expect(service.gaService.Track).toHaveBeenCalled();
     }));
 });

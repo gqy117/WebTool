@@ -5,14 +5,14 @@
 
     export class loginService {
         // inject
-        static $inject = ["$window", "jQuery"];
+        static $inject = ["$window", "jQuery", "gaService"];
 
         // constructor
-        constructor(private $window: WindowService, private jQuery: JQueryStatic) { }
+        constructor(private $window: WindowService, private jQuery: JQueryStatic, private gaService: gaService) { }
 
         //  methods
         public formLogOnSubmit(): void {
-            this.$window.Track("LogOn", "LogOn");
+            this.gaService.Track("LogOn", "LogOn");
             this.jQuery("#FormLogin").submit();
         }
 
@@ -23,7 +23,7 @@
         }
 
         public signUpNow(): void {
-            this.$window.Track("LogOn", "SignUpNow");
+            this.gaService.Track("LogOn", "SignUpNow");
             this.$window.location.href = this.$window.App.baseUrl + "Register/Index";
         }
     }

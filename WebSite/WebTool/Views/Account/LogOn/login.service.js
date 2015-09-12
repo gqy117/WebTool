@@ -3,13 +3,14 @@ var M;
     "use strict";
     var loginService = (function () {
         // constructor
-        function loginService($window, jQuery) {
+        function loginService($window, jQuery, gaService) {
             this.$window = $window;
             this.jQuery = jQuery;
+            this.gaService = gaService;
         }
         //  methods
         loginService.prototype.formLogOnSubmit = function () {
-            this.$window.Track("LogOn", "LogOn");
+            this.gaService.Track("LogOn", "LogOn");
             this.jQuery("#FormLogin").submit();
         };
         loginService.prototype.formLogOnPasswordKeyup = function ($event) {
@@ -18,11 +19,11 @@ var M;
             }
         };
         loginService.prototype.signUpNow = function () {
-            this.$window.Track("LogOn", "SignUpNow");
+            this.gaService.Track("LogOn", "SignUpNow");
             this.$window.location.href = this.$window.App.baseUrl + "Register/Index";
         };
         // inject
-        loginService.$inject = ["$window", "jQuery"];
+        loginService.$inject = ["$window", "jQuery", "gaService"];
         return loginService;
     })();
     M.loginService = loginService;
