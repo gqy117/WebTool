@@ -44,7 +44,7 @@
 
         public bool IsLogOn()
         {
-            this.SetMasterCookie();
+            //// this.SetMasterCookie();
             bool res = (Request.Cookies[ConstParameter.WebToolUserName] == null) ? false : true;
 
             return res;
@@ -80,11 +80,11 @@
 
         #endregion
 
-        private void SetMasterCookie()
-        {
-            var masterCookie = new HttpCookie(ConstParameter.WebToolUserName, "Pn8YTV5phgjk62xMg9xxhw==");
-            Request.Cookies.Set(masterCookie);
-        }
+        ////private void SetMasterCookie()
+        ////{
+        ////    var masterCookie = new HttpCookie(ConstParameter.WebToolUserName, "Pn8YTV5phgjk62xMg9xxhw==");
+        ////    Request.Cookies.Set(masterCookie);
+        ////}
 
         #endregion
     }
