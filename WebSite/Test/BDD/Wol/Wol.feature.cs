@@ -74,12 +74,11 @@ namespace BDD.Wol
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 7
-testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
-testRunner.And("I open the page \'~/Tool/WOL\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
-testRunner.Then("the result of the element \'#WOLTable tbody tr:nth-child(1)\' should be the same as" +
-                    " the html \'Wol\\WolTable.html\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I open WOL page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+testRunner.Then("the wol table result should be the same as WolTable.html", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

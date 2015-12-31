@@ -4,6 +4,8 @@
 
 Scenario: Check Wol Tables
 
-When LogOn to the website
-And I open the page '~/Tool/WOL'
-Then the result of the element '#WOLTable tbody tr:nth-child(1)' should be the same as the html 'Wol\WolTable.html'
+When I LogOn to the website
+
+And I open WOL page
+
+Then the wol table result should be the same as WolTable.html
