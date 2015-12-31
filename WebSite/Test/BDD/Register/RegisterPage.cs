@@ -12,6 +12,9 @@
     [Binding]
     public class RegisterPage
     {
+        public const string RegisterIndexUrl = "~/Register/Index";
+        public const string RegisterBtn = "login-btn";
+        public const string AlertError = "alert-error";
         private readonly CommonSteps commonSteps;
 
         public RegisterPage(CommonSteps commonSteps)
@@ -22,7 +25,7 @@
         [When("I GotoRegisterPage")]
         public void GotoRegisterPage()
         {
-            this.commonSteps.OpenPage("~/Register/Index");
+            this.commonSteps.OpenPage(RegisterIndexUrl);
         }
 
         [When("I fill the username, passport and confirm password")]
@@ -34,13 +37,13 @@
         [When("I click register button")]
         public void ClickRegisteButton()
         {
-            this.commonSteps.ClickById("login-btn");
+            this.commonSteps.ClickById(RegisterBtn);
         }
 
         [Then("I should see an error")]
         public void IShouldSeeAnError()
         {
-            this.commonSteps.ThenIShouldSeeByName("alert-error");
+            this.commonSteps.ThenIShouldSeeByName(AlertError);
         }
     }
 }
