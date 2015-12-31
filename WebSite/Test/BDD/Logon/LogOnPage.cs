@@ -12,6 +12,9 @@
     [Binding]
     public class LogOnToTheWebsite
     {
+        public const string AccountLoginUrl = "~/Account/Login";
+        public const string LoginBtn = "login-btn";
+        public const string RootUrl = "~/";
         private readonly CommonSteps commonSteps;
 
         public LogOnToTheWebsite(CommonSteps commonSteps)
@@ -30,7 +33,7 @@
         [When(@"I goto logon page")]
         public void WhenIGotoLogonPage()
         {
-            this.commonSteps.OpenPage("~/Account/Login");
+            this.commonSteps.OpenPage(AccountLoginUrl);
         }
 
         [When(@"I fill the username and password")]
@@ -47,14 +50,14 @@
         [When(@"I start logon")]
         public void WhenIStartLogon()
         {
-            this.commonSteps.ClickById("login-btn");
+            this.commonSteps.ClickById(LoginBtn);
             this.commonSteps.WaitFor(1000);
         }
 
         [Then(@"I should see the url is base url")]
         public void ThenIShouldSeeTheUrlIsBaseUrl()
         {
-            this.commonSteps.ThenTheCurrentUrlShouldBe("~/");
+            this.commonSteps.ThenTheCurrentUrlShouldBe(RootUrl);
         }
 
         private void InitDefaultUserInfo()
