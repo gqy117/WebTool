@@ -1,4 +1,4 @@
-﻿namespace BDD.Base
+﻿namespace BDD
 {
     using System;
     using System.Collections.Generic;
@@ -19,6 +19,14 @@
             this.commonSteps = commonSteps;
         }
 
+        [When("I LogOn to the website")]
+        public void WhenILogOnToTheWebsite()
+        {
+            this.WhenIGotoLogonPage();
+            this.WhenIFillTheUsernameAndPassword();
+            this.WhenIStartLogon();
+        }
+
         [When(@"I goto logon page")]
         public void WhenIGotoLogonPage()
         {
@@ -31,6 +39,8 @@
             Table tableElementName = new Table(new string[] { "UserName", "Password" });
             tableElementName.AddRow(new string[] { "UserName", "Password" });
 
+            this.InitDefaultUserInfo();
+
             this.commonSteps.FillTheFormByName(tableElementName, this.commonSteps.UserInfo);
         }
 
@@ -38,12 +48,24 @@
         public void WhenIStartLogon()
         {
             this.commonSteps.ClickById("login-btn");
+            this.commonSteps.WaitFor(1000);
         }
 
         [Then(@"I should see the url is base url")]
         public void ThenIShouldSeeTheUrlIsBaseUrl()
         {
             this.commonSteps.ThenTheCurrentUrlShouldBe("~/");
+        }
+
+        private void InitDefaultUserInfo()
+        {
+            Table userInfoTable = new Table(new string[] { "UserName", "Password" });
+            userInfoTable.AddRow(new string[] { "1", "1" });
+
+            if (this.commonSteps.UserInfo == null)
+            {
+                this.commonSteps.GivenInformation(userInfoTable);
+            }
         }
     }
 }

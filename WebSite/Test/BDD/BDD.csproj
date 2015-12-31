@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LonOn.feature</DependentUpon>
     </Compile>
+    <Compile Include="Head\LanguageBarPage.cs" />
     <Compile Include="Logon\LogOnPage.cs" />
     <Compile Include="Logon\LogOnToTheWebsite.feature.cs">
       <AutoGen>True</AutoGen>
