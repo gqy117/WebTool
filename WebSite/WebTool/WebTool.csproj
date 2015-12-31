@@ -707,10 +707,16 @@
     <Content Include="Content\img\sidebar-menu-arrow.png" />
     <Content Include="Content\img\syncfusion-icons-white.png" />
     <Content Include="Content\img\syncfusion-icons.png" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Site.css.map">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css">
+      <DependentUpon>Site.scss</DependentUpon>
+    </Content>
     <Content Include="Content\Site.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Site.scss" />
     <None Include="tslint.json" />
     <None Include="Scripts\angular.intellisense.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -828,10 +834,10 @@
     <Compile Include="App_Start\Bundle\Shared\Head.cs" />
     <Compile Include="App_Start\Bundle\Shared\MainJs.cs" />
     <Compile Include="App_Start\Bundle\Shared\JqTable.cs" />
-    <Compile Include="Code\Base\BaseController.cs" />
-    <Compile Include="Code\Base\TableBaseController.cs" />
+    <Compile Include="Content\Code\Base\BaseController.cs" />
+    <Compile Include="Content\Code\Base\TableBaseController.cs" />
     <Compile Include="App_Start\BootStrap.cs" />
-    <Compile Include="Code\JQueryDataTablesModelBinder.cs" />
+    <Compile Include="Content\Code\JQueryDataTablesModelBinder.cs" />
     <Compile Include="Controllers\Account\AccountBaseController.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Account\RegisterController.cs" />
