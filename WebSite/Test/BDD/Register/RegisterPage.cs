@@ -25,6 +25,12 @@
             this.commonSteps.OpenPage("~/Register/Index");
         }
 
+        [When("I fill the username, passport and confirm password")]
+        public void FillTheUsernamePasswordAndConfirmPassword(Table table)
+        {
+            this.commonSteps.FillTheFormByName(table, this.commonSteps.UserInfo);
+        }
+
         [When("I click register button")]
         public void ClickRegisteButton()
         {

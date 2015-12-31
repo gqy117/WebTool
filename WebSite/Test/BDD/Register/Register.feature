@@ -10,7 +10,7 @@ Scenario: Try to register an existing user
 
 	When I GotoRegisterPage
 
-	And I fill all the following elements by name
+	And I fill the username, passport and confirm password
 	| UserName | Password | ConfirmPassword |
 	| UserName | Password | ConfirmPassword |
 
