@@ -13,6 +13,4 @@ Scenario: LogOn
 
 	And I start logon
 
-	And I wait for '1000'
-
 	Then I should see the url is base url
