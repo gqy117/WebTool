@@ -25,7 +25,7 @@
 
         public TableRow UserInfo { get; set; }
 
-        protected virtual Encoding DefaultEncoding
+        public virtual Encoding DefaultEncoding
         {
             get { return Encoding.UTF8; }
         }
@@ -34,7 +34,7 @@
 
         #endregion
 
-        protected virtual void FillTheFormByName(Table tableKey, TableRow rowValue)
+        public virtual void FillTheFormByName(Table tableKey, TableRow rowValue)
         {
             var firstRow = tableKey.Rows.First();
 
@@ -44,7 +44,7 @@
             }
         }
 
-        protected virtual void FillTheFormById(Table tableKey, TableRow rowValue)
+        public virtual void FillTheFormById(Table tableKey, TableRow rowValue)
         {
             var firstRow = tableKey.Rows.First();
 
@@ -54,24 +54,24 @@
             }
         }
 
-        protected void OpenPage(string url)
+        public void OpenPage(string url)
         {
             url = this.AddBaseUrl(url);
 
             this.Browser.Navigate().GoToUrl(url);
         }
 
-        protected void ClickById(string buttonId)
+        public void ClickById(string buttonId)
         {
             this.Browser.FindElementById(buttonId).Click();
         }
 
-        protected void ClickByName(string buttonName)
+        public void ClickByName(string buttonName)
         {
             this.Browser.FindElementByName(buttonName).Click();
         }
 
-        protected virtual string ReadFileString(string filePath)
+        public virtual string ReadFileString(string filePath)
         {
             string fileString;
 
@@ -83,17 +83,17 @@
             return fileString;
         }
 
-        protected void WaitFor(int millionSeconds)
+        public void WaitFor(int millionSeconds)
         {
             Thread.Sleep(millionSeconds);
         }
 
-        protected string RemoveWhiteSpace(string actual)
+        public string RemoveWhiteSpace(string actual)
         {
             return Regex.Replace(actual, @"\s+", string.Empty);
         }
 
-        protected string AddBaseUrl(string url)
+        public string AddBaseUrl(string url)
         {
             if (url.StartsWith("~"))
             {
