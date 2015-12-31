@@ -83,11 +83,6 @@
             return fileString;
         }
 
-        public void WaitFor(int millionSeconds)
-        {
-            Thread.Sleep(millionSeconds);
-        }
-
         public string RemoveWhiteSpace(string actual)
         {
             return Regex.Replace(actual, @"\s+", string.Empty);
