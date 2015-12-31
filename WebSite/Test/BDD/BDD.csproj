@@ -101,6 +101,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Wol.feature</DependentUpon>
     </Compile>
+    <Compile Include="Wol\WolPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Account\LonOn.feature">
