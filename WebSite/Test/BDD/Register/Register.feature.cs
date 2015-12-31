@@ -85,7 +85,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("the information", ((string)(null)), table1, "Given ");
 #line 11
- testRunner.When("I open the page \'~/Register/Index\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I GotoRegisterPage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "UserName",
@@ -96,13 +96,13 @@ this.ScenarioSetup(scenarioInfo);
                         "Password",
                         "ConfirmPassword"});
 #line 13
- testRunner.And("I fill all the following elements by name", ((string)(null)), table2, "And ");
+ testRunner.And("I fill the username, passport and confirm password", ((string)(null)), table2, "And ");
 #line 17
- testRunner.And("I click the button by id \'login-btn\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
  testRunner.And("I wait for \'1000\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.Then("I should see by name \'alert-error\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see an error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

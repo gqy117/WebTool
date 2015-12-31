@@ -71,8 +71,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LonOn.feature</DependentUpon>
     </Compile>
-    <Compile Include="Base\LogOnToTheWebsite.cs" />
-    <Compile Include="Base\LogOnToTheWebsite.feature.cs">
+    <Compile Include="Dashboard\DashboardPage.cs" />
+    <Compile Include="Head\LanguageBarPage.cs" />
+    <Compile Include="Logon\LogOnPage.cs" />
+    <Compile Include="Logon\LogOnToTheWebsite.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LogOnToTheWebsite.feature</DependentUpon>
@@ -94,11 +96,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Register.feature</DependentUpon>
     </Compile>
+    <Compile Include="Register\RegisterPage.cs" />
     <Compile Include="Wol\Wol.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Wol.feature</DependentUpon>
     </Compile>
+    <Compile Include="Wol\WolPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Account\LonOn.feature">
@@ -106,7 +110,7 @@
       <LastGenOutput>LonOn.feature.cs</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="Base\LogOnToTheWebsite.feature">
+    <None Include="Logon\LogOnToTheWebsite.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LogOnToTheWebsite.feature.cs</LastGenOutput>
     </None>
