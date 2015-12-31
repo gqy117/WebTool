@@ -96,7 +96,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Password",
                         "ConfirmPassword"});
 #line 13
- testRunner.And("I fill all the following elements by name", ((string)(null)), table2, "And ");
+ testRunner.And("I fill the username, passport and confirm password", ((string)(null)), table2, "And ");
 #line 17
  testRunner.And("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19

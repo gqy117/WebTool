@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BDD.Base
+namespace BDD.Logon
 {
     using TechTalk.SpecFlow;
     
@@ -65,16 +65,33 @@ namespace BDD.Base
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("One-step LogOn")]
+        [NUnit.Framework.DescriptionAttribute("LogOn")]
         [NUnit.Framework.CategoryAttribute("LogOnToTheWebsite")]
-        public virtual void One_StepLogOn()
+        public virtual void LogOn()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("One-step LogOn", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LogOn", new string[] {
                         "LogOnToTheWebsite"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
-#line 5
-testRunner.When("LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "UserName",
+                        "Password"});
+            table1.AddRow(new string[] {
+                        "1",
+                        "1"});
+#line 6
+ testRunner.Given("the information", ((string)(null)), table1, "Given ");
+#line 10
+ testRunner.When("I goto logon page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.And("I fill the username and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.And("I start logon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("I wait for \'1000\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.Then("I should see the url is base url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
