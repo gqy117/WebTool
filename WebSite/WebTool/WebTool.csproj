@@ -836,10 +836,10 @@
     <Compile Include="App_Start\Bundle\Shared\Head.cs" />
     <Compile Include="App_Start\Bundle\Shared\MainJs.cs" />
     <Compile Include="App_Start\Bundle\Shared\JqTable.cs" />
-    <Compile Include="Content\Code\Base\BaseController.cs" />
-    <Compile Include="Content\Code\Base\TableBaseController.cs" />
+    <Compile Include="Code\Base\BaseController.cs" />
+    <Compile Include="Code\Base\TableBaseController.cs" />
+    <Compile Include="Code\JQueryDataTablesModelBinder.cs" />
     <Compile Include="App_Start\BootStrap.cs" />
-    <Compile Include="Content\Code\JQueryDataTablesModelBinder.cs" />
     <Compile Include="Controllers\Account\AccountBaseController.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Account\RegisterController.cs" />
