@@ -94,6 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Register.feature</DependentUpon>
     </Compile>
+    <Compile Include="Register\RegisterPage.cs" />
     <Compile Include="Wol\Wol.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

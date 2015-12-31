@@ -8,14 +8,14 @@ Scenario: Try to register an existing user
 	| UserName | Password | ConfirmPassword |
 	| 1        | 1        | 1               |
 
-	When I open the page '~/Register/Index'
+	When I GotoRegisterPage
 
 	And I fill all the following elements by name
 	| UserName | Password | ConfirmPassword |
 	| UserName | Password | ConfirmPassword |
 
-	And I click the button by id 'login-btn'
+	And I click register button
 
 	And I wait for '1000'
 
-	Then I should see by name 'alert-error'
+	Then I should see an error
