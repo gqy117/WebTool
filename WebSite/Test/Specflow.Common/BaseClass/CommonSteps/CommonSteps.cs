@@ -8,7 +8,6 @@
     using System.Threading;
     using System.Threading.Tasks;
     using BoDi;
-    using CsQuery;
     using NUnit.Framework;
     using NUnit.Framework.Constraints;
     using OpenQA.Selenium.Chrome;
@@ -84,12 +83,6 @@
         public void WhenIClickSubmitById(string buttonId)
         {
             this.ClickById(buttonId);
-        }
-
-        [When(@"I wait for '(.*)'")]
-        public void WhenIWaitFor(int millionSeconds)
-        {
-            this.WaitFor(millionSeconds);
         }
     }
 }

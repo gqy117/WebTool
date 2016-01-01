@@ -6,6 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using BoDi;
+    using OpenQA.Selenium;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
@@ -43,7 +44,7 @@
         [Then("I should see an error")]
         public void IShouldSeeAnError()
         {
-            this.commonSteps.ThenIShouldSeeByName(AlertError);
+            this.commonSteps.ThenIShouldSee(By.Name(AlertError), 3);
         }
     }
 }
