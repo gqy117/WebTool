@@ -48,7 +48,7 @@
         [When(@"I goto logon page")]
         public void WhenIGotoLogonPage()
         {
-            this.CommonSteps.OpenPage(this.CurrentUrl);
+            this.OpenCurrentPage();
         }
 
         [When(@"I fill the username and password")]
