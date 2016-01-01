@@ -5,7 +5,9 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using OpenQA.Selenium;
     using OpenQA.Selenium.Remote;
+    using OpenQA.Selenium.Support.PageObjects;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
@@ -13,13 +15,17 @@
     public class LogOnToTheWebsite : StepsBase
     {
         public const string AccountLoginUrl = "~/Account/Login";
-        public const string LoginBtn = "login-btn";
         public const string RootUrl = "~/";
 
         public LogOnToTheWebsite(CommonSteps commonSteps)
             : base(commonSteps)
         {
         }
+
+        #region Properties
+        [FindsBy(How = How.Id, Using = "login-btn")]
+        public IWebElement LoginBtn { get; set; }
+        #endregion
 
         [When("I LogOn to the website")]
         public void WhenILogOnToTheWebsite()
@@ -49,7 +55,7 @@
         [When(@"I start logon")]
         public void WhenIStartLogon()
         {
-            this.CommonSteps.ClickById(LoginBtn);
+            this.LoginBtn.Click();
         }
 
         [Then(@"I should see the url is base url")]
