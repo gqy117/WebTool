@@ -80,8 +80,6 @@ testRunner.When("I LogOn to the website", ((string)(null)), ((TechTalk.SpecFlow.
 #line 10
 testRunner.And("I click home-wake-up button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
-testRunner.And("I wait for \'2500\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
 testRunner.Then("I should see alertWakeUpSuccess", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

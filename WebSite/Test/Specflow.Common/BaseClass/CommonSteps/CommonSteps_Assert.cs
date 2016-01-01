@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
     using CsQuery;
     using NUnit.Framework;
+    using OpenQA.Selenium;
     using TechTalk.SpecFlow;
 
     public partial class CommonSteps : TestBase
@@ -25,14 +26,9 @@
         }
 
         [Then(@"the result of the element '(.*)' should be the same as '(.*)'")]
-        public void ThenTheResultShouldBeTheSameAs(string selector, string content)
+        public void ThenTheResultShouldBeTheSameAs(string name, string expected, int timeoutInSeconds = 0)
         {
-            var expected = content;
-
-            var actual = CQ.Create(this.Browser.PageSource).Select(selector).Html();
-
-            actual = this.RemoveWhiteSpace(actual);
-            expected = this.RemoveWhiteSpace(expected);
+            var actual = this.Browser.FindElement(By.Name(name), timeoutInSeconds).Text;
 
             Assert.AreEqual(expected, actual);
         }
@@ -47,17 +43,9 @@
         }
 
         [Then(@"I should see by id '(.*)'")]
-        public void ThenIShouldSeeById(string expectedElementId)
+        public void ThenIShouldSee(By by, int timeoutInSeconds = 0)
         {
-            var expectedElement = this.Browser.FindElementById(expectedElementId);
-
-            Assert.IsTrue(expectedElement.Displayed);
-        }
-
-        [Then(@"I should see by name '(.*)'")]
-        public void ThenIShouldSeeByName(string expectedElementName)
-        {
-            var expectedElement = this.Browser.FindElementByName(expectedElementName);
+            var expectedElement = this.Browser.FindElement(by, timeoutInSeconds);
 
             Assert.IsTrue(expectedElement.Displayed);
         }
