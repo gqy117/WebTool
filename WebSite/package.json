@@ -6,7 +6,7 @@
     "gulp": "*",
     "gulp-eol": "*",
     "gulp-jshint": "*",
-    "gulp-resolve-dependencies": "^2.2.0",
+    "gulp-resolve-dependencies": "*",
     "gulp-tslint": "*",
     "gulp-typescript": "*",
     "map-stream": "*"
