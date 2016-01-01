@@ -5,9 +5,10 @@
   "devDependencies": {
     "gulp": "*",
     "gulp-eol": "*",
-    "map-stream": "*",
     "gulp-jshint": "*",
+    "gulp-resolve-dependencies": "^2.2.0",
+    "gulp-tslint": "*",
     "gulp-typescript": "*",
-    "gulp-tslint": "*"
+    "map-stream": "*"
   }
 }
