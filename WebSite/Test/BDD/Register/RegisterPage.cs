@@ -14,12 +14,16 @@
     [Binding]
     public class RegisterPage : StepsBase
     {
-        public const string RegisterIndexUrl = "~/Register/Index";
+        #region Fields
+        public const string RegisterIndexUrl = "~/Register/Index"; 
+        #endregion
 
+        #region Constructors
         public RegisterPage(CommonSteps commonSteps)
             : base(commonSteps)
         {
-        }
+        } 
+        #endregion
 
         #region Properties
         [FindsBy(How = How.Id, Using = "login-btn")]
@@ -27,12 +31,18 @@
 
         [FindsBy(How = How.Name, Using = "alert-error")]
         public IWebElement AlertError { get; set; }
+
+        protected override string CurrentUrl
+        {
+            get { return RegisterIndexUrl; }
+        }
         #endregion
 
+        #region Methods
         [When("I GotoRegisterPage")]
         public void GotoRegisterPage()
         {
-            this.CommonSteps.OpenPage(RegisterIndexUrl);
+            this.CommonSteps.OpenPage(this.CurrentUrl);
         }
 
         [When("I fill the username, passport and confirm password")]
@@ -52,6 +62,7 @@
         {
             this.RefreshElementsValues(3);
             this.CommonSteps.ThenIShouldSee(this.AlertError);
-        }
+        } 
+        #endregion
     }
 }
