@@ -16,6 +16,11 @@
         public StepsBase(CommonSteps commonSteps)
         {
             this.CommonSteps = commonSteps;
+            this.RefreshElementsValues();
+        }
+
+        protected void RefreshElementsValues()
+        {
             PageFactory.InitElements(this.CommonSteps.Browser, this);
         }
     }
