@@ -10,16 +10,15 @@
     using TechTalk.SpecFlow;
 
     [Binding]
-    public class LogOnToTheWebsite
+    public class LogOnToTheWebsite : StepsBase
     {
         public const string AccountLoginUrl = "~/Account/Login";
         public const string LoginBtn = "login-btn";
         public const string RootUrl = "~/";
-        private readonly CommonSteps commonSteps;
 
         public LogOnToTheWebsite(CommonSteps commonSteps)
+            : base(commonSteps)
         {
-            this.commonSteps = commonSteps;
         }
 
         [When("I LogOn to the website")]
@@ -33,7 +32,7 @@
         [When(@"I goto logon page")]
         public void WhenIGotoLogonPage()
         {
-            this.commonSteps.OpenPage(AccountLoginUrl);
+            this.CommonSteps.OpenPage(AccountLoginUrl);
         }
 
         [When(@"I fill the username and password")]
@@ -44,19 +43,19 @@
 
             this.InitDefaultUserInfo();
 
-            this.commonSteps.FillTheFormByName(tableElementName, this.commonSteps.UserInfo);
+            this.CommonSteps.FillTheFormByName(tableElementName, this.CommonSteps.UserInfo);
         }
 
         [When(@"I start logon")]
         public void WhenIStartLogon()
         {
-            this.commonSteps.ClickById(LoginBtn);
+            this.CommonSteps.ClickById(LoginBtn);
         }
 
         [Then(@"I should see the url is base url")]
         public void ThenIShouldSeeTheUrlIsBaseUrl()
         {
-            this.commonSteps.ThenTheCurrentUrlShouldBe(RootUrl);
+            this.CommonSteps.ThenTheCurrentUrlShouldBe(RootUrl);
         }
 
         private void InitDefaultUserInfo()
@@ -64,9 +63,9 @@
             Table userInfoTable = new Table(new string[] { "UserName", "Password" });
             userInfoTable.AddRow(new string[] { "1", "1" });
 
-            if (this.commonSteps.UserInfo == null)
+            if (this.CommonSteps.UserInfo == null)
             {
-                this.commonSteps.GivenInformation(userInfoTable);
+                this.CommonSteps.GivenInformation(userInfoTable);
             }
         }
     }
