@@ -9,7 +9,7 @@
     using OpenQA.Selenium;
     using TechTalk.SpecFlow;
 
-    public partial class CommonSteps : TestBase
+    public partial class CommonSteps : SeleniumWrapper
     {
         [Then(@"the result of the element '(.*)' should be the same as the html '(.*)'")]
         public void ThenTheResultShouldBeTheSameAsTheHtmlFile(string selector, string fileName)
