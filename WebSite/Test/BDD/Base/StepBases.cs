@@ -19,9 +19,9 @@
             this.RefreshElementsValues();
         }
 
-        protected void RefreshElementsValues()
+        protected void RefreshElementsValues(int timeout = 0)
         {
-            PageFactory.InitElements(this.CommonSteps.Browser, this);
+            PageFactory.InitElements(this, new RetryingElementLocator(this.CommonSteps.Browser, TimeSpan.FromSeconds(timeout)));
         }
     }
 }

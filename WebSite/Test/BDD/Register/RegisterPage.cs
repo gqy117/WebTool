@@ -15,7 +15,6 @@
     public class RegisterPage : StepsBase
     {
         public const string RegisterIndexUrl = "~/Register/Index";
-        public const string AlertError = "alert-error";
 
         public RegisterPage(CommonSteps commonSteps)
             : base(commonSteps)
@@ -25,6 +24,9 @@
         #region Properties
         [FindsBy(How = How.Id, Using = "login-btn")]
         public IWebElement RegisterBtn { get; set; }
+
+        [FindsBy(How = How.Name, Using = "alert-error")]
+        public IWebElement AlertError { get; set; }
         #endregion
 
         [When("I GotoRegisterPage")]
@@ -48,7 +50,8 @@
         [Then("I should see an error")]
         public void IShouldSeeAnError()
         {
-            this.CommonSteps.ThenIShouldSee(By.Name(AlertError), 3);
+            this.RefreshElementsValues(3);
+            this.CommonSteps.ThenIShouldSee(this.AlertError);
         }
     }
 }
