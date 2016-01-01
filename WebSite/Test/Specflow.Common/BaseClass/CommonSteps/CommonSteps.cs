@@ -17,7 +17,7 @@
     using TechTalk.SpecFlow;
 
     [Binding]
-    public partial class CommonSteps : TestBase
+    public partial class CommonSteps : SeleniumWrapper
     {
         private readonly IObjectContainer _objectContainer;
 
