@@ -9,29 +9,40 @@
     [Binding]
     public class WolPage : StepsBase
     {
+        #region Fields
         public const string ToolWolUrl = "~/Tool/WOL";
-        public const string WolWoltableHtml = "Wol\\WolTable.html";
+        public const string WolWoltableHtml = "Wol\\WolTable.html"; 
+        #endregion
 
+        #region Constructors
         public WolPage(CommonSteps commonSteps)
             : base(commonSteps)
         {
-        }
+        } 
+        #endregion
 
         #region Properties
         [FindsBy(How = How.CssSelector, Using = "#WOLTable tbody tr:nth-child(1)")]
         public IWebElement WoltableTbodyTrNthChild { get; set; }
+
+        protected override string CurrentUrl
+        {
+            get { return ToolWolUrl; }
+        }
         #endregion
 
+        #region Methods
         [When(@"I open WOL page")]
         public void WhenIOpenWOLPage()
         {
-            this.CommonSteps.OpenPage(ToolWolUrl);
+            this.CommonSteps.OpenPage(this.CurrentUrl);
         }
 
         [Then(@"the wol table result should be the same as WolTable\.html")]
         public void ThenTheWolTableResultShouldBeTheSameAsWolTable_Html()
         {
             this.CommonSteps.ThenTheResultShouldBeTheSameAsTheHtmlFile(this.WoltableTbodyTrNthChild, WolWoltableHtml);
-        }
+        } 
+        #endregion
     }
 }

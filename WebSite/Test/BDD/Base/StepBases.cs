@@ -19,6 +19,8 @@
             this.RefreshElementsValues();
         }
 
+        protected abstract string CurrentUrl { get; }
+
         protected void RefreshElementsValues(int timeout = 0)
         {
             PageFactory.InitElements(this, new RetryingElementLocator(this.CommonSteps.Browser, TimeSpan.FromSeconds(timeout)));
