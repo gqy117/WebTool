@@ -14,19 +14,29 @@
     [Binding]
     public class LogOnToTheWebsite : StepsBase
     {
+        #region Fields
         public const string AccountLoginUrl = "~/Account/Login";
-        public const string RootUrl = "~/";
+        public const string RootUrl = "~/"; 
+        #endregion
 
+        #region Constructors
         public LogOnToTheWebsite(CommonSteps commonSteps)
             : base(commonSteps)
         {
-        }
+        } 
+        #endregion
 
         #region Properties
         [FindsBy(How = How.Id, Using = "login-btn")]
         public IWebElement LoginBtn { get; set; }
+
+        protected override string CurrentUrl
+        {
+            get { return AccountLoginUrl; }
+        }
         #endregion
 
+        #region Methods
         [When("I LogOn to the website")]
         public void WhenILogOnToTheWebsite()
         {
@@ -38,7 +48,7 @@
         [When(@"I goto logon page")]
         public void WhenIGotoLogonPage()
         {
-            this.CommonSteps.OpenPage(AccountLoginUrl);
+            this.CommonSteps.OpenPage(this.CurrentUrl);
         }
 
         [When(@"I fill the username and password")]
@@ -73,6 +83,7 @@
             {
                 this.CommonSteps.GivenInformation(userInfoTable);
             }
-        }
+        } 
+        #endregion
     }
 }
