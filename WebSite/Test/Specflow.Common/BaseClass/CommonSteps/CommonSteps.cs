@@ -85,12 +85,5 @@
         {
             this.ClickById(buttonId);
         }
-
-        [When(@"I wait for '(.*)'")]
-        public void WhenIWaitFor(int millionSeconds)
-        {
-
-            this.WaitFor(millionSeconds);
-        }
     }
 }
