@@ -8,7 +8,6 @@
     using System.Threading;
     using System.Threading.Tasks;
     using BoDi;
-    using CsQuery;
     using NUnit.Framework;
     using NUnit.Framework.Constraints;
     using OpenQA.Selenium.Chrome;

@@ -1,6 +1,7 @@
 ﻿namespace BDD.Dashboard
 {
     using System;
+    using OpenQA.Selenium;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
@@ -25,7 +26,7 @@
         [Then(@"I should see alertWakeUpSuccess")]
         public void ThenIShouldSeeAlertWakeUpSuccess()
         {
-            this.commonSteps.ThenIShouldSeeById(AlertWakeUpSuccess);
+            this.commonSteps.ThenIShouldSee(By.Id(AlertWakeUpSuccess), 3);
         }
     }
 }
