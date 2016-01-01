@@ -42,7 +42,7 @@
         [When("I GotoRegisterPage")]
         public void GotoRegisterPage()
         {
-            this.CommonSteps.OpenPage(this.CurrentUrl);
+            this.OpenCurrentPage();
         }
 
         [When("I fill the username, passport and confirm password")]

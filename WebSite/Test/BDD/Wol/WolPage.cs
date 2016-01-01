@@ -35,7 +35,7 @@
         [When(@"I open WOL page")]
         public void WhenIOpenWOLPage()
         {
-            this.CommonSteps.OpenPage(this.CurrentUrl);
+            this.OpenCurrentPage();
         }
 
         [Then(@"the wol table result should be the same as WolTable\.html")]
