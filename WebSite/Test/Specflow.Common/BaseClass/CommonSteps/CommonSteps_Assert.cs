@@ -5,7 +5,6 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using CsQuery;
     using NUnit.Framework;
     using OpenQA.Selenium;
     using TechTalk.SpecFlow;
@@ -17,10 +16,7 @@
         {
             var expected = this.ReadFileString(fileName);
 
-            var actual = CQ.Create(this.Browser.PageSource).Select(selector).Html();
-
-            actual = this.RemoveWhiteSpace(actual);
-            expected = this.RemoveWhiteSpace(expected);
+            var actual = this.Browser.FindElement(By.CssSelector(selector)).Text;
 
             Assert.AreEqual(expected, actual);
         }
