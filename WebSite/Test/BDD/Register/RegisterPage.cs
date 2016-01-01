@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
     using BoDi;
     using OpenQA.Selenium;
+    using OpenQA.Selenium.Support.PageObjects;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
@@ -14,13 +15,17 @@
     public class RegisterPage : StepsBase
     {
         public const string RegisterIndexUrl = "~/Register/Index";
-        public const string RegisterBtn = "login-btn";
         public const string AlertError = "alert-error";
 
         public RegisterPage(CommonSteps commonSteps)
             : base(commonSteps)
         {
         }
+
+        #region Properties
+        [FindsBy(How = How.Id, Using = "login-btn")]
+        public IWebElement RegisterBtn { get; set; }
+        #endregion
 
         [When("I GotoRegisterPage")]
         public void GotoRegisterPage()
@@ -37,7 +42,7 @@
         [When("I click register button")]
         public void ClickRegisteButton()
         {
-            this.CommonSteps.ClickById(RegisterBtn);
+            this.RegisterBtn.Click();
         }
 
         [Then("I should see an error")]
