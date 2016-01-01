@@ -11,19 +11,32 @@
 
     public abstract class StepsBase
     {
-        protected readonly CommonSteps CommonSteps;
+        #region Fields
+        protected readonly CommonSteps CommonSteps; 
+        #endregion
 
+        #region Constructors
         public StepsBase(CommonSteps commonSteps)
         {
             this.CommonSteps = commonSteps;
             this.RefreshElementsValues();
-        }
+        } 
+        #endregion
 
-        protected abstract string CurrentUrl { get; }
+        #region Properties
+        protected abstract string CurrentUrl { get; } 
+        #endregion
 
+        #region Methods
         protected void RefreshElementsValues(int timeout = 0)
         {
             PageFactory.InitElements(this, new RetryingElementLocator(this.CommonSteps.Browser, TimeSpan.FromSeconds(timeout)));
         }
+
+        protected virtual void OpenCurrentPage()
+        {
+            this.CommonSteps.OpenPage(this.CurrentUrl);
+        } 
+        #endregion
     }
 }
