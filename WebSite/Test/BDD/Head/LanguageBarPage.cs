@@ -9,7 +9,7 @@
     {
         public const string ChangeLanguageDropdown = "change-language-dropdown";
         public const string LanguageIcon = "language-icon";
-        public const string NameCurrentLanguageText = "[name=\"current-language-text\"]";
+        public const string NameCurrentLanguageText = "current-language-text";
         private readonly CommonSteps commonSteps;
 
         public LanguageBarPage(CommonSteps commonSteps)
@@ -32,7 +32,7 @@
         [Then(@"the current language text should be cn\.")]
         public void ThenTheCurrentLanguageTextShouldBeCn_()
         {
-            this.commonSteps.ThenTheResultShouldBeTheSameAs(NameCurrentLanguageText, "&#20013;&#25991;");
+            this.commonSteps.ThenTheResultShouldBeTheSameAs(NameCurrentLanguageText, "中文");
         }
     }
 }
