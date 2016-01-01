@@ -7,15 +7,13 @@
     using TechTalk.SpecFlow;
 
     [Binding]
-    public class LanguageBarPage
+    public class LanguageBarPage : StepsBase
     {
         public const string NameCurrentLanguageText = "current-language-text";
-        private readonly CommonSteps commonSteps;
 
         public LanguageBarPage(CommonSteps commonSteps)
+            : base(commonSteps)
         {
-            this.commonSteps = commonSteps;
-            PageFactory.InitElements(this.commonSteps.Browser, this);
         }
 
         #region Properties
@@ -41,7 +39,7 @@
         [Then(@"the current language text should be cn\.")]
         public void ThenTheCurrentLanguageTextShouldBeCn_()
         {
-            this.commonSteps.ThenTheResultShouldBeTheSameAs(NameCurrentLanguageText, "中文");
+            this.CommonSteps.ThenTheResultShouldBeTheSameAs(NameCurrentLanguageText, "中文");
         }
     }
 }
