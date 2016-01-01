@@ -7,15 +7,21 @@
     using System.Text;
     using System.Threading.Tasks;
     using OpenQA.Selenium.Chrome;
+    using OpenQA.Selenium.Support.PageObjects;
 
-    public class StepsBase : TestBase
+    public abstract class StepsBase
     {
-        private string baseUrl = ConfigurationManager.AppSettings["BaseUrl"];
+        protected readonly CommonSteps CommonSteps;
 
-        public override string BaseUrl
+        public StepsBase(CommonSteps commonSteps)
         {
-            get { return this.baseUrl; }
-            set { this.baseUrl = value; }
+            this.CommonSteps = commonSteps;
+            this.RefreshElementsValues();
+        }
+
+        protected void RefreshElementsValues()
+        {
+            PageFactory.InitElements(this.CommonSteps.Browser, this);
         }
     }
 }

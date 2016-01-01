@@ -2,31 +2,35 @@
 {
     using System;
     using OpenQA.Selenium;
+    using OpenQA.Selenium.Support.PageObjects;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
     [Binding]
-    public class DashboardPage
+    public class DashboardPage : StepsBase
     {
         public const string AlertWakeUpSuccess = "#alertWakeUpSuccess:not(.ng-hide)";
-        public const string HomeWakeUp = "home-wake-up";
-        private readonly CommonSteps commonSteps;
 
         public DashboardPage(CommonSteps commonSteps)
+            : base(commonSteps)
         {
-            this.commonSteps = commonSteps;
         }
+
+        #region Properties
+        [FindsBy(How = How.Id, Using = "home-wake-up")]
+        public IWebElement HomeWakeUp { get; set; } 
+        #endregion
 
         [When(@"I click home-wake-up button")]
         public void WhenIClickHome_Wake_UpButton()
         {
-            this.commonSteps.WhenIClickSubmitById(HomeWakeUp);
+            this.HomeWakeUp.Click();
         }
         
         [Then(@"I should see alertWakeUpSuccess")]
         public void ThenIShouldSeeAlertWakeUpSuccess()
         {
-            this.commonSteps.ThenIShouldSee(By.CssSelector(AlertWakeUpSuccess), 3);
+            this.CommonSteps.ThenIShouldSee(By.CssSelector(AlertWakeUpSuccess), 3);
         }
     }
 }
