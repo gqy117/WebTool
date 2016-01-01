@@ -8,7 +8,7 @@
     [Binding]
     public class DashboardPage
     {
-        public const string AlertWakeUpSuccess = "alertWakeUpSuccess";
+        public const string AlertWakeUpSuccess = "#alertWakeUpSuccess:not(.ng-hide)";
         public const string HomeWakeUp = "home-wake-up";
         private readonly CommonSteps commonSteps;
 
@@ -26,7 +26,7 @@
         [Then(@"I should see alertWakeUpSuccess")]
         public void ThenIShouldSeeAlertWakeUpSuccess()
         {
-            this.commonSteps.ThenIShouldSee(By.Id(AlertWakeUpSuccess), 3);
+            this.commonSteps.ThenIShouldSee(By.CssSelector(AlertWakeUpSuccess), 3);
         }
     }
 }
