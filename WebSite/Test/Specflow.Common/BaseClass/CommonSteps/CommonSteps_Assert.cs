@@ -12,11 +12,11 @@
     public partial class CommonSteps : SeleniumWrapper
     {
         [Then(@"the result of the element '(.*)' should be the same as the html '(.*)'")]
-        public void ThenTheResultShouldBeTheSameAsTheHtmlFile(string selector, string fileName)
+        public void ThenTheResultShouldBeTheSameAsTheHtmlFile(IWebElement element, string fileName)
         {
             var expected = this.ReadFileString(fileName);
 
-            var actual = this.Browser.FindElement(By.CssSelector(selector)).Text;
+            var actual = element.Text;
 
             Assert.AreEqual(expected, actual);
         }
@@ -39,10 +39,8 @@
         }
 
         [Then(@"I should see by id '(.*)'")]
-        public void ThenIShouldSee(By by, int timeoutInSeconds = 0)
+        public void ThenIShouldSee(IWebElement expectedElement)
         {
-            var expectedElement = this.Browser.FindElement(by, timeoutInSeconds);
-
             Assert.IsTrue(expectedElement.Displayed);
         }
     }
