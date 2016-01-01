@@ -1,13 +1,14 @@
 ﻿namespace BDD.Dashboard
 {
     using System;
+    using OpenQA.Selenium;
     using Specflow.Common;
     using TechTalk.SpecFlow;
 
     [Binding]
     public class DashboardPage
     {
-        public const string AlertWakeUpSuccess = "alertWakeUpSuccess";
+        public const string AlertWakeUpSuccess = "#alertWakeUpSuccess:not(.ng-hide)";
         public const string HomeWakeUp = "home-wake-up";
         private readonly CommonSteps commonSteps;
 
@@ -25,7 +26,7 @@
         [Then(@"I should see alertWakeUpSuccess")]
         public void ThenIShouldSeeAlertWakeUpSuccess()
         {
-            this.commonSteps.ThenIShouldSeeById(AlertWakeUpSuccess);
+            this.commonSteps.ThenIShouldSee(By.CssSelector(AlertWakeUpSuccess), 3);
         }
     }
 }

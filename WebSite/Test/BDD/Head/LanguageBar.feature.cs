@@ -80,8 +80,6 @@ testRunner.And("I click the change-language-dropdown button", ((string)(null)), 
 #line 11
 testRunner.And("I click the language-icon button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
-testRunner.And("I wait for \'1000\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
 testRunner.Then("the current language text should be cn.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

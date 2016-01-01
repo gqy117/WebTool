@@ -16,6 +16,4 @@ Scenario: Try to register an existing user
 
 	And I click register button
 
-	And I wait for '1000'
-
 	Then I should see an error

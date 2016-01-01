@@ -51,7 +51,6 @@
         public void WhenIStartLogon()
         {
             this.commonSteps.ClickById(LoginBtn);
-            this.commonSteps.WaitFor(1000);
         }
 
         [Then(@"I should see the url is base url")]
