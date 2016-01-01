@@ -9,28 +9,41 @@
     [Binding]
     public class DashboardPage : StepsBase
     {
-        public const string AlertWakeUpSuccess = "#alertWakeUpSuccess:not(.ng-hide)";
-
+        #region Constructors
         public DashboardPage(CommonSteps commonSteps)
             : base(commonSteps)
         {
-        }
-
-        #region Properties
-        [FindsBy(How = How.Id, Using = "home-wake-up")]
-        public IWebElement HomeWakeUp { get; set; } 
+        } 
         #endregion
 
+        #region Properties
+
+        [FindsBy(How = How.Id, Using = "home-wake-up")]
+        public IWebElement HomeWakeUp { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#alertWakeUpSuccess:not(.ng-hide)")]
+        public IWebElement AlertWakeUpSuccess { get; set; }
+
+        protected override string CurrentUrl
+        {
+            get { return "/"; }
+        }
+
+        #endregion
+
+        #region Methods
         [When(@"I click home-wake-up button")]
         public void WhenIClickHome_Wake_UpButton()
         {
             this.HomeWakeUp.Click();
         }
-        
+
         [Then(@"I should see alertWakeUpSuccess")]
         public void ThenIShouldSeeAlertWakeUpSuccess()
         {
-            this.CommonSteps.ThenIShouldSee(By.CssSelector(AlertWakeUpSuccess), 3);
-        }
+            this.RefreshElementsValues(3);
+            this.CommonSteps.ThenIShouldSee(this.AlertWakeUpSuccess);
+        } 
+        #endregion
     }
 }
