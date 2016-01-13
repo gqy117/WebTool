@@ -6,3 +6,14 @@ branches:
 # scripts that are called at very beginning, before repo cloning
 init:
     git config --system core.longpaths true
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+# to add several configurations to build matrix:
+#configuration:
+#  - Debug
+#  - Release
+
+build:
+  project: WebSite\WebTool.sln      # path to Visual Studio solution or project
