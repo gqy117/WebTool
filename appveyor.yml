@@ -17,3 +17,11 @@ configuration: Release
 
 build:
   project: WebSite\WebTool.sln      # path to Visual Studio solution or project
+
+
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node
+  # install modules
+  - cd WebSite
+  - npm install
