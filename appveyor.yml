@@ -24,3 +24,4 @@ install:
   - ps: Install-Product node
   # install modules
   - npm install WebSite
+  - npm install --global gulp
