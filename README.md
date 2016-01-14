@@ -52,7 +52,7 @@ Use **MSTest** and **Moq** to do the unit tests.
 **Load tests** project.
 
 ### 3. Utilities
-Common utilities such as **NLog**, **JSON.net**, **Enyim.Caching**(**Memcached** C# implementation).
+Common utilities such as **NLog**, **JSON.net**, **Redis**.
 
 ### 4. Repository layer
 WebToolRepository
