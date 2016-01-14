@@ -30,9 +30,7 @@ install:
   - npm install -g gulp
 
   # Install Dependencies
-  - cd WebSite
-  - npm install gulp-typescript
-  - cd ..
+  - npm install --prefix WebSite gulp-typescript
 
 
 
