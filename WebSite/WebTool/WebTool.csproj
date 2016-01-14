@@ -49,6 +49,7 @@
     <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
     <PublishDatabases>true</PublishDatabases>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
     <CodeAnalysisRuleSet>..\AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
