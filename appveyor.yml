@@ -31,6 +31,5 @@ install:
 
   # Install Dependencies
   - cd WebSite
-  - npm install gulp
-  - npm install
+  - npm install gulp-typescript
   - cd ..
