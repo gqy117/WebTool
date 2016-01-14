@@ -7,9 +7,6 @@ branches:
 init:
     git config --system core.longpaths true
 
-# environment variables
-environment:
-  NODE_PATH: %AppData%\npm\node_modules
 
 # build Configuration, i.e. Debug, Release, etc.
 configuration: Release
@@ -28,6 +25,6 @@ install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node
   # install modules
-  - npm install WebSite
-  - npm install --global gulp
-  - npm install --global gulp-typescript
+  - cd WebSite
+  - npm install
+  - cd ..
