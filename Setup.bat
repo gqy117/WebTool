@@ -1,5 +1,5 @@
 REM Create Web.config
-Xcopy WebSite\WebTool\Web.template.config WebSite\WebTool\Web.config 
+copy WebSite\WebTool\Web.template.config WebSite\WebTool\Web.config 
 
 REM Install Gulp
 npm install -g gulp
