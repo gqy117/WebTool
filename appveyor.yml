@@ -23,7 +23,7 @@ build:
 
 install:
   # Get the latest stable version of Node.js or io.js
-  #- ps: Install-Product node
+  - ps: Install-Product node 4.2.4
   # install modules
 
   # Install Gulp
