@@ -5,4 +5,6 @@ REM Install Gulp
 npm install -g gulp
 
 REM Install Dependencies
-npm install --prefix WebSite
+cd WebSite
+npm install
+cd ..
