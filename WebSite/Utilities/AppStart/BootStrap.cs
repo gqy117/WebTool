@@ -21,8 +21,9 @@
 
         private static void OnConfigure()
         {
-            Builder.RegisterType<MemcachedHelper>().As<ICacheHelper>();
+            ////Builder.RegisterType<MemcachedHelper>().As<ICacheHelper>();
             ////Builder.RegisterType<SessionHelper>().As<ICacheHelper>();
+            Builder.RegisterType<RedisHelper>().As<ICacheHelper>();
         }
 
         private static void BuildContainer()
