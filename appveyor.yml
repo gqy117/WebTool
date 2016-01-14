@@ -26,3 +26,4 @@ install:
   # install modules
   - npm install WebSite
   - npm install --global gulp
+  - npm install --global gulp-typescript
