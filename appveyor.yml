@@ -35,9 +35,7 @@ install:
   - npm install -g gulp
 
   # Install Dependencies
-  - cd WebSite
-  - npm install
-  - cd ..
+  - npm install --prefix WebSite
 
 
 
