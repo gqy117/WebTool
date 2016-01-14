@@ -33,3 +33,13 @@ install:
   - cd WebSite
   - npm install gulp-typescript
   - cd ..
+
+
+
+
+#---------------------------------#
+#       tests configuration       #
+#---------------------------------#
+
+test:
+  assemblies:
