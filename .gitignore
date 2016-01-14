@@ -96,3 +96,4 @@ WebSite/WebTool/WebTool.Publish.xml
 #WebSite/Test/UnitTestProject/App.config
 #WebSite/WebTool/Web.Release.config
 #WebSite/WebTool/Web.config
+WebSite/node_modules
