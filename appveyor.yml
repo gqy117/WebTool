@@ -27,9 +27,17 @@ install:
   # install modules
 
   # Install Gulp
-  - Setup.bat
+  #- Setup.bat
 
+- copy WebSite\WebTool\Web.template.config WebSite\WebTool\Web.config 
 
+# Install Gulp
+- npm install -g gulp
+
+# Install Dependencies
+- cd WebSite
+- npm install
+- cd ..
 
 
 
