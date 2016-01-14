@@ -1,10 +1,8 @@
-# Create Web.config
+REM Create Web.config
 Xcopy WebSite\WebTool\Web.template.config WebSite\WebTool\Web.config 
 
-
-# Install Gulp
+REM Install Gulp
 npm install -g gulp
 
-# Install Dependencies
+REM Install Dependencies
 npm install --prefix WebSite gulp-typescript
-
