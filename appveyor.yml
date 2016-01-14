@@ -31,10 +31,10 @@ install:
 
   - copy "WebSite\WebTool\Web.template.config" "WebSite\WebTool\Web.config"
 
-	# Install Gulp
+  # Install Gulp
   - npm install -g gulp
 
-	# Install Dependencies
+  # Install Dependencies
   - cd WebSite
   - npm install
   - cd ..
