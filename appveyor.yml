@@ -7,6 +7,10 @@ branches:
 init:
     git config --system core.longpaths true
 
+# environment variables
+environment:
+  NODE_PATH: %AppData%\npm\node_modules
+
 # build Configuration, i.e. Debug, Release, etc.
 configuration: Release
 
