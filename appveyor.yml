@@ -27,10 +27,9 @@ install:
   # install modules
 
   # Install Gulp
-  - npm install -g gulp
+  - Setup.bat
 
-  # Install Dependencies
-  - npm install --prefix WebSite gulp-typescript
+
 
 
 
