@@ -25,6 +25,12 @@ install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node
   # install modules
+
+  # Install Gulp
+  - npm install -g gulp
+
+  # Install Dependencies
   - cd WebSite
+  - npm install gulp
   - npm install
   - cd ..
