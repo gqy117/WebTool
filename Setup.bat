@@ -5,4 +5,4 @@ REM Install Gulp
 npm install -g gulp
 
 REM Install Dependencies
-npm install --prefix WebSite gulp-typescript
+npm install --prefix WebSite
