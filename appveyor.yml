@@ -19,7 +19,7 @@ configuration: Release
 build:
   parallel: true                    # enable MSBuild parallel builds
   project: WebSite\WebTool.sln      # path to Visual Studio solution or project
-
+  publish_wap: true
 
 install:
   # Get the latest stable version of Node.js or io.js
@@ -43,3 +43,4 @@ install:
 
 test:
   assemblies:
+
