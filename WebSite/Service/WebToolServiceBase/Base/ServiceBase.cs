@@ -25,6 +25,11 @@
 
         private bool isValid = true;
 
+        [Injection]
+        public void Init(ICacheHelper cacheHelper)
+        {
+            
+        }
         private ICacheHelper cacheHelper = WebToolService.Bootstrap.Container.Resolve<ICacheHelper>();
 
         public virtual WebToolEntities Context
