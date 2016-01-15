@@ -42,10 +42,10 @@ install:
   - npm install --prefix WebSite
 
   # Attach the Database
-  - ps: appveyor-attachdb-sql.ps1
+  - ps: .\appveyor-attachdb-sql.ps1
 
   # Create the iis website
-  - ps: CreateIISWebSite.ps1
+  - ps: .\CreateIISWebSite.ps1
 
 #---------------------------------#
 #       tests configuration       #
