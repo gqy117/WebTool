@@ -7,6 +7,8 @@
     using System.Text;
     using System.Web;
     using System.Web.Mvc;
+    using Microsoft.Practices.Unity;
+    using Utilities;
     using WebToolCulture.Resource;
     using WebToolService;
 
@@ -53,6 +55,15 @@
             }
         }
         #endregion
+        #endregion
+
+        #region Constructors
+
+        [InjectionMethod]
+        public void Init(WolService wolService)
+        {
+            this.WOLService = wolService;
+        }
         #endregion
 
         #region Methods
