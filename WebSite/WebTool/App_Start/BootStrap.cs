@@ -16,6 +16,7 @@ namespace WebTool
     using CaptchaMvc.Infrastructure;
     using Enyim.Caching;
     using Microsoft.Practices.Unity;
+    using Microsoft.Practices.Unity.Configuration;
     using Microsoft.Practices.Unity.Mvc;
     using Microsoft.SqlServer.Server;
     using WebToolService;
@@ -49,8 +50,9 @@ namespace WebTool
         #region Methods
         public void Configure()
         {
-            WebToolService.Bootstrap.Startup();
-            this.MyContainer = WebToolService.Bootstrap.Container;
+            Utilities.Bootstrap.Startup();
+            this.MyContainer = Utilities.Bootstrap.Container;
+            this.MyContainer.LoadConfiguration();
             this.OnConfigure();
 
             ////This tells the MVC application to use myContainer as its dependency resolver
@@ -87,9 +89,6 @@ namespace WebTool
                     var serviceTypes = loadedAssembly.ExportedTypes.Where(t => t.IsSubclassOf(typeof(ServiceBase)));
 
                     this.MyContainer.RegisterTypes(serviceTypes);
-                    ////this.MyContainer.RegisterAssemblyTypes(loadedAssembly).Where(t => t.IsSubclassOf(typeof(ServiceBase)))
-                    ////    .InstancePerLifetimeScope()
-                    ////    .EnableClassInterceptors();
                 }
             }
         }
