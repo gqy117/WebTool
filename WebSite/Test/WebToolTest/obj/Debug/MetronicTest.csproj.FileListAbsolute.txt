@@ -1,9 +1,0 @@
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\bin\Debug\MetronicTest.dll
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\bin\Debug\MetronicTest.pdb
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\bin\Debug\Metronic.dll
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\bin\Debug\EntityFramework.dll
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\bin\Debug\Metronic.pdb
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\bin\Debug\EntityFramework.xml
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\obj\Debug\MetronicTest.csprojResolveAssemblyReference.cache
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\obj\Debug\MetronicTest.dll
-F:\Program Files\Microsoft Visual Studio 9.0\workspace\Metronic\MetronicTest\obj\Debug\MetronicTest.pdb
