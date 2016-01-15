@@ -60,4 +60,4 @@ after_build:
 
 test:
   assemblies:
-    - 'WebTool\WebSite\Test\BDD\bin\Release\BDD.dll'
+    - 'WebSite\WebTool\WebSite\Test\BDD\bin\Release\BDD.dll'
