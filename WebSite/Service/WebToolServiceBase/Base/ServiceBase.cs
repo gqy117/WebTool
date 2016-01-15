@@ -12,6 +12,7 @@
     using Autofac;
     using Enyim.Caching;
     using Enyim.Caching.Memcached;
+    using Microsoft.Practices.Unity;
     using WebToolRepository;
     using WebToolService;
 
@@ -25,13 +26,8 @@
 
         private bool isValid = true;
 
-        [Injection]
-        public void Init(ICacheHelper cacheHelper)
-        {
-            
-        }
-        private ICacheHelper cacheHelper = WebToolService.Bootstrap.Container.Resolve<ICacheHelper>();
-
+        private ICacheHelper cacheHelper;
+        
         public virtual WebToolEntities Context
         {
             get
@@ -69,6 +65,12 @@
         }
 
         #endregion
+
+        [InjectionMethod]
+        public void Init(ICacheHelper cache)
+        {
+            this.cacheHelper = cache;
+        }
 
         #region Methods
         public void CommitChanges()
