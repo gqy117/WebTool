@@ -3,6 +3,10 @@ WebTool
 
 A demo website contains many best practices.
 
+Branch  | Status | 
+-------- | :------------: | 
+master | [![Build status](https://ci.appveyor.com/api/projects/status/8mk3pyahcejbfduv/branch/master?svg=true)](https://ci.appveyor.com/project/gqy117/webtool/branch/master)
+
 ### 1. WebTool
 Main website.
 
