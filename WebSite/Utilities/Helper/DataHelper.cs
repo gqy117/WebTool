@@ -1,4 +1,4 @@
-﻿namespace WebToolService
+﻿namespace Utilities
 {
     using System;
     using System.Collections;

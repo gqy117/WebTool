@@ -1,10 +1,11 @@
-﻿namespace WebToolService
+﻿namespace Utilities
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using Microsoft.Practices.Unity;
+    using Microsoft.Practices.Unity.Configuration;
     using StackExchange.Redis.Extensions.Core;
     using StackExchange.Redis.Extensions.Jil;
 
@@ -22,7 +23,8 @@
         private static void OnConfigure()
         {
             ////Builder.RegisterType<MemcachedHelper>().As<ICacheHelper>();
-            Container.RegisterInstance<ICacheHelper>(new SessionHelper());
+            // Container.RegisterInstance<ICacheHelper>(new SessionHelper(), new ContainerControlledLifetimeManager());
+            ////Container.LoadConfiguration();
 
             ////ICacheHelper cacheHelper = null;
             ////try
