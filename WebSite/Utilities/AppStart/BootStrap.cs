@@ -26,21 +26,21 @@
             ////Builder.RegisterType<MemcachedHelper>().As<ICacheHelper>();
             Builder.RegisterInstance(new SessionHelper()).As<ICacheHelper>();
 
-            //ICacheHelper cacheHelper = null;
-            //try
-            //{
-            //    StackExchangeRedisCacheClient stackExchangeRedisCacheClient = new StackExchangeRedisCacheClient(new JilSerializer());
-            //    stackExchangeRedisCacheClient.Dispose();
-            //    cacheHelper = new RedisHelper();
-            //}
-            //catch (TypeInitializationException)
-            //{
-            //    cacheHelper = new SessionHelper();
-            //}
-            //finally
-            //{
-            //    Builder.RegisterInstance(cacheHelper).As<ICacheHelper>();
-            //}
+            ////ICacheHelper cacheHelper = null;
+            ////try
+            ////{s
+            ////    StackExchangeRedisCacheClient stackExchangeRedisCacheClient = new StackExchangeRedisCacheClient(new JilSerializer());
+            ////    stackExchangeRedisCacheClient.Dispose();
+            ////    cacheHelper = new RedisHelper();
+            ////}
+            ////catch (TypeInitializationException)
+            ////{
+            ////    cacheHelper = new SessionHelper();
+            ////}
+            ////finally
+            ////{
+            ////    Builder.RegisterInstance(cacheHelper).As<ICacheHelper>();
+            ////}
         }
 
         private static void BuildContainer()
