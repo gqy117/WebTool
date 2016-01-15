@@ -1,5 +1,5 @@
 $startPath = "$($env:appveyor_build_folder)\DBProject\WebToolDB\WebToolDB\Backup"
-$sqlInstance = "\SQL2008R2SP2"
+$sqlInstance = ".\SQL2008R2SP2"
 $dbName = "WebTool"
 
 
