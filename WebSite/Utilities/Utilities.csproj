@@ -7,7 +7,7 @@
     <ProjectGuid>{C458CE84-5BB1-4A0E-AD8A-3E6FA7B9901F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebToolService</RootNamespace>
+    <RootNamespace>Utilities</RootNamespace>
     <AssemblyName>Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -106,6 +106,7 @@
       <HintPath>..\packages\StyleCop.4.7.49.0\lib\net35\StyleCop.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />

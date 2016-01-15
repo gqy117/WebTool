@@ -44,7 +44,7 @@
         #region InitDI
         public virtual void InitDI()
         {
-            WebToolService.Bootstrap.Startup();
+            Utilities.Bootstrap.Startup();
         }
         #endregion
         #region Request
