@@ -24,21 +24,21 @@
         private static void OnConfigure()
         {
             ////Builder.RegisterType<MemcachedHelper>().As<ICacheHelper>();
-            ////Builder.RegisterType<SessionHelper>().As<ICacheHelper>();
+            Builder.RegisterInstance(new SessionHelper()).As<ICacheHelper>();
 
-            ICacheHelper cacheHelper = null;
-            try
-            {
-                cacheHelper = new RedisHelper();
-            }
-            catch (TypeInitializationException)
-            {
-                cacheHelper = new SessionHelper();
-            }
-            finally
-            {
-                Builder.RegisterInstance(cacheHelper).As<ICacheHelper>();
-            }
+            ////ICacheHelper cacheHelper = null;
+            ////try
+            ////{
+            ////    cacheHelper = new RedisHelper();
+            ////}
+            ////catch (TypeInitializationException)
+            ////{
+            ////    cacheHelper = new SessionHelper();
+            ////}
+            ////finally
+            ////{
+            ////    Builder.RegisterInstance(cacheHelper).As<ICacheHelper>();
+            ////}
         }
 
         private static void BuildContainer()
