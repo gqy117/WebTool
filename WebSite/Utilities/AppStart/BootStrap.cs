@@ -4,27 +4,25 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using Autofac;
+    using Microsoft.Practices.Unity;
     using StackExchange.Redis.Extensions.Core;
     using StackExchange.Redis.Extensions.Jil;
 
     public static class Bootstrap
     {
-        public static ContainerBuilder Builder { get; set; }
-
-        public static Autofac.IContainer Container { get; private set; }
+        public static IUnityContainer Container { get; private set; }
 
         public static void Startup()
         {
-            Builder = new ContainerBuilder();
+            Bootstrap.Container = new UnityContainer();
             OnConfigure();
-            BuildContainer();
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "That's default usage of Unity")]
         private static void OnConfigure()
         {
             ////Builder.RegisterType<MemcachedHelper>().As<ICacheHelper>();
-            Builder.RegisterInstance(new SessionHelper()).As<ICacheHelper>();
+            Container.RegisterInstance<ICacheHelper>(new SessionHelper());
 
             ////ICacheHelper cacheHelper = null;
             ////try
@@ -41,18 +39,6 @@
             ////{
             ////    Builder.RegisterInstance(cacheHelper).As<ICacheHelper>();
             ////}
-        }
-
-        private static void BuildContainer()
-        {
-            if (Container == null)
-            {
-                Container = Builder.Build();
-            }
-            else
-            {
-                Builder.Update(Container);
-            }
         }
     }
 }
