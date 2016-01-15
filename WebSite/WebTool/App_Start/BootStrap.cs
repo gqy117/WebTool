@@ -13,20 +13,17 @@ namespace WebTool
     using System.Web;
     using System.Web.Compilation;
     using System.Web.Mvc;
-    using Autofac;
-    using Autofac.Extras.DynamicProxy2;
-    using Autofac.Integration.Mvc;
     using CaptchaMvc.Infrastructure;
     using Enyim.Caching;
+    using Microsoft.Practices.Unity;
+    using Microsoft.Practices.Unity.Mvc;
     using Microsoft.SqlServer.Server;
     using WebToolService;
 
     public class BootStrap
     {
         #region Properties
-        private ContainerBuilder builder;
-
-        public Autofac.IContainer MyContainer { get; private set; }
+        public IUnityContainer MyContainer { get; private set; }
 
         public string AssembleStartWith
         {
@@ -52,25 +49,20 @@ namespace WebTool
         #region Methods
         public void Configure()
         {
-            this.builder = new ContainerBuilder();
+            WebToolService.Bootstrap.Startup();
+            this.MyContainer = WebToolService.Bootstrap.Container;
             this.OnConfigure();
-            if (this.MyContainer == null)
-            {
-                this.MyContainer = this.builder.Build();
-            }
-            else
-            {
-                this.builder.Update(this.MyContainer);
-            }
+
             ////This tells the MVC application to use myContainer as its dependency resolver
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(this.MyContainer));
+            DependencyResolver.SetResolver(new UnityDependencyResolver(this.MyContainer));
         }
 
         protected virtual void OnConfigure()
         {
             ////This is where you register all dependencies
-            ////The line below tells autofac, when a controller is initialized, pass into its constructor, the implementations of the required interfaces
-            this.builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired();
+            FilterProviders.Providers.Remove(FilterProviders.Providers.OfType<FilterAttributeFilterProvider>().First());
+            FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(this.MyContainer));
+
             this.RegisterWebToolRepositoryService();
             ////RegisterAOP();
             ////RegisterLogger();
@@ -79,9 +71,11 @@ namespace WebTool
         #region Service
         private void RegisterWebToolRepositoryService()
         {
+            // TODO register 
             this.RegisterAssemblyName();
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "loadedAssembly", Justification = "Default")]
         private void RegisterAssemblyName()
         {
             AssemblyName[] assemblyNames = Assembly.GetExecutingAssembly().GetReferencedAssemblies();
@@ -90,9 +84,12 @@ namespace WebTool
                 if (this.IsServiceDll(item))
                 {
                     var loadedAssembly = Assembly.Load(item.FullName);
-                    this.builder.RegisterAssemblyTypes(loadedAssembly).Where(t => t.IsSubclassOf(typeof(ServiceBase)))
-                        .InstancePerLifetimeScope()
-                        .EnableClassInterceptors();
+                    var serviceTypes = loadedAssembly.ExportedTypes.Where(t => t.IsSubclassOf(typeof(ServiceBase)));
+
+                    this.MyContainer.RegisterTypes(serviceTypes);
+                    ////this.MyContainer.RegisterAssemblyTypes(loadedAssembly).Where(t => t.IsSubclassOf(typeof(ServiceBase)))
+                    ////    .InstancePerLifetimeScope()
+                    ////    .EnableClassInterceptors();
                 }
             }
         }
@@ -106,13 +103,13 @@ namespace WebTool
         #region AOP
         private void RegisterAOP()
         {
-            this.builder.Register(c => new Validation());
+            this.MyContainer.RegisterType<Validation>();
         }
         #endregion
         #region Logger
         private void RegisterLogger()
         {
-            this.builder.Register(c => new ErrorLoggerAttribute());
+            this.MyContainer.RegisterType<ErrorLoggerAttribute>();
         }
         #endregion
         private void RegisterCaptcha()

@@ -12,6 +12,7 @@
     using DataHelperLibrary;
     using Enyim.Caching;
     using Enyim.Caching.Memcached;
+    using Microsoft.Practices.Unity;
     using Newtonsoft.Json;
     using WebToolCulture;
     using WebToolCulture.Resource;
@@ -34,6 +35,13 @@
         public UserModel CurrentUserModel { get; set; }
         #endregion
         #region Constructors
+
+        [InjectionMethod]
+        public void Init(UserService userService, LanguageService languageService)
+        {
+            this.UserService = userService;
+            this.LanguageService = languageService;
+        }
         #endregion
         #region Methods
         public virtual void GetCurrentUser()
