@@ -13,6 +13,7 @@ configuration: Release
 
 
 services:
+  - mssql2008r2sp2      # start sql server 2008
   - iis                 # start IIS
 
 install:
