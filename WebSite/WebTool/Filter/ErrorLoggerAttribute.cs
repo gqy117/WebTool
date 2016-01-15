@@ -7,7 +7,6 @@
     using System.Text;
     using System.Web;
     using System.Web.Mvc;
-    using Autofac.Core.Lifetime;
     using WebToolService;
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
