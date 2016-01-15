@@ -55,7 +55,10 @@ after_build:
   # Enable SQL Server name pipe and TCP-IP
   - ps: .\sql-server-ip-and-alias.ps1
 
+  # Test The Database
   - sqlcmd -S "(local)\SQL2008R2SP2" -U "sa" -P "Password12!" -Q "SELECT * FROM information_schema.tables;" -d "master"
+  - sqlcmd -S "(local)\SQL2008R2SP2" -U "sa" -P "Password12!" -Q "SELECT * FROM dbo.Users;" -d "WebTool"
+
 
 #---------------------------------#
 #       tests configuration       #
