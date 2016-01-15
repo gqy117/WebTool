@@ -21,6 +21,10 @@ build:
   project: WebSite\WebTool.sln      # path to Visual Studio solution or project
   publish_wap: true
 
+services:
+  - mssql2008r2sp2      # start SQL Server 2008 R2 SP2 Express
+  - iis
+
 install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node 4.2.4
@@ -37,7 +41,11 @@ install:
   # Install Dependencies
   - npm install --prefix WebSite
 
+  # Attach the Database
+  - ps: appveyor-attachdb-sql.ps1
 
+  # Create the iis website
+  - ps: CreateIISWebSite.ps1
 
 #---------------------------------#
 #       tests configuration       #
