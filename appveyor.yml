@@ -9,7 +9,7 @@ init:
 
 
 # build Configuration, i.e. Debug, Release, etc.
-configuration: Release
+configuration: Debug
 
 
 services:
