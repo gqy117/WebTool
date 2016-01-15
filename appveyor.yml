@@ -13,8 +13,7 @@ configuration: Release
 
 
 services:
-  - mssql2008r2sp2      # start SQL Server 2008 R2 SP2 Express
-  - iis
+  - iis                 # start IIS
 
 install:
   # Get the latest stable version of Node.js or io.js
@@ -52,6 +51,8 @@ after_build:
   # Create the iis website
   - ps: .\CreateIISWebSite.ps1
 
+  # Enable SQL Server name pipe and TCP-IP
+  - ps: .\sql-server-ip-and-alias.ps1
 
 
 #---------------------------------#
@@ -60,4 +61,4 @@ after_build:
 
 test:
   assemblies:
-    - BDD.dll
+    - 'WebSite\Test\BDD\bin\Release\BDD.dll'
