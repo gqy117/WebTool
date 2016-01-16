@@ -33,8 +33,8 @@ install:
   - npm install --prefix WebSite
 
   # Install karma, Jasmine
-  - npm install -g karma --save-dev
-  - npm install -g karma-jasmine karma-chrome-launcher --save-dev
+  - npm install -g karma
+  - npm install -g karma-jasmine karma-chrome-launcher
 
 
 # to add several configurations to build matrix:
