@@ -1,4 +1,4 @@
-REM Create Web.config
-copy WebSite\WebTool\Web.template.config WebSite\WebTool\Web.config 
 npm install -g gulp
 npm install --prefix WebSite
+npm install -g karma
+npm install -g karma-jasmine karma-chrome-launcher karma-html-reporter
