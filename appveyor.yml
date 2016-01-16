@@ -67,7 +67,7 @@ after_build:
   - WebSite\Test\BDD\phantomjs.exe WebSite\Test\BDD\phantomjs_Debug.js
 
   # Run Jasmine
-  - WebSite\Test\Jasmine\runJasmine.bat
+  - karma start "WebSite\Test\Jasmine\webTool.conf.js"
 
 #---------------------------------#
 #       tests configuration       #
