@@ -97,3 +97,7 @@ WebSite/WebTool/WebTool.Publish.xml
 #WebSite/WebTool/Web.Release.config
 #WebSite/WebTool/Web.config
 WebSite/node_modules
+
+# Nuget Packages
+WebSite/packages/
+!WebSite/packages/repositories.config
