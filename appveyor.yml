@@ -62,6 +62,9 @@ after_build:
   # Test IIS
   - WebSite\Test\BDD\phantomjs.exe WebSite\Test\BDD\phantomjs_Debug.js
 
+  # Run Jasmine
+  - WebSite\Test\Jasmine\runJasmine.bat
+
 #---------------------------------#
 #       tests configuration       #
 #---------------------------------#
