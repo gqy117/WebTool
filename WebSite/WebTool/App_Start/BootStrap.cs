@@ -50,8 +50,7 @@ namespace WebTool
         #region Methods
         public void Configure()
         {
-            Utilities.Bootstrap.Startup();
-            this.MyContainer = Utilities.Bootstrap.Container;
+            this.MyContainer = new UnityContainer();
             this.MyContainer.LoadConfiguration();
             this.OnConfigure();
 
