@@ -8,6 +8,10 @@ init:
     git config --system core.longpaths true
 
 
+# fetch repository as zip archive
+shallow_clone: true                 # default is "false"
+
+
 # build cache to preserve files/folders between builds
 cache:
   - WebSite\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
