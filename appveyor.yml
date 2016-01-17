@@ -77,6 +77,8 @@ after_build:
   # Run Jasmine
   - karma start "WebSite\Test\Jasmine\webTool.conf.js"
 
+
+
 #---------------------------------#
 #       tests configuration       #
 #---------------------------------#
@@ -84,3 +86,22 @@ after_build:
 test:
   assemblies:
     - BDD.dll
+
+
+
+
+
+#---------------------------------#
+#     deployment configuration    #
+#---------------------------------#
+
+# providers: Local, FTP, WebDeploy, AzureCS, AzureBlob, S3, NuGet, Environment
+# provider names are case-sensitive!
+deploy:
+
+    # Deploying to a named environment
+  - provider: Environment
+    name: leoli.noip.me
+    on:
+      branch: master
+      #env_var1: value1
