@@ -14,25 +14,27 @@ Main website.
 
 (2) Use **TypeScript** as a superset of javascript.
 
-(3) Use **JqueryDataTables** as table control.
+(3) Use **Redis** as distributed cache.
 
-(4) Use **Autofac** as **DI** framework.
+(4) Use **JqueryDataTables** as table control.
 
-(5) Use **bootstrap** as UI framework.
+(5) Use **Unity** as **DI** framework.
 
-(6) Use **Code Analysis/ Fxcop** to prevent the high **Cyclomatic Complexity** or something like that.
+(6) Use **bootstrap** as UI framework.
 
-(7) Use **StyleCop** to keep codes clean.
+(7) Use **Code Analysis/ Fxcop** to prevent the high **Cyclomatic Complexity** or something like that.
 
-(8) Use **jsHint** and **tsLint** to make javascript/TypeScript code clean and strong.
+(8) Use **StyleCop** to keep codes clean.
 
-(9) Use some **Node.js** plugin such as **grunt**/**gulp** to auto watch file changes.
+(9) Use **jsHint** and **tsLint** to make javascript/TypeScript code clean and strong.
 
-(10) Use **Castle.Core** as **AOP** framework.
+(10) Use some **Node.js** plugin such as **grunt**/**gulp** to auto watch file changes.
 
-(11) Use **Glimpse** to debug.
+(12) Use **Castle.Core** as **AOP** framework.
 
-(12) Use **Google Analytics** to analyze users' behaviour.
+(12) Use **Glimpse** to debug.
+
+(13) Use **Google Analytics** to analyze users' behaviour.
 
 ### 2.Tests
 (1) BDD
