@@ -20,7 +20,7 @@ services:
 
 install:
   # Get the latest stable version of Node.js or io.js
-  - ps: Install-Product node 4.2.4
+  - ps: Install-Product node 5.4.1
   # install modules
 
   # Install Gulp
