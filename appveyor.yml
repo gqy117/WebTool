@@ -5,7 +5,7 @@
 
 # scripts that are called at very beginning, before repo cloning
 init:
-    git config --system core.longpaths true
+    #git config --system core.longpaths true
 
 
 # fetch repository as zip archive
