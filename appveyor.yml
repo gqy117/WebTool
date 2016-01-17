@@ -34,19 +34,17 @@ install:
   # install modules
 
   # Install Gulp
-  #- Setup.bat
-
-  #- copy "WebSite\WebTool\Web.template.config" "WebSite\WebTool\Web.config"
+  - ps: .\Setup.ps1
 
   # Install Gulp
-  - npm install -g gulp
+  #- npm install -g gulp
 
   # Install Dependencies
-  - npm install --prefix WebSite
+  #- npm install --prefix WebSite
 
   # Install karma, Jasmine
-  - npm install -g karma
-  - npm install -g karma-jasmine karma-chrome-launcher karma-html-reporter
+  #- npm install -g karma
+  #- npm install -g karma-jasmine karma-chrome-launcher karma-html-reporter
 
 
 # to add several configurations to build matrix:
