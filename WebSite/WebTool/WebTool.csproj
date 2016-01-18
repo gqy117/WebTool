@@ -255,10 +255,6 @@
     <Content Include="Content\assets\data-tables\images\sort_both.png" />
     <Content Include="Content\assets\data-tables\images\sort_desc.png" />
     <Content Include="Content\assets\data-tables\jquery.dataTables.js" />
-    <Content Include="Content\assets\fancybox\source\blank.gif" />
-    <Content Include="Content\assets\fancybox\source\fancybox_loading.gif" />
-    <Content Include="Content\assets\fancybox\source\fancybox_overlay.png" />
-    <Content Include="Content\assets\fancybox\source\fancybox_sprite.png" />
     <Content Include="Content\assets\font-awesome\css\font-awesome.css" />
     <Content Include="Content\assets\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\assets\gritter\images\gritter-light.png" />
@@ -540,7 +536,6 @@
     <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.eot" />
     <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.ttf" />
     <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.woff" />
-    <None Include="Content\assets\font-awesome\font\fontawesome-webfont_162a16fe.eot" />
     <Content Include="Views\Account\LogOn\_loginLayout.cshtml" />
     <Content Include="Views\Shared\_indexLayout.cshtml" />
     <Content Include="Views\Head\Head.cshtml" />
@@ -549,7 +544,6 @@
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <Content Include="Content\font\fontawesome-webfont.ttf" />
     <Content Include="Content\font\fontawesome-webfont.woff" />
-    <Content Include="Content\font\fontawesome-webfont_162a16fe.eot" />
     <Content Include="Content\assets\plugins\bootstrap-modal\.gitattributes" />
     <Content Include="Content\assets\plugins\bootstrap-modal\component.json" />
     <Content Include="Content\assets\plugins\bootstrap-modal\composer.json" />
@@ -648,6 +642,7 @@
     <Folder Include="Content\assets\bootstrap-datepicker\js\" />
     <Folder Include="Content\assets\bootstrap-daterangepicker\" />
     <Folder Include="Content\assets\clockface\js\" />
+    <Folder Include="Content\assets\fancybox\source\" />
     <Folder Include="Content\assets\gritter\css\" />
     <Folder Include="Content\assets\gritter\js\" />
   </ItemGroup>
