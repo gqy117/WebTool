@@ -1,13 +1,3 @@
-#branches:
-  # whitelist
-  #only:
-    #- master
-
-# scripts that are called at very beginning, before repo cloning
-init:
-    git config --system core.longpaths true
-
-
 # fetch repository as zip archive
 shallow_clone: true                 # default is "false"
 
@@ -34,19 +24,8 @@ install:
   # install modules
 
   # Install Gulp
-  #- Setup.bat
+  - ps: .\Setup.ps1
 
-  #- copy "WebSite\WebTool\Web.template.config" "WebSite\WebTool\Web.config"
-
-  # Install Gulp
-  - npm install -g gulp
-
-  # Install Dependencies
-  - npm install --prefix WebSite
-
-  # Install karma, Jasmine
-  - npm install -g karma
-  - npm install -g karma-jasmine karma-chrome-launcher karma-html-reporter
 
 
 # to add several configurations to build matrix:
