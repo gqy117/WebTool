@@ -645,26 +645,11 @@
     <TypeScriptCompile Include="Views\WOL\wolHeaderPanel.service.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\assets\bootstrap-colorpicker\css\" />
-    <Folder Include="Content\assets\bootstrap-colorpicker\img\" />
-    <Folder Include="Content\assets\bootstrap-colorpicker\js\" />
     <Folder Include="Content\assets\bootstrap-datepicker\js\" />
     <Folder Include="Content\assets\bootstrap-daterangepicker\" />
-    <Folder Include="Content\assets\bootstrap-timepicker\compiled\" />
-    <Folder Include="Content\assets\bootstrap-timepicker\js\" />
-    <Folder Include="Content\assets\bootstrap-toggle-buttons\static\js\" />
-    <Folder Include="Content\assets\bootstrap-toggle-buttons\static\stylesheets\" />
-    <Folder Include="Content\assets\bootstrap-wizard\" />
-    <Folder Include="Content\assets\bootstrap-wysihtml5\" />
     <Folder Include="Content\assets\clockface\js\" />
-    <Folder Include="Content\assets\flot\" />
-    <Folder Include="Content\assets\fullcalendar\fullcalendar\" />
     <Folder Include="Content\assets\gritter\css\" />
     <Folder Include="Content\assets\gritter\js\" />
-    <Folder Include="Content\assets\jquery-slimscroll\" />
-    <Folder Include="Content\assets\jquery-tags-input\" />
-    <Folder Include="Content\assets\jqvmap\jqvmap\data\" />
-    <Folder Include="Content\assets\jqvmap\jqvmap\maps\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
