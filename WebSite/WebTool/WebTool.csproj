@@ -269,6 +269,7 @@
     <Content Include="Content\assets\img\avatar1.jpg" />
     <Content Include="Content\assets\img\avatar1_small.jpg" />
     <Content Include="Content\assets\img\flags\ch.png" />
+    <Content Include="Content\assets\img\flags\cn.png" />
     <Content Include="Content\assets\img\flags\er.png" />
     <Content Include="Content\assets\img\flags\gs.png" />
     <Content Include="Content\assets\img\flags\ht.png" />
