@@ -231,17 +231,11 @@
     <Content Include="Content\assets\bootstrap\img\glyphicons-halflings.png" />
     <Content Include="Content\assets\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\assets\breakpoints\breakpoints.js" />
-    <Content Include="Content\assets\chosen-bootstrap\chosen\chosen-sprite.png" />
     <Content Include="Content\assets\ckeditor\config.js" />
     <Content Include="Content\assets\ckeditor\plugins\icons.png" />
-    <Content Include="Content\assets\ckeditor\styles.js" />
-    <Content Include="Content\assets\clockface\css\clockface.css" />
     <Content Include="Content\assets\css\metro.min.css" />
     <Content Include="Content\assets\css\metro.css" />
-    <Content Include="Content\assets\css\style-responsive.css" />
     <Content Include="Content\assets\css\style.css" />
-    <Content Include="Content\assets\css\style_default.css" />
-    <Content Include="Content\assets\css\style_default.min.css" />
     <Content Include="Content\assets\css\style_responsive.css" />
     <Content Include="Content\assets\css\themes\blue.css" />
     <Content Include="Content\assets\css\themes\brown.css" />
@@ -259,7 +253,6 @@
     <Content Include="Content\assets\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\assets\gritter\images\gritter-light.png" />
     <Content Include="Content\assets\gritter\images\gritter.png" />
-    <Content Include="Content\assets\gritter\images\ie-spacer.gif" />
     <Content Include="Content\assets\img\ajax-loading.gif" />
     <Content Include="Content\assets\img\ajax-modal-loading.gif" />
     <Content Include="Content\assets\img\avatar1.jpg" />
@@ -640,9 +633,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\assets\bootstrap-datepicker\js\" />
-    <Folder Include="Content\assets\bootstrap-daterangepicker\" />
-    <Folder Include="Content\assets\clockface\js\" />
-    <Folder Include="Content\assets\fancybox\source\" />
     <Folder Include="Content\assets\gritter\css\" />
     <Folder Include="Content\assets\gritter\js\" />
   </ItemGroup>
