@@ -1,6 +1,4 @@
-﻿[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(WebTool.BootStrap), "PostStart")]
-////[assembly: PreApplicationStartMethod(typeof(WebTool.Bootstrap), "PostStart")]
-namespace WebTool
+﻿namespace WebTool
 {
     using System;
     using System;
@@ -43,10 +41,6 @@ namespace WebTool
         }
         #endregion
 
-        public static void PostStart()
-        {
-            ////Console.Clear();
-        }
         #region Methods
         public void Configure()
         {
@@ -65,14 +59,11 @@ namespace WebTool
             FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(this.MyContainer));
 
             this.RegisterWebToolRepositoryService();
-            ////RegisterAOP();
-            ////RegisterLogger();
             this.RegisterCaptcha();
         }
         #region Service
         private void RegisterWebToolRepositoryService()
         {
-            // TODO register 
             this.RegisterAssemblyName();
         }
 
@@ -98,18 +89,7 @@ namespace WebTool
                     assemblyName.Name.EndsWith(this.AssembleEndWith);
         }
         #endregion
-        #region AOP
-        private void RegisterAOP()
-        {
-            this.MyContainer.RegisterType<Validation>();
-        }
-        #endregion
-        #region Logger
-        private void RegisterLogger()
-        {
-            this.MyContainer.RegisterType<ErrorLoggerAttribute>();
-        }
-        #endregion
+
         private void RegisterCaptcha()
         {
             CaptchaUtils.CaptchaManager.StorageProvider = new CookieStorageProvider();
