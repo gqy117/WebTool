@@ -477,8 +477,6 @@
     <Compile Include="App_Start\Bundle\Shared\Head.cs" />
     <Compile Include="App_Start\Bundle\Shared\MainJs.cs" />
     <Compile Include="App_Start\Bundle\Shared\JqTable.cs" />
-    <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Code\Base\BaseController.cs" />
     <Compile Include="Code\Base\TableBaseController.cs" />
     <Compile Include="Code\JQueryDataTablesModelBinder.cs" />
