@@ -155,10 +155,6 @@
       <Project>{e91055a3-4dfc-478a-a3d6-79d0b581c4d5}</Project>
       <Name>WebToolRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Service\WebToolOtherTool\WebToolOtherService.csproj">
-      <Project>{a35d3c91-60b8-4121-a7a6-9e5c5cbd914a}</Project>
-      <Name>WebToolOtherService</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Service\WebToolServiceBase\WebToolServiceBase.csproj">
       <Project>{7eae600d-97a9-4946-b8da-1248667482e0}</Project>
       <Name>WebToolServiceBase</Name>
