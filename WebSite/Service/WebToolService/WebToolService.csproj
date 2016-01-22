@@ -122,7 +122,7 @@
     <Compile Include="Service\Account\UserService.cs" />
     <Compile Include="Service\Home\LanguageService.cs" />
     <Compile Include="Validation\Validation.cs" />
-    <Compile Include="WOL\WOLService.cs" />
+    <Compile Include="Service\WOL\WOLService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DataAccess\WebToolRepository.csproj">
@@ -144,7 +144,7 @@
     <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WOL\WolCmd.exe">
+    <Content Include="Service\WOL\WolCmd.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
