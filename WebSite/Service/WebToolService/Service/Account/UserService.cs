@@ -15,7 +15,6 @@
     using WebToolCulture;
     using WebToolRepository;
 
-    ////[Intercept(typeof(Validation))]
     public class UserService : ServiceBase
     {
         #region Properties
