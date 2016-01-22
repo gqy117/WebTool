@@ -121,7 +121,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Account\UserService.cs" />
     <Compile Include="Service\Home\LanguageService.cs" />
-    <Compile Include="Validation\Validation.cs" />
     <Compile Include="Service\WOL\WOLService.cs" />
   </ItemGroup>
   <ItemGroup>
