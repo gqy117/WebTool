@@ -477,8 +477,6 @@
     <Compile Include="App_Start\Bundle\Shared\Head.cs" />
     <Compile Include="App_Start\Bundle\Shared\MainJs.cs" />
     <Compile Include="App_Start\Bundle\Shared\JqTable.cs" />
-    <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Code\Base\BaseController.cs" />
     <Compile Include="Code\Base\TableBaseController.cs" />
     <Compile Include="Code\JQueryDataTablesModelBinder.cs" />
@@ -576,14 +574,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Service\WebToolOtherTool\WebToolOtherService.csproj">
-      <Project>{a35d3c91-60b8-4121-a7a6-9e5c5cbd914a}</Project>
-      <Name>WebToolOtherService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Service\WebToolServiceBase\WebToolServiceBase.csproj">
-      <Project>{7eae600d-97a9-4946-b8da-1248667482e0}</Project>
-      <Name>WebToolServiceBase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Service\WebToolService\WebToolService.csproj">
       <Project>{c4c2f800-0f47-424f-92fe-1c37e850c1ca}</Project>
       <Name>WebToolService</Name>

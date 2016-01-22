@@ -71,7 +71,6 @@ namespace WebTool
                 CultureHelper.SetCurrentCulture(lang);
                 HttpCookie cookie = new HttpCookie(ConstParameter.WebToolLanguage, lang);
                 cookie.Expires = DateTime.Now.AddYears(10);
-                ////cookie.Domain = ConstParameter.CurrentDomain;
                 Response.Cookies.Add(cookie);
             }
         } 
