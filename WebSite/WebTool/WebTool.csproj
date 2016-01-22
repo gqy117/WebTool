@@ -576,10 +576,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Service\WebToolServiceBase\WebToolServiceBase.csproj">
-      <Project>{7eae600d-97a9-4946-b8da-1248667482e0}</Project>
-      <Name>WebToolServiceBase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Service\WebToolService\WebToolService.csproj">
       <Project>{c4c2f800-0f47-424f-92fe-1c37e850c1ca}</Project>
       <Name>WebToolService</Name>
