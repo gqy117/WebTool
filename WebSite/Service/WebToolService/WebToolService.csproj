@@ -67,6 +67,22 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Dlls\Enyim.Caching.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="StyleCop">
       <HintPath>..\..\packages\StyleCop.4.7.49.0\lib\net35\StyleCop.dll</HintPath>
     </Reference>
@@ -90,14 +106,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attribute\RequiredExt.cs" />
+    <Compile Include="Base\IServiceBase.cs" />
+    <Compile Include="Base\ServiceBase.cs" />
+    <Compile Include="Interface\ITotalRecords.cs" />
     <Compile Include="Models\Account\LogonBaseModel.cs" />
     <Compile Include="Models\Account\LogonModel.cs" />
     <Compile Include="Models\Account\RegisterModel.cs" />
     <Compile Include="Models\Account\UserModel.cs" />
+    <Compile Include="Models\HeaderCaption.cs" />
     <Compile Include="Models\Home\LanguageModel.cs" />
+    <Compile Include="Models\JQueryTable.cs" />
+    <Compile Include="Models\SortedColumn.cs" />
+    <Compile Include="Models\WOLModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Account\UserService.cs" />
     <Compile Include="Service\Home\LanguageService.cs" />
+    <Compile Include="Service\WOL\WOLService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DataAccess\WebToolRepository.csproj">
@@ -112,15 +136,16 @@
       <Project>{38cd1cd2-3deb-43bb-b649-e4d0cb2644cc}</Project>
       <Name>WebToolCulture</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebToolServiceBase\WebToolServiceBase.csproj">
-      <Project>{7eae600d-97a9-4946-b8da-1248667482e0}</Project>
-      <Name>WebToolServiceBase</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Service\WOL\WolCmd.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" />
