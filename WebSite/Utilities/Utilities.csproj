@@ -96,8 +96,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\Cache\ICacheHelper.cs" />
-    <Compile Include="Helper\Cache\RedisHelper.cs" />
-    <Compile Include="Helper\Cache\SessionHelper.cs" />
+    <Compile Include="Helper\Cache\RedisCacheHelper.cs" />
+    <Compile Include="Helper\Cache\SessionCacheHelper.cs" />
     <Compile Include="Helper\CMDHelper.cs" />
     <Compile Include="Helper\DataHelper.cs" />
     <Compile Include="Helper\Encrypt\AESHelper.cs" />
