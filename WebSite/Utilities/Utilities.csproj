@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\Cache\ICacheHelper.cs" />
+    <Compile Include="Helper\Cache\NoCacheHelper.cs" />
     <Compile Include="Helper\Cache\RedisCacheHelper.cs" />
     <Compile Include="Helper\Cache\SessionCacheHelper.cs" />
     <Compile Include="Helper\CMDHelper.cs" />
