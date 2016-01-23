@@ -46,7 +46,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jasmine", "Test\Jasmine\Jas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebToolService.Test", "Test\WebToolService.Test\WebToolService.Test.csproj", "{B857C674-DC05-4277-A25F-5BDA8904AF82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection1\DependencyInjection.csproj", "{EC2D780F-FA49-442A-A7E7-172951BFFAE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection\DependencyInjection.csproj", "{EC2D780F-FA49-442A-A7E7-172951BFFAE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

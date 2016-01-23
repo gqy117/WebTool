@@ -558,7 +558,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DependencyInjection\ClassLibrary1\DependencyInjection.csproj">
+    <ProjectReference Include="..\DependencyInjection\DependencyInjection\DependencyInjection.csproj">
       <Project>{ec2d780f-fa49-442a-a7e7-172951bffae0}</Project>
       <Name>DependencyInjection</Name>
     </ProjectReference>
