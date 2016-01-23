@@ -43,7 +43,7 @@ namespace WebToolRepository
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectUser_Result>("SelectUser", userIdParameter, userNameParameter);
         }
     
-        public virtual int SelectWOL(Nullable<int> userId, Nullable<int> pageSize, Nullable<int> startRecord, string orderBy, string wOLName)
+        public virtual ObjectResult<SelectWOL_Result> SelectWOL(Nullable<int> userId, Nullable<int> pageSize, Nullable<int> startRecord, string orderBy, string wOLName)
         {
             var userIdParameter = userId.HasValue ?
                 new ObjectParameter("UserId", userId) :
@@ -65,7 +65,7 @@ namespace WebToolRepository
                 new ObjectParameter("WOLName", wOLName) :
                 new ObjectParameter("WOLName", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SelectWOL", userIdParameter, pageSizeParameter, startRecordParameter, orderByParameter, wOLNameParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectWOL_Result>("SelectWOL", userIdParameter, pageSizeParameter, startRecordParameter, orderByParameter, wOLNameParameter);
         }
     }
 }

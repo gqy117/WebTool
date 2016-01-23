@@ -78,6 +78,9 @@
     <Compile Include="SelectUser_Result.cs">
       <DependentUpon>WebToolEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="SelectWOL_Result.cs">
+      <DependentUpon>WebToolEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>WebToolEF.tt</DependentUpon>
     </Compile>
