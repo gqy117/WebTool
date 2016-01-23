@@ -38,7 +38,8 @@
 
         private void CreateDatabase()
         {
-            var dbContext = Mock.Create<WebToolEntities>().PrepareMock();
+            this.Context = Mock.Create<WebToolEntities>().PrepareMock();
+            this.Container.RegisterInstance(this.Context);
         }
 
         private void SetupWOLTable()
