@@ -1,5 +1,4 @@
 @{ Layout = "~/Views/Account/LogOn/_loginLayout.cshtml"; }
-@using CaptchaMvc.HtmlHelpers
 @using System.Web.Optimization
 @using Utilities
 @model WebToolService.LogOnModel
@@ -27,7 +26,6 @@
                 </div>
             </div>
         </div>
-        @*@Html.Partial("~/Views/Account/LogOn/Captcha.cshtml")*@
 
         @Html.MyValidationSummary()
         <div class="form-actions">
