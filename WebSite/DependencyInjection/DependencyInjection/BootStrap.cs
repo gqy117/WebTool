@@ -11,8 +11,6 @@
     using System.Web;
     using System.Web.Compilation;
     using System.Web.Mvc;
-    using CaptchaMvc.Infrastructure;
-    using Enyim.Caching;
     using Microsoft.Practices.Unity;
     using Microsoft.Practices.Unity.Configuration;
     using Microsoft.Practices.Unity.Mvc;
@@ -59,7 +57,6 @@
             FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(this.MyContainer));
 
             this.RegisterWebToolRepositoryService();
-            this.RegisterCaptcha();
         }
         #region Service
         private void RegisterWebToolRepositoryService()
@@ -89,11 +86,6 @@
                     assemblyName.Name.EndsWith(this.AssembleEndWith);
         }
         #endregion
-
-        private void RegisterCaptcha()
-        {
-            CaptchaUtils.CaptchaManager.StorageProvider = new CookieStorageProvider();
-        }
         #endregion
     }
 }
