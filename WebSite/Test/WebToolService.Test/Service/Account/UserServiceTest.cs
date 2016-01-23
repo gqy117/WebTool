@@ -32,13 +32,14 @@
             // Arrange
 
             // Act
-            var actual = this.UserService.GetUserModelByName("1");
+            var actual = this.UserService.GetUserModelByName("Pn8YTV5phgjk62xMg9xxhw==");
 
             // Assert
             UserModel expected = new UserModel()
             {
                 UserId = 1,
                 UserName = "1",
+                Password = "3gVPVdEt60jny1k3431HB3AZOR/0qOW7L6l5dBNLvgEVPgNfFg==",
             };
 
             actual.ShouldBeEquivalentTo(expected);
