@@ -78,10 +78,6 @@
     <Reference Include="Autofac.Extras.DynamicProxy2">
       <HintPath>..\Dlls\IOC\Autofac.Extras.DynamicProxy2.dll</HintPath>
     </Reference>
-    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CaptchaMvc.Mvc4.1.5.0\lib\net40-full\CaptchaMvc.dll</HintPath>
-    </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\Dlls\IOC\Castle.Core.dll</HintPath>
     </Reference>
@@ -95,13 +91,6 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Enyim.Caching, Version=2.11.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Membase.2.14\lib\net35\Enyim.Caching.dll</HintPath>
-    </Reference>
-    <Reference Include="Enyim.Caching.Web">
-      <HintPath>..\packages\Enyim.Caching.Web.1.0.0.1\lib\net40\Enyim.Caching.Web.dll</HintPath>
     </Reference>
     <Reference Include="Glimpse.Ado">
       <HintPath>..\packages\Glimpse.Ado.1.7.0\lib\net40\Glimpse.Ado.dll</HintPath>
@@ -118,9 +107,6 @@
     </Reference>
     <Reference Include="Glimpse.Mvc4">
       <HintPath>..\packages\Glimpse.Mvc4.1.5.3\lib\net40\Glimpse.Mvc4.dll</HintPath>
-    </Reference>
-    <Reference Include="Membase">
-      <HintPath>..\packages\Membase.2.14\lib\net35\Membase.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -480,7 +466,6 @@
     <Compile Include="Code\Base\BaseController.cs" />
     <Compile Include="Code\Base\TableBaseController.cs" />
     <Compile Include="Code\JQueryDataTablesModelBinder.cs" />
-    <Compile Include="App_Start\BootStrap.cs" />
     <Compile Include="Controllers\Account\AccountBaseController.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Account\RegisterController.cs" />
@@ -549,7 +534,6 @@
     <Content Include="Views\WOL\WOL.cshtml" />
     <Content Include="Views\Head\Language\LanguageBar.cshtml" />
     <Content Include="Views\Shared\JS\BackendResource.cshtml" />
-    <Content Include="Views\Account\LogOn\Captcha.cshtml" />
     <Content Include="Views\Shared\JS\AntiForgeryToken.cshtml" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -574,6 +558,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DependencyInjection\ClassLibrary1\DependencyInjection.csproj">
+      <Project>{ec2d780f-fa49-442a-a7e7-172951bffae0}</Project>
+      <Name>DependencyInjection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\WebToolService\WebToolService.csproj">
       <Project>{c4c2f800-0f47-424f-92fe-1c37e850c1ca}</Project>
       <Name>WebToolService</Name>

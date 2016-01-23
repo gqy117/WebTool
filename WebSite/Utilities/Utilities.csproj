@@ -44,22 +44,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Enyim.Caching, Version=2.11.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Membase.2.14\lib\net35\Enyim.Caching.dll</HintPath>
-    </Reference>
-    <Reference Include="Enyim.Caching.Web">
-      <HintPath>..\packages\Enyim.Caching.Web.1.0.0.1\lib\net40\Enyim.Caching.Web.dll</HintPath>
-    </Reference>
     <Reference Include="Jil, Version=2.12.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Jil.2.12.1\lib\net45\Jil.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="LogHelperLibrary">
       <HintPath>..\Dlls\LogHelperLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Membase">
-      <HintPath>..\packages\Membase.2.14\lib\net35\Membase.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -112,7 +102,6 @@
     <Compile Include="Helper\DataHelper.cs" />
     <Compile Include="Helper\Encrypt\AESHelper.cs" />
     <Compile Include="Helper\Encrypt\SHA256Helper.cs" />
-    <Compile Include="Helper\Cache\MemcachedHelper.cs" />
     <Compile Include="Helper\MyHtmlHelper.cs" />
     <Compile Include="Helper\Utility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,8 +5,15 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using NUnit.Framework;
 
+    [TestFixture]
     public class UserServiceTest
     {
+        [Test]
+        public void GetUserModelByName_ShouldReturn1_WhenTheUserNameIs1()
+        {
+            
+        }
     }
 }
