@@ -28,15 +28,10 @@
         private bool isValid = true;
 
         private ICacheHelper cacheHelper;
-        
+
         public virtual WebToolEntities Context
         {
-            get
-            {
-                this.context = this.context ?? new WebToolEntities();
-
-                return this.context;
-            }
+            get { return this.context; }
         }
 
         public virtual int Count { get; set; }
@@ -68,8 +63,9 @@
         #endregion
 
         [InjectionMethod]
-        public void Init(ICacheHelper cache)
+        public void Init(ICacheHelper cache, WebToolEntities webToolEntities)
         {
+            this.context = webToolEntities;
             this.cacheHelper = cache;
         }
 
