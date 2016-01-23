@@ -2,11 +2,47 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using FluentAssertions;
+    using Microsoft.Practices.Unity;
+    using NUnit.Framework;
+    using Telerik.JustMock;
+    using Telerik.JustMock.EntityFramework;
+    using WebTool;
+    using WebToolRepository;
 
-    public class UserServiceTest
+    [TestFixture]
+    public class UserServiceTest : TestBase
     {
+        private UserService UserService { get; set; }
+
+        [TestFixtureSetUp]
+        public override void Init()
+        {
+            base.Init();
+            this.UserService = this.Container.Resolve<UserService>();
+        }
+
+        [Test]
+        public void GetUserModelByName_ShouldReturn1_WhenTheUserNameIs1()
+        {
+            // Arrange
+
+            // Act
+            var actual = this.UserService.GetUserModelByName("Pn8YTV5phgjk62xMg9xxhw==");
+
+            // Assert
+            UserModel expected = new UserModel()
+            {
+                UserId = 1,
+                UserName = "1",
+                Password = "3gVPVdEt60jny1k3431HB3AZOR/0qOW7L6l5dBNLvgEVPgNfFg==",
+            };
+
+            actual.ShouldBeEquivalentTo(expected);
+        }
     }
 }
