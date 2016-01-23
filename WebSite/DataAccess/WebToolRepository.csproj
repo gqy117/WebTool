@@ -53,16 +53,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glimpse.Ado">
-      <HintPath>..\packages\Glimpse.Ado.1.7.0\lib\net40\Glimpse.Ado.dll</HintPath>
-    </Reference>
-    <Reference Include="Glimpse.Core">
-      <HintPath>..\packages\Glimpse.1.8.0\lib\net40\Glimpse.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Glimpse.EF6, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Glimpse.EF6.1.6.1\lib\net40\Glimpse.EF6.dll</HintPath>
-    </Reference>
     <Reference Include="StyleCop">
       <HintPath>..\packages\StyleCop.4.7.49.0\lib\net35\StyleCop.dll</HintPath>
     </Reference>
@@ -88,7 +78,6 @@
     <Compile Include="SelectUser_Result.cs">
       <DependentUpon>WebToolEF.tt</DependentUpon>
     </Compile>
-    <Compile Include="SelectWOL_Result.cs" />
     <Compile Include="User.cs">
       <DependentUpon>WebToolEF.tt</DependentUpon>
     </Compile>

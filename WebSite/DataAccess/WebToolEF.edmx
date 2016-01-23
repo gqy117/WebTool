@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WebToolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="WebToolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserId" />
@@ -51,8 +51,8 @@
           <Parameter Name="WOLName" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="WebToolModelStoreContainer">
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="WOL" EntityType="Self.WOL" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WOL" EntityType="Self.WOL" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_WOL_UserId" Association="Self.FK_WOL_UserId">
             <End Role="Users" EntitySet="Users" />
             <End Role="WOL" EntitySet="WOL" />
@@ -62,12 +62,12 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="WebToolModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+      <Schema Namespace="WebToolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CreationDate" Type="DateTime" Precision="3" />
@@ -77,7 +77,7 @@
           <Key>
             <PropertyRef Name="WOLID" />
           </Key>
-          <Property Name="WOLID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="WOLID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="WOLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MACAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -99,7 +99,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="WebToolEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="WebToolEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="WOLs" EntityType="Self.WOL" />
           <AssociationSet Name="FK_WOL_UserId" Association="Self.FK_WOL_UserId">
@@ -110,7 +110,7 @@
             <Parameter Name="UserId" Mode="In" Type="Int32" />
             <Parameter Name="UserName" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SelectWOL" ReturnType="Collection(WebToolModel.SelectWOL_Result)">
+          <FunctionImport Name="SelectWOL">
             <Parameter Name="UserId" Mode="In" Type="Int32" />
             <Parameter Name="PageSize" Mode="In" Type="Int32" />
             <Parameter Name="StartRecord" Mode="In" Type="Int32" />
@@ -123,18 +123,6 @@
           <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
           <Property Type="DateTime" Name="CreationDate" Nullable="true" Precision="23" />
-        </ComplexType>
-        <ComplexType Name="SelectWOL_Result">
-          <Property Type="Int64" Name="RowID" Nullable="true" />
-          <Property Type="Int32" Name="WOLID" Nullable="true" />
-          <Property Type="Int32" Name="UserId" Nullable="true" />
-          <Property Type="String" Name="WOLName" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="MACAddress" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="SubnetMask" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="HostName" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="Port" Nullable="true" />
-          <Property Type="String" Name="Protocol" Nullable="true" MaxLength="20" />
-          <Property Type="Int32" Name="TotalRecords" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -176,22 +164,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SelectWOL" FunctionName="WebToolModel.Store.SelectWOL">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="WebToolModel.SelectWOL_Result">
-                <ScalarProperty Name="RowID" ColumnName="RowID" />
-                <ScalarProperty Name="WOLID" ColumnName="WOLID" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="WOLName" ColumnName="WOLName" />
-                <ScalarProperty Name="MACAddress" ColumnName="MACAddress" />
-                <ScalarProperty Name="SubnetMask" ColumnName="SubnetMask" />
-                <ScalarProperty Name="HostName" ColumnName="HostName" />
-                <ScalarProperty Name="Port" ColumnName="Port" />
-                <ScalarProperty Name="Protocol" ColumnName="Protocol" />
-                <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectWOL" FunctionName="WebToolModel.Store.SelectWOL" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -208,11 +181,11 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams />
+    <Diagrams></Diagrams>
   </Designer>
 </edmx:Edmx>
