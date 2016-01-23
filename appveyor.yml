@@ -75,9 +75,9 @@ after_build:
 #       tests configuration       #
 #---------------------------------#
 
-#test:
-#  assemblies:
- #   - BDD.dll
+test:
+  assemblies:
+    - BDD.dll
 
 test_script:
 - ps: .\WebSite\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:.\WebSite\packages\NUnit.Runners.2.6.4\tools\nunit-console.exe "-targetargs:"".\WebSite\Test\WebToolService.Test\bin\$env:CONFIGURATION\WebToolService.Test.dll"" /noshadow" -filter:"+[WebToolService*]*" -output:opencoverCoverage.xml
@@ -107,4 +107,3 @@ deploy:
     name: leoli.noip.me
     on:
       branch: master
-      #env_var1: value1
