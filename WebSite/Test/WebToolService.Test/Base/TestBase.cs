@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -37,8 +38,7 @@
 
         private void CreateDatabase()
         {
-            var dbContext = EntityFrameworkMock.Create<WebToolEntities>();
-            dbContext.PrepareMock();
+            var dbContext = Mock.Create<WebToolEntities>().PrepareMock();
         }
 
         private void SetupWOLTable()
