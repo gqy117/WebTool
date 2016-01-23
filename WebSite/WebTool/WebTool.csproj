@@ -536,6 +536,7 @@
     <Content Include="Views\Shared\JS\PageEnd.cshtml" />
     <Content Include="Views\Shared\JS\PageStart.cshtml" />
     <Content Include="runJsLint.cmd" />
+    <Content Include="Unity.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
