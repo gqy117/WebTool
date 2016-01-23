@@ -8,7 +8,6 @@ namespace WebTool
     using System.Web.Routing;
     using System.Web.Security;
     using System.Web.SessionState;
-    using CaptchaMvc.Attributes;
     using WebMatrix.WebData;
     using WebToolCulture.Resource;
     using WebToolService;
