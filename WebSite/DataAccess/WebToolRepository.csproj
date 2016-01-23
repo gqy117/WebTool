@@ -115,6 +115,7 @@
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="connectionStrings.config" />
     <None Include="packages.config" />
     <None Include="Settings.StyleCop" />
     <None Include="WebTool.codeclonesettings" />

@@ -101,4 +101,4 @@ WebSite/node_modules
 # Nuget Packages
 WebSite/packages/
 !WebSite/packages/repositories.config
-WebSite/WebTool/connectionStrings.config
+connectionStrings.config
