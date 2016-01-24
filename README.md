@@ -3,7 +3,7 @@ WebTool
 
 A demo website contains many best practices.
 
-Branch  | Status | Coverage |
+Branch  | Build Status | Coverage Status|
 -------- | :------------: | :------------: |
 master | [![Build status](https://ci.appveyor.com/api/projects/status/8mk3pyahcejbfduv/branch/master?svg=true)](https://ci.appveyor.com/project/gqy117/webtool/branch/master) | [![Coverage Status](https://coveralls.io/repos/github/gqy117/WebTool/badge.svg?branch=master)](https://coveralls.io/github/gqy117/WebTool?branch=master) |
 
