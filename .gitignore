@@ -102,3 +102,6 @@ WebSite/node_modules
 WebSite/packages/
 !WebSite/packages/repositories.config
 connectionStrings.config
+TestResult.xml
+opencoverCoverage.xml
+Report
