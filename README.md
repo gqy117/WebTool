@@ -30,32 +30,22 @@ Main website.
 
 (10) Use some **Node.js** plugin such as **grunt**/**gulp** to auto watch file changes.
 
-(12) Use **Castle.Core** as **AOP** framework.
+(11) Use **Castle.Core** as **AOP** framework.
 
-(12) Use **Glimpse** to debug.
-
-(13) Use **Google Analytics** to analyze users' behaviour.
+(12) Use **Google Analytics** to analyze users' behaviour.
 
 ### 2.Tests
 (1) BDD
 
 Use **SpecFlow** as BDD framework.
 
-(2) UITest
-
-Use **Selenium** as Functional test framework.
-
-(3) Jasmine
+(2) Jasmine
 
 Use **Jasmine** and **Karma** to test javascript code.
 
-(4) UnitTestProject
+(3) WebToolService.Test
 
-Use **MSTest** and **Moq** to do the unit tests.
-
-(5) WebAndLoadTestProject
-
-**Load tests** project.
+Test project for WebToolService.csproj.
 
 ### 3. Utilities
 Common utilities such as **NLog**, **JSON.net**, **Redis**.
@@ -71,11 +61,6 @@ Use **Db Project** to control versions of all the tables and stored procedure.
 Multilanguage project, display different language depending on browser settings and user selection.
 
 ### 7. Service Layer
-(1) WebToolServiceBase
-Base service layer of other services.
-
-(2) WebToolService
+(1) WebToolService
 WebTool related service layer.
 
-(3) WebToolOtherService
-Other services.
