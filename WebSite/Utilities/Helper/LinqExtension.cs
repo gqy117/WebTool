@@ -9,9 +9,9 @@
 
     public static class LinqExtension
     {
-        public static IQueryable<TSource> Search<TSource>(this IQueryable<TSource> source, string search, Expression<Func<TSource, bool>> predicate)
+        public static IQueryable<TSource> Search<TSource>(this IQueryable<TSource> source, string searchText, Expression<Func<TSource, bool>> predicate)
         {
-            if (String.IsNullOrEmpty(search))
+            if (string.IsNullOrEmpty(searchText))
             {
                 return source;
             }
