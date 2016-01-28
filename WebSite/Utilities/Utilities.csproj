@@ -103,6 +103,7 @@
     <Compile Include="Helper\DataHelper.cs" />
     <Compile Include="Helper\Encrypt\AESHelper.cs" />
     <Compile Include="Helper\Encrypt\SHA256Helper.cs" />
+    <Compile Include="Helper\LinqExtension.cs" />
     <Compile Include="Helper\MyHtmlHelper.cs" />
     <Compile Include="Helper\Utility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
