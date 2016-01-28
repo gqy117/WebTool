@@ -91,6 +91,7 @@
     <Compile Include="Service\Account\UserServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Home\LanguageServiceTest.cs" />
+    <Compile Include="Service\WOL\WOLServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

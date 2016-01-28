@@ -29,8 +29,13 @@
 
         public IList<WolModel> GetWolById(int userId, JQueryTable model)
         {
-            var res = this.Context.SelectWOL(userId, model.iDisplayLength, model.iDisplayStart, model.OrderBy, model.sSearch).ToList<SelectWOL_Result, WolModel>();
-            
+            var wolList = this.Context.WOLs
+                .Where(x => x.UserId == userId)
+                .Search(model.sSearch, x => x.WOLName.Contains(model.sSearch))
+                .Skip(model.iDisplayStart).Take(model.iDisplayLength);
+
+            var res = wolList.ToList<WOL, WolModel>();
+
             return res;
         }
         #endregion
