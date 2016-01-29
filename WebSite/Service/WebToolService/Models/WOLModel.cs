@@ -26,7 +26,7 @@
 
         public string WolName { get; set; }
 
-        public int WolId { get; set; }
+        public int WOLID { get; set; }
 
         public string Arguments { get; set; }
 
