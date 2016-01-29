@@ -46,7 +46,7 @@
 
             // Act
             IList<WolModel> result = this.WolService.GetWolById(1);
-            int actual = result.First().WolId;
+            int actual = result.First().WOLID;
 
             // Assert
             int expected = 1;

@@ -9,6 +9,7 @@
     using System.Web.Mvc;
     using System.Web.UI.WebControls.Expressions;
     using DataHelperLibrary;
+    using UnconstrainedMelody;
     using WebToolService;
 
     public class TableBaseController<TMain> : BaseController where TMain : ITotalRecords
@@ -84,7 +85,7 @@
             {
                 sb.Append(this.PropertyList[sortedColumn.PropertyName.ToInt32()]);
                 sb.Append(" ");
-                sb.Append(sortedColumn.Direction.ToString());
+                sb.Append(Enums.GetDescription(sortedColumn.Direction));
                 sb.Append(",");
             }
 
