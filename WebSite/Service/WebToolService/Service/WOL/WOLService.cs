@@ -24,7 +24,12 @@
 
         public IList<WolModel> GetWolById(int userId)
         {
-            return this.GetWolById(userId, new JQueryTable());
+            var defaultModel = new JQueryTable
+            {
+                OrderBy = "WOLID OrderBy"
+            };
+
+            return this.GetWolById(userId, defaultModel);
         }
 
         public IList<WolModel> GetWolById(int userId, JQueryTable model)

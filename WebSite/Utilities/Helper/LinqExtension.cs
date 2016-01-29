@@ -23,6 +23,11 @@
 
         public static IQueryable<T> OrderBy<T>(this IQueryable<T> source, string ordering)
         {
+            if (string.IsNullOrEmpty(ordering))
+            {
+                return source;
+            }
+
             string[] sortArray = ordering.Split(' ');
             string sortCol = sortArray[0];
             string sortDir = sortArray[1];
