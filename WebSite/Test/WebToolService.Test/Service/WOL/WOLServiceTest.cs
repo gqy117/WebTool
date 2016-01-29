@@ -1,5 +1,4 @@
-﻿
-namespace WebToolService.Test.Service.WOL
+﻿namespace WebToolService.Test
 {
     using System;
     using System.Collections.Generic;
