@@ -105,7 +105,7 @@
             this.CmdHelper.Run();
         }
 
-        private void PrepareArgument()
+        public void PrepareArgument()
         {
             List<string> argumentList = new List<string>();
 
