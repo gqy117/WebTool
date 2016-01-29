@@ -51,7 +51,7 @@
         {
             get
             {
-                return new List<string>() { "WolId", "WolName", "HostName", "MacAddress", "SubnetMask", "Port", "Protocol" };
+                return new List<string>() { "WOLID", "WolName", "HostName", "MacAddress", "SubnetMask", "Port", "Protocol" };
             }
         }
         #endregion
