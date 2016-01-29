@@ -32,7 +32,7 @@
             var wolList = this.Context.WOLs
                 .Where(x => x.UserId == userId)
                 .Search(model.sSearch, x => x.WOLName.Contains(model.sSearch))
-                .OrderBy(x => x.WOLID)
+                .OrderBy(model.OrderBy)
                 .Skip(model.iDisplayStart).Take(model.iDisplayLength);
 
             var res = wolList.ToList<WOL, WolModel>();
