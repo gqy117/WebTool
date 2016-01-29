@@ -90,6 +90,8 @@
     <Compile Include="Base\TestBase.cs" />
     <Compile Include="Service\Account\UserServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Home\LanguageServiceTest.cs" />
+    <Compile Include="Service\WOL\WOLServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -107,6 +109,10 @@
     <ProjectReference Include="..\..\Service\WebToolService\WebToolService.csproj">
       <Project>{c4c2f800-0f47-424f-92fe-1c37e850c1ca}</Project>
       <Name>WebToolService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WebToolCulture\WebToolCulture.csproj">
+      <Project>{38cd1cd2-3deb-43bb-b649-e4d0cb2644cc}</Project>
+      <Name>WebToolCulture</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
