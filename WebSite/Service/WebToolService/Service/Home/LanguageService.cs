@@ -20,14 +20,14 @@
             return languageModel;
         }
 
-        public IList<Language> GetLanguageList(string languageCode)
+        private IList<Language> GetLanguageList(string languageCode)
         {
             return (from language in ConstParameter.LanguageList
                     where language.Code != languageCode
                     select new Language(language.Code)).ToList();
         }
 
-        public Language GetCurrentLanguage(string languageCode)
+        private Language GetCurrentLanguage(string languageCode)
         {
             return new Language(languageCode);
         }
