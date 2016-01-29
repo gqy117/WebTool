@@ -22,9 +22,9 @@
         }
 
         [Then(@"the result of the element '(.*)' should be the same as '(.*)'")]
-        public void ThenTheResultShouldBeTheSameAs(string name, string expected, int timeoutInSeconds = 0)
+        public void ThenTheResultShouldBeTheSameAs(string name, string expected, int timeoutInMilliseconds = 0)
         {
-            var actual = this.Browser.FindElement(By.Name(name), timeoutInSeconds).Text;
+            var actual = this.Browser.FindElement(By.Name(name), timeoutInMilliseconds).Text;
 
             Assert.AreEqual(expected, actual);
         }
