@@ -47,7 +47,7 @@
         [Then(@"the current language text should be cn\.")]
         public void ThenTheCurrentLanguageTextShouldBeCn_()
         {
-            this.CommonSteps.ThenTheResultShouldBeTheSameAs(NameCurrentLanguageText, "中文");
+            this.CommonSteps.ThenTheResultShouldBeTheSameAs(NameCurrentLanguageText, "中文", 100);
         } 
         #endregion
     }
