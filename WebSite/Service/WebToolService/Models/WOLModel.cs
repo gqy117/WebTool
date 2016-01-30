@@ -41,7 +41,7 @@
 
         public string FileName { get; set; }
 
-        public CmdHelper CmdHelper { get; set; }
+        public ICmdHelper CmdHelper { get; set; }
 
         public int TotalRecords { get; set; }
 
@@ -51,9 +51,8 @@
         public void Wake()
         {
             this.PrepareArgument();
-            this.CmdHelper.FileName = this.FileName;
-            this.CmdHelper.Arguments = this.Arguments;
-            this.CmdHelper.Run();
+
+            this.CmdHelper.Run(this.FileName, this.Arguments);
         }
 
         public void PrepareArgument()
