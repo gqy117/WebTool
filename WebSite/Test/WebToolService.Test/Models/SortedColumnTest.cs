@@ -57,6 +57,36 @@
 
             actual.ShouldBeEquivalentTo(expected);
         }
+
+        private static object[] TheObjectIsNull = { new object[] { new SortedColumn("property1", "asc"), null } };
+
+        [Test]
+        [TestCaseSource("TheObjectIsNull")]
+        public void Equals_ShouldReturnFalse_WhenTheObjectIsNull(SortedColumn sortedColumn1, SortedColumn sortedColumn2)
+        {
+            // Act
+            bool actual = sortedColumn1.Equals(sortedColumn2);
+
+            // Assert
+            bool expected = false;
+
+            actual.ShouldBeEquivalentTo(expected);
+        }
+
+        private static object[] TheyAreNotTheSameType = { new object[] { new SortedColumn("property1", "asc"), new object() } };
+
+        [Test]
+        [TestCaseSource("TheyAreNotTheSameType")]
+        public void Equals_ShouldReturnFalse_WhenTheyAreNotTheSameType(SortedColumn sortedColumn1, object sortedColumn2)
+        {
+            // Act
+            bool actual = sortedColumn1.Equals(sortedColumn2);
+
+            // Assert
+            bool expected = false;
+
+            actual.ShouldBeEquivalentTo(expected);
+        }
         #endregion
 
         [Test]
