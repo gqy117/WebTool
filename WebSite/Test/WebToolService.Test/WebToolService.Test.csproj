@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\TestBase.cs" />
+    <Compile Include="Models\SortedColumnTest.cs" />
     <Compile Include="Models\WOLModelTest.cs" />
     <Compile Include="Service\Account\UserServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
