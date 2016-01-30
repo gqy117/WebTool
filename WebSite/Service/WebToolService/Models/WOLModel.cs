@@ -8,20 +8,19 @@
 
     public class WolModel : ITotalRecords
     {
+        #region Constructors
+        public WolModel()
+        {
+            this.CmdHelper = new CmdHelper();
+            this.FileName = string.Empty;
+            this.Port = 9;
+            this.HostName = string.Empty;
+            this.SubnetMask = "255.255.255.255";
+            this.MacAddress = string.Empty;
+        }
+        #endregion
+
         #region Properties
-
-        private int port = 9;
-
-        private string hostName = string.Empty;
-
-        private string fileName = string.Empty;
-
-        private string subnetMask = "255.255.255.255";
-
-        private string macAddress = string.Empty;
-
-        private CmdHelper cmdHelper = new CmdHelper();
-
         public string Protocol { get; set; }
 
         public string WolName { get; set; }
@@ -32,65 +31,17 @@
 
         public int UserId { get; set; }
 
-        public string HostName
-        {
-            get { return this.hostName; }
+        public string HostName { get; set; }
 
-            set { this.hostName = value; }
-        }
+        public string SubnetMask { get; set; }
 
-        public string SubnetMask
-        {
-            get
-            {
-                return this.subnetMask;
-            }
+        public string MacAddress { get; set; }
 
-            set
-            {
-                this.subnetMask = value;
-            }
-        }
+        public int Port { get; set; }
 
-        public string MacAddress
-        {
-            get { return this.macAddress; }
+        public string FileName { get; set; }
 
-            set { this.macAddress = value; }
-        }
-
-        public int Port
-        {
-            get
-            {
-                return this.port;
-            }
-
-            set
-            {
-                this.port = value;
-            }
-        }
-
-        public string FileName
-        {
-            get
-            {
-                return this.fileName;
-            }
-
-            set
-            {
-                this.fileName = value;
-            }
-        }
-
-        public CmdHelper CmdHelper
-        {
-            get { return this.cmdHelper; }
-
-            set { this.cmdHelper = value; }
-        }
+        public ICmdHelper CmdHelper { get; set; }
 
         public int TotalRecords { get; set; }
 
@@ -100,9 +51,8 @@
         public void Wake()
         {
             this.PrepareArgument();
-            this.CmdHelper.FileName = this.FileName;
-            this.CmdHelper.Arguments = this.Arguments;
-            this.CmdHelper.Run();
+
+            this.CmdHelper.Run(this.FileName, this.Arguments);
         }
 
         public void PrepareArgument()
