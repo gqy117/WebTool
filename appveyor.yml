@@ -7,7 +7,7 @@ cache:
   - WebSite\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
   #- projectA\libs
   - WebSite\node_modules                    # local npm modules
-  - '%APPDATA%\npm-cache'             # npm cache
+  - '%APPDATA%\npm-cache'                   # npm cache
 
 
 # build Configuration, i.e. Debug, Release, etc.
@@ -66,7 +66,7 @@ after_build:
   - sqlcmd -S "(local)\SQL2008R2SP2" -U "sa" -P "Password12!" -Q "SELECT * FROM dbo.Users;" -d "WebTool"
 
   # Test IIS
-  - '%AppData%\npm\node_modules\phantomjs\lib\phantom\bin\phantomjs.exe' WebSite\Test\BDD\phantomjs_Debug.js
+  - C:\Users\appveyor\AppData\Roaming\npm\node_modules\phantomjs\lib\phantom\bin\phantomjs.exe WebSite\Test\BDD\phantomjs_Debug.js
 
   # Run Jasmine
   - karma start "WebSite\Test\Jasmine\webTool.conf.js"
