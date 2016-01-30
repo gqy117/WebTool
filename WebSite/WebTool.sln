@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebToolService.Test", "Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection\DependencyInjection.csproj", "{EC2D780F-FA49-442A-A7E7-172951BFFAE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Test", "Test\Utilities.Test\Utilities.Test.csproj", "{48887263-4522-4FE7-B3CF-4BCF420C0CC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +133,14 @@ Global
 		{EC2D780F-FA49-442A-A7E7-172951BFFAE0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC2D780F-FA49-442A-A7E7-172951BFFAE0}.Test|Any CPU.ActiveCfg = Release|Any CPU
 		{EC2D780F-FA49-442A-A7E7-172951BFFAE0}.Test|Any CPU.Build.0 = Release|Any CPU
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1}.PhantomJS|Any CPU.ActiveCfg = Release|Any CPU
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1}.PhantomJS|Any CPU.Build.0 = Release|Any CPU
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1}.Test|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +157,7 @@ Global
 		{79C37AC4-9BD1-4D15-898A-F17E8B423728} = {8DC7BF8A-BF29-45B3-A1BA-5B71BD2E7216}
 		{B857C674-DC05-4277-A25F-5BDA8904AF82} = {8DC7BF8A-BF29-45B3-A1BA-5B71BD2E7216}
 		{EC2D780F-FA49-442A-A7E7-172951BFFAE0} = {D6AE36BD-4E08-4438-BCD9-F56D469B962D}
+		{48887263-4522-4FE7-B3CF-4BCF420C0CC1} = {8DC7BF8A-BF29-45B3-A1BA-5B71BD2E7216}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = WebTool.vsmdi
