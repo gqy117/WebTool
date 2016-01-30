@@ -10,7 +10,12 @@
     [Serializable]
     public class LogOnModel : LogOnBaseModel
     {
-        private bool rememberMe = true;
+        #region Constructors
+        public LogOnModel()
+        {
+            this.RememberMe = true;
+        }
+        #endregion
 
         [RequiredExt(ErrorMessageResourceType = typeof(UIResource), ErrorMessageResourceName = "UserNameIsRequired")]
         [StringLength(10, ErrorMessageResourceType = typeof(UIResource), ErrorMessageResourceName = ("UserNameCannotBeLongerThan10Characters"))]
@@ -29,12 +34,7 @@
             set;
         }
 
-        public bool RememberMe
-        {
-            get { return this.rememberMe; }
-
-            set { this.rememberMe = value; }
-        }
+        public bool RememberMe { get; set; }
 
         public string ErrorMessage { get; set; }
     }
