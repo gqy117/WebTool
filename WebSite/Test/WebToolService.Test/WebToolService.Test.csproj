@@ -87,7 +87,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attribute\RequiredExtTest.cs" />
     <Compile Include="Base\TestBase.cs" />
+    <Compile Include="Models\Account\LogonModelTest.cs" />
     <Compile Include="Models\SortedColumnTest.cs" />
     <Compile Include="Models\WOLModelTest.cs" />
     <Compile Include="Service\Account\UserServiceTest.cs" />
