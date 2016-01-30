@@ -8,21 +8,19 @@
     using System.Security.Policy;
     using System.Text;
 
-    public class CmdHelper
+    public interface ICmdHelper
     {
-        #region Properties
-        public string FileName { get; set; }
+        void Run(string fileName, string arguments);
+    }
 
-        public string Arguments { get; set; }
-
-        #endregion
-
-        public void Run()
+    public class CmdHelper : ICmdHelper
+    {
+        public void Run(string fileName, string arguments)
         {
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = this.FileName;
-            startInfo.Arguments = this.Arguments;
+            startInfo.FileName = fileName;
+            startInfo.Arguments = arguments;
 
             using (System.Diagnostics.Process process = new System.Diagnostics.Process())
             {
