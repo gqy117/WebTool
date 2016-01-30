@@ -82,7 +82,7 @@ test_script:
 - ps: nunit-console.exe ".\WebSite\Test\BDD\bin\$env:CONFIGURATION\BDD.dll"
 
 # run unit tests
-- ps: .\WebSite\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:.\WebSite\packages\NUnit.Runners.2.6.4\tools\nunit-console.exe "-targetargs:"".\WebSite\Test\WebToolService.Test\bin\$env:CONFIGURATION\WebToolService.Test.dll"" /noshadow" -filter:"+[WebToolService]* +[Utilities]*" -output:opencoverCoverage.xml
+- ps: .\WebSite\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:.\WebSite\packages\NUnit.Runners.2.6.4\tools\nunit-console.exe "-targetargs:"".\WebSite\Test\WebToolService.Test\bin\$env:CONFIGURATION\WebToolService.Test.dll"" /noshadow" -filter:"+[WebToolService|Utilities]*" -output:opencoverCoverage.xml
 
 - ps: $env:COVERALLS_REPO_TOKEN
 - ps: $env:APPVEYOR_REPO_COMMIT
