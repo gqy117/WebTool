@@ -41,6 +41,7 @@
         [Then(@"the wol table result should be the same as WolTable\.html")]
         public void ThenTheWolTableResultShouldBeTheSameAsWolTable_Html()
         {
+            this.RefreshElementsValues(3);
             this.CommonSteps.ThenTheResultShouldBeTheSameAsTheHtmlFile(this.WoltableTbodyTrNthChild, WolWoltableHtml);
         } 
         #endregion
