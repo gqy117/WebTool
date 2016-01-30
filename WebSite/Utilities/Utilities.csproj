@@ -101,12 +101,9 @@
     <Compile Include="Helper\Cache\RedisCacheHelper.cs" />
     <Compile Include="Helper\Cache\SessionCacheHelper.cs" />
     <Compile Include="Helper\CMDHelper.cs" />
-    <Compile Include="Helper\DataHelper.cs" />
     <Compile Include="Helper\Encrypt\AESHelper.cs" />
     <Compile Include="Helper\Encrypt\SHA256Helper.cs" />
     <Compile Include="Helper\LinqExtension.cs" />
-    <Compile Include="Helper\MyHtmlHelper.cs" />
-    <Compile Include="Helper\Utility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
