@@ -27,7 +27,8 @@
             </div>
         </div>
 
-        @Html.MyValidationSummary()
+        @Html.Partial("_ValidationSummary", ViewData.ModelState)
+
         <div class="form-actions">
             <label class="checkbox">
                 @Html.CheckBoxFor(x => x.RememberMe)

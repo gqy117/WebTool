@@ -541,6 +541,7 @@
     <Content Include="Views\Shared\JS\PageStart.cshtml" />
     <Content Include="runJsLint.cmd" />
     <Content Include="Unity.config" />
+    <Content Include="Views\Shared\_ValidationSummary.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
