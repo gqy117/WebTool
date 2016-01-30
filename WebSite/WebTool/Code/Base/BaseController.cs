@@ -12,6 +12,7 @@
     using DataHelperLibrary;
     using Microsoft.Practices.Unity;
     using Newtonsoft.Json;
+    using Utilities;
     using WebToolCulture;
     using WebToolCulture.Resource;
     using WebToolService;
@@ -21,24 +22,28 @@
         #region Properties
         public string ResourceJson { get; set; }
 
-        public UserService UserService { get; set; }
-
-        public LanguageService LanguageService { get; set; }
-
         public virtual string MainCshtmlName
         {
             get { return string.Empty; }
         }
 
         public UserModel CurrentUserModel { get; set; }
+
+        protected UserService UserService { get; set; }
+
+        protected LanguageService LanguageService { get; set; }
+
+        protected AESHelper AESHelper { get; set; }
+
         #endregion
         #region Constructors
 
         [InjectionMethod]
-        public void Init(UserService userService, LanguageService languageService)
+        public void Init(UserService userService, LanguageService languageService, AESHelper aesHelper)
         {
             this.UserService = userService;
             this.LanguageService = languageService;
+            this.AESHelper = aesHelper;
         }
         #endregion
         #region Methods
