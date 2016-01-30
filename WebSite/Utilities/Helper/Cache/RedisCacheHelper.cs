@@ -9,18 +9,27 @@
 
     public class RedisHelper : ICacheHelper
     {
-        private static StackExchangeRedisCacheClient stackExchangeRedisCacheClient = new StackExchangeRedisCacheClient(new JilSerializer());
+        private static ICacheClient stackExchangeRedisCacheClient = null;
+        private static Lazy<ICacheClient> lazyStackExchangeRedisCacheClient = new Lazy<ICacheClient>(() => new StackExchangeRedisCacheClient(new JilSerializer()));
 
-        public static StackExchangeRedisCacheClient StackExchangeRedisCacheClient
+        public static ICacheClient StackExchangeRedisCacheClient
         {
-            get { return stackExchangeRedisCacheClient; }
+            get
+            {
+                stackExchangeRedisCacheClient = stackExchangeRedisCacheClient ?? lazyStackExchangeRedisCacheClient.Value;
 
-            set { stackExchangeRedisCacheClient = value; }
+                return stackExchangeRedisCacheClient;
+            }
+
+            set
+            {
+                stackExchangeRedisCacheClient = value;
+            }
         }
 
         public T GetCache<T>(string key, Func<T> func) where T : class
         {
-            T obj = StackExchangeRedisCacheClient.Exists(key) as T;
+            T obj = null;
 
             if (StackExchangeRedisCacheClient.Exists(key))
             {
