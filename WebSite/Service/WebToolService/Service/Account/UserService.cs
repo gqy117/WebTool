@@ -18,16 +18,21 @@
     public class UserService : ServiceBase
     {
         #region Properties
-
+        private readonly AESHelper aESHelper;
         #endregion
+
         #region Constructors
-
+        public UserService(AESHelper aESHelper)
+        {
+            this.aESHelper = aESHelper;
+        }
         #endregion
+
         #region Methods
         #region Select
         public UserModel GetUserModelByName(string encryptedUserName)
         {
-            string userName = Utility.AESHelper.DecryptStringFromBytes(encryptedUserName);
+            string userName = this.aESHelper.DecryptStringFromBytes(encryptedUserName);
 
             return this.CacheHelper.GetCache(userName, () => Context.Users.FirstOrDefault(x => x.UserName == userName).To<User, UserModel>());
         }
