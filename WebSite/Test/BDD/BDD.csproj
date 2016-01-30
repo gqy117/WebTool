@@ -140,9 +140,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="wires-0.6.2-win.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="phantomjs_Debug.js" />
     <Content Include="Wol\WolTable.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
