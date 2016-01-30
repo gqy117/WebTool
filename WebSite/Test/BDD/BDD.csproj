@@ -140,10 +140,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chromedriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="phantomjs.exe">
+    <Content Include="wires-0.6.2-win.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Wol\WolTable.html">
