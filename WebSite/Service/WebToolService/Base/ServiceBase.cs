@@ -18,74 +18,37 @@
     using WebToolService;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Justification = "Justification")]
-    public class ServiceBase : IServiceBase
+    public class ServiceBase
     {
         #region Properties
-        private WebToolEntities context = null;
-
-        private List<ValidationResult> validationResults = new List<ValidationResult>();
-
-        private bool isValid = true;
-
-        private ICacheHelper cacheHelper;
-
-        public virtual WebToolEntities Context
-        {
-            get { return this.context; }
-        }
+        public virtual WebToolEntities Context { get; set; }
 
         public virtual int Count { get; set; }
 
-        public ICacheHelper CacheHelper
-        {
-            get { return this.cacheHelper; }
-
-            set { this.cacheHelper = value; }
-        }
+        public ICacheHelper CacheHelper { get; set; }
 
         public ValidationContext ValidationContext { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Justification")]
-        public List<ValidationResult> ValidationResults
-        {
-            get { return this.validationResults; }
+        public List<ValidationResult> ValidationResults { get; set; }
 
-            set { this.validationResults = value; }
-        }
-
-        public bool IsValid
-        {
-            get { return this.isValid; }
-
-            set { this.isValid = value; }
-        }
+        public bool IsValid { get; set; }
 
         #endregion
 
         [InjectionMethod]
         public void Init(ICacheHelper cache, WebToolEntities webToolEntities)
         {
-            this.context = webToolEntities;
-            this.cacheHelper = cache;
+            this.Context = webToolEntities;
+            this.CacheHelper = cache;
+            this.IsValid = true;
+            this.ValidationResults = new List<ValidationResult>();
         }
 
         #region Methods
         public void CommitChanges()
         {
             this.Context.SaveChanges();
-        }
-
-        public void Validate(object[] arg)
-        {
-            this.ValidationResults = new List<ValidationResult>();
-
-            foreach (var o in arg)
-            {
-                this.ValidationContext = new ValidationContext(o, null, null);
-                List<ValidationResult> currentResults = new List<ValidationResult>();
-                this.IsValid = this.IsValid == false ? false : Validator.TryValidateObject(o, this.ValidationContext, this.validationResults, true);
-                this.ValidationResults.AddRange(currentResults);
-            }
         }
         #endregion
     }
