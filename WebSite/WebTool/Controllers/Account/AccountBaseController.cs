@@ -50,7 +50,7 @@
         #region Cookies
         public void SetLogOnCookie(LogOnModel logOnModel)
         {
-            string encryptedUsername = Utility.AESHelper.EncryptStringToBytes(logOnModel.UserName);
+            string encryptedUsername = this.AESHelper.EncryptStringToBytes(logOnModel.UserName);
             HttpCookie cookie = new HttpCookie(ConstParameter.WebToolUserName, encryptedUsername);
             this.SetLoginCookieExpires(cookie, logOnModel.RememberMe);
             Response.Cookies.Add(cookie);
