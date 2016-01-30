@@ -66,7 +66,7 @@ after_build:
   - sqlcmd -S "(local)\SQL2008R2SP2" -U "sa" -P "Password12!" -Q "SELECT * FROM dbo.Users;" -d "WebTool"
 
   # Test IIS
-  - ps: & "$env:AppData\npm\node_modules\phantomjs\lib\phantom\bin\phantomjs.exe" WebSite\Test\BDD\phantomjs_Debug.js
+  - '%AppData%\npm\node_modules\phantomjs\lib\phantom\bin\phantomjs.exe' WebSite\Test\BDD\phantomjs_Debug.js
 
   # Run Jasmine
   - karma start "WebSite\Test\Jasmine\webTool.conf.js"
