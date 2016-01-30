@@ -20,31 +20,24 @@
 
     public class JQueryTable
     {
-        private int _iDisplayStart = 0;
-
-        private int _iDisplayLength = 10;
-
+        #region MyRegion
+        public JQueryTable()
+        {
+            this.iDisplayStart = 0;
+            this.iDisplayLength = 10;
+        }
+        #endregion
         public int sEcho { get; set; }
 
         /// <summary>
         /// Gets or sets the display start point.
         /// </summary>
-        public int iDisplayStart
-        {
-            get { return this._iDisplayStart; }
-
-            set { this._iDisplayStart = value; }
-        }
+        public int iDisplayStart { get; set; }
 
         /// <summary>
         /// Gets or sets the number of records to display.
         /// </summary>
-        public int iDisplayLength
-        {
-            get { return this._iDisplayLength; }
-
-            set { this._iDisplayLength = value; }
-        }
+        public int iDisplayLength { get; set; }
 
         /// <summary>
         /// Gets or sets the Global search field.
