@@ -107,7 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attribute\RequiredExt.cs" />
-    <Compile Include="Base\IServiceBase.cs" />
     <Compile Include="Base\ServiceBase.cs" />
     <Compile Include="Interface\ITotalRecords.cs" />
     <Compile Include="Models\Account\LogonBaseModel.cs" />
