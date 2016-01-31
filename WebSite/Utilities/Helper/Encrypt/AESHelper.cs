@@ -38,22 +38,6 @@
 
         public string EncryptStringToBytes(string plaintext)
         {
-            // Check arguments. 
-            if (plaintext == null || plaintext.Length <= 0)
-            {
-                throw new ArgumentNullException("plaintext");
-            }
-
-            if (this.RijnKey == null || this.RijnKey.Length <= 0)
-            {
-                throw new ArgumentNullException("Key");
-            }
-
-            if (this.RijnIv == null || this.RijnIv.Length <= 0)
-            {
-                throw new ArgumentNullException("Key");
-            }
-
             byte[] encrypted;
             /*Create an RijndaelManaged object 
                with the specified key and IV. */
@@ -88,23 +72,6 @@
         public string DecryptStringFromBytes(string s)
         {
             byte[] cipherText = Convert.FromBase64String(s);
-
-            ////Check arguments
-
-            if (cipherText == null || cipherText.Length <= 0)
-            {
-                throw new ArgumentNullException("cipherText");
-            }
-
-            if (this.RijnKey == null || this.RijnKey.Length <= 0)
-            {
-                throw new ArgumentNullException("Key");
-            }
-
-            if (this.RijnIv == null || this.RijnIv.Length <= 0)
-            {
-                throw new ArgumentNullException("Key");
-            }
 
             // Declare the string used to hold 
             // the decrypted text. 
