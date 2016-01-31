@@ -45,24 +45,9 @@
             // Initialize appropriate hashing algorithm class.
             switch (hashAlgorithm.ToUpper())
             {
-                case "SHA1":
-                    hash = new SHA1Managed();
-                    break;
-
                 case "SHA256":
+                    default:
                     hash = new SHA256Managed();
-                    break;
-
-                case "SHA384":
-                    hash = new SHA384Managed();
-                    break;
-
-                case "SHA512":
-                    hash = new SHA512Managed();
-                    break;
-
-                default:
-                    hash = new MD5CryptoServiceProvider();
                     break;
             }
 
