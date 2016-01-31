@@ -81,10 +81,10 @@ test_script:
 
 
 # run tests
-- ps: nunit-console.exe ".\WebSite\Test\BDD\bin\$env:CONFIGURATION\BDD.dll"
+#- ps: nunit-console.exe ".\WebSite\Test\BDD\bin\$env:CONFIGURATION\BDD.dll"
 
 # run unit tests
-- ps: .\WebSite\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:.\WebSite\packages\NUnit.Runners.2.6.4\tools\nunit-console.exe "-targetargs:"".\WebSite\Test\WebToolService.Test\bin\$env:CONFIGURATION\WebToolService.Test.dll" ".\WebSite\Test\Utilities.Test\bin\$env:CONFIGURATION\Utilities.Test.dll"" /noshadow" -filter:"+[WebToolService|Utilities]*" -output:opencoverCoverage.xml
+- ps: .\WebSite\packages\OpenCover.*\tools\OpenCover.Console.exe -register:user -target:.\WebSite\packages\NUnit.Runners.*\tools\nunit-console.exe "-targetargs:"".\WebSite\Test\WebToolService.Test\bin\$env:CONFIGURATION\WebToolService.Test.dll" ".\WebSite\Test\Utilities.Test\bin\$env:CONFIGURATION\Utilities.Test.dll"" /noshadow" -filter:"+[WebToolService|Utilities]*" -output:opencoverCoverage.xml
 
 - ps: $env:COVERALLS_REPO_TOKEN
 - ps: $env:APPVEYOR_REPO_COMMIT
@@ -98,7 +98,7 @@ test_script:
 - ps: $wc = New-Object 'System.Net.WebClient'
 - ps: $wc.UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\TestResult.xml))
 # upload coverage to Coveralls.net
-- ps: .\WebSite\packages\coveralls.net.0.6.0\tools\csmacnz.coveralls.exe --opencover -i opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --serviceName appveyor
+- ps: .\WebSite\packages\coveralls.net.*\tools\csmacnz.coveralls.exe --opencover -i opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_BUILD_NUMBER --serviceName appveyor
 
 
 
