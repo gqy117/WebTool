@@ -7,7 +7,7 @@ cache:
   - WebSite\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
   #- projectA\libs
   - WebSite\node_modules                    # local npm modules
-  - '%APPDATA%\npm-cache'             # npm cache
+  - '%APPDATA%\npm-cache'               # npm cache
 
 
 # build Configuration, i.e. Debug, Release, etc.
@@ -17,6 +17,8 @@ configuration: Release
 environment:
   COVERALLS_REPO_TOKEN:
     secure: oPWlAm7qUsd8UDn+sKevbeqai8QfEDr5CdBFgL5aFSuRJdDzAz226rL6oIsHEDev
+
+
 
 
 services:
@@ -64,7 +66,7 @@ after_build:
   - sqlcmd -S "(local)\SQL2008R2SP2" -U "sa" -P "Password12!" -Q "SELECT * FROM dbo.Users;" -d "WebTool"
 
   # Test IIS
-  - WebSite\Test\BDD\phantomjs.exe WebSite\Test\BDD\phantomjs_Debug.js
+  - C:\Users\appveyor\AppData\Roaming\npm\node_modules\phantomjs\lib\phantom\bin\phantomjs.exe WebSite\Test\BDD\phantomjs_Debug.js
 
   # Run Jasmine
   - karma start "WebSite\Test\Jasmine\webTool.conf.js"
@@ -82,7 +84,7 @@ test_script:
 - ps: nunit-console.exe ".\WebSite\Test\BDD\bin\$env:CONFIGURATION\BDD.dll"
 
 # run unit tests
-- ps: .\WebSite\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:.\WebSite\packages\NUnit.Runners.2.6.4\tools\nunit-console.exe "-targetargs:"".\WebSite\Test\WebToolService.Test\bin\$env:CONFIGURATION\WebToolService.Test.dll"" /noshadow" -filter:"+[WebToolService|Utilities]*" -output:opencoverCoverage.xml
+- ps: .\WebSite\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:.\WebSite\packages\NUnit.Runners.2.6.4\tools\nunit-console.exe "-targetargs:"".\WebSite\Test\WebToolService.Test\bin\$env:CONFIGURATION\WebToolService.Test.dll" ".\WebSite\Test\Utilities.Test\bin\$env:CONFIGURATION\Utilities.Test.dll"" /noshadow" -filter:"+[WebToolService|Utilities]*" -output:opencoverCoverage.xml
 
 - ps: $env:COVERALLS_REPO_TOKEN
 - ps: $env:APPVEYOR_REPO_COMMIT
@@ -115,6 +117,10 @@ deploy:
       branch: master
 
 
+# on successful build
+# clear github badge cache
+on_success:
+- curl -X PURGE https://camo.githubusercontent.com/b5a05a66dcd05757f3624da408ea0e5a243cc4f5/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f6769746875622f6771793131372f576562546f6f6c2f62616467652e7376673f6272616e63683d6d61737465722631
 
 # on build failure
 on_failure:
