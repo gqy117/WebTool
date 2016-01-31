@@ -14,7 +14,7 @@
             <div class="controls">
                 <div class="input-icon left">
                     <i class="icon-user"></i>
-                    <input name="UserName" class="m-wrap" type="text" placeholder="@UIResource.Username" value="@Model.UserName" />
+                    <input name="UserName" class="m-wrap" type="text" placeholder="@UIResource.Username" value="@Model.UserName"/>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <div class="controls">
                 <div class="input-icon left">
                     <i class="icon-lock"></i>
-                    <input name="Password" class="m-wrap" type="password" style="" placeholder="@UIResource.Password" />
+                    <input name="Password" class="m-wrap" type="password" style="" placeholder="@UIResource.Password"/>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="controls">
                 <div class="input-icon left">
                     <i class="icon-lock"></i>
-                    <input id="FormRegister_ConfirmPassword" ng-keyup="register.formRegister_Password_keyup($event)" name="ConfirmPassword" class="m-wrap" type="password" style="" placeholder="@UIResource.ConfirmPassword" />
+                    <input id="FormRegister_ConfirmPassword" ng-keyup="register.formRegister_Password_keyup($event)" name="ConfirmPassword" class="m-wrap" type="password" style="" placeholder="@UIResource.ConfirmPassword"/>
                 </div>
             </div>
         </div>
@@ -40,7 +40,8 @@
             </a>
         </div>
     </form>
-    @Html.MyValidationSummary()
+    @Html.Partial("_ValidationSummary", ViewData.ModelState)
+
     <!-- END LOGIN FORM -->
 </div>
 

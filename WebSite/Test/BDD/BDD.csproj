@@ -140,12 +140,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chromedriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="phantomjs.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="phantomjs_Debug.js" />
     <Content Include="Wol\WolTable.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
