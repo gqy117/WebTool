@@ -38,9 +38,10 @@
                 .Where(x => x.UserId == userId)
                 .Search(model.sSearch, x => x.WOLName.Contains(model.sSearch))
                 .OrderBy(model.OrderBy)
-                .Skip(model.iDisplayStart).Take(model.iDisplayLength);
+                .Skip(model.iDisplayStart).Take(model.iDisplayLength)
+                .ToList();
 
-            var res = this.Mapper.Map<IQueryable<WOL>, IList<WolModel>>(wolList);
+            var res = this.Mapper.Map<IList<WOL>, IList<WolModel>>(wolList);
 
             return res;
         }
