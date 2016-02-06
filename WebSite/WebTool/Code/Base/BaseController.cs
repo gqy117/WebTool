@@ -49,7 +49,7 @@
         #region Methods
         public virtual void GetCurrentUser()
         {
-            string userName = Option.Safe(() => Request.Cookies[ConstParameter.WebToolUserName].ToString()).GetValueOrDefault();
+            string userName = Option.Safe(() => Request.Cookies[ConstParameter.WebToolUserName].Value).GetValueOrDefault();
             this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
 
