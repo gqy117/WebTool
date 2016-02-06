@@ -7,7 +7,6 @@
     using System.Runtime.Remoting.Contexts;
     using System.Text;
     using System.Web;
-    using DataHelperLibrary;
     using WebToolCulture;
     using WebToolRepository;
 
@@ -49,7 +48,7 @@
         #region Insert
         public void Insert(WolModel logOnModel)
         {
-            WOL wol = logOnModel.To<WolModel, WOL>();
+            WOL wol = this.Mapper.Map<WolModel, WOL>(logOnModel);
             this.Context.WOLs.Add(wol);
             this.CommitChanges();
         }
