@@ -9,9 +9,6 @@
     using System.Linq;
     using System.Runtime.Remoting.Contexts;
     using System.Text;
-    using Autofac;
-    using Enyim.Caching;
-    using Enyim.Caching.Memcached;
     using Microsoft.Practices.Unity;
     using Utilities;
     using WebToolRepository;

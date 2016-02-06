@@ -7,10 +7,7 @@
     using System.Runtime.Remoting.Contexts;
     using System.Text;
     using System.Web;
-    using Autofac.Extras.DynamicProxy2;
     using DataHelperLibrary;
-    using Enyim.Caching;
-    using Enyim.Caching.Memcached;
     using Utilities;
     using WebToolCulture;
     using WebToolRepository;
