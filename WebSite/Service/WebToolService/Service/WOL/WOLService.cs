@@ -40,7 +40,7 @@
                 .OrderBy(model.OrderBy)
                 .Skip(model.iDisplayStart).Take(model.iDisplayLength);
 
-            var res = wolList.ToList<WOL, WolModel>();
+            var res = this.Mapper.Map<IQueryable<WOL>, IList<WolModel>>(wolList);
 
             return res;
         }
