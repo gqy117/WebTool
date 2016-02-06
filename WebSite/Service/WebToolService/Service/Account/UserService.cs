@@ -7,7 +7,6 @@
     using System.Runtime.Remoting.Contexts;
     using System.Text;
     using System.Web;
-    using DataHelperLibrary;
     using Utilities;
     using WebToolCulture;
     using WebToolRepository;
@@ -31,7 +30,15 @@
         {
             string userName = this.aESHelper.DecryptStringFromBytes(encryptedUserName);
 
-            return this.CacheHelper.GetCache(userName, () => Context.Users.FirstOrDefault(x => x.UserName == userName).To<User, UserModel>());
+            return this.CacheHelper.GetCache(
+                userName, 
+                () => 
+                {
+                    var user = Context.Users.FirstOrDefault(x => x.UserName == userName);
+                    var userModel = this.Mapper.Map<User, UserModel>(user);
+
+                    return userModel;
+                });
         }
         #endregion
         #region Insert
@@ -79,7 +86,8 @@
         private User ConvertUser(LogOnModel logOnModel)
         {
             User user = new User();
-            user = logOnModel.To<LogOnModel, User>();
+
+            user = this.Mapper.Map<LogOnModel, User>(logOnModel);
             user.Password = logOnModel.Password.Hash();
 
             return user;

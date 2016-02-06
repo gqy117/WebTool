@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
-    using DataHelperLibrary;
+    using Devshorts.MonadicNull;
     using Utilities;
     using WebToolCulture;
     using WebToolService;
@@ -14,7 +14,7 @@
     {
         public virtual void AddModelError(LogOnModel userModel)
         {
-            if (!string.IsNullOrEmpty(userModel.Get(x => x.ErrorMessage)))
+            if (!string.IsNullOrEmpty(Option.Safe(() => userModel.ErrorMessage).GetValueOrDefault()))
             {
                 this.ModelState.AddModelError(string.Empty, userModel.ErrorMessage);
             }
