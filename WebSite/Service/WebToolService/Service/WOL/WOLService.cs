@@ -7,7 +7,6 @@
     using System.Runtime.Remoting.Contexts;
     using System.Text;
     using System.Web;
-    using DataHelperLibrary;
     using WebToolCulture;
     using WebToolRepository;
 
@@ -38,9 +37,10 @@
                 .Where(x => x.UserId == userId)
                 .Search(model.sSearch, x => x.WOLName.Contains(model.sSearch))
                 .OrderBy(model.OrderBy)
-                .Skip(model.iDisplayStart).Take(model.iDisplayLength);
+                .Skip(model.iDisplayStart).Take(model.iDisplayLength)
+                .ToList();
 
-            var res = wolList.ToList<WOL, WolModel>();
+            var res = this.Mapper.Map<IList<WOL>, IList<WolModel>>(wolList);
 
             return res;
         }
@@ -48,7 +48,7 @@
         #region Insert
         public void Insert(WolModel logOnModel)
         {
-            WOL wol = logOnModel.To<WolModel, WOL>();
+            WOL wol = this.Mapper.Map<WolModel, WOL>(logOnModel);
             this.Context.WOLs.Add(wol);
             this.CommitChanges();
         }

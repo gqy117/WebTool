@@ -7,7 +7,7 @@
     using System.Reflection;
     using System.Text;
     using System.Web.Mvc;
-    using DataHelperLibrary;
+    using Devshorts.MonadicNull;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1018:MarkAttributesWithAttributeUsage", Justification = "Justification ")]
     public class AntiForgeryAttribute : ActionFilterAttribute
@@ -35,13 +35,15 @@
 
         private bool IsUrlReferrerNull()
         {
-            return string.IsNullOrEmpty(this.CurrentContext.Get(x => x.HttpContext.Request.UrlReferrer.Host));
+            string host = Option.Safe(() => this.CurrentContext.HttpContext.Request.UrlReferrer.Host).GetValueOrDefault();
+
+            return string.IsNullOrEmpty(host);
         }
 
         private bool IsUrlReferrerSameDomain()
         {
-            return this.CurrentContext.Get(x => x.HttpContext.Request.UrlReferrer.Host) !=
-                   this.CurrentContext.Get(x => x.HttpContext.Request.Url.Host);
+            return Option.Safe(() => this.CurrentContext.HttpContext.Request.UrlReferrer.Host).GetValueOrDefault() !=
+                   Option.Safe(() => this.CurrentContext.HttpContext.Request.Url.Host).GetValueOrDefault();
         }
 
         private bool IsPost()

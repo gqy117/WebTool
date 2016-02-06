@@ -9,7 +9,7 @@
     using System.Text;
     using System.Web;
     using System.Web.Mvc;
-    using DataHelperLibrary;
+    using Devshorts.MonadicNull;
     using Microsoft.Practices.Unity;
     using Newtonsoft.Json;
     using Utilities;
@@ -49,7 +49,7 @@
         #region Methods
         public virtual void GetCurrentUser()
         {
-            string userName = Request.Cookies[ConstParameter.WebToolUserName].Get(x => x.Value).ToStringN();
+            string userName = Option.Safe(() => Request.Cookies[ConstParameter.WebToolUserName].Value).GetValueOrDefault();
             this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
 
