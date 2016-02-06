@@ -7,7 +7,7 @@
     using System.Text;
     using System.Web;
     using System.Web.Mvc;
-    using DataHelperLibrary;
+    using Devshorts.MonadicNull;
     using UnconstrainedMelody;
     using WebToolService;
 
@@ -59,7 +59,7 @@
                 string[] res = new string[this.PropertyList.Count];
                 for (int i = 0; i < this.PropertyList.Count; i++)
                 {
-                    res[i] = DataHelperLibrary.DataHelper.GetPropertyValue(x, this.PropertyList[i]);
+                    res[i] = typeof(TMain).GetProperty(this.PropertyList[i]).GetValue(x, null) as string;
                 }
 
                 return res;
@@ -82,7 +82,9 @@
 
             foreach (SortedColumn sortedColumn in res)
             {
-                sb.Append(this.PropertyList[sortedColumn.PropertyName.ToInt32()]);
+                int columnNumber = int.Parse(sortedColumn.PropertyName);
+
+                sb.Append(this.PropertyList[columnNumber]);
                 sb.Append(" ");
                 sb.Append(Enums.GetDescription(sortedColumn.Direction));
                 sb.Append(",");
