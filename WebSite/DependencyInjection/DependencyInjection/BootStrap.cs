@@ -58,17 +58,27 @@
             FilterProviders.Providers.Remove(FilterProviders.Providers.OfType<FilterAttributeFilterProvider>().First());
             FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(this.MyContainer));
 
-            this.RegisterAutomapper();
+            RegisterAutomapper();
 
             this.RegisterWebToolRepositoryService();
         }
 
         private void RegisterAutomapper()
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<WOL, WolModel>());
+            var config = new MapperConfiguration(CreateMapConfigure());
             var mapper = config.CreateMapper();
 
             this.MyContainer.RegisterInstance(mapper);
+        }
+
+        private Action<IMapperConfiguration> CreateMapConfigure()
+        {
+            return (IMapperConfiguration cfg) =>
+            {
+                cfg.CreateMap<WOL, WolModel>();
+                cfg.CreateMap<User, UserModel>();
+                cfg.CreateMap<LogOnModel, User>();
+            };
         }
 
         #region Service
