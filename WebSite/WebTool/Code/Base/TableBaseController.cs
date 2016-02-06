@@ -59,7 +59,7 @@
                 string[] res = new string[this.PropertyList.Count];
                 for (int i = 0; i < this.PropertyList.Count; i++)
                 {
-                    res[i] = typeof(TMain).GetProperty(this.PropertyList[i]).GetValue(x, null) as string;
+                    res[i] = Option.Safe(() => typeof(TMain).GetProperty(this.PropertyList[i]).GetValue(x, null).ToString()).GetValueOrDefault();
                 }
 
                 return res;
