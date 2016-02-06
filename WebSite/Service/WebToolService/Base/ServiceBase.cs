@@ -9,6 +9,7 @@
     using System.Linq;
     using System.Runtime.Remoting.Contexts;
     using System.Text;
+    using AutoMapper;
     using Microsoft.Practices.Unity;
     using Utilities;
     using WebToolRepository;
@@ -31,15 +32,18 @@
 
         public bool IsValid { get; set; }
 
+        public IMapper Mapper { get; private set; }
+
         #endregion
 
         [InjectionMethod]
-        public void Init(ICacheHelper cache, WebToolEntities webToolEntities)
+        public void Init(ICacheHelper cache, WebToolEntities webToolEntities, IMapper mapper)
         {
             this.Context = webToolEntities;
             this.CacheHelper = cache;
             this.IsValid = true;
             this.ValidationResults = new List<ValidationResult>();
+            this.Mapper = mapper;
         }
 
         #region Methods
