@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
-    using DataHelperLibrary;
+    using Devshorts.MonadicNull;
     using WebToolCulture;
     using WebToolService;
 
@@ -13,7 +13,9 @@
     {
         public ActionResult Index()
         {
-           return this.PartialView("~/Views/Head/Language/LanguageBar.cshtml", this.LanguageService.GetLanguageModel(Request.Cookies[ConstParameter.WebToolLanguage].Get(x => x.Value).ToStringN()));
+           string language = Option.Safe(() => Request.Cookies[ConstParameter.WebToolLanguage].Value).GetValueOrDefault();
+
+           return this.PartialView("~/Views/Head/Language/LanguageBar.cshtml", this.LanguageService.GetLanguageModel(language));
         }
     }
 }

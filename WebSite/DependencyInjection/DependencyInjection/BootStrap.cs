@@ -11,10 +11,12 @@
     using System.Web;
     using System.Web.Compilation;
     using System.Web.Mvc;
+    using AutoMapper;
     using Microsoft.Practices.Unity;
     using Microsoft.Practices.Unity.Configuration;
     using Microsoft.Practices.Unity.Mvc;
     using Microsoft.SqlServer.Server;
+    using WebToolRepository;
     using WebToolService;
 
     public class BootStrap
@@ -56,8 +58,29 @@
             FilterProviders.Providers.Remove(FilterProviders.Providers.OfType<FilterAttributeFilterProvider>().First());
             FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(this.MyContainer));
 
+            RegisterAutomapper();
+
             this.RegisterWebToolRepositoryService();
         }
+
+        private void RegisterAutomapper()
+        {
+            var config = new MapperConfiguration(CreateMapConfigure());
+            var mapper = config.CreateMapper();
+
+            this.MyContainer.RegisterInstance(mapper);
+        }
+
+        private Action<IMapperConfiguration> CreateMapConfigure()
+        {
+            return (IMapperConfiguration cfg) =>
+            {
+                cfg.CreateMap<WOL, WolModel>();
+                cfg.CreateMap<User, UserModel>();
+                cfg.CreateMap<LogOnModel, User>();
+            };
+        }
+
         #region Service
         private void RegisterWebToolRepositoryService()
         {
