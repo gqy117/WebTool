@@ -19,7 +19,7 @@
 
         protected IUnityContainer Container { get; set; }
 
-        [TestFixtureSetUp]
+        [SetUp]
         public virtual void Init()
         {
             SetupDependency();

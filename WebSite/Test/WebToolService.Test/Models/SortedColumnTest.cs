@@ -11,7 +11,7 @@
     [TestFixture]
     public class SortedColumnTest : TestBase
     {
-        [TestFixtureSetUp]
+        [SetUp]
         public override void Init()
         {
             base.Init();
