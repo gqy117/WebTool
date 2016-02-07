@@ -25,7 +25,11 @@
         #region Properties
         public IUnityContainer MyContainer { get; private set; }
 
-        private IList<string> NamespaceToRegister = new[] { "Utilities", "WebToolService" };
+        private IList<Assembly> AssembliesToRegister = new[]
+        {
+            Utilities.AssemblyReference.Assembly,
+            WebToolService.AssemblyReference.Assembly,
+        };
         #endregion
 
         #region Methods
@@ -78,9 +82,9 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "loadedAssembly", Justification = "Default")]
         private void RegisterAssemblyName()
         {
-            var assemblies = this.NamespaceToRegister.SelectMany(assemblyName => Assembly.Load(assemblyName).ExportedTypes).ToList();
+            var types = this.AssembliesToRegister.SelectMany(x => x.ExportedTypes).ToList();
 
-            this.MyContainer.RegisterTypes(assemblies, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
+            this.MyContainer.RegisterTypes(types, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
         }
         #endregion
         #endregion
