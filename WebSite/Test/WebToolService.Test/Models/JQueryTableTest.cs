@@ -14,7 +14,7 @@
     {
         public JQueryTable JQueryTable { get; set; }
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void Init()
         {
             this.JQueryTable = new JQueryTable();
