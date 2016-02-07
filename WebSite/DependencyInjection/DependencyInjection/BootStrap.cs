@@ -76,6 +76,7 @@
             return (IMapperConfiguration cfg) =>
             {
                 cfg.CreateMap<WOL, WolModel>();
+                cfg.CreateMap<WolModel, WOL>();
                 cfg.CreateMap<User, UserModel>();
                 cfg.CreateMap<LogOnModel, User>();
             };
