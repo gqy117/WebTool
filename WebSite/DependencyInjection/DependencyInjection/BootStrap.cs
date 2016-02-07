@@ -12,6 +12,7 @@
     using System.Web.Compilation;
     using System.Web.Mvc;
     using AutoMapper;
+    using Microsoft.Practices.ObjectBuilder2;
     using Microsoft.Practices.Unity;
     using Microsoft.Practices.Unity.Configuration;
     using Microsoft.Practices.Unity.Mvc;
@@ -24,21 +25,7 @@
         #region Properties
         public IUnityContainer MyContainer { get; private set; }
 
-        public string AssembleStartWith
-        {
-            get
-            {
-                return "WebTool";
-            }
-        }
-
-        public string AssembleEndWith
-        {
-            get
-            {
-                return "Service";
-            }
-        }
+        private IList<string> NamespaceToRegister = new[] { "Utilities", "WebToolService" };
         #endregion
 
         #region Methods
@@ -58,7 +45,7 @@
             FilterProviders.Providers.Remove(FilterProviders.Providers.OfType<FilterAttributeFilterProvider>().First());
             FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(this.MyContainer));
 
-            RegisterAutomapper();
+            this.RegisterAutomapper();
 
             this.RegisterWebToolRepositoryService();
         }
@@ -91,23 +78,9 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "loadedAssembly", Justification = "Default")]
         private void RegisterAssemblyName()
         {
-            AssemblyName[] assemblyNames = Assembly.GetExecutingAssembly().GetReferencedAssemblies();
-            foreach (var item in assemblyNames)
-            {
-                if (this.IsServiceDll(item))
-                {
-                    var loadedAssembly = Assembly.Load(item.FullName);
-                    var serviceTypes = loadedAssembly.ExportedTypes.Where(t => t.IsSubclassOf(typeof(ServiceBase)) || t.IsInterface);
+            var assemblies = this.NamespaceToRegister.SelectMany(assemblyName => Assembly.Load(assemblyName).ExportedTypes).ToList();
 
-                    this.MyContainer.RegisterTypes(serviceTypes, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
-                }
-            }
-        }
-
-        private bool IsServiceDll(AssemblyName assemblyName)
-        {
-            return assemblyName.Name.StartsWith(this.AssembleStartWith) &&
-                    assemblyName.Name.EndsWith(this.AssembleEndWith);
+            this.MyContainer.RegisterTypes(assemblies, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
         }
         #endregion
         #endregion
