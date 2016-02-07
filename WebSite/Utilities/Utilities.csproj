@@ -92,6 +92,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyReference.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helper\Cache\ICacheHelper.cs" />
     <Compile Include="Helper\Cache\NoCacheHelper.cs" />
