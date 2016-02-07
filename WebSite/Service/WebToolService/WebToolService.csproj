@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyReference.cs" />
     <Compile Include="Attribute\RequiredExt.cs" />
     <Compile Include="Base\ServiceBase.cs" />
     <Compile Include="Interface\ITotalRecords.cs" />
