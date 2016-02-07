@@ -97,9 +97,9 @@
                 if (this.IsServiceDll(item))
                 {
                     var loadedAssembly = Assembly.Load(item.FullName);
-                    var serviceTypes = loadedAssembly.ExportedTypes.Where(t => t.IsSubclassOf(typeof(ServiceBase)));
+                    var serviceTypes = loadedAssembly.ExportedTypes.Where(t => t.IsSubclassOf(typeof(ServiceBase)) || t.IsInterface);
 
-                    this.MyContainer.RegisterTypes(serviceTypes);
+                    this.MyContainer.RegisterTypes(serviceTypes, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
                 }
             }
         }
