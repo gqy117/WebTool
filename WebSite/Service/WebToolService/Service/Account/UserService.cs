@@ -11,7 +11,7 @@
     using WebToolCulture;
     using WebToolRepository;
 
-    public class UserService : ServiceBase
+    public class UserService : ServiceBase, IUserService
     {
         #region Properties
         private readonly AESHelper aESHelper;

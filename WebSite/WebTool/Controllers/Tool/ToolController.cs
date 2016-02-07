@@ -28,7 +28,7 @@
             }
         }
 
-        public WolService WOLService { get; set; }
+        public IWolService WOLService { get; set; }
 
         public WolModel WOLModel { get; set; }
 
@@ -60,7 +60,7 @@
         #region Constructors
 
         [InjectionMethod]
-        public void Init(WolService wolService)
+        public void Init(IWolService wolService)
         {
             this.WOLService = wolService;
         }
