@@ -10,7 +10,7 @@
     using WebToolCulture;
     using WebToolRepository;
 
-    public class WolService : ServiceBase
+    public class WolService : ServiceBase, IWolService
     {
         #region Properties
 

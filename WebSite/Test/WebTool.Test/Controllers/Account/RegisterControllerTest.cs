@@ -1,4 +1,4 @@
-﻿namespace WebTool.Test.Controllers
+﻿namespace WebTool.Test
 {
     using System;
     using System.Collections.Generic;

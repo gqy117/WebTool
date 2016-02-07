@@ -15,7 +15,7 @@
     {
         private LanguageService LanguageService { get; set; }
 
-        [TestFixtureSetUp]
+        [SetUp]
         public override void Init()
         {
             base.Init();
