@@ -100,8 +100,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="BootStrap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
