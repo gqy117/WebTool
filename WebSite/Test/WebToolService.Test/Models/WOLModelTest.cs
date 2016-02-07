@@ -18,7 +18,7 @@
         private WolModel WolModel { get; set; }
         private Mock<ICmdHelper> MockCmdHelper { get; set; }
 
-        [TestFixtureSetUp]
+        [SetUp]
         public override void Init()
         {
             base.Init();

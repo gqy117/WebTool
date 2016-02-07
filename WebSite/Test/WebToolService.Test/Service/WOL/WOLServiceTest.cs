@@ -14,7 +14,7 @@
     {
         private WolService WolService { get; set; }
 
-        [TestFixtureSetUp]
+        [SetUp]
         public override void Init()
         {
             base.Init();

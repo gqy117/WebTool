@@ -6,7 +6,7 @@
     using System.Text;
     using WebToolCulture;
 
-    public class LanguageService : ServiceBase
+    public class LanguageService : ServiceBase, ILanguageService
     {
         #region Methods
         public LanguageModel GetLanguageModel(string languageCode)
