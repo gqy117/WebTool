@@ -16,7 +16,7 @@
     using WebToolService;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Justification = "Justification")]
-    public class ServiceBase
+    public abstract class ServiceBase
     {
         #region Properties
         public virtual WebToolEntities Context { get; set; }
