@@ -19,7 +19,7 @@
     {
         private UserService UserService { get; set; }
 
-        [TestFixtureSetUp]
+        [SetUp]
         public override void Init()
         {
             base.Init();
