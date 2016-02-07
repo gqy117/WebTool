@@ -107,6 +107,7 @@
     <Compile Include="Models\SortedColumn.cs" />
     <Compile Include="Models\WOLModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Account\IUserService.cs" />
     <Compile Include="Service\Account\UserService.cs" />
     <Compile Include="Service\Home\ILanguageService.cs" />
     <Compile Include="Service\Home\LanguageService.cs" />

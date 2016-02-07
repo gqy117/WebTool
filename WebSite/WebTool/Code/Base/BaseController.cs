@@ -29,7 +29,7 @@
 
         public UserModel CurrentUserModel { get; set; }
 
-        protected UserService UserService { get; set; }
+        protected IUserService UserService { get; set; }
 
         protected ILanguageService LanguageService { get; set; }
 
@@ -39,7 +39,7 @@
         #region Constructors
 
         [InjectionMethod]
-        public void Init(UserService userService, ILanguageService languageService, AESHelper aesHelper)
+        public void Init(IUserService userService, ILanguageService languageService, AESHelper aesHelper)
         {
             this.UserService = userService;
             this.LanguageService = languageService;
