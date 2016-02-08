@@ -102,6 +102,7 @@
     <Compile Include="Helper\Encrypt\AESHelper.cs" />
     <Compile Include="Helper\Encrypt\SHA256Helper.cs" />
     <Compile Include="Helper\LinqExtension.cs" />
+    <Compile Include="Helper\Nameof.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
