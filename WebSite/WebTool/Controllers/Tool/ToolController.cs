@@ -51,7 +51,16 @@
         {
             get
             {
-                return new List<string>() { "WOLID", "WolName", "HostName", "MacAddress", "SubnetMask", "Port", "Protocol" };
+                return new List<string>()
+                {
+                    Nameof<WolModel>.Property(x => x.WOLID), 
+                    Nameof<WolModel>.Property(x => x.WolName), 
+                    Nameof<WolModel>.Property(x => x.HostName), 
+                    Nameof<WolModel>.Property(x => x.MacAddress), 
+                    Nameof<WolModel>.Property(x => x.SubnetMask), 
+                    Nameof<WolModel>.Property(x => x.Port), 
+                    Nameof<WolModel>.Property(x => x.Protocol)
+                };
             }
         }
         #endregion
