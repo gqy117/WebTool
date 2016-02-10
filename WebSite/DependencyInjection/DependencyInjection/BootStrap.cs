@@ -12,6 +12,7 @@
     using System.Web.Compilation;
     using System.Web.Mvc;
     using AutoMapper;
+    using DependencyInjection;
     using Microsoft.Practices.ObjectBuilder2;
     using Microsoft.Practices.Unity;
     using Microsoft.Practices.Unity.Configuration;
@@ -49,9 +50,8 @@
             FilterProviders.Providers.Remove(FilterProviders.Providers.OfType<FilterAttributeFilterProvider>().First());
             FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(this.MyContainer));
 
-            this.RegisterAutomapper();
-
             this.RegisterWebToolRepositoryService();
+            this.RegisterAutomapper();
         }
 
         private void RegisterAutomapper()
@@ -66,10 +66,9 @@
         {
             return (IMapperConfiguration cfg) =>
             {
-                cfg.CreateMap<WOL, WolModel>();
-                cfg.CreateMap<WolModel, WOL>();
-                cfg.CreateMap<User, UserModel>();
-                cfg.CreateMap<LogOnModel, User>();
+                var allProfiles = this.MyContainer.ResolveAll<Profile>().ToList();
+
+                allProfiles.ForEach(profile => cfg.AddProfile(profile));
             };
         }
 
@@ -77,6 +76,16 @@
         private void RegisterWebToolRepositoryService()
         {
             this.RegisterAssemblyName();
+            this.RegisterAutoMapperProfiles();
+        }
+
+        private void RegisterAutoMapperProfiles()
+        {
+            var autoMapperProfiles = DependencyInjection.AssemblyReference.Assembly.ExportedTypes
+                .Where(x => x.BaseType == typeof(Profile))
+                .ToList();
+
+            autoMapperProfiles.ForEach(profile => this.MyContainer.RegisterType(typeof(Profile), profile, profile.Name));
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "loadedAssembly", Justification = "Default")]
