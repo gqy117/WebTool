@@ -12,6 +12,7 @@
     using System.Web.Compilation;
     using System.Web.Mvc;
     using AutoMapper;
+    using DependencyInjection;
     using Microsoft.Practices.ObjectBuilder2;
     using Microsoft.Practices.Unity;
     using Microsoft.Practices.Unity.Configuration;
@@ -81,10 +82,10 @@
         private void RegisterAutoMapperProfiles()
         {
             var autoMapperProfiles = DependencyInjection.AssemblyReference.Assembly.ExportedTypes
-                .Where(x => x.BaseType == typeof (Profile))
+                .Where(x => x.BaseType == typeof(Profile))
                 .ToList();
 
-            this.RegisterTypes(autoMapperProfiles);
+            autoMapperProfiles.ForEach(profile => this.MyContainer.RegisterType(typeof(Profile), profile, profile.Name));
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "loadedAssembly", Justification = "Default")]
@@ -92,14 +93,8 @@
         {
             var types = this.AssembliesToRegister.SelectMany(x => x.ExportedTypes).ToList();
 
-            this.RegisterTypes(types);
+            this.MyContainer.RegisterTypes(types, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
         }
-
-        private void RegisterTypes(List<Type> autoMapperProfiles)
-        {
-            this.MyContainer.RegisterTypes(autoMapperProfiles, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
-        }
-
         #endregion
         #endregion
     }
