@@ -49,9 +49,8 @@
             FilterProviders.Providers.Remove(FilterProviders.Providers.OfType<FilterAttributeFilterProvider>().First());
             FilterProviders.Providers.Add(new UnityFilterAttributeFilterProvider(this.MyContainer));
 
-            this.RegisterAutomapper();
-
             this.RegisterWebToolRepositoryService();
+            this.RegisterAutomapper();
         }
 
         private void RegisterAutomapper()
@@ -66,10 +65,9 @@
         {
             return (IMapperConfiguration cfg) =>
             {
-                cfg.CreateMap<WOL, WolModel>();
-                cfg.CreateMap<WolModel, WOL>();
-                cfg.CreateMap<User, UserModel>();
-                cfg.CreateMap<LogOnModel, User>();
+                var allProfiles = this.MyContainer.ResolveAll<Profile>().ToList();
+
+                allProfiles.ForEach(profile => cfg.AddProfile(profile));
             };
         }
 
@@ -77,6 +75,16 @@
         private void RegisterWebToolRepositoryService()
         {
             this.RegisterAssemblyName();
+            this.RegisterAutoMapperProfiles();
+        }
+
+        private void RegisterAutoMapperProfiles()
+        {
+            var autoMapperProfiles = DependencyInjection.AssemblyReference.Assembly.ExportedTypes
+                .Where(x => x.BaseType == typeof (Profile))
+                .ToList();
+
+            this.RegisterTypes(autoMapperProfiles);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "loadedAssembly", Justification = "Default")]
@@ -84,8 +92,14 @@
         {
             var types = this.AssembliesToRegister.SelectMany(x => x.ExportedTypes).ToList();
 
-            this.MyContainer.RegisterTypes(types, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
+            this.RegisterTypes(types);
         }
+
+        private void RegisterTypes(List<Type> autoMapperProfiles)
+        {
+            this.MyContainer.RegisterTypes(autoMapperProfiles, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
+        }
+
         #endregion
         #endregion
     }
