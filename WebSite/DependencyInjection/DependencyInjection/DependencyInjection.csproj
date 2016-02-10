@@ -100,6 +100,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapper\LogOnModelProfile.cs" />
+    <Compile Include="AutoMapper\UserProfile.cs" />
     <Compile Include="AutoMapper\WolModelProfile.cs" />
     <Compile Include="AutoMapper\WOLProfile.cs" />
     <Compile Include="BootStrap.cs" />
