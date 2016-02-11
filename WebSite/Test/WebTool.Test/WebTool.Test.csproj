@@ -105,12 +105,19 @@
     <Compile Include="Controllers\Account\RegisterControllerTest.cs" />
     <Compile Include="Controllers\ControllerTestBase.cs" />
     <Compile Include="Controllers\Error\ErrorControllerTest.cs" />
+    <Compile Include="Controllers\Home\HomeControllerTest.cs" />
+    <Compile Include="Controllers\Home\IndexHeadControllerTest.cs" />
+    <Compile Include="Controllers\Home\LanguageControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DependencyInjection\DependencyInjection\DependencyInjection.csproj">
       <Project>{ec2d780f-fa49-442a-a7e7-172951bffae0}</Project>
       <Name>DependencyInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\WebToolService\WebToolService.csproj">
+      <Project>{c4c2f800-0f47-424f-92fe-1c37e850c1ca}</Project>
+      <Name>WebToolService</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\WebTool\WebTool.csproj">
       <Project>{d45e5829-9254-439a-8435-bf04d2d2f4bf}</Project>
@@ -122,7 +129,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Home\" />
     <Folder Include="Controllers\Tool\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
