@@ -10,6 +10,7 @@
     using System.Web.Routing;
     using Microsoft.Practices.Unity;
     using Moq;
+    using WebToolService;
 
     public abstract class ControllerTestBase
     {
@@ -18,6 +19,10 @@
         protected Mock<HttpRequestBase> MockRequest;
 
         protected Mock<HttpResponseBase> MockResponse;
+
+        protected Mock<ILanguageService> MockLanguageService = new Mock<ILanguageService>();
+
+        protected Mock<IUserService> MockUserService = new Mock<IUserService>();
 
         protected IUnityContainer Container { get; set; }
 
@@ -31,8 +36,15 @@
             this.InitMockRequest();
             this.InitMockResponse();
             this.InitMockContext();
+            this.RegisterMockingService();
             this.InitController();
             this.InitControllerContext();
+        }
+
+        protected virtual void RegisterMockingService()
+        {
+            this.Container.RegisterInstance<IUserService>(this.MockUserService.Object);
+            this.Container.RegisterInstance<ILanguageService>(this.MockLanguageService.Object);
         }
 
         private void InitMockRequest()
