@@ -11,6 +11,7 @@
 bin/
 bin
 obj/
+obj
 tmp/
 *.tmp
 *.bak
