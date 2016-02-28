@@ -257,7 +257,6 @@
     <Content Include="Content\assets\img\syncfusion-icons-white.png" />
     <Content Include="Content\assets\img\syncfusion-icons.png" />
     <Content Include="Content\assets\js\app.js" />
-    <Content Include="Content\assets\js\jquery-1.8.3.min.js" />
     <Content Include="Content\assets\js\jquery.cookie.js" />
     <Content Include="Content\assets\plugins\bootstrap-modal\css\bootstrap-modal.css" />
     <Content Include="Content\assets\plugins\bootstrap-modal\img\ajax-loader.gif" />
@@ -345,7 +344,6 @@
     <None Include="tslint.json" />
     <None Include="Scripts\angular.intellisense.js" />
     <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular\angular.js" />
     <Content Include="Scripts\jquery\jquery-1.8.3.min.js" />
     <Content Include="Views\Account\LogOn\login.controller.js">

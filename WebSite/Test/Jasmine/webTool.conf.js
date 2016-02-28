@@ -11,7 +11,7 @@ module.exports = function (config) {
     frameworkFiles = [
         webToolPath + 'Scripts/jquery/jquery-1.8.3.min.js',
         webToolPath + 'Scripts/jquery.cookie.js',
-        webToolPath + 'Scripts/angular.js',
+        webToolPath + 'Scripts/angular/angular.js',
         webToolPath + 'Scripts/angular-mocks.js',
         webToolPath + 'Content/assets/js/app.js'
     ];
