@@ -98,6 +98,7 @@ WebSite/WebTool/WebTool.Publish.xml
 #WebSite/WebTool/Web.Release.config
 #WebSite/WebTool/Web.config
 WebSite/node_modules
+WebSite/bower_components
 
 # Nuget Packages
 WebSite/packages/
