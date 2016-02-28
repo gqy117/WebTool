@@ -8,7 +8,7 @@ cache:
   #- projectA\libs
   - WebSite\node_modules                    # local npm modules
   - '%APPDATA%\npm-cache'                   # npm cache
-  - WebSite\bower_components                # bower components
+  #- WebSite\bower_components                # bower components
 
 
 # build Configuration, i.e. Debug, Release, etc.
