@@ -9,7 +9,7 @@
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {
-            "~/Content/assets/js/jquery-1.8.3.min.js",
+            "~/Scripts/jquery/jquery-1.8.3.min.js",
             "~/Scripts/angular.js",
             "~/Content/assets/uniform/jquery.uniform.min.js",
             "~/Content/assets/breakpoints/breakpoints.js",
