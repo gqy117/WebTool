@@ -1,1 +1,3 @@
 WebSite/WebTool/Content/assets/* linguist-vendored
+WebSite/WebTool/Scripts/* linguist-vendored
+WebSite/Test/Jasmine/lib/* linguist-vendored
