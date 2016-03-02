@@ -9,8 +9,9 @@
 
     public class RedisHelper : ICacheHelper
     {
-        private static ICacheClient stackExchangeRedisCacheClient = null;
         private static Lazy<ICacheClient> lazyStackExchangeRedisCacheClient = new Lazy<ICacheClient>(() => new StackExchangeRedisCacheClient(new JilSerializer()));
+
+        private static ICacheClient stackExchangeRedisCacheClient = null;
 
         public static ICacheClient StackExchangeRedisCacheClient
         {
