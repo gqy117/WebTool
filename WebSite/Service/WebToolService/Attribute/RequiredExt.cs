@@ -21,13 +21,11 @@
 
         public bool Enabled { get; protected set; }
 
-        #region Methods
         public override bool IsValid(object value)
         {
             bool res = !this.Enabled ? true : base.IsValid(value);
 
             return res;
         }
-        #endregion
     }
 }

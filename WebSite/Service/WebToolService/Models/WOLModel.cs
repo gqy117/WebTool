@@ -8,7 +8,6 @@
 
     public class WolModel : ITotalRecords
     {
-        #region Constructors
         public WolModel()
         {
             this.CmdHelper = new CmdHelper();
@@ -18,42 +17,30 @@
             this.SubnetMask = "255.255.255.255";
             this.MacAddress = string.Empty;
         }
-        #endregion
-
-        #region Properties
-        public string Protocol { get; set; }
-
-        public string WolName { get; set; }
-
-        public int WOLID { get; set; }
 
         public string Arguments { get; set; }
 
-        public int UserId { get; set; }
+        public ICmdHelper CmdHelper { get; set; }
+
+        public string FileName { get; set; }
 
         public string HostName { get; set; }
-
-        public string SubnetMask { get; set; }
 
         public string MacAddress { get; set; }
 
         public int Port { get; set; }
 
-        public string FileName { get; set; }
+        public string Protocol { get; set; }
 
-        public ICmdHelper CmdHelper { get; set; }
+        public string SubnetMask { get; set; }
 
         public int TotalRecords { get; set; }
 
-        #endregion
+        public int UserId { get; set; }
 
-        #region Methods
-        public void Wake()
-        {
-            this.PrepareArgument();
+        public int WOLID { get; set; }
 
-            this.CmdHelper.Run(this.FileName, this.Arguments);
-        }
+        public string WolName { get; set; }
 
         public void PrepareArgument()
         {
@@ -67,6 +54,11 @@
             this.Arguments = string.Join(" ", argumentList.ToArray());
         }
 
-        #endregion
+        public void Wake()
+        {
+            this.PrepareArgument();
+
+            this.CmdHelper.Run(this.FileName, this.Arguments);
+        }
     }
 }

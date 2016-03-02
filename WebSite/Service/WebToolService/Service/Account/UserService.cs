@@ -13,19 +13,13 @@
 
     public class UserService : ServiceBase, IUserService
     {
-        #region Properties
         private readonly AESHelper aESHelper;
-        #endregion
 
-        #region Constructors
         public UserService(AESHelper aESHelper)
         {
             this.aESHelper = aESHelper;
         }
-        #endregion
 
-        #region Methods
-        #region Select
         public UserModel GetUserModelByName(string encryptedUserName)
         {
             string userName = this.aESHelper.DecryptStringFromBytes(encryptedUserName);
@@ -40,8 +34,7 @@
                     return userModel;
                 });
         }
-        #endregion
-        #region Insert
+
         public bool Insert(LogOnModel logOnModel)
         {
             bool res = true;
@@ -61,8 +54,7 @@
 
             return res;
         }
-        #endregion
-        #region Check
+
         public bool IsExist(LogOnModel userModel)
         {
             return this.Context.Users.Any(x => x.UserName == userModel.UserName);
@@ -82,7 +74,7 @@
 
             return res;
         }
-        #endregion
+
         private User ConvertUser(LogOnModel logOnModel)
         {
             User user = new User();
@@ -92,6 +84,5 @@
 
             return user;
         }
-        #endregion
     }
 }
