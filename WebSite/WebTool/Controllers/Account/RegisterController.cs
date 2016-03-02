@@ -9,16 +9,11 @@
 
     public class RegisterController : AccountBaseController
     {
-        #region Properties
-
         public override string MainCshtmlName
         {
             get { return "~/Views/Account/Register/Register.cshtml"; }
         }
 
-        #endregion
-
-        #region Methods
         public ActionResult Index()
         {
             return this.View(this.MainCshtmlName, new RegisterModel());
@@ -50,6 +45,5 @@
 
             return result;
         }
-        #endregion
     }
 }

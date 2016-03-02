@@ -13,14 +13,19 @@
 
     public class TableBaseController<TMain> : BaseController where TMain : ITotalRecords
     {
-        #region Properties
+        public virtual IList<TMain> MainList
+        {
+            get;
+            set;
+        }
+
         public virtual Func<TMain, string[]> MainResultColumn
         {
             get;
             set;
         }
 
-        public virtual IList<TMain> MainList
+        public virtual IList<string> PropertyList
         {
             get;
             set;
@@ -28,13 +33,14 @@
 
         public int TotalRecords { get; set; }
 
-        public virtual IList<string> PropertyList
+        public virtual ActionResult GetJsonTable(JQueryTable model, Action action)
         {
-            get;
-            set;
+            this.ReBindJQueryTable(model);
+            action();
+
+            return this.JsonTable(model);
         }
-        #endregion
-        #region Methods
+
         public virtual ActionResult JsonTable(JQueryTable model)
         {
             this.SetTotalRecords();
@@ -45,33 +51,6 @@
                 iTotalDisplayRecords = this.TotalRecords,
                 aaData = this.MainList.Select(this.MainResultColumn),
             });
-        }
-
-        public virtual void SetTotalRecords()
-        {
-            this.TotalRecords = (this.MainList != null && this.MainList.Count > 0) ? this.MainList.FirstOrDefault().TotalRecords : 0;
-        }
-
-        public virtual void SetMainResultColumn()
-        {
-            this.MainResultColumn = (TMain x) =>
-            {
-                string[] res = new string[this.PropertyList.Count];
-                for (int i = 0; i < this.PropertyList.Count; i++)
-                {
-                    res[i] = Option.Safe(() => typeof(TMain).GetProperty(this.PropertyList[i]).GetValue(x, null).ToString()).GetValueOrDefault();
-                }
-
-                return res;
-            };
-        }
-
-        public virtual ActionResult GetJsonTable(JQueryTable model, Action action)
-        {
-            this.ReBindJQueryTable(model);
-            action();
-
-            return this.JsonTable(model);
         }
 
         public virtual void ReBindJQueryTable(JQueryTable model)
@@ -92,6 +71,24 @@
 
             model.OrderBy = sb.ToString().Substring(0, sb.Length - 1);
         }
-        #endregion
+
+        public virtual void SetMainResultColumn()
+        {
+            this.MainResultColumn = (TMain x) =>
+            {
+                string[] res = new string[this.PropertyList.Count];
+                for (int i = 0; i < this.PropertyList.Count; i++)
+                {
+                    res[i] = Option.Safe(() => typeof(TMain).GetProperty(this.PropertyList[i]).GetValue(x, null).ToString()).GetValueOrDefault();
+                }
+
+                return res;
+            };
+        }
+
+        public virtual void SetTotalRecords()
+        {
+            this.TotalRecords = (this.MainList != null && this.MainList.Count > 0) ? this.MainList.FirstOrDefault().TotalRecords : 0;
+        }
     }
 }

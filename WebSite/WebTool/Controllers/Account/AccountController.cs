@@ -13,15 +13,11 @@ namespace WebTool
 
     public class AccountController : AccountBaseController
     {
-        #region Properties
-
         public override string MainCshtmlName
         {
             get { return "~/Views/Account/LogOn/LogOn.cshtml"; }
         }
-        #endregion
 
-        #region Methods
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Login", Justification = "Justification ")]
         [HttpGet]
         public ActionResult Login()
@@ -37,6 +33,5 @@ namespace WebTool
         {
             return this.DoLogOn(logOnModel);
         }
-        #endregion
     }
 }

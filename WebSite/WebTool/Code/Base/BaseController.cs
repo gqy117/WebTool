@@ -19,24 +19,26 @@
 
     public abstract class BaseController : Controller
     {
-        #region Properties
-        public string ResourceJson { get; set; }
+        public UserModel CurrentUserModel { get; set; }
 
         public virtual string MainCshtmlName
         {
             get { return string.Empty; }
         }
 
-        public UserModel CurrentUserModel { get; set; }
-
-        protected IUserService UserService { get; set; }
-
-        protected ILanguageService LanguageService { get; set; }
+        public string ResourceJson { get; set; }
 
         protected AESHelper AESHelper { get; set; }
 
-        #endregion
-        #region Constructors
+        protected ILanguageService LanguageService { get; set; }
+
+        protected IUserService UserService { get; set; }
+
+        public virtual void GetCurrentUser()
+        {
+            string userName = Option.Safe(() => Request.Cookies[ConstParameter.WebToolUserName].Value).GetValueOrDefault();
+            this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
+        }
 
         [InjectionMethod]
         public void Init(IUserService userService, ILanguageService languageService, AESHelper aesHelper)
@@ -44,13 +46,6 @@
             this.UserService = userService;
             this.LanguageService = languageService;
             this.AESHelper = aesHelper;
-        }
-        #endregion
-        #region Methods
-        public virtual void GetCurrentUser()
-        {
-            string userName = Option.Safe(() => Request.Cookies[ConstParameter.WebToolUserName].Value).GetValueOrDefault();
-            this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
 
         public bool IsLogOn()
@@ -61,17 +56,21 @@
             return res;
         }
 
-        public ActionResult RedirectToLogOnPage()
-        {
-            return this.RedirectToAction("Login", "Account");
-        }
-
         public ActionResult JSON(object data)
         {
             return this.Json(data, JsonRequestBehavior.AllowGet);
         }
 
-        #region Resource
+        public ActionResult RedirectToLogOnPage()
+        {
+            return this.RedirectToAction("Login", "Account");
+        }
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            this.SetResourceJson();
+            base.OnActionExecuting(filterContext);
+        }
 
         [NonAction]
         protected virtual void SetResourceJson()
@@ -83,19 +82,10 @@
             this.ResourceJson = JsonConvert.SerializeObject(result);
         }
 
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
-        {
-            this.SetResourceJson();
-            base.OnActionExecuting(filterContext);
-        }
-
-        #endregion
-
         private void SetMasterCookie()
         {
             var masterCookie = new HttpCookie(ConstParameter.WebToolUserName, "Pn8YTV5phgjk62xMg9xxhw==");
             Request.Cookies.Set(masterCookie);
         }
-        #endregion
     }
 }
