@@ -11,22 +11,10 @@
 
     public partial class CommonSteps : SeleniumWrapper
     {
-        [Then(@"the result of the element '(.*)' should be the same as the html '(.*)'")]
-        public void ThenTheResultShouldBeTheSameAsTheHtmlFile(IWebElement element, string fileName)
+        [Then(@"I should see by id '(.*)'")]
+        public void ThenIShouldSee(IWebElement expectedElement)
         {
-            var expected = this.ReadFileString(fileName);
-
-            var actual = element.Text;
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [Then(@"the result of the element '(.*)' should be the same as '(.*)'")]
-        public void ThenTheResultShouldBeTheSameAs(string name, string expected, int timeoutInMilliseconds = 0)
-        {
-            var actual = this.Browser.FindElement(By.Name(name), timeoutInMilliseconds).Text;
-
-            Assert.AreEqual(expected, actual);
+            Assert.IsTrue(expectedElement.Displayed);
         }
 
         [Then(@"the current url should be '(.*)'")]
@@ -38,10 +26,22 @@
             Assert.AreEqual(expectedUrl, actualUrl);
         }
 
-        [Then(@"I should see by id '(.*)'")]
-        public void ThenIShouldSee(IWebElement expectedElement)
+        [Then(@"the result of the element '(.*)' should be the same as '(.*)'")]
+        public void ThenTheResultShouldBeTheSameAs(string name, string expected, int timeoutInMilliseconds = 0)
         {
-            Assert.IsTrue(expectedElement.Displayed);
+            var actual = this.Browser.FindElement(By.Name(name), timeoutInMilliseconds).Text;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Then(@"the result of the element '(.*)' should be the same as the html '(.*)'")]
+        public void ThenTheResultShouldBeTheSameAsTheHtmlFile(IWebElement element, string fileName)
+        {
+            var expected = this.ReadFileString(fileName);
+
+            var actual = element.Text;
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

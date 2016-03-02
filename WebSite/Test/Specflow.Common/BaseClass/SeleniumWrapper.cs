@@ -15,7 +15,7 @@
 
     public abstract class SeleniumWrapper
     {
-        #region Properties
+        public virtual string BaseUrl { get; set; }
 
         public virtual RemoteWebDriver Browser
         {
@@ -23,25 +23,32 @@
             set;
         }
 
-        public TableRow UserInfo { get; set; }
-
         public virtual Encoding DefaultEncoding
         {
             get { return Encoding.UTF8; }
         }
 
-        public virtual string BaseUrl { get; set; }
+        public TableRow UserInfo { get; set; }
 
-        #endregion
-
-        public virtual void FillTheFormByName(Table tableKey, TableRow rowValue)
+        public string AddBaseUrl(string url)
         {
-            var firstRow = tableKey.Rows.First();
-
-            for (int i = 0; i < firstRow.Keys.Count; i++)
+            if (url.StartsWith("~"))
             {
-                this.Browser.FindElementByName(firstRow.Values.ElementAt(i)).SendKeys(rowValue[i]);
+                url = url.Replace("~", string.Empty);
+                url = this.BaseUrl + url;
             }
+
+            return url;
+        }
+
+        public void ClickById(string buttonId)
+        {
+            this.Browser.FindElementById(buttonId).Click();
+        }
+
+        public void ClickByName(string buttonName)
+        {
+            this.Browser.FindElementByName(buttonName).Click();
         }
 
         public virtual void FillTheFormById(Table tableKey, TableRow rowValue)
@@ -54,21 +61,21 @@
             }
         }
 
+        public virtual void FillTheFormByName(Table tableKey, TableRow rowValue)
+        {
+            var firstRow = tableKey.Rows.First();
+
+            for (int i = 0; i < firstRow.Keys.Count; i++)
+            {
+                this.Browser.FindElementByName(firstRow.Values.ElementAt(i)).SendKeys(rowValue[i]);
+            }
+        }
+
         public void OpenPage(string url)
         {
             url = this.AddBaseUrl(url);
 
             this.Browser.Navigate().GoToUrl(url);
-        }
-
-        public void ClickById(string buttonId)
-        {
-            this.Browser.FindElementById(buttonId).Click();
-        }
-
-        public void ClickByName(string buttonName)
-        {
-            this.Browser.FindElementByName(buttonName).Click();
         }
 
         public virtual string ReadFileString(string filePath)
@@ -86,17 +93,6 @@
         public string RemoveWhiteSpace(string actual)
         {
             return Regex.Replace(actual, @"\s+", string.Empty);
-        }
-
-        public string AddBaseUrl(string url)
-        {
-            if (url.StartsWith("~"))
-            {
-                url = url.Replace("~", string.Empty);
-                url = this.BaseUrl + url;
-            }
-
-            return url;
         }
     }
 }
