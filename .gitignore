@@ -107,3 +107,4 @@ connectionStrings.config
 TestResult.xml
 opencoverCoverage.xml
 Report
+WebSite/.nuget/NuGet.exe
