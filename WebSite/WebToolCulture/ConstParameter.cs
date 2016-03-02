@@ -9,15 +9,15 @@
 
     public static class ConstParameter
     {
-        public const string WebToolUserName = "WebToolUserName";
-
-        public const string WebToolLanguage = "WebToolLanguage";
-
-        public const string SimplifiedChinese = "zh-CN";
-
         public const string Chinese = "zh";
 
         public const string English = "en";
+
+        public const string SimplifiedChinese = "zh-CN";
+
+        public const string WebToolLanguage = "WebToolLanguage";
+
+        public const string WebToolUserName = "WebToolUserName";
 
         private static IList<Language> languageList = new List<Language>() 
         {
