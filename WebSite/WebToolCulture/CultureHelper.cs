@@ -15,22 +15,9 @@
             { ConstParameter.Chinese, ConstParameter.SimplifiedChinese },
         };
 
-        public static void SetCurrentCulture(CultureInfo culture)
+        public static string GetAnotherLanguage(string lang)
         {
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
-        }
-
-        public static void SetCurrentCulture(string[] userLanguages)
-        {
-            string lang = GetLang(userLanguages);
-            SetCurrentCulture(lang);
-        }
-
-        public static void SetCurrentCulture(string lang)
-        {
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(lang);
-            SetCurrentCulture(culture);
+            return lang == null || lang == ConstParameter.English ? ConstParameter.SimplifiedChinese : ConstParameter.English;
         }
 
         public static string GetLang(string[] userLanguages)
@@ -56,9 +43,22 @@
             return lang;
         }
 
-        public static string GetAnotherLanguage(string lang)
+        public static void SetCurrentCulture(CultureInfo culture)
         {
-            return lang == null || lang == ConstParameter.English ? ConstParameter.SimplifiedChinese : ConstParameter.English;
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+        }
+
+        public static void SetCurrentCulture(string[] userLanguages)
+        {
+            string lang = GetLang(userLanguages);
+            SetCurrentCulture(lang);
+        }
+
+        public static void SetCurrentCulture(string lang)
+        {
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(lang);
+            SetCurrentCulture(culture);
         }
     }
 }
