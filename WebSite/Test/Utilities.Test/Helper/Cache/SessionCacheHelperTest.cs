@@ -13,11 +13,41 @@
     [TestFixture]
     public class SessionCacheHelperTest
     {
-        private SessionHelper SessionHelper { get; set; }
-
         private string key;
 
         private string value;
+
+        private SessionHelper SessionHelper { get; set; }
+
+        [Test]
+        public void GetCache_ShouldGetFromCache_WhenTheKeyDoesNotExist()
+        {
+            // Arrange
+            HttpContext.Current.Session[this.key] = null;
+
+            // Act
+            string actual = this.SessionHelper.GetCache(this.key, () => this.value);
+
+            // Assert
+            string expected = this.value;
+
+            actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [Test]
+        public void GetCache_ShouldGetFromCache_WhenTheKeyExists()
+        {
+            // Arrange
+            HttpContext.Current.Session[this.key] = this.value;
+
+            // Act
+            string actual = this.SessionHelper.GetCache(this.key, () => "Another Value");
+
+            // Assert
+            string expected = this.value;
+
+            actual.ShouldBeEquivalentTo(expected);
+        }
 
         [SetUp]
         public void Init()
@@ -27,12 +57,6 @@
             this.InitKeyAndValue();
 
             this.InitHttpContext();
-        }
-
-        private void InitKeyAndValue()
-        {
-            this.key = "the key";
-            this.value = "the value";
         }
 
         private void InitHttpContext()
@@ -51,34 +75,10 @@
             HttpContext.Current = httpContext;
         }
 
-        [Test]
-        public void GetCache_ShouldGetFromCache_WhenTheKeyExists()
+        private void InitKeyAndValue()
         {
-            // Arrange
-            HttpContext.Current.Session[this.key] = this.value;
-
-            // Act
-            string actual = this.SessionHelper.GetCache(this.key, () => "Another Value");
-
-            // Assert
-            string expected = this.value;
-
-            actual.ShouldBeEquivalentTo(expected);
-        }
-
-        [Test]
-        public void GetCache_ShouldGetFromCache_WhenTheKeyDoesNotExist()
-        {
-            // Arrange
-            HttpContext.Current.Session[this.key] = null;
-
-            // Act
-            string actual = this.SessionHelper.GetCache(this.key, () => this.value);
-
-            // Assert
-            string expected = this.value;
-
-            actual.ShouldBeEquivalentTo(expected);
+            this.key = "the key";
+            this.value = "the value";
         }
     }
 }

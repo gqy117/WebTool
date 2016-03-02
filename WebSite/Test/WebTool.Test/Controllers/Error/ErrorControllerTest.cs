@@ -20,17 +20,6 @@
 
         private ErrorController ErrorController { get; set; }
 
-        [SetUp]
-        public void Init()
-        {
-            base.Init();
-        }
-
-        protected override void InitController()
-        {
-            this.ErrorController = this.Container.Resolve<ErrorController>();
-        }
-
         [Test]
         public void Error_ShouldReturnAViewWithNameError()
         {
@@ -42,6 +31,12 @@
             // Assert
             string expected = "Error";
             actual.ViewName.ShouldBeEquivalentTo(expected);
+        }
+
+        [SetUp]
+        public void Init()
+        {
+            base.Init();
         }
 
         [Test]
@@ -59,6 +54,11 @@
 
             actual.ViewName.ShouldBeEquivalentTo(expectedViewName);
             MockResponse.VerifySet(setStatusCode, Times.Once);
+        }
+
+        protected override void InitController()
+        {
+            this.ErrorController = this.Container.Resolve<ErrorController>();
         }
     }
 }

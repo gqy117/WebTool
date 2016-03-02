@@ -19,17 +19,6 @@
 
         private LanguageController LanguageController { get; set; }
 
-        [SetUp]
-        public void Init()
-        {
-            base.Init();
-        }
-
-        protected override void InitController()
-        {
-            this.LanguageController = this.Container.Resolve<LanguageController>();
-        }
-
         [Test]
         public void Index_ShouldReturnPartialViewWithTheNameOfLanguageBar_AndCallGetLanguageModelMethod()
         {
@@ -43,6 +32,17 @@
             // Assert
             string expected = "~/Views/Head/Language/LanguageBar.cshtml";
             actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [SetUp]
+        public void Init()
+        {
+            base.Init();
+        }
+
+        protected override void InitController()
+        {
+            this.LanguageController = this.Container.Resolve<LanguageController>();
         }
     }
 }

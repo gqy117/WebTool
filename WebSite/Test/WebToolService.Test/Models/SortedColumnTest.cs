@@ -11,10 +11,52 @@
     [TestFixture]
     public class SortedColumnTest : TestBase
     {
-        [SetUp]
-        public override void Init()
+        private static object[] PropertyNamesAreNotTheSameDirectionsAreTheSame = { new object[] { new SortedColumn("property1", "asc"), new SortedColumn("property2", "asc") } };
+
+        private static object[] PropertyNamesAreTheSameDirectionsAreNot = { new object[] { new SortedColumn("property1", "asc"), new SortedColumn("property1", "desc") } };
+
+        private static object[] TheObjectIsNull = { new object[] { new SortedColumn("property1", "asc"), null } };
+
+        private static object[] TheyAreNotTheSameType = { new object[] { new SortedColumn("property1", "asc"), new object() } };
+
+        [Test]
+        [TestCaseSource("PropertyNamesAreTheSameDirectionsAreNot")]
+        [TestCaseSource("PropertyNamesAreNotTheSameDirectionsAreTheSame")]
+        public void Equals_ShouldReturnFalse_WhenDirectionOrPropertyNameAreNotTheSame(SortedColumn sortedColumn1, SortedColumn sortedColumn2)
         {
-            base.Init();
+            // Act
+            bool actual = sortedColumn1.Equals(sortedColumn2);
+
+            // Assert
+            bool expected = false;
+
+            actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [Test]
+        [TestCaseSource("TheObjectIsNull")]
+        public void Equals_ShouldReturnFalse_WhenTheObjectIsNull(SortedColumn sortedColumn1, SortedColumn sortedColumn2)
+        {
+            // Act
+            bool actual = sortedColumn1.Equals(sortedColumn2);
+
+            // Assert
+            bool expected = false;
+
+            actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [Test]
+        [TestCaseSource("TheyAreNotTheSameType")]
+        public void Equals_ShouldReturnFalse_WhenTheyAreNotTheSameType(SortedColumn sortedColumn1, object sortedColumn2)
+        {
+            // Act
+            bool actual = sortedColumn1.Equals(sortedColumn2);
+
+            // Assert
+            bool expected = false;
+
+            actual.ShouldBeEquivalentTo(expected);
         }
 
         [Test]
@@ -39,56 +81,6 @@
             actual.ShouldBeEquivalentTo(expected);
         }
 
-        #region Equals_ShouldReturnFalse_WhenDirectionAndPropertyNameAreNotTheSame
-
-        private static object[] PropertyNamesAreTheSameDirectionsAreNot = { new object[] { new SortedColumn("property1", "asc"), new SortedColumn("property1", "desc") } };
-        private static object[] PropertyNamesAreNotTheSameDirectionsAreTheSame = { new object[] { new SortedColumn("property1", "asc"), new SortedColumn("property2", "asc") } };
-
-        [Test]
-        [TestCaseSource("PropertyNamesAreTheSameDirectionsAreNot")]
-        [TestCaseSource("PropertyNamesAreNotTheSameDirectionsAreTheSame")]
-        public void Equals_ShouldReturnFalse_WhenDirectionOrPropertyNameAreNotTheSame(SortedColumn sortedColumn1, SortedColumn sortedColumn2)
-        {
-            // Act
-            bool actual = sortedColumn1.Equals(sortedColumn2);
-
-            // Assert
-            bool expected = false;
-
-            actual.ShouldBeEquivalentTo(expected);
-        }
-
-        private static object[] TheObjectIsNull = { new object[] { new SortedColumn("property1", "asc"), null } };
-
-        [Test]
-        [TestCaseSource("TheObjectIsNull")]
-        public void Equals_ShouldReturnFalse_WhenTheObjectIsNull(SortedColumn sortedColumn1, SortedColumn sortedColumn2)
-        {
-            // Act
-            bool actual = sortedColumn1.Equals(sortedColumn2);
-
-            // Assert
-            bool expected = false;
-
-            actual.ShouldBeEquivalentTo(expected);
-        }
-
-        private static object[] TheyAreNotTheSameType = { new object[] { new SortedColumn("property1", "asc"), new object() } };
-
-        [Test]
-        [TestCaseSource("TheyAreNotTheSameType")]
-        public void Equals_ShouldReturnFalse_WhenTheyAreNotTheSameType(SortedColumn sortedColumn1, object sortedColumn2)
-        {
-            // Act
-            bool actual = sortedColumn1.Equals(sortedColumn2);
-
-            // Assert
-            bool expected = false;
-
-            actual.ShouldBeEquivalentTo(expected);
-        }
-        #endregion
-
         [Test]
         public void GetHashCode_ShouldCalculateTheHashCodeBasedOnDirectionAndPropertyName()
         {
@@ -103,6 +95,12 @@
             // Assert
             int expected = 2036934070;
             actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [SetUp]
+        public override void Init()
+        {
+            base.Init();
         }
     }
 }

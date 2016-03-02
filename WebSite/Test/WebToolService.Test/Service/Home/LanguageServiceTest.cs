@@ -15,14 +15,6 @@
     {
         private LanguageService LanguageService { get; set; }
 
-        [SetUp]
-        public override void Init()
-        {
-            base.Init();
-            this.LanguageService = this.Container.Resolve<LanguageService>();
-        }
-
-        #region GetLanguageModel
         [Test]
         public void GetLanguageModel_ShouldReturnTheGetLanguageModel_WhenTheInputLanguageCodeExists()
         {
@@ -43,7 +35,13 @@
             };
 
             actual.ShouldBeEquivalentTo(expected);
-        } 
-        #endregion
+        }
+
+        [SetUp]
+        public override void Init()
+        {
+            base.Init();
+            this.LanguageService = this.Container.Resolve<LanguageService>();
+        }
     }
 }

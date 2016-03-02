@@ -15,9 +15,9 @@
 
     public abstract class TestBase
     {
-        private WebToolEntities Context { get; set; }
-
         protected IUnityContainer Container { get; set; }
+
+        private WebToolEntities Context { get; set; }
 
         [SetUp]
         public virtual void Init()
@@ -26,7 +26,11 @@
             SetupDatabase();
         }
 
-        #region SetupDatabase
+        private void CreateDatabase()
+        {
+            this.Context = Mock.Create<WebToolEntities>().PrepareMock();
+            this.Container.RegisterInstance(this.Context);
+        }
 
         private void SetupDatabase()
         {
@@ -36,10 +40,28 @@
             SetupWOLTable();
         }
 
-        private void CreateDatabase()
+        private void SetupDependency()
         {
-            this.Context = Mock.Create<WebToolEntities>().PrepareMock();
-            this.Container.RegisterInstance(this.Context);
+            BootStrap bootStrap = new BootStrap();
+            bootStrap.Configure();
+
+            this.Container = bootStrap.MyContainer;
+        }
+
+        private void SetupUsersTable()
+        {
+            var users = new List<User>
+            {
+                new User
+                {
+                    UserId = 1,
+                    UserName = "1",
+                    Password = "3gVPVdEt60jny1k3431HB3AZOR/0qOW7L6l5dBNLvgEVPgNfFg==",
+                    CreationDate = Convert.ToDateTime("2016-01-11 21:58:33.903")
+                }
+            };
+
+            this.Context.Users.Bind(users);
         }
 
         private void SetupWOLTable()
@@ -60,32 +82,6 @@
             };
 
             this.Context.WOLs.Bind(wols);
-        }
-
-        private void SetupUsersTable()
-        {
-            var users = new List<User>
-            {
-                new User
-                {
-                    UserId = 1,
-                    UserName = "1",
-                    Password = "3gVPVdEt60jny1k3431HB3AZOR/0qOW7L6l5dBNLvgEVPgNfFg==",
-                    CreationDate = Convert.ToDateTime("2016-01-11 21:58:33.903")
-                }
-            };
-
-            this.Context.Users.Bind(users);
-        }
-
-        #endregion
-
-        private void SetupDependency()
-        {
-            BootStrap bootStrap = new BootStrap();
-            bootStrap.Configure();
-
-            this.Container = bootStrap.MyContainer;
         }
     }
 }

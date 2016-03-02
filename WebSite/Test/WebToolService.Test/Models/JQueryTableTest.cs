@@ -21,6 +21,21 @@
         }
 
         [Test]
+        public void SortedColumns_ShouldReturnACollectionOfSortedColumns_WheniSortingColsDoesNotHavaValue()
+        {
+            // Arrange
+            this.JQueryTable.iSortingCols = null;
+
+            // Act
+            var acutal = this.JQueryTable.SortedColumns();
+
+            // Assert
+            ReadOnlyCollection<SortedColumn> expected = new List<SortedColumn>().AsReadOnly();
+
+            acutal.ShouldBeEquivalentTo(expected);
+        }
+
+        [Test]
         public void SortedColumns_ShouldReturnACollectionOfSortedColumns_WheniSortingColsHasValue()
         {
             // Arrange
@@ -37,21 +52,6 @@
             {
                 new SortedColumn("WOLID", "asc")
             }.AsReadOnly();
-
-            acutal.ShouldBeEquivalentTo(expected);
-        }
-
-        [Test]
-        public void SortedColumns_ShouldReturnACollectionOfSortedColumns_WheniSortingColsDoesNotHavaValue()
-        {
-            // Arrange
-            this.JQueryTable.iSortingCols = null;
-
-            // Act
-            var acutal = this.JQueryTable.SortedColumns();
-
-            // Assert
-            ReadOnlyCollection<SortedColumn> expected = new List<SortedColumn>().AsReadOnly();
 
             acutal.ShouldBeEquivalentTo(expected);
         }
