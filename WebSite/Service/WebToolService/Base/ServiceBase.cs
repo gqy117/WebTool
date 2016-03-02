@@ -18,23 +18,25 @@
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Justification = "Justification")]
     public abstract class ServiceBase
     {
-        #region Properties
+        public ICacheHelper CacheHelper { get; set; }
+
         public virtual WebToolEntities Context { get; set; }
 
         public virtual int Count { get; set; }
 
-        public ICacheHelper CacheHelper { get; set; }
+        public bool IsValid { get; set; }
+
+        public IMapper Mapper { get; private set; }
 
         public ValidationContext ValidationContext { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Justification")]
         public List<ValidationResult> ValidationResults { get; set; }
 
-        public bool IsValid { get; set; }
-
-        public IMapper Mapper { get; private set; }
-
-        #endregion
+        public void CommitChanges()
+        {
+            this.Context.SaveChanges();
+        }
 
         [InjectionMethod]
         public void Init(ICacheHelper cache, WebToolEntities webToolEntities, IMapper mapper)
@@ -45,12 +47,5 @@
             this.ValidationResults = new List<ValidationResult>();
             this.Mapper = mapper;
         }
-
-        #region Methods
-        public void CommitChanges()
-        {
-            this.Context.SaveChanges();
-        }
-        #endregion
     }
 }

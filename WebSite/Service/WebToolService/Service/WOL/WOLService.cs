@@ -12,15 +12,6 @@
 
     public class WolService : ServiceBase, IWolService
     {
-        #region Properties
-
-        #endregion
-        #region Constructors
-
-        #endregion
-        #region Methods
-        #region Select
-
         public IList<WolModel> GetWolById(int userId)
         {
             var defaultModel = new JQueryTable
@@ -44,15 +35,12 @@
 
             return res;
         }
-        #endregion
-        #region Insert
+
         public void Insert(WolModel logOnModel)
         {
             WOL wol = this.Mapper.Map<WolModel, WOL>(logOnModel);
             this.Context.WOLs.Add(wol);
             this.CommitChanges();
         }
-        #endregion
-        #endregion
     }
 }
