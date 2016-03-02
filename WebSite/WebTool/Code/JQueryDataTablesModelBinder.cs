@@ -10,41 +10,35 @@
 
     public class JQueryDataTablesModelBinder : IModelBinder
     {
-        #region Private Variables (Request Keys)
+        private const string ColumnsKey = "iColumns";
 
-        private const string DisplayStartKey = "iDisplayStart";
+        private const string DataPropKey = "mDataProp_";
 
         private const string DisplayLengthKey = "iDisplayLength";
 
-        private const string ColumnsKey = "iColumns";
+        private const string DisplayStartKey = "iDisplayStart";
 
-        private const string Search = "sSearch";
+        private const string EchoKey = "sEcho";
 
         private const string EscapeRegex = "bRegex";
 
-        private const string SortableKey = "bSortable_";
+        private const string EscapeRegexKey = "bRegex_";
+
+        private const string Search = "sSearch";
 
         private const string SearchableKey = "bSearchable_";
 
         private const string SearchKey = "sSearch_";
 
-        private const string EscapeRegexKey = "bRegex_";
-
-        private const string SortingColsKey = "iSortingCols";
+        private const string SortableKey = "bSortable_";
 
         private const string SortColKey = "iSortCol_";
 
         private const string SortDirKey = "sSortDir_";
 
-        private const string EchoKey = "sEcho";
-
-        private const string DataPropKey = "mDataProp_";
+        private const string SortingColsKey = "iSortingCols";
 
         private ModelBindingContext bindingContext;
-
-        #endregion
-
-        #region IModelBinder Members
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1500:VariableNamesShouldNotMatchFieldNames", MessageId = "bindingContext", Justification = "Justification"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", Justification = "Justification ")]
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
@@ -98,9 +92,72 @@
             return dataTablesRequest;
         }
 
-        #endregion
+        private T GetA<T>(string key) where T : struct
+        {
+            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
 
-        #region Methods
+            if (valueResult == null)
+            {
+                return new T();
+            }
+
+            return (T)valueResult.ConvertTo(typeof(T));
+        }
+
+        private ReadOnlyCollection<T> GetAList<T>(string key) where T : struct
+        {
+            var list = new List<T>();
+            bool hasMore = true;
+            int i = 0;
+            while (hasMore)
+            {
+                var newKey = key + i.ToString();
+
+                var valueResult = this.bindingContext.ValueProvider.GetValue(newKey);
+
+                if (valueResult == null)
+                {
+                    // If valueResult is still null then we know the value is not in the ModelBindingContext
+                    // cease execution of this forloop
+                    hasMore = false;
+                    continue;
+                }
+
+                list.Add((T)valueResult.ConvertTo(typeof(T)));
+                i++;
+            }
+
+            return list.AsReadOnly();
+        }
+
+        private T? GetANullableValue<T>(string key) where T : struct
+        {
+            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
+
+            if (valueResult == null)
+            {
+                return null;
+            }
+
+            return (T?)valueResult.ConvertTo(typeof(T));
+        }
+
+        /// <summary>
+        /// Retrieves a string from the ModelBindingContext based on the key provided.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        private string GetString(string key)
+        {
+            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
+
+            if (valueResult == null)
+            {
+                return null;
+            }
+
+            return (string)valueResult.ConvertTo(typeof(string));
+        }
 
         /// <summary>
         /// Retrieves an IList of strings from the ModelBindingContext based on the key provided.
@@ -134,74 +191,5 @@
 
             return list.AsReadOnly();
         }
-
-        private ReadOnlyCollection<T> GetAList<T>(string key) where T : struct
-        {
-            var list = new List<T>();
-            bool hasMore = true;
-            int i = 0;
-            while (hasMore)
-            {
-                var newKey = key + i.ToString();
-
-                var valueResult = this.bindingContext.ValueProvider.GetValue(newKey);
-
-                if (valueResult == null)
-                {
-                    // If valueResult is still null then we know the value is not in the ModelBindingContext
-                    // cease execution of this forloop
-                    hasMore = false;
-                    continue;
-                }
-
-                list.Add((T)valueResult.ConvertTo(typeof(T)));
-                i++;
-            }
-
-            return list.AsReadOnly();
-        }
-
-        /// <summary>
-        /// Retrieves a string from the ModelBindingContext based on the key provided.
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        private string GetString(string key)
-        {
-            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
-
-            if (valueResult == null)
-            {
-                return null;
-            }
-
-            return (string)valueResult.ConvertTo(typeof(string));
-        }
-
-        private T GetA<T>(string key) where T : struct
-        {
-            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
-
-            if (valueResult == null)
-            {
-                return new T();
-            }
-
-            return (T)valueResult.ConvertTo(typeof(T));
-        }
-
-        private T? GetANullableValue<T>(string key) where T : struct
-        {
-            var valueResult = this.bindingContext.ValueProvider.GetValue(key);
-
-            if (valueResult == null)
-            {
-                return null;
-            }
-
-            return (T?)valueResult.ConvertTo(typeof(T));
-        }
-
-        #endregion
     }
 }

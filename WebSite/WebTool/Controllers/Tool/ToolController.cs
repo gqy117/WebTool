@@ -15,7 +15,6 @@
     [LogOnCheck]
     public class ToolController : TableBaseController<WolModel>
     {
-        #region Properties
         private CmdHelper cmdHelper = new CmdHelper();
 
         private string fileName = string.Empty;
@@ -27,10 +26,6 @@
                 return this.cmdHelper;
             }
         }
-
-        public IWolService WOLService { get; set; }
-
-        public WolModel WOLModel { get; set; }
 
         public string FileName
         {
@@ -45,7 +40,6 @@
                 this.fileName = value;
             }
         }
-        #region MainResultColumn
 
         public override IList<string> PropertyList
         {
@@ -63,24 +57,15 @@
                 };
             }
         }
-        #endregion
-        #endregion
 
-        #region Constructors
+        public WolModel WOLModel { get; set; }
+
+        public IWolService WOLService { get; set; }
 
         [InjectionMethod]
         public void Init(IWolService wolService)
         {
             this.WOLService = wolService;
-        }
-        #endregion
-
-        #region Methods
-
-        [HttpGet]
-        public ActionResult WOL()
-        {
-            return this.View("~/Views/WOL/WOL.cshtml");
         }
 
         ////[HttpPost, ValidateAntiForgeryToken]
@@ -98,6 +83,12 @@
             return this.Json(UIResource.Done);
         }
 
+        [HttpGet]
+        public ActionResult WOL()
+        {
+            return this.View("~/Views/WOL/WOL.cshtml");
+        }
+
         public ActionResult WOLTable(JQueryTable model)
         {
             return this.GetJsonTable(
@@ -107,7 +98,5 @@
                     this.MainList = this.WOLService.GetWolById(this.CurrentUserModel.UserId, model);
                 });
         }
-
-        #endregion
     }
 }

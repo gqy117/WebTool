@@ -19,10 +19,14 @@
                 this.ModelState.AddModelError(string.Empty, userModel.ErrorMessage);
             }
         }
-        #region Action
-        public ActionResult RedirectToHomePage()
+
+        public void DoLogOff()
         {
-            return this.RedirectToAction("Index", "Home");
+            if (Request.Cookies[ConstParameter.WebToolUserName] != null)
+            {
+                Request.Cookies[ConstParameter.WebToolUserName].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(Request.Cookies[ConstParameter.WebToolUserName]);
+            }
         }
 
         public ActionResult DoLogOn(LogOnModel logOnModel)
@@ -45,24 +49,18 @@
                 return this.View(this.MainCshtmlName, logOnModel);
             }
         }
-        #endregion
 
-        #region Cookies
+        public ActionResult RedirectToHomePage()
+        {
+            return this.RedirectToAction("Index", "Home");
+        }
+
         public void SetLogOnCookie(LogOnModel logOnModel)
         {
             string encryptedUsername = this.AESHelper.EncryptStringToBytes(logOnModel.UserName);
             HttpCookie cookie = new HttpCookie(ConstParameter.WebToolUserName, encryptedUsername);
             this.SetLoginCookieExpires(cookie, logOnModel.RememberMe);
             Response.Cookies.Add(cookie);
-        }
-
-        public void DoLogOff()
-        {
-            if (Request.Cookies[ConstParameter.WebToolUserName] != null)
-            {
-                Request.Cookies[ConstParameter.WebToolUserName].Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies.Add(Request.Cookies[ConstParameter.WebToolUserName]);
-            }
         }
 
         private void SetLoginCookieExpires(HttpCookie cookie, bool isRemeber)
@@ -76,7 +74,5 @@
                 cookie.Expires = DateTime.Now.AddDays(1);
             }
         }
-
-        #endregion
     }
 }

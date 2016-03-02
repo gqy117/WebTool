@@ -10,10 +10,8 @@
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1018:MarkAttributesWithAttributeUsage", Justification = "Justification ")]
     public class BaseAttribute : ActionFilterAttribute
     {
-        #region Properties
         public virtual BaseController CurrentBaseController { get; set; }
-        #endregion
-        #region Methods
+
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             this.CurrentBaseController = filterContext.Controller as BaseController;
@@ -24,7 +22,6 @@
             }
 
             base.OnActionExecuting(filterContext);
-        } 
-        #endregion
+        }
     }
 }

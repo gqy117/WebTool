@@ -12,11 +12,8 @@
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1018:MarkAttributesWithAttributeUsage", Justification = "Justification ")]
     public class AntiForgeryAttribute : ActionFilterAttribute
     {
-        #region Properties
         public ActionExecutingContext CurrentContext { get; set; }
 
-        #endregion
-        #region Methods
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             this.CurrentContext = filterContext;
@@ -33,6 +30,11 @@
             }
         }
 
+        private bool IsPost()
+        {
+            return "POST" == this.CurrentContext.HttpContext.Request.HttpMethod.ToUpper();
+        }
+
         private bool IsUrlReferrerNull()
         {
             string host = Option.Safe(() => this.CurrentContext.HttpContext.Request.UrlReferrer.Host).GetValueOrDefault();
@@ -45,12 +47,5 @@
             return Option.Safe(() => this.CurrentContext.HttpContext.Request.UrlReferrer.Host).GetValueOrDefault() !=
                    Option.Safe(() => this.CurrentContext.HttpContext.Request.Url.Host).GetValueOrDefault();
         }
-
-        private bool IsPost()
-        {
-            return "POST" == this.CurrentContext.HttpContext.Request.HttpMethod.ToUpper();
-        }
-
-        #endregion
     }
 }

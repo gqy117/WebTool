@@ -15,7 +15,6 @@ namespace WebTool
 
     public class MvcApplication : System.Web.HttpApplication
     {
-        #region Application
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new ErrorLoggerAttribute());
@@ -56,9 +55,6 @@ namespace WebTool
             ModelBinders.Binders.Add(typeof(JQueryTable), new JQueryDataTablesModelBinder());
         }
 
-        #endregion
-
-        #region Other Methods
         private void SetLanguage()
         {
             if (Request.Cookies[ConstParameter.WebToolLanguage] != null)
@@ -73,7 +69,6 @@ namespace WebTool
                 cookie.Expires = DateTime.Now.AddYears(10);
                 Response.Cookies.Add(cookie);
             }
-        } 
-        #endregion
+        }
     }
 }

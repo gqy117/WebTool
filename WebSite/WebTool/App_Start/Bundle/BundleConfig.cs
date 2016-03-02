@@ -7,16 +7,6 @@
 
     public static class BundleConfig
     {
-        public static void RegisterBundles(BundleCollection bundles)
-        {
-            bundles.IgnoreList.Clear();
-            RegisterJS(bundles);
-            RegisteCSS(bundles);
-#if !DEBUG
-            BundleTable.EnableOptimizations = true;
-#endif
-        }
-
         public static void RegisteCSS(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/AllCSS").IncludeWithCssRewriteUrlTransform(
@@ -35,21 +25,22 @@
             "~/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"));
         }
 
-        #region JS
+        public static void RegisterBundles(BundleCollection bundles)
+        {
+            bundles.IgnoreList.Clear();
+            RegisterJS(bundles);
+            RegisteCSS(bundles);
+#if !DEBUG
+            BundleTable.EnableOptimizations = true;
+#endif
+        }
+
         public static void RegisterJS(BundleCollection bundles)
         {
             RegisterJSLogin(bundles);
             RegisterJSHome(bundles);
             RegisterJSWol(bundles);
             RegisterJSRegister(bundles);
-        }
-
-        private static void RegisterJSRegister(BundleCollection bundles)
-        {
-            bundles.Add(new ScriptBundle("~/Content/Register").Include(
-                MainJs.Files
-                .Concat(Register.Files)
-                .ToArray()));
         }
 
         private static void RegisterJSHome(BundleCollection bundles)
@@ -69,6 +60,14 @@
                     .ToArray()));
         }
 
+        private static void RegisterJSRegister(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Content/Register").Include(
+                MainJs.Files
+                .Concat(Register.Files)
+                .ToArray()));
+        }
+
         private static void RegisterJSWol(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Content/Wol").Include(
@@ -78,6 +77,5 @@
                 .Concat(Wol.Files)
                 .ToArray()));
         }
-        #endregion
     }
 }
