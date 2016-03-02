@@ -23,17 +23,14 @@
 
     public class BootStrap
     {
-        #region Properties
-        public IUnityContainer MyContainer { get; private set; }
-
         private IList<Assembly> AssembliesToRegister = new[]
         {
             Utilities.AssemblyReference.Assembly,
             WebToolService.AssemblyReference.Assembly,
         };
-        #endregion
 
-        #region Methods
+        public IUnityContainer MyContainer { get; private set; }
+
         public void Configure()
         {
             this.MyContainer = new UnityContainer();
@@ -54,14 +51,6 @@
             this.RegisterAutomapper();
         }
 
-        private void RegisterAutomapper()
-        {
-            var config = new MapperConfiguration(CreateMapConfigure());
-            var mapper = config.CreateMapper();
-
-            this.MyContainer.RegisterInstance(mapper);
-        }
-
         private Action<IMapperConfiguration> CreateMapConfigure()
         {
             return (IMapperConfiguration cfg) =>
@@ -72,11 +61,20 @@
             };
         }
 
-        #region Service
-        private void RegisterWebToolRepositoryService()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "loadedAssembly", Justification = "Default")]
+        private void RegisterAssemblyName()
         {
-            this.RegisterAssemblyName();
-            this.RegisterAutoMapperProfiles();
+            var types = this.AssembliesToRegister.SelectMany(x => x.ExportedTypes).ToList();
+
+            this.MyContainer.RegisterTypes(types, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
+        }
+
+        private void RegisterAutomapper()
+        {
+            var config = new MapperConfiguration(CreateMapConfigure());
+            var mapper = config.CreateMapper();
+
+            this.MyContainer.RegisterInstance(mapper);
         }
 
         private void RegisterAutoMapperProfiles()
@@ -88,14 +86,10 @@
             autoMapperProfiles.ForEach(profile => this.MyContainer.RegisterType(typeof(Profile), profile, profile.Name));
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "loadedAssembly", Justification = "Default")]
-        private void RegisterAssemblyName()
+        private void RegisterWebToolRepositoryService()
         {
-            var types = this.AssembliesToRegister.SelectMany(x => x.ExportedTypes).ToList();
-
-            this.MyContainer.RegisterTypes(types, WithMappings.FromMatchingInterface, WithName.Default, WithLifetime.Transient);
+            this.RegisterAssemblyName();
+            this.RegisterAutoMapperProfiles();
         }
-        #endregion
-        #endregion
     }
 }
