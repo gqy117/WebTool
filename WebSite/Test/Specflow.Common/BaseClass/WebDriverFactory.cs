@@ -15,8 +15,10 @@
     public class WebDriverFactory
     {
         private const string Chrome = "Chrome";
-        private const string PhantomJS = "PhantomJS";
+
         private const string Firefox = "Firefox";
+
+        private const string PhantomJS = "PhantomJS";
 
         private static string PhantomJSPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"npm\node_modules\phantomjs\lib\phantom\bin\");
 
