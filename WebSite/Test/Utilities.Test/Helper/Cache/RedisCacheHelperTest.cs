@@ -10,37 +10,34 @@
     [TestFixture]
     public class RedisCacheHelperTest
     {
-        private RedisHelper RedisHelper { get; set; }
+        private Expression<Func<ICacheClient, bool>> addMethod;
 
-        private Mock<ICacheClient> MockICacheClient { get; set; }
+        private Expression<Func<ICacheClient, bool>> existsMethod;
+
+        private Expression<Func<ICacheClient, string>> getMethod;
 
         private string key;
 
         private string value;
 
-        private Expression<Func<ICacheClient, string>> getMethod;
+        private Mock<ICacheClient> MockICacheClient { get; set; }
 
-        private Expression<Func<ICacheClient, bool>> addMethod;
+        private RedisHelper RedisHelper { get; set; }
 
-        private Expression<Func<ICacheClient, bool>> existsMethod;
-
-        [SetUp]
-        public void Init()
+        [Test]
+        public void GetCache_ShouldCallThePastInFunction_AndAddToTheCache_WhenTheKeyDoesNotExist()
         {
-            this.RedisHelper = new RedisHelper();
-            this.MockICacheClient = new Mock<ICacheClient>();
-            RedisHelper.StackExchangeRedisCacheClient = MockICacheClient.Object;
+            // Arrange
+            this.MockICacheClient.Setup(existsMethod).Returns(false);
 
-            InitMockICacheClient();
-        }
+            this.MockICacheClient.Setup(addMethod).Returns(true);
 
-        private void InitMockICacheClient()
-        {
-            key = "the key";
-            value = "the value";
-            existsMethod = x => x.Exists(key);
-            getMethod = x => x.Get<string>(key);
-            addMethod = x => x.Add(key, value);
+            // Act
+            this.RedisHelper.GetCache(key, () => value);
+
+            // Assert
+            this.MockICacheClient.Verify(addMethod, Times.Once);
+            this.MockICacheClient.Verify(getMethod, Times.Never);
         }
 
         [Test]
@@ -59,20 +56,23 @@
             this.MockICacheClient.Verify(addMethod, Times.Never);
         }
 
-        [Test]
-        public void GetCache_ShouldCallThePastInFunction_AndAddToTheCache_WhenTheKeyDoesNotExist()
+        [SetUp]
+        public void Init()
         {
-            // Arrange
-            this.MockICacheClient.Setup(existsMethod).Returns(false);
+            this.RedisHelper = new RedisHelper();
+            this.MockICacheClient = new Mock<ICacheClient>();
+            RedisHelper.StackExchangeRedisCacheClient = MockICacheClient.Object;
 
-            this.MockICacheClient.Setup(addMethod).Returns(true);
+            InitMockICacheClient();
+        }
 
-            // Act
-            this.RedisHelper.GetCache(key, () => value);
-
-            // Assert
-            this.MockICacheClient.Verify(addMethod, Times.Once);
-            this.MockICacheClient.Verify(getMethod, Times.Never);
+        private void InitMockICacheClient()
+        {
+            key = "the key";
+            value = "the value";
+            existsMethod = x => x.Exists(key);
+            getMethod = x => x.Get<string>(key);
+            addMethod = x => x.Add(key, value);
         }
     }
 }

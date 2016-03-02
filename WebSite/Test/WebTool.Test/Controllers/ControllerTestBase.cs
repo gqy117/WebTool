@@ -16,19 +16,17 @@
     {
         protected Mock<HttpContextBase> MockContext;
 
+        protected Mock<ILanguageService> MockLanguageService = new Mock<ILanguageService>();
+
         protected Mock<HttpRequestBase> MockRequest;
 
         protected Mock<HttpResponseBase> MockResponse;
-
-        protected Mock<ILanguageService> MockLanguageService = new Mock<ILanguageService>();
 
         protected Mock<IUserService> MockUserService = new Mock<IUserService>();
 
         protected IUnityContainer Container { get; set; }
 
         protected abstract Controller Controller { get; }
-
-        protected abstract void InitController();
 
         public virtual void Init()
         {
@@ -41,20 +39,17 @@
             this.InitControllerContext();
         }
 
+        protected abstract void InitController();
+
         protected virtual void RegisterMockingService()
         {
             this.Container.RegisterInstance<IUserService>(this.MockUserService.Object);
             this.Container.RegisterInstance<ILanguageService>(this.MockLanguageService.Object);
         }
 
-        private void InitMockRequest()
+        private void InitControllerContext()
         {
-            MockRequest = new Mock<HttpRequestBase>();
-        }
-
-        private void InitMockResponse()
-        {
-            MockResponse = new Mock<HttpResponseBase>();
+            Controller.ControllerContext = new ControllerContext(MockContext.Object, new RouteData(), Controller);
         }
 
         private void InitMockContext()
@@ -65,9 +60,14 @@
             MockContext.Setup(x => x.Response).Returns(MockResponse.Object);
         }
 
-        private void InitControllerContext()
+        private void InitMockRequest()
         {
-            Controller.ControllerContext = new ControllerContext(MockContext.Object, new RouteData(), Controller);
+            MockRequest = new Mock<HttpRequestBase>();
+        }
+
+        private void InitMockResponse()
+        {
+            MockResponse = new Mock<HttpResponseBase>();
         }
 
         private void SetupDependency()

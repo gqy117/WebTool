@@ -19,17 +19,6 @@
 
         private HomeController HomeController { get; set; }
 
-        [SetUp]
-        public void Init()
-        {
-            base.Init();
-        }
-
-        protected override void InitController()
-        {
-            this.HomeController = this.Container.Resolve<HomeController>();
-        }
-
         [Test]
         public void Index_ShouldReturnPartialViewWithTheNameHome()
         {
@@ -42,6 +31,17 @@
             // Assert
             string expected = "~/Views/Home/Home.cshtml";
             actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [SetUp]
+        public void Init()
+        {
+            base.Init();
+        }
+
+        protected override void InitController()
+        {
+            this.HomeController = this.Container.Resolve<HomeController>();
         }
     }
 }

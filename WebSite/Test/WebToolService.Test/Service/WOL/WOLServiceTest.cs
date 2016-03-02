@@ -14,6 +14,21 @@
     {
         private WolService WolService { get; set; }
 
+        [Test]
+        public void GetWolById_ShouldReturnAllTheRecordInTheDatabase_WhenWeDoNotProvideTheModel()
+        {
+            // Arrange
+            int userId = 1;
+
+            // Act
+            IList<WolModel> result = this.WolService.GetWolById(1);
+            int actual = result.First().WOLID;
+
+            // Assert
+            int expected = 1;
+            actual.ShouldBeEquivalentTo(expected);
+        }
+
         [SetUp]
         public override void Init()
         {
@@ -36,21 +51,6 @@
 
             // Assert
             actual.WOLName.ShouldBeEquivalentTo(wolModel.WolName);
-        }
-
-        [Test]
-        public void GetWolById_ShouldReturnAllTheRecordInTheDatabase_WhenWeDoNotProvideTheModel()
-        {
-            // Arrange
-            int userId = 1;
-
-            // Act
-            IList<WolModel> result = this.WolService.GetWolById(1);
-            int actual = result.First().WOLID;
-
-            // Assert
-            int expected = 1;
-            actual.ShouldBeEquivalentTo(expected);
         }
     }
 }

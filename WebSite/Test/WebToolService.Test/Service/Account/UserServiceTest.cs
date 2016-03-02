@@ -19,14 +19,6 @@
     {
         private UserService UserService { get; set; }
 
-        [SetUp]
-        public override void Init()
-        {
-            base.Init();
-            this.UserService = this.Container.Resolve<UserService>();
-        }
-
-        #region GetUserModelByName
         [Test]
         public void GetUserModelByName_ShouldReturn1_WhenTheUserNameIs1()
         {
@@ -45,9 +37,33 @@
 
             actual.ShouldBeEquivalentTo(expected);
         }
-        #endregion
 
-        #region Insert
+        [SetUp]
+        public override void Init()
+        {
+            base.Init();
+            this.UserService = this.Container.Resolve<UserService>();
+        }
+
+        [Test]
+        public void Insert_ShouldReturnFalse_AndSetErrorMessage_WhenThereIsOneWithTheSameUserId()
+        {
+            // Arrange
+            LogOnModel logOnModel = new LogOnModel
+            {
+                UserName = "1",
+                Password = "1",
+            };
+
+            // Act
+            bool actual = this.UserService.Insert(logOnModel);
+
+            // Assert
+            bool expected = false;
+            actual.ShouldBeEquivalentTo(expected);
+            logOnModel.ErrorMessage.ShouldBeEquivalentTo(WebToolCulture.Resource.UIResource.UserAlreadyExist);
+        }
+
         [Test]
         public void Insert_ShouldReturnTrue_AndInsertLogonModelIntoTheDatabase_WhenThereIsNotOneWithTheSameUserId()
         {
@@ -69,27 +85,6 @@
         }
 
         [Test]
-        public void Insert_ShouldReturnFalse_AndSetErrorMessage_WhenThereIsOneWithTheSameUserId()
-        {
-            // Arrange
-            LogOnModel logOnModel = new LogOnModel
-            {
-                UserName = "1",
-                Password = "1",
-            };
-
-            // Act
-            bool actual = this.UserService.Insert(logOnModel);
-
-            // Assert
-            bool expected = false;
-            actual.ShouldBeEquivalentTo(expected);
-            logOnModel.ErrorMessage.ShouldBeEquivalentTo(WebToolCulture.Resource.UIResource.UserAlreadyExist);
-        }
-        #endregion
-
-        #region IsExist
-        [Test]
         public void IsExist_ShouldReturnTrue_WhenTheUser1Exists()
         {
             // Arrange
@@ -105,9 +100,7 @@
             bool expected = true;
             actual.ShouldBeEquivalentTo(expected);
         }
-        #endregion
 
-        #region IsLogOnAllowed
         [Test]
         public void IsLogOnAllowed_ShouldReturnFalse_WhenThePasswordIsWrong()
         {
@@ -143,6 +136,5 @@
             bool expected = true;
             actual.ShouldBeEquivalentTo(expected);
         }
-        #endregion
     }
 }

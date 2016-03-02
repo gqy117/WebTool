@@ -19,17 +19,6 @@
 
         private IndexHeadController IndexHeadController { get; set; }
 
-        [SetUp]
-        public void Init()
-        {
-            base.Init();
-        }
-
-        protected override void InitController()
-        {
-            this.IndexHeadController = this.Container.Resolve<IndexHeadController>();
-        }
-
         [Test]
         public void Index_ShouldReturnPartialViewWithTheNameOfHead_WithDataEqualingCurrentUserModel()
         {
@@ -44,6 +33,17 @@
             string expected = "~/Views/Head/Head.cshtml";
             actual.ShouldBeEquivalentTo(expected);
             actualData.ShouldBeEquivalentTo(this.IndexHeadController.CurrentUserModel);
+        }
+
+        [SetUp]
+        public void Init()
+        {
+            base.Init();
+        }
+
+        protected override void InitController()
+        {
+            this.IndexHeadController = this.Container.Resolve<IndexHeadController>();
         }
     }
 }

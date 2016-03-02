@@ -15,8 +15,9 @@
     [TestFixture]
     public class WOLModelTest : TestBase
     {
-        private WolModel WolModel { get; set; }
         private Mock<ICmdHelper> MockCmdHelper { get; set; }
+
+        private WolModel WolModel { get; set; }
 
         [SetUp]
         public override void Init()
@@ -25,11 +26,6 @@
             this.InitCmdHelper();
             this.WolModel = new WolModel();
             this.WolModel.CmdHelper = this.MockCmdHelper.Object;
-        }
-
-        private void InitCmdHelper()
-        {
-            this.MockCmdHelper = new Mock<ICmdHelper>();
         }
 
         [Test]
@@ -65,6 +61,11 @@
 
             // Assert
             this.MockCmdHelper.Verify(run, Times.Once);
+        }
+
+        private void InitCmdHelper()
+        {
+            this.MockCmdHelper = new Mock<ICmdHelper>();
         }
     }
 }

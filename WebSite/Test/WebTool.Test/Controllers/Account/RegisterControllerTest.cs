@@ -17,17 +17,6 @@
 
         private RegisterController RegisterController { get; set; }
 
-        [SetUp]
-        public void Init()
-        {
-            base.Init();
-        }
-
-        protected override void InitController()
-        {
-            this.RegisterController = this.Container.Resolve<RegisterController>();
-        }
-
         [Test]
         public void Index_ShouldReturnViewResultOfRegister()
         {
@@ -40,6 +29,17 @@
             // Assert
             string expected = "~/Views/Account/Register/Register.cshtml";
             actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [SetUp]
+        public void Init()
+        {
+            base.Init();
+        }
+
+        protected override void InitController()
+        {
+            this.RegisterController = this.Container.Resolve<RegisterController>();
         }
     }
 }

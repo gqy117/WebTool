@@ -13,12 +13,6 @@
     {
         private AESHelper AESHelper { get; set; }
 
-        [SetUp]
-        public void Init()
-        {
-            this.AESHelper = new AESHelper();
-        }
-
         [Test]
         public void EncryptStringToBytes_ShouldReturnEncryptedString_WhenTheInputIs1()
         {
@@ -32,6 +26,12 @@
             string expected = "Pn8YTV5phgjk62xMg9xxhw==";
 
             actual.ShouldBeEquivalentTo(expected);
+        }
+
+        [SetUp]
+        public void Init()
+        {
+            this.AESHelper = new AESHelper();
         }
     }
 }
