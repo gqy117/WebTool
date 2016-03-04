@@ -1,3 +1,7 @@
 WebSite/WebTool/Content/assets/* linguist-vendored
 WebSite/WebTool/Scripts/* linguist-vendored
 WebSite/Test/Jasmine/lib/* linguist-vendored
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.exe filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.doc filter=lfs diff=lfs merge=lfs -text
