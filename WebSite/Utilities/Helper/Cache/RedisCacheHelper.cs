@@ -25,7 +25,8 @@
             get
             {
                 stackExchangeRedisCacheClient = stackExchangeRedisCacheClient ?? lazyStackExchangeRedisCacheClient.Value;
-                return lazyStackExchangeRedisCacheClient.Value;
+
+                return stackExchangeRedisCacheClient;
             }
 
             set
