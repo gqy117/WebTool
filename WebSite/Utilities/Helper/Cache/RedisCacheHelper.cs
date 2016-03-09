@@ -13,7 +13,7 @@
 
         private static ICacheClient stackExchangeRedisCacheClient = null;
 
-        private static object ThisLock = new object();
+        private static object thisLock = new object();
 
         static RedisHelper()
         {
@@ -44,7 +44,7 @@
             }
             else
             {
-                lock (ThisLock)
+                lock (thisLock)
                 {
                     if (!StackExchangeRedisCacheClient.Exists(key))
                     {
