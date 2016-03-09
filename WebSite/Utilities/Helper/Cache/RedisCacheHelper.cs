@@ -9,9 +9,16 @@
 
     public class RedisHelper : ICacheHelper
     {
-        private static Lazy<ICacheClient> lazyStackExchangeRedisCacheClient = new Lazy<ICacheClient>(() => new StackExchangeRedisCacheClient(new JilSerializer()));
+        private static Lazy<ICacheClient> lazyStackExchangeRedisCacheClient;
 
         private static ICacheClient stackExchangeRedisCacheClient = null;
+
+        private static object thisLock = new object();
+
+        static RedisHelper()
+        {
+            lazyStackExchangeRedisCacheClient = new Lazy<ICacheClient>(() => new StackExchangeRedisCacheClient(new JilSerializer()));
+        }
 
         public static ICacheClient StackExchangeRedisCacheClient
         {
@@ -38,8 +45,14 @@
             }
             else
             {
-                obj = func();
-                StackExchangeRedisCacheClient.Add(key, obj);
+                lock (thisLock)
+                {
+                    if (!StackExchangeRedisCacheClient.Exists(key))
+                    {
+                        obj = func();
+                        StackExchangeRedisCacheClient.Add(key, obj);
+                    }
+                }
             }
 
             return obj;
