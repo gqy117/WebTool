@@ -13,7 +13,7 @@
     using WebToolService;
 
     [LogOnCheck]
-    public class ToolController : TableBaseController<WolModel>
+    public class ToolController : TableBaseController
     {
         private CmdHelper cmdHelper = new CmdHelper();
 
