@@ -108,6 +108,7 @@
     <Compile Include="Controllers\Home\HomeControllerTest.cs" />
     <Compile Include="Controllers\Home\IndexHeadControllerTest.cs" />
     <Compile Include="Controllers\Home\LanguageControllerTest.cs" />
+    <Compile Include="Filter\JsonTableFilterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

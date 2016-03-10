@@ -459,6 +459,7 @@
     <Compile Include="Filter\ErrorLoggerAttribute.cs" />
     <Compile Include="Filter\GetUserFilter.cs" />
     <Compile Include="Filter\BaseAttribute.cs" />
+    <Compile Include="Filter\JsonTableAttribute.cs" />
     <Compile Include="Filter\LoginFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
