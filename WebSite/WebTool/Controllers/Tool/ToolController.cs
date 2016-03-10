@@ -13,7 +13,7 @@
     using WebToolService;
 
     [LogOnCheck]
-    public class ToolController : TableBaseController<WolModel>
+    public class ToolController : TableBaseController
     {
         private CmdHelper cmdHelper = new CmdHelper();
 
@@ -89,14 +89,12 @@
             return this.View("~/Views/WOL/WOL.cshtml");
         }
 
+        [JsonTable]
         public ActionResult WOLTable(JQueryTable model)
         {
-            return this.GetJsonTable(
-                model,
-                () =>
-                {
-                    this.MainList = this.WOLService.GetWolById(this.CurrentUserModel.UserId, model);
-                });
+            this.MainList = this.WOLService.GetWolById(this.CurrentUserModel.UserId, model);
+
+            return this.JsonTable(model);
         }
     }
 }
