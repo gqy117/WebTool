@@ -19,9 +19,7 @@
         private Mock<TableBaseController> MockTableBaseController;
 
         private Expression<Action<TableBaseController>> ReBindJQueryTable;
-
-        private Expression<Func<TableBaseController, ActionResult>> JsonTable;
-
+        
         private JsonTableAttribute JsonTableAttribute { get; set; }
 
         [SetUp]
@@ -46,11 +44,10 @@
 
             // Assert
             MockTableBaseController.Verify(ReBindJQueryTable, Times.Never);
-            MockTableBaseController.Verify(JsonTable, Times.Never);
         }
 
         [Test]
-        public void OnActionExecuting_ShouldCallReBindJQueryTableAndJsonTable_WhenTheControllerIsTableBaseController()
+        public void OnActionExecuting_ShouldCallReBindJQueryTable_WhenTheControllerIsTableBaseController()
         {
             // Arrange
 
@@ -59,7 +56,6 @@
 
             // Assert
             MockTableBaseController.Verify(ReBindJQueryTable, Times.Once);
-            MockTableBaseController.Verify(JsonTable, Times.Once);
         }
 
         private void InitControllerContext()
@@ -75,10 +71,8 @@
         private void InitMockMethods()
         {
             this.ReBindJQueryTable = x => x.ReBindJQueryTable(It.IsAny<JQueryTable>());
-            this.JsonTable = x => x.JsonTable(It.IsAny<JQueryTable>());
 
             this.MockTableBaseController.Setup(ReBindJQueryTable);
-            this.MockTableBaseController.Setup(JsonTable);
         }
     }
 }

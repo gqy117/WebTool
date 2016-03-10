@@ -24,13 +24,6 @@
             tableBaseController.ReBindJQueryTable(model);
 
             base.OnActionExecuting(filterContext);
-
-            this.SetJsonTableResult(filterContext, tableBaseController, model);
-        }
-
-        private void SetJsonTableResult(ActionExecutingContext filterContext, TableBaseController tableBaseController, JQueryTable model)
-        {
-            filterContext.Result = tableBaseController.JsonTable(model);
         }
     }
 }
