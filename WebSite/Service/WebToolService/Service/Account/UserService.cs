@@ -24,7 +24,7 @@
         {
             string userName = this.aESHelper.DecryptStringFromBytes(encryptedUserName);
 
-            return this.CacheHelper.GetCache(
+            return this.CacheHelper.GetCacheById(
                 userName, 
                 () => 
                 {

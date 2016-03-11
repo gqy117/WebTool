@@ -36,7 +36,7 @@
             this.MockTypedClient.Setup(Store);
 
             // Act
-            this.RedisHelper.GetCache(key, () => value);
+            this.RedisHelper.GetCacheById(key, () => value);
 
             // Assert
             this.MockTypedClient.Verify(Store, Times.Once);
@@ -50,7 +50,7 @@
             this.MockTypedClient.Setup(GetById).Returns(value);
 
             // Act
-            string actual = this.RedisHelper.GetCache(key, () => value);
+            string actual = this.RedisHelper.GetCacheById(key, () => value);
 
             // Assert
             string expected = value;

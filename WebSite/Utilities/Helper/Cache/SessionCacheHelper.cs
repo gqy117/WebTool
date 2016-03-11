@@ -7,14 +7,14 @@
 
     public class SessionHelper : ICacheHelper
     {
-        public T GetCache<T>(string key, Func<T> func) where T : class
+        public T GetCacheById<T>(string id, Func<T> func) where T : class
         {
-            T obj = System.Web.HttpContext.Current.Session[key] as T;
+            T obj = System.Web.HttpContext.Current.Session[id] as T;
 
             if (obj == null)
             {
                 obj = func();
-                System.Web.HttpContext.Current.Session.Add(key, obj);
+                System.Web.HttpContext.Current.Session.Add(id, obj);
             }
 
             return obj;

@@ -26,7 +26,7 @@
             HttpContext.Current.Session[this.key] = null;
 
             // Act
-            string actual = this.SessionHelper.GetCache(this.key, () => this.value);
+            string actual = this.SessionHelper.GetCacheById(this.key, () => this.value);
 
             // Assert
             string expected = this.value;
@@ -41,7 +41,7 @@
             HttpContext.Current.Session[this.key] = this.value;
 
             // Act
-            string actual = this.SessionHelper.GetCache(this.key, () => "Another Value");
+            string actual = this.SessionHelper.GetCacheById(this.key, () => "Another Value");
 
             // Assert
             string expected = this.value;
