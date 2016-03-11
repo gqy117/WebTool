@@ -99,6 +99,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebToolEF.edmx</DependentUpon>
     </Compile>
+    <Compile Include="WebToolEF.Partial\User.cs" />
     <Compile Include="WebToolEF.Partial\WOL.cs" />
     <Compile Include="WOL.cs">
       <DependentUpon>WebToolEF.tt</DependentUpon>
