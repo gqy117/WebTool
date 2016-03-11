@@ -14,5 +14,12 @@
 
             return obj;
         }
+
+        public IEnumerable<T> GetCacheTable<T>(string tableName, Func<IEnumerable<T>> func) where T : class
+        {
+            var obj = func();
+
+            return obj;
+        }
     }
 }

@@ -19,5 +19,18 @@
 
             return obj;
         }
+
+        public IEnumerable<T> GetCacheTable<T>(string tableName, Func<IEnumerable<T>> func) where T : class
+        {
+            IEnumerable<T> obj = System.Web.HttpContext.Current.Session[tableName] as IEnumerable<T>;
+
+            if (obj == null)
+            {
+                obj = func();
+                System.Web.HttpContext.Current.Session.Add(tableName, obj);
+            }
+
+            return obj;
+        }
     }
 }
