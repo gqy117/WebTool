@@ -2,17 +2,21 @@
 {
     using System;
     using System.Linq.Expressions;
+    using System.Security.Cryptography.X509Certificates;
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
     using ServiceStack.Redis;
+    using ServiceStack.Redis.Generic;
 
     [TestFixture]
     public class RedisCacheHelperTest
     {
-        private Expression<Func<IRedisClient, string>> Store;
+        private Expression<Action<IRedisTypedClient<string>>> Store;
 
-        private Expression<Func<IRedisClient, string>> GetById;
+        private Expression<Func<IRedisTypedClient<string>, string>> GetById;
+
+        private Expression<Func<IRedisClient, IRedisTypedClient<string>>> As;
 
         private string key;
 
@@ -20,52 +24,69 @@
 
         private Mock<IRedisClient> MockICacheClient { get; set; }
 
+        private Mock<IRedisTypedClient<string>> MockTypedClient { get; set; }
+
         private RedisHelper RedisHelper { get; set; }
 
         [Test]
         public void GetCache_ShouldCallThePastInFunction_AndAddToTheCache_WhenTheKeyDoesNotExist()
         {
             // Arrange
-            this.MockICacheClient.Setup(GetById).Returns<string>(null);
+            this.MockTypedClient.Setup(GetById).Returns<string>(null);
+            this.MockTypedClient.Setup(Store);
 
             // Act
             this.RedisHelper.GetCache(key, () => value);
 
             // Assert
-            this.MockICacheClient.Verify(Store, Times.Once);
-            this.MockICacheClient.Verify(GetById, Times.Never);
+            this.MockTypedClient.Verify(Store, Times.Once);
+            this.MockTypedClient.Verify(GetById, Times.Exactly(2));
         }
 
         [Test]
         public void GetCache_ShouldGetFromCache_WhenTheKeyExists()
         {
             // Arrange
-            this.MockICacheClient.Setup(GetById).Returns(value);
+            this.MockTypedClient.Setup(GetById).Returns(value);
 
             // Act
-            this.RedisHelper.GetCache(key, () => value);
+            string actual = this.RedisHelper.GetCache(key, () => value);
 
             // Assert
-            this.MockICacheClient.Verify(GetById, Times.Once);
-            this.MockICacheClient.Verify(Store, Times.Never);
+            string expected = value;
+            actual.ShouldBeEquivalentTo(expected);
+
+            this.MockTypedClient.Verify(GetById, Times.Once);
+            this.MockTypedClient.Verify(Store, Times.Never);
         }
 
         [SetUp]
         public void Init()
         {
             this.RedisHelper = new RedisHelper();
-            this.MockICacheClient = new Mock<IRedisClient>();
-            RedisHelper.RedisCacheClient = MockICacheClient.Object;
+            this.InitMockRedisTypedClient();
+            this.InitMockICacheClient();
 
-            InitMockICacheClient();
+            RedisHelper.RedisCacheClient = MockICacheClient.Object;
+        }
+
+        private void InitMockRedisTypedClient()
+        {
+            this.MockTypedClient = new Mock<IRedisTypedClient<string>>();
+
+            key = "the key";
+            value = "the value";
+            
+            GetById = x => x.GetById(key);
+            Store = x => x.Store(value);
         }
 
         private void InitMockICacheClient()
         {
-            key = "the key";
-            value = "the value";
-            GetById = x => x.GetById<string>(key);
-            Store = x => x.Store(value);
+            this.MockICacheClient = new Mock<IRedisClient>();
+            As = x => x.As<string>();
+
+            this.MockICacheClient.Setup(As).Returns(this.MockTypedClient.Object);
         }
     }
 }
