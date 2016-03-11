@@ -53,5 +53,27 @@
 
             return obj;
         }
+
+        public IEnumerable<T> GetCacheTable<T>(string tableName, Func<IEnumerable<T>> func) where T : class
+        {
+            var tableT = RedisCacheClient.As<T>();
+
+            IEnumerable<T> obj = tableT.GetAll();
+
+            if (obj == null)
+            {
+                using (tableT.AcquireLock(TimeSpan.FromMinutes(5)))
+                {
+                    obj = tableT.GetAll();
+                    if (obj == null)
+                    {
+                        obj = func();
+                        tableT.StoreAll(obj);
+                    }
+                }
+            }
+
+            return obj;
+        }
     }
 }

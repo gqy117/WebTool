@@ -1,6 +1,7 @@
 ﻿namespace Utilities.Test
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Linq.Expressions;
     using System.Reflection;
@@ -47,6 +48,37 @@
             string expected = this.value;
 
             actual.ShouldBeEquivalentTo(expected);
+        }
+
+
+        [Test]
+        public void GetCacheTable_ShouldGetFromCache_WhenTheKeyDoesNotExist()
+        {
+            // Arrange
+            HttpContext.Current.Session[this.key] = null;
+
+            // Act
+            IEnumerable<string> actual = this.SessionHelper.GetCacheTable(this.key, () => new List<string>() { "1" });
+
+            // Assert
+            IEnumerable<string> expected = new List<string>() { "1" };
+
+            actual.ShouldAllBeEquivalentTo(expected);
+        }
+
+        [Test]
+        public void GetCacheTable_ShouldGetFromCache_WhenTheKeyExists()
+        {
+            // Arrange
+            HttpContext.Current.Session[this.key] = new List<string>() { "1" };
+
+            // Act
+            IEnumerable<string> actual = this.SessionHelper.GetCacheTable(this.key, () => new List<string>() { "2" });
+
+            // Assert
+            IEnumerable<string> expected = new List<string>() { "1" };
+
+            actual.ShouldAllBeEquivalentTo(expected);
         }
 
         [SetUp]
