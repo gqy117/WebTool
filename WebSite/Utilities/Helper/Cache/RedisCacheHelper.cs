@@ -32,17 +32,17 @@
             }
         }
 
-        public T GetCache<T>(string key, Func<T> func) where T : class
+        public T GetCacheById<T>(string id, Func<T> func) where T : class
         {
             var tableT = RedisCacheClient.As<T>();
 
-            T obj = tableT.GetById(key);
+            T obj = tableT.GetById(id);
 
             if (obj == null)
             {
                 using (tableT.AcquireLock(TimeSpan.FromMinutes(5)))
                 {
-                    obj = tableT.GetById(key);
+                    obj = tableT.GetById(id);
                     if (obj == null)
                     {
                         obj = func();
