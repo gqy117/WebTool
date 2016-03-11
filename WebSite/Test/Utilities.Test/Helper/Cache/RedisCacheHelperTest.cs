@@ -70,7 +70,7 @@
         public void GetCacheTable_ShouldCallThePastInFunction_AndAddToTheCache_WhenTheKeyDoesNotExist()
         {
             // Arrange
-            this.MockTypedClient.Setup(GetAll).Returns(null as IList<string>);
+            this.MockTypedClient.Setup(GetAll).Returns(new List<string>());
             this.MockTypedClient.Setup(StoreAll);
 
             // Act

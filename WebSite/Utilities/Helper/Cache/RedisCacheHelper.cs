@@ -60,12 +60,12 @@
 
             IEnumerable<T> obj = tableT.GetAll();
 
-            if (obj == null)
+            if (!obj.Any())
             {
                 using (tableT.AcquireLock(TimeSpan.FromMinutes(5)))
                 {
                     obj = tableT.GetAll();
-                    if (obj == null)
+                    if (!obj.Any())
                     {
                         obj = func();
                         tableT.StoreAll(obj);
