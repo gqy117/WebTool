@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Linq.Expressions;
     using System.Security.Cryptography.X509Certificates;
+    using System.Threading;
+    using System.Threading.Tasks;
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
@@ -64,6 +66,41 @@
 
             this.MockTypedClient.Verify(GetById, Times.Once);
             this.MockTypedClient.Verify(Store, Times.Never);
+        }
+
+        [Test]
+        public void GetCache_SecondThreadShouldNotBeLocked_WhenTheFirstThreadThrowsAnException()
+        {
+            // Arrange
+            this.MockTypedClient.Setup(GetById).Returns(null as string);
+            string actual1 = null;
+            string actual2 = null;
+
+            // Act
+            try
+            {
+                Parallel.Invoke(new ParallelOptions(), () =>
+                {
+                    actual1 = this.RedisHelper.GetCacheById(key, () =>
+                    {
+                        throw new StackOverflowException();
+                        return "";
+                    });
+                },
+                () =>
+                {
+                    Thread.Sleep(1000);
+                    actual2 = this.RedisHelper.GetCacheById(key, () => value);
+                }
+                );
+            }
+            catch (AggregateException ex) { }
+
+            // Assert
+            string expected1 = null;
+            string expected2 = value;
+            actual1.ShouldBeEquivalentTo(expected1);
+            actual2.ShouldBeEquivalentTo(expected2);
         }
 
         [Test]

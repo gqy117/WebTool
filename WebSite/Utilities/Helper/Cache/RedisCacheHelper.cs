@@ -40,7 +40,7 @@
 
             if (obj == null)
             {
-                using (tableT.AcquireLock(TimeSpan.FromMinutes(5)))
+                using (tableT.AcquireLock(TimeSpan.FromMinutes(1)))
                 {
                     obj = tableT.GetById(id);
                     if (obj == null)
@@ -62,7 +62,7 @@
 
             if (!obj.Any())
             {
-                using (tableT.AcquireLock(TimeSpan.FromMinutes(5)))
+                using (tableT.AcquireLock(TimeSpan.FromMinutes(1)))
                 {
                     obj = tableT.GetAll();
                     if (!obj.Any())
