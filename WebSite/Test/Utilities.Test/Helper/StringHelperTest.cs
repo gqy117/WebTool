@@ -19,7 +19,7 @@
             string toCheck = "h";
 
             // Act
-            bool actual = StringHelper.Contains(source, toCheck);
+            bool actual = StringHelper.ContainsCaseInsensitive(source, toCheck);
 
             // Assert
             bool expected = true;
