@@ -7,6 +7,8 @@
 
     public interface ICacheHelper
     {
-        T GetCache<T>(string key, Func<T> func) where T : class;
+        T GetCacheById<T>(string id, Func<T> func) where T : class;
+
+        IEnumerable<T> GetCacheTable<T>(string tableName, Func<IEnumerable<T>> func) where T : class;
     }
 }
