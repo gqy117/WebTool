@@ -29,7 +29,7 @@
 
             var wolList = wolTable.AsQueryable()
                 .Where(x => x.UserId == userId)
-                .Search(model.sSearch, x => x.WOLName.Contains(model.sSearch))
+                .Search(model.sSearch, x => x.WOLName.ContainsCaseInsensitive(model.sSearch))
                 .OrderBy(model.OrderBy)
                 .Skip(model.iDisplayStart).Take(model.iDisplayLength)
                 .ToList();
