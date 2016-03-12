@@ -24,15 +24,12 @@
         {
             string userName = this.aESHelper.DecryptStringFromBytes(encryptedUserName);
 
-            return this.CacheHelper.GetCacheById(
-                userName, 
-                () => 
-                {
-                    var user = Context.Users.FirstOrDefault(x => x.UserName == userName);
-                    var userModel = this.Mapper.Map<User, UserModel>(user);
+            var userTable = this.CacheHelper.GetCacheTable("User", () => Context.Users);
 
-                    return userModel;
-                });
+            var user = userTable.FirstOrDefault(x => x.UserName == userName);
+            var userModel = this.Mapper.Map<User, UserModel>(user);
+
+            return userModel;
         }
 
         public bool Insert(LogOnModel logOnModel)
