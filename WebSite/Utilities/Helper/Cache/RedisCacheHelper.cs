@@ -4,53 +4,71 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using StackExchange.Redis.Extensions.Core;
-    using StackExchange.Redis.Extensions.Jil;
+    using ServiceStack.Redis;
 
     public class RedisHelper : ICacheHelper
     {
-        private static Lazy<ICacheClient> lazyStackExchangeRedisCacheClient;
+        private static Lazy<IRedisClient> lazyStackExchangeRedisCacheClient;
 
-        private static ICacheClient stackExchangeRedisCacheClient = null;
-
-        private static object thisLock = new object();
+        private static IRedisClient redisCacheClient = null;
 
         static RedisHelper()
         {
-            lazyStackExchangeRedisCacheClient = new Lazy<ICacheClient>(() => new StackExchangeRedisCacheClient(new JilSerializer()));
+            lazyStackExchangeRedisCacheClient = new Lazy<IRedisClient>(() => new RedisClient());
         }
 
-        public static ICacheClient StackExchangeRedisCacheClient
+        public static IRedisClient RedisCacheClient
         {
             get
             {
-                stackExchangeRedisCacheClient = stackExchangeRedisCacheClient ?? lazyStackExchangeRedisCacheClient.Value;
+                redisCacheClient = redisCacheClient ?? lazyStackExchangeRedisCacheClient.Value;
 
-                return stackExchangeRedisCacheClient;
+                return redisCacheClient;
             }
 
             set
             {
-                stackExchangeRedisCacheClient = value;
+                redisCacheClient = value;
             }
         }
 
-        public T GetCache<T>(string key, Func<T> func) where T : class
+        public T GetCacheById<T>(string id, Func<T> func) where T : class
         {
-            T obj = null;
+            var tableT = RedisCacheClient.As<T>();
 
-            if (StackExchangeRedisCacheClient.Exists(key))
+            T obj = tableT.GetById(id);
+
+            if (obj == null)
             {
-                obj = StackExchangeRedisCacheClient.Get<T>(key);
-            }
-            else
-            {
-                lock (thisLock)
+                using (tableT.AcquireLock(TimeSpan.FromMinutes(1)))
                 {
-                    if (!StackExchangeRedisCacheClient.Exists(key))
+                    obj = tableT.GetById(id);
+                    if (obj == null)
                     {
                         obj = func();
-                        StackExchangeRedisCacheClient.Add(key, obj);
+                        tableT.Store(obj);
+                    }
+                }
+            }
+
+            return obj;
+        }
+
+        public IEnumerable<T> GetCacheTable<T>(string tableName, Func<IEnumerable<T>> func) where T : class
+        {
+            var tableT = RedisCacheClient.As<T>();
+
+            IEnumerable<T> obj = tableT.GetAll();
+
+            if (!obj.Any())
+            {
+                using (tableT.AcquireLock(TimeSpan.FromMinutes(1)))
+                {
+                    obj = tableT.GetAll();
+                    if (!obj.Any())
+                    {
+                        obj = func();
+                        tableT.StoreAll(obj);
                     }
                 }
             }

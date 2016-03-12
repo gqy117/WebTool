@@ -7,6 +7,7 @@
     using System.Runtime.Remoting.Contexts;
     using System.Text;
     using System.Web;
+    using Utilities;
     using WebToolCulture;
     using WebToolRepository;
 
@@ -24,7 +25,9 @@
 
         public IList<WolModel> GetWolById(int userId, JQueryTable model)
         {
-            var wolList = this.Context.WOLs
+            IEnumerable<WOL> wolTable = this.CacheHelper.GetCacheTable("WOL", () => this.Context.WOLs);
+
+            var wolList = wolTable.AsQueryable()
                 .Where(x => x.UserId == userId)
                 .Search(model.sSearch, x => x.WOLName.Contains(model.sSearch))
                 .OrderBy(model.OrderBy)
