@@ -3,7 +3,7 @@ $sqlInstance = ".\SQL2008R2SP2"
 $dbName = "WebTool"
 
 
-Add-Type -assembly “system.io.compression.filesystem”
+Add-Type -assembly "system.io.compression.filesystem"
 # unzip 
 [io.compression.zipfile]::ExtractToDirectory($startPath + "\Backup.zip", $startPath)
 
