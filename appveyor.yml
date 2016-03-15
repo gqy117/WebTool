@@ -4,10 +4,9 @@ shallow_clone: false                 # default is "false"
 
 # build cache to preserve files/folders between builds
 cache:
-  - WebSite\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
-  #- projectA\libs
-  - WebSite\node_modules                    # local npm modules
-  - '%APPDATA%\npm-cache'                   # npm cache
+  #- WebSite\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+  #- WebSite\node_modules                    # local npm modules
+  #- '%APPDATA%\npm-cache'                   # npm cache
   #- WebSite\bower_components                # bower components
 
 
