@@ -8,16 +8,16 @@
 
     public class RedisHelper : ICacheHelper
     {
-        private static Lazy<IRedisClient> lazyStackExchangeRedisCacheClient;
+        private static Lazy<PooledRedisClientManager> lazyStackExchangeRedisCacheClient;
 
-        private static IRedisClient redisCacheClient = null;
+        private static PooledRedisClientManager redisCacheClient = null;
 
         static RedisHelper()
         {
-            lazyStackExchangeRedisCacheClient = new Lazy<IRedisClient>(() => new RedisClient());
+            lazyStackExchangeRedisCacheClient = new Lazy<PooledRedisClientManager>(() => new PooledRedisClientManager());
         }
 
-        public static IRedisClient RedisCacheClient
+        public static PooledRedisClientManager RedisCacheClientManager
         {
             get
             {
@@ -34,46 +34,52 @@
 
         public T GetCacheById<T>(string id, Func<T> func) where T : class
         {
-            var tableT = RedisCacheClient.As<T>();
-
-            T obj = tableT.GetById(id);
-
-            if (obj == null)
+            using (var client = RedisCacheClientManager.GetClient())
             {
-                using (tableT.AcquireLock(TimeSpan.FromMinutes(1)))
+                var tableT = client.As<T>();
+
+                T obj = tableT.GetById(id);
+
+                if (obj == null)
                 {
-                    obj = tableT.GetById(id);
-                    if (obj == null)
+                    using (tableT.AcquireLock(TimeSpan.FromMinutes(1)))
                     {
-                        obj = func();
-                        tableT.Store(obj);
+                        obj = tableT.GetById(id);
+                        if (obj == null)
+                        {
+                            obj = func();
+                            tableT.Store(obj);
+                        }
                     }
                 }
-            }
 
-            return obj;
+                return obj;
+            }
         }
 
         public IEnumerable<T> GetCacheTable<T>(string tableName, Func<IEnumerable<T>> func) where T : class
         {
-            var tableT = RedisCacheClient.As<T>();
-
-            IEnumerable<T> obj = tableT.GetAll();
-
-            if (!obj.Any())
+            using (var client = RedisCacheClientManager.GetClient())
             {
-                using (tableT.AcquireLock(TimeSpan.FromMinutes(1)))
+                var tableT = client.As<T>();
+
+                IEnumerable<T> obj = tableT.GetAll();
+
+                if (!obj.Any())
                 {
-                    obj = tableT.GetAll();
-                    if (!obj.Any())
+                    using (tableT.AcquireLock(TimeSpan.FromMinutes(1)))
                     {
-                        obj = func();
-                        tableT.StoreAll(obj);
+                        obj = tableT.GetAll();
+                        if (!obj.Any())
+                        {
+                            obj = func();
+                            tableT.StoreAll(obj);
+                        }
                     }
                 }
-            }
 
-            return obj;
+                return obj;
+            }
         }
     }
 }

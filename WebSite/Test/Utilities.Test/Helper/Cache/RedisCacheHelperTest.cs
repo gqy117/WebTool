@@ -143,7 +143,7 @@
             this.InitMockRedisTypedClient();
             this.InitMockICacheClient();
 
-            RedisHelper.RedisCacheClient = MockICacheClient.Object;
+            RedisHelper.RedisCacheClientManager = MockICacheClient.Object;
         }
 
         private void InitMockRedisTypedClient()
