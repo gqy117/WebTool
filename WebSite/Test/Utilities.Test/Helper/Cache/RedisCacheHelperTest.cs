@@ -34,6 +34,8 @@
 
         private Mock<IRedisTypedClient<string>> MockTypedClient { get; set; }
 
+        private Mock<IRedisClientsManager> MockRedisClientsManager { get; set; }
+
         private RedisHelper RedisHelper { get; set; }
 
         [Test]
@@ -143,7 +145,15 @@
             this.InitMockRedisTypedClient();
             this.InitMockICacheClient();
 
-            RedisHelper.RedisCacheClientManager = MockICacheClient.Object;
+            this.InitMockRedisClientsManager();
+        }
+
+        private void InitMockRedisClientsManager()
+        {
+            this.MockRedisClientsManager = new Mock<IRedisClientsManager>();
+            this.MockRedisClientsManager.Setup(x => x.GetClient()).Returns(MockICacheClient.Object);
+
+            RedisHelper.RedisCacheClientManager = this.MockRedisClientsManager.Object;
         }
 
         private void InitMockRedisTypedClient()
