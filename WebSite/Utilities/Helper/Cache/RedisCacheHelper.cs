@@ -10,14 +10,14 @@
     {
         private static Lazy<PooledRedisClientManager> lazyStackExchangeRedisCacheClient;
 
-        private static PooledRedisClientManager redisCacheClient = null;
+        private static IRedisClientsManager redisCacheClient = null;
 
         static RedisHelper()
         {
             lazyStackExchangeRedisCacheClient = new Lazy<PooledRedisClientManager>(() => new PooledRedisClientManager());
         }
 
-        public static PooledRedisClientManager RedisCacheClientManager
+        public static IRedisClientsManager RedisCacheClientManager
         {
             get
             {
