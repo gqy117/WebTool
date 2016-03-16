@@ -10,6 +10,7 @@
     {
         public ViewResult Error()
         {
+            Response.StatusCode = 500;
             return this.View("Error");
         }
 
