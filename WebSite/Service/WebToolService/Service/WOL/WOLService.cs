@@ -7,6 +7,7 @@
     using System.Runtime.Remoting.Contexts;
     using System.Text;
     using System.Web;
+    using Devshorts.MonadicNull;
     using Utilities;
     using WebToolCulture;
     using WebToolRepository;
@@ -25,7 +26,8 @@
 
         public IList<WolModel> GetWolById(int userId, JQueryTable model)
         {
-            IEnumerable<WOL> wolTable = this.CacheHelper.GetCacheTable("WOL", () => this.Context.WOLs);
+            var wolTable = this.CacheHelper.GetCacheTable("WOL", () => this.Context.WOLs).ToList();
+            int count = wolTable.Count;
 
             var wolList = wolTable.AsQueryable()
                 .Where(x => x.UserId == userId)
@@ -35,6 +37,8 @@
                 .ToList();
 
             var res = this.Mapper.Map<IList<WOL>, IList<WolModel>>(wolList);
+
+            res.First().TotalRecords = count;
 
             return res;
         }
