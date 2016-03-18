@@ -13,22 +13,19 @@
 
     public class TableBaseController : BaseController
     {
-        public virtual IList<string> PropertyList
-        {
-            get;
-            set;
-        }
+        public virtual IList<string> PropertyList { get; set; }
 
         public virtual ActionResult JsonTable<T>(JQueryTable model, ListWrapper<T> mainList)
         {
-            var mainResultColumn = this.SetMainResultColumn<T>();
+            var resultColumns = this.GetResultColumns<T>();
+            var resultValues = this.GetResultValues(mainList, resultColumns);
 
             return this.JSON(new
             {
                 sEcho = model.sEcho,
                 iTotalRecords = mainList.TotalRecords,
                 iTotalDisplayRecords = mainList.TotalRecords,
-                aaData = mainList.List.Select(mainResultColumn),
+                aaData = resultValues
             });
         }
 
@@ -50,18 +47,25 @@
             model.OrderBy = sb.ToString().Substring(0, sb.Length - 1);
         }
 
-        public virtual Func<T, string[]> SetMainResultColumn<T>()
+        public virtual Func<T, string[]> GetResultColumns<T>()
         {
             return (T x) =>
             {
                 string[] res = new string[this.PropertyList.Count];
                 for (int i = 0; i < this.PropertyList.Count; i++)
                 {
-                    res[i] = Option.Safe(() => x.GetType().GetProperty(this.PropertyList[i]).GetValue(x, null).ToString()).GetValueOrDefault();
+                    res[i] =
+                        Option.Safe(() => x.GetType().GetProperty(this.PropertyList[i]).GetValue(x, null).ToString())
+                            .GetValueOrDefault();
                 }
 
                 return res;
             };
+        }
+
+        private IEnumerable<string[]> GetResultValues<T>(ListWrapper<T> mainList, Func<T, string[]> resultColumns)
+        {
+            return mainList.List.Select(resultColumns);
         }
     }
 }
