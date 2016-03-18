@@ -21,7 +21,7 @@
                 return;
             }
 
-            tableBaseController.ReBindJQueryTable(model);
+            tableBaseController.AddOrderBy(model);
 
             base.OnActionExecuting(filterContext);
         }
