@@ -19,8 +19,10 @@
             set;
         }
 
-        public virtual ActionResult JsonTable<T>(JQueryTable model, ListWrapper<T> mainList, Func<T, string[]> mainResultColumn)
+        public virtual ActionResult JsonTable<T>(JQueryTable model, ListWrapper<T> mainList)
         {
+            var mainResultColumn = this.SetMainResultColumn<T>();
+
             return this.JSON(new
             {
                 sEcho = model.sEcho,
@@ -30,7 +32,7 @@
             });
         }
 
-        public virtual void ReBindJQueryTable(JQueryTable model)
+        public virtual void AddOrderBy(JQueryTable model)
         {
             ReadOnlyCollection<SortedColumn> res = model.SortedColumns();
             StringBuilder sb = new StringBuilder();
