@@ -4,9 +4,9 @@ namespace WebToolService
 
     public interface IWolService
     {
-        IList<WolModel> GetWolById(int userId);
+        ListWrapper<WolModel> GetWolById(int userId);
 
-        IList<WolModel> GetWolById(int userId, JQueryTable model);
+        ListWrapper<WolModel> GetWolById(int userId, JQueryTable model);
 
         void Insert(WolModel logOnModel);
     }
