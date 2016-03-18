@@ -102,6 +102,7 @@
     <Compile Include="Attribute\RequiredExt.cs" />
     <Compile Include="Base\ServiceBase.cs" />
     <Compile Include="Interface\ITotalRecords.cs" />
+    <Compile Include="Interface\ListWrapper.cs" />
     <Compile Include="Models\Account\LogonBaseModel.cs" />
     <Compile Include="Models\Account\LogonModel.cs" />
     <Compile Include="Models\Account\RegisterModel.cs" />
