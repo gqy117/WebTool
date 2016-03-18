@@ -72,7 +72,7 @@
         [HttpPost]
         public ActionResult WakeUp()
         {
-            this.WOLModel = this.WOLService.GetWolById(this.CurrentUserModel.UserId).FirstOrDefault();
+            this.WOLModel = this.WOLService.GetWolById(this.CurrentUserModel.UserId).List.FirstOrDefault();
 
             if (this.WOLModel != null)
             {
@@ -92,9 +92,13 @@
         [JsonTable]
         public ActionResult WOLTable(JQueryTable model)
         {
-            this.MainList = this.WOLService.GetWolById(this.CurrentUserModel.UserId, model);
+            var mainResultColumn = this.SetMainResultColumn<WolModel>();
 
-            return this.JsonTable(model);
+            this.ReBindJQueryTable(model);
+
+            var listWrapper = this.WOLService.GetWolById(this.CurrentUserModel.UserId, model);
+
+            return this.JsonTable(model, listWrapper, mainResultColumn);
         }
     }
 }

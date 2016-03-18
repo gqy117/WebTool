@@ -13,49 +13,25 @@
 
     public class TableBaseController : BaseController
     {
-        public virtual IEnumerable<ITotalRecords> MainList
-        {
-            get;
-            set;
-        }
-
-        public virtual Func<ITotalRecords, string[]> MainResultColumn
-        {
-            get;
-            set;
-        }
-
         public virtual IList<string> PropertyList
         {
             get;
             set;
         }
 
-        public int TotalRecords { get; set; }
-
-        public virtual ActionResult GetJsonTable(JQueryTable model, Action action)
+        public virtual ActionResult JsonTable<T>(JQueryTable model, ListWrapper<T> mainList, Func<T, string[]> mainResultColumn)
         {
-            this.ReBindJQueryTable(model);
-            action();
-
-            return this.JsonTable(model);
-        }
-
-        public virtual ActionResult JsonTable(JQueryTable model)
-        {
-            this.SetTotalRecords();
             return this.JSON(new
             {
                 sEcho = model.sEcho,
-                iTotalRecords = this.TotalRecords,
-                iTotalDisplayRecords = this.TotalRecords,
-                aaData = this.MainList.Select(this.MainResultColumn),
+                iTotalRecords = mainList.TotalRecords,
+                iTotalDisplayRecords = mainList.TotalRecords,
+                aaData = mainList.List.Select(mainResultColumn),
             });
         }
 
         public virtual void ReBindJQueryTable(JQueryTable model)
         {
-            this.SetMainResultColumn();
             ReadOnlyCollection<SortedColumn> res = model.SortedColumns();
             StringBuilder sb = new StringBuilder();
 
@@ -72,9 +48,9 @@
             model.OrderBy = sb.ToString().Substring(0, sb.Length - 1);
         }
 
-        public virtual void SetMainResultColumn()
+        public virtual Func<T, string[]> SetMainResultColumn<T>()
         {
-            this.MainResultColumn = (ITotalRecords x) =>
+            return (T x) =>
             {
                 string[] res = new string[this.PropertyList.Count];
                 for (int i = 0; i < this.PropertyList.Count; i++)
@@ -84,13 +60,6 @@
 
                 return res;
             };
-        }
-
-        public virtual void SetTotalRecords()
-        {
-            var list = this.MainList.ToList();
-
-            this.TotalRecords = list.Count > 0 ? list.FirstOrDefault().TotalRecords : 0;
         }
     }
 }
