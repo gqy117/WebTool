@@ -92,13 +92,9 @@
         [JsonTable]
         public ActionResult WOLTable(JQueryTable model)
         {
-            var mainResultColumn = this.SetMainResultColumn<WolModel>();
-
-            this.ReBindJQueryTable(model);
-
             var listWrapper = this.WOLService.GetWolById(this.CurrentUserModel.UserId, model);
 
-            return this.JsonTable(model, listWrapper, mainResultColumn);
+            return this.JsonTable(model, listWrapper);
         }
     }
 }
