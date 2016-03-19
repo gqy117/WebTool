@@ -21,7 +21,7 @@
             int userId = 1;
 
             // Act
-            IList<WolModel> result = this.WolService.GetWolById(1);
+            IList<WolModel> result = this.WolService.GetWolById(1).List;
             int actual = result.First().WOLID;
 
             // Assert

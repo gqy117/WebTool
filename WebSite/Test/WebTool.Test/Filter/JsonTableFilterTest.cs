@@ -70,7 +70,7 @@
 
         private void InitMockMethods()
         {
-            this.ReBindJQueryTable = x => x.ReBindJQueryTable(It.IsAny<JQueryTable>());
+            this.ReBindJQueryTable = x => x.AddOrderBy(It.IsAny<JQueryTable>());
 
             this.MockTableBaseController.Setup(ReBindJQueryTable);
         }

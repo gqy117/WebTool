@@ -13,49 +13,24 @@
 
     public class TableBaseController : BaseController
     {
-        public virtual IEnumerable<ITotalRecords> MainList
+        public virtual IList<string> PropertyList { get; set; }
+
+        public virtual ActionResult JsonTable<T>(JQueryTable model, ListWrapper<T> mainList)
         {
-            get;
-            set;
-        }
+            var resultColumns = this.GetResultColumns<T>();
+            var resultValues = this.GetResultValues(mainList, resultColumns);
 
-        public virtual Func<ITotalRecords, string[]> MainResultColumn
-        {
-            get;
-            set;
-        }
-
-        public virtual IList<string> PropertyList
-        {
-            get;
-            set;
-        }
-
-        public int TotalRecords { get; set; }
-
-        public virtual ActionResult GetJsonTable(JQueryTable model, Action action)
-        {
-            this.ReBindJQueryTable(model);
-            action();
-
-            return this.JsonTable(model);
-        }
-
-        public virtual ActionResult JsonTable(JQueryTable model)
-        {
-            this.SetTotalRecords();
             return this.JSON(new
             {
                 sEcho = model.sEcho,
-                iTotalRecords = this.TotalRecords,
-                iTotalDisplayRecords = this.TotalRecords,
-                aaData = this.MainList.Select(this.MainResultColumn),
+                iTotalRecords = mainList.TotalRecords,
+                iTotalDisplayRecords = mainList.TotalRecords,
+                aaData = resultValues
             });
         }
 
-        public virtual void ReBindJQueryTable(JQueryTable model)
+        public virtual void AddOrderBy(JQueryTable model)
         {
-            this.SetMainResultColumn();
             ReadOnlyCollection<SortedColumn> res = model.SortedColumns();
             StringBuilder sb = new StringBuilder();
 
@@ -72,25 +47,25 @@
             model.OrderBy = sb.ToString().Substring(0, sb.Length - 1);
         }
 
-        public virtual void SetMainResultColumn()
+        public virtual Func<T, string[]> GetResultColumns<T>()
         {
-            this.MainResultColumn = (ITotalRecords x) =>
+            return (T x) =>
             {
                 string[] res = new string[this.PropertyList.Count];
                 for (int i = 0; i < this.PropertyList.Count; i++)
                 {
-                    res[i] = Option.Safe(() => x.GetType().GetProperty(this.PropertyList[i]).GetValue(x, null).ToString()).GetValueOrDefault();
+                    res[i] =
+                        Option.Safe(() => x.GetType().GetProperty(this.PropertyList[i]).GetValue(x, null).ToString())
+                            .GetValueOrDefault();
                 }
 
                 return res;
             };
         }
 
-        public virtual void SetTotalRecords()
+        private IEnumerable<string[]> GetResultValues<T>(ListWrapper<T> mainList, Func<T, string[]> resultColumns)
         {
-            var list = this.MainList.ToList();
-
-            this.TotalRecords = list.Count > 0 ? list.FirstOrDefault().TotalRecords : 0;
+            return mainList.List.Select(resultColumns);
         }
     }
 }
