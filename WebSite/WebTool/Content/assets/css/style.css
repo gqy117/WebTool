@@ -129,6 +129,9 @@ Header and header elements.
 
     .header .brand {
         margin-top: -1px;
+        width: 86px; 
+        height: 24px; 
+        background: url("../img/logo.png") center no-repeat;
     }
 
     .header .btn-navbar {
