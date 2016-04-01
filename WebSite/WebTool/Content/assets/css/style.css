@@ -238,7 +238,10 @@ Header and header elements.
 
 .header .nav .dropdown-menu {
     margin-top: 3px;
+    height: 30px;
 }
+
+
 
 /***
 Page container
@@ -1296,6 +1299,26 @@ Custom icon buttons
 /***
 Extended bootstrap dropdowns
 ***/
+.dropdown .current-language {
+    float: left;
+    margin-top: 3px;
+}
+
+.dropdown .current-language-text {
+    margin-left: 3px;
+}
+
+.dropdown-menu .language-list {
+    float: left;
+    margin-top: 3px;
+}
+
+.dropdown-menu .language-list-name {
+    float: left;
+    margin-left: 5px;
+}
+
+
 .dropdown-menu.opens-left {
     margin-left: -136px;
 }
