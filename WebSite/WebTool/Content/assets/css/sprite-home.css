@@ -1,5 +1,5 @@
 ﻿.sprite-home {
-    background-image: url("../img/spritesheet.png");
+    background-image: url(spritesheet.png);
     background-repeat: no-repeat;
     display: block;
 }
@@ -10,14 +10,26 @@
     background-position: -1px -1px;
 }
 
+.sprite-home-cn {
+    width: 16px;
+    height: 11px;
+    background-position: -1px -32px;
+}
+
 .sprite-home-logo {
     width: 86px;
     height: 14px;
-    background-position: -1px -32px;
+    background-position: -1px -45px;
 }
 
 .sprite-home-menu-toggler {
     width: 18px;
     height: 13px;
-    background-position: -1px -48px;
+    background-position: -1px -61px;
+}
+
+.sprite-home-us {
+    width: 16px;
+    height: 11px;
+    background-position: -1px -76px;
 }
