@@ -191,23 +191,33 @@ Header and header elements.
         }
 
         .header .nav li.dropdown.user .dropdown-toggle {
-            padding: 6px 4px 7px 9px;
+            padding: 10px 4px 7px 9px;
         }
 
-            .header .nav li.dropdown.user .dropdown-toggle:hover {
-                text-decoration: none;
-            }
+        .header .nav li.dropdown.user .dropdown-toggle-image {
+            background: url("../img/avatar1_small.jpg") no-repeat;
+            margin-top: -4px;
+            width: 29px;
+            height: 29px;
+            display: block;
+            float: left;
+        }
 
-            .header .nav li.dropdown.user .dropdown-toggle .username {
-                color: #ddd;
-            }
+        .header .nav li.dropdown.user .dropdown-toggle:hover {
+            text-decoration: none;
+        }
 
-            .header .nav li.dropdown.user .dropdown-toggle i {
-                display: inline-block;
-                margin-top: 5px;
-                margin: 0;
-                font-size: 16px;
-            }
+        .header .nav li.dropdown.user .dropdown-toggle .username {
+            color: #ddd;
+            margin-left: 3px;
+        }
+
+        .header .nav li.dropdown.user .dropdown-toggle i {
+            display: inline-block;
+            margin-top: 5px;
+            margin: 0;
+            font-size: 16px;
+        }
 
         .header .nav li.dropdown .dropdown-toggle .badge {
             position: absolute;
