@@ -1,0 +1,23 @@
+﻿.sprite-home {
+    background-image: url("../img/spritesheet.png");
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-home-avatar1_small {
+    width: 29px;
+    height: 29px;
+    background-position: -1px -1px;
+}
+
+.sprite-home-logo {
+    width: 86px;
+    height: 14px;
+    background-position: -1px -32px;
+}
+
+.sprite-home-menu-toggler {
+    width: 18px;
+    height: 13px;
+    background-position: -1px -48px;
+}
