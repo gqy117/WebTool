@@ -224,6 +224,11 @@
     <Content Include="Content\assets\img\ajax-loading.gif" />
     <Content Include="Content\assets\img\ajax-modal-loading.gif" />
     <Content Include="Content\assets\img\avatar1.jpg" />
+    <Content Include="Content\assets\img\cssSprite\avatar1_small.jpg" />
+    <Content Include="Content\assets\img\cssSprite\cn.png" />
+    <Content Include="Content\assets\img\cssSprite\logo.png" />
+    <Content Include="Content\assets\img\cssSprite\menu-toggler.png" />
+    <Content Include="Content\assets\img\cssSprite\us.png" />
     <Content Include="Content\assets\img\flags\ch.png" />
     <Content Include="Content\assets\img\flags\cn.png" />
     <Content Include="Content\assets\img\flags\er.png" />
