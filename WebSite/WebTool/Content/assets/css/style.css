@@ -129,24 +129,20 @@ Header and header elements.
 
     .header .brand {
         margin-top: -1px;
-        width: 86px;
-        height: 24px;
-        background: url("../img/logo.png") center no-repeat;
+        padding-top: 15px;
     }
 
     .header .btn-navbar {
-        width: 8px;
-        background: url("../img/menu-toggler.png") no-repeat;
         margin-bottom: 0px;
         padding-right: 0px;
-        margin-top: 14px;
+        margin-top: 7px;
         padding-bottom: 6px;
-        margin-left: 14px;
         filter: none;
         box-shadow: none;
         color: #fff;
         border: 0;
         cursor: pointer;
+        background: none;
     }
 
         .header .btn-navbar:hover {
@@ -195,7 +191,6 @@ Header and header elements.
         }
 
         .header .nav li.dropdown.user .dropdown-toggle-image {
-            background: url("../img/avatar1_small.jpg") no-repeat;
             margin-top: -4px;
             width: 29px;
             height: 29px;

@@ -14,6 +14,7 @@
             "~/Content/assets/css/metro.css",
             "~/Content/assets/font-awesome/css/font-awesome.css",
             "~/Content/assets/css/style.css",
+            "~/Content/assets/css/sprite-home.css",
             "~/Content/assets/css/themes/default.css",
                 ////"~/Content/assets/css/themes/light.css",
             "~/Content/assets/uniform/css/uniform.default.css",

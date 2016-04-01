@@ -201,6 +201,7 @@
     <Content Include="Content\assets\ckeditor\plugins\icons.png" />
     <Content Include="Content\assets\css\metro.min.css" />
     <Content Include="Content\assets\css\metro.css" />
+    <Content Include="Content\assets\css\sprite-home.css" />
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\css\style_responsive.css" />
     <Content Include="Content\assets\css\themes\blue.css" />
@@ -254,6 +255,7 @@
     <Content Include="Content\assets\img\sidebar-menu-arrow-green-right.png" />
     <Content Include="Content\assets\img\sidebar-menu-arrow-green.png" />
     <Content Include="Content\assets\img\sidebar-menu-arrow.png" />
+    <Content Include="Content\assets\img\spritesheet.png" />
     <Content Include="Content\assets\img\syncfusion-icons-white.png" />
     <Content Include="Content\assets\img\syncfusion-icons.png" />
     <Content Include="Content\assets\js\app.js" />

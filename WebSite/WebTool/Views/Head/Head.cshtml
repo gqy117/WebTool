@@ -8,11 +8,12 @@
         <div class="container-fluid">
             <!-- BEGIN LOGO -->
             <a class="brand" ng-click="head.brand_Click()">
+                <span class="sprite-home sprite-home-logo"></span>
             </a>
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
             <a class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                
+                <span class="sprite-home sprite-home-menu-toggler"></span>
             </a>
 
             <!-- END RESPONSIVE MENU TOGGLER -->
@@ -22,7 +23,7 @@
                 <!-- BEGIN USER LOGIN DROPDOWN -->
                 <li class="dropdown user">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="dropdown-toggle-image"></span>
+                        <span class="dropdown-toggle-image sprite-home sprite-home-avatar1_small"></span>
                         <span class="username">@Option.Safe(() => Model.UserName).GetValueOrDefault()</span> <i class="icon-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
