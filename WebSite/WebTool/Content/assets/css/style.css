@@ -129,21 +129,24 @@ Header and header elements.
 
     .header .brand {
         margin-top: -1px;
-        width: 86px; 
-        height: 24px; 
+        width: 86px;
+        height: 24px;
         background: url("../img/logo.png") center no-repeat;
     }
 
     .header .btn-navbar {
+        width: 8px;
+        background: url("../img/menu-toggler.png") no-repeat;
         margin-bottom: 0px;
         padding-right: 0px;
-        padding-top: 10px;
+        margin-top: 14px;
         padding-bottom: 6px;
-        background-image: none;
+        margin-left: 14px;
         filter: none;
         box-shadow: none;
         color: #fff;
         border: 0;
+        cursor: pointer;
     }
 
         .header .btn-navbar:hover {
