@@ -129,18 +129,20 @@ Header and header elements.
 
     .header .brand {
         margin-top: -1px;
+        padding-top: 15px;
     }
 
     .header .btn-navbar {
         margin-bottom: 0px;
         padding-right: 0px;
-        padding-top: 10px;
+        margin-top: 7px;
         padding-bottom: 6px;
-        background-image: none;
         filter: none;
         box-shadow: none;
         color: #fff;
         border: 0;
+        cursor: pointer;
+        background: none;
     }
 
         .header .btn-navbar:hover {
@@ -185,23 +187,32 @@ Header and header elements.
         }
 
         .header .nav li.dropdown.user .dropdown-toggle {
-            padding: 6px 4px 7px 9px;
+            padding: 10px 4px 7px 9px;
         }
 
-            .header .nav li.dropdown.user .dropdown-toggle:hover {
-                text-decoration: none;
-            }
+        .header .nav li.dropdown.user .dropdown-toggle-image {
+            margin-top: -4px;
+            width: 29px;
+            height: 29px;
+            display: block;
+            float: left;
+        }
 
-            .header .nav li.dropdown.user .dropdown-toggle .username {
-                color: #ddd;
-            }
+        .header .nav li.dropdown.user .dropdown-toggle:hover {
+            text-decoration: none;
+        }
 
-            .header .nav li.dropdown.user .dropdown-toggle i {
-                display: inline-block;
-                margin-top: 5px;
-                margin: 0;
-                font-size: 16px;
-            }
+        .header .nav li.dropdown.user .dropdown-toggle .username {
+            color: #ddd;
+            margin-left: 3px;
+        }
+
+        .header .nav li.dropdown.user .dropdown-toggle i {
+            display: inline-block;
+            margin-top: 5px;
+            margin: 0;
+            font-size: 16px;
+        }
 
         .header .nav li.dropdown .dropdown-toggle .badge {
             position: absolute;
