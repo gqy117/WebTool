@@ -1,8 +1,8 @@
 ﻿@model WebToolService.LanguageModel
 <li ng-controller="languageBarController as languageBar" class="dropdown language" style="line-height: 16px;">
     <a id="change-language-dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-        <img alt="" src="@Url.Content(String.Format("~/Content/assets/img/flags/{0}", Model.CurrentLanguage.PictureName))" />
-        <span name="current-language-text" class="username">
+        <span class="current-language sprite-home sprite-home-@Model.CurrentLanguage.PictureName"></span>
+        <span name="current-language-text" class="username current-language-text">
             @Model.CurrentLanguage.Name
         </span>
         <i class="fa fa-angle-down"></i>
@@ -12,8 +12,8 @@
         <ul class="dropdown-menu">
             <li>
                 <a id="language-icon" ng-click="languageBar.changeLanguage('@language.Code');">
-                    <img alt="" src="@Url.Content(String.Format("~/Content/assets/img/flags/{0}", language.PictureName))" />
-                    @language.Name
+                    <span class="language-list sprite-home sprite-home-@language.PictureName"></span>
+                    <span class="language-list-name">@language.Name</span>   
                 </a>
             </li>
         </ul>

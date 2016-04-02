@@ -202,6 +202,7 @@
     <Content Include="Content\assets\css\metro.min.css" />
     <Content Include="Content\assets\css\metro.css" />
     <Content Include="Content\assets\css\sprite-home.css" />
+    <Content Include="Content\assets\css\spritesheet.png" />
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\css\style_responsive.css" />
     <Content Include="Content\assets\css\themes\blue.css" />
@@ -223,9 +224,12 @@
     <Content Include="Content\assets\img\ajax-loading.gif" />
     <Content Include="Content\assets\img\ajax-modal-loading.gif" />
     <Content Include="Content\assets\img\avatar1.jpg" />
-    <Content Include="Content\assets\img\avatar1_small.jpg" />
+    <Content Include="Content\assets\img\cssSprite\avatar1_small.jpg" />
+    <Content Include="Content\assets\img\cssSprite\cn.png" />
+    <Content Include="Content\assets\img\cssSprite\logo.png" />
+    <Content Include="Content\assets\img\cssSprite\menu-toggler.png" />
+    <Content Include="Content\assets\img\cssSprite\us.png" />
     <Content Include="Content\assets\img\flags\ch.png" />
-    <Content Include="Content\assets\img\flags\cn.png" />
     <Content Include="Content\assets\img\flags\er.png" />
     <Content Include="Content\assets\img\flags\gs.png" />
     <Content Include="Content\assets\img\flags\ht.png" />
@@ -233,12 +237,9 @@
     <Content Include="Content\assets\img\flags\sc.png" />
     <Content Include="Content\assets\img\flags\se.png" />
     <Content Include="Content\assets\img\flags\th.png" />
-    <Content Include="Content\assets\img\flags\us.png" />
     <Content Include="Content\assets\img\gallery\image1.jpg" />
     <Content Include="Content\assets\img\loading.gif" />
     <Content Include="Content\assets\img\logo-big.png" />
-    <Content Include="Content\assets\img\logo.png" />
-    <Content Include="Content\assets\img\menu-toggler.png" />
     <Content Include="Content\assets\img\overlay-icon.png" />
     <Content Include="Content\assets\img\portlet-collapse-icon-white.png" />
     <Content Include="Content\assets\img\portlet-collapse-icon.png" />
@@ -255,7 +256,6 @@
     <Content Include="Content\assets\img\sidebar-menu-arrow-green-right.png" />
     <Content Include="Content\assets\img\sidebar-menu-arrow-green.png" />
     <Content Include="Content\assets\img\sidebar-menu-arrow.png" />
-    <Content Include="Content\assets\img\spritesheet.png" />
     <Content Include="Content\assets\img\syncfusion-icons-white.png" />
     <Content Include="Content\assets\img\syncfusion-icons.png" />
     <Content Include="Content\assets\js\app.js" />
