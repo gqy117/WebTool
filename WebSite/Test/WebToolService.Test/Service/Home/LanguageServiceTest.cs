@@ -27,10 +27,10 @@
             // Assert
             LanguageModel expected = new LanguageModel()
             {
-                CurrentLanguage = new Language() { Code = "en", Name = "English", PictureName = "us.png" },
+                CurrentLanguage = new Language() { Code = "en", Name = "English", PictureName = "us" },
                 ListLanguage = new List<Language>()
                 {
-                    new Language(){ Code = "zh-CN", Name = "中文", PictureName = "cn.png"},
+                    new Language(){ Code = "zh-CN", Name = "中文", PictureName = "cn"},
                 }
             };
 
