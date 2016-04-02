@@ -25,13 +25,13 @@
             {
                 Code = English, 
                 Name = UIResource.English, 
-                PictureName = "us.png"
+                PictureName = "us"
             },
             new Language()
             {
                 Code = SimplifiedChinese, 
                 Name = UIResource.Chinese, 
-                PictureName = "cn.png"
+                PictureName = "cn"
             },
         };
 
