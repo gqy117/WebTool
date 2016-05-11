@@ -8,7 +8,7 @@
     "gulp-jshint": "2.0.0",
     "gulp-resolve-dependencies": "2.2.0",
     "gulp-tslint": "4.3.2",
-    "gulp-typescript": "2.10.0",
+    "gulp-typescript": "2.13.4",
     "map-stream": "0.0.6"
   }
 }

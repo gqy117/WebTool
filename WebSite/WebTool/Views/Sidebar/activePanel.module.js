@@ -8,6 +8,6 @@ var M;
             this.wol = false;
         }
         return activePanel;
-    })();
+    }());
     M.activePanel = activePanel;
 })(M || (M = {}));

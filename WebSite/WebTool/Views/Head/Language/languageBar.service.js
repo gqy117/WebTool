@@ -21,7 +21,7 @@ var M;
         // inject
         languageBarService.$inject = ["$window", "jQuery", "gaService"];
         return languageBarService;
-    })();
+    }());
     M.languageBarService = languageBarService;
     // init
     angular.module("mainApp")

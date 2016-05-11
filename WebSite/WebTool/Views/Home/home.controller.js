@@ -12,7 +12,7 @@ var M;
         // inject
         homeController.$inject = ["homeService", "sidebarService"];
         return homeController;
-    })();
+    }());
     M.homeController = homeController;
     // init
     angular.module("mainApp")

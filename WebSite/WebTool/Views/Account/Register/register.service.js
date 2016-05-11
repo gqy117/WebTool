@@ -21,7 +21,7 @@ var M;
         // inject
         registerService.$inject = ["$window", "jQuery", "gaService"];
         return registerService;
-    })();
+    }());
     M.registerService = registerService;
     // init
     angular.module("mainApp")

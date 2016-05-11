@@ -13,7 +13,7 @@ var M;
         // inject
         languageBarController.$inject = ["languageBarService"];
         return languageBarController;
-    })();
+    }());
     M.languageBarController = languageBarController;
     // init
     angular.module("mainApp")
