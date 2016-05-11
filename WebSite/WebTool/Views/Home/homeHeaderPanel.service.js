@@ -18,7 +18,7 @@ var M;
         // inject
         homeHeaderPanelService.$inject = ["gaService"];
         return homeHeaderPanelService;
-    })();
+    }());
     M.homeHeaderPanelService = homeHeaderPanelService;
     // init
     angular.module("mainApp")

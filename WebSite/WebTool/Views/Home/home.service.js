@@ -5,7 +5,7 @@ var M;
         function homeService() {
         }
         return homeService;
-    })();
+    }());
     M.homeService = homeService;
     // init
     angular.module("mainApp")

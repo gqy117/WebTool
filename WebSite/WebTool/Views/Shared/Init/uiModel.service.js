@@ -17,7 +17,7 @@ var M;
             $.fn.modalmanager.defaults.spinner = spinner;
         };
         return uiModelService;
-    })();
+    }());
     M.uiModelService = uiModelService;
     // init
     angular.module("mainApp")
