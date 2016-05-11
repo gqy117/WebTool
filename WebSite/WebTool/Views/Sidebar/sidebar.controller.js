@@ -17,7 +17,7 @@ var M;
         // inject
         sidebarController.$inject = ["sidebarService"];
         return sidebarController;
-    })();
+    }());
     M.sidebarController = sidebarController;
     // init
     angular.module("mainApp")

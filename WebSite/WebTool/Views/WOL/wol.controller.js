@@ -15,7 +15,7 @@ var M;
         // inject
         wolController.$inject = ["$window", "wolService", "sidebarService", "myDataTableService"];
         return wolController;
-    })();
+    }());
     M.wolController = wolController;
     // init
     angular.module("mainApp")

@@ -16,7 +16,7 @@ var M;
         // inject
         headerPanelController.$inject = ["headerPanelService"];
         return headerPanelController;
-    })();
+    }());
     M.headerPanelController = headerPanelController;
     // init
     angular.module("mainApp")

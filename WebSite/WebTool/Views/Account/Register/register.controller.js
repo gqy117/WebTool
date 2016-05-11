@@ -16,7 +16,7 @@ var M;
         // inject
         registerController.$inject = ["registerService"];
         return registerController;
-    })();
+    }());
     M.registerController = registerController;
     // init
     angular.module("mainApp")

@@ -19,7 +19,7 @@ var M;
         // inject
         headController.$inject = ["headService"];
         return headController;
-    })();
+    }());
     M.headController = headController;
     // init
     angular.module("mainApp")

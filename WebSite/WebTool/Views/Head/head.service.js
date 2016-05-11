@@ -21,7 +21,7 @@ var M;
         // inject
         headService.$inject = ["$window", "gaService"];
         return headService;
-    })();
+    }());
     M.headService = headService;
     // init
     angular.module("mainApp")

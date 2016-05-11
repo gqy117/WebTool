@@ -25,7 +25,7 @@ var M;
         // inject
         loginService.$inject = ["$window", "jQuery", "gaService"];
         return loginService;
-    })();
+    }());
     M.loginService = loginService;
     // init
     angular.module("mainApp")

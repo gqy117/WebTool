@@ -18,7 +18,7 @@ var M;
         // inject
         wolHeaderPanelService.$inject = ["gaService"];
         return wolHeaderPanelService;
-    })();
+    }());
     M.wolHeaderPanelService = wolHeaderPanelService;
     // init
     angular.module("mainApp")

@@ -21,7 +21,7 @@ var M;
         // inject
         sidebarService.$inject = ["$window", "gaService"];
         return sidebarService;
-    })();
+    }());
     M.sidebarService = sidebarService;
     // init
     angular.module("mainApp")

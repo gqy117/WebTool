@@ -13,7 +13,7 @@ var M;
         // inject
         gaService.$inject = ["$window"];
         return gaService;
-    })();
+    }());
     M.gaService = gaService;
     // init
     angular.module("mainApp")
