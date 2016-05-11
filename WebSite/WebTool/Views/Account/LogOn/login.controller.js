@@ -23,7 +23,7 @@ var M;
         // inject
         loginController.$inject = ["loginService", "$window"];
         return loginController;
-    })();
+    }());
     M.loginController = loginController;
     // init
     angular.module("mainApp")

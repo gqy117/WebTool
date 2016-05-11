@@ -24,7 +24,7 @@ var M;
         // inject
         wakeUpPanelController.$inject = ["wakeUpPanelService"];
         return wakeUpPanelController;
-    })();
+    }());
     M.wakeUpPanelController = wakeUpPanelController;
     // init
     angular.module("mainApp")

@@ -14,7 +14,7 @@ var M;
         // inject
         mainController.$inject = ["$window", "uiModelService"];
         return mainController;
-    })();
+    }());
     M.mainController = mainController;
     // init
     angular.module("mainApp")

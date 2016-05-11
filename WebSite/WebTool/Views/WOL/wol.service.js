@@ -5,7 +5,7 @@ var M;
         function wolService() {
         }
         return wolService;
-    })();
+    }());
     M.wolService = wolService;
     // init
     angular.module("mainApp")
