@@ -108,3 +108,4 @@ TestResult.xml
 opencoverCoverage.xml
 Report
 WebSite/.nuget/NuGet.exe
+WebSite/.vs/config/applicationhost.config
