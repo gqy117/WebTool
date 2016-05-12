@@ -15,17 +15,9 @@
     [LogOnCheck]
     public class ToolController : TableBaseController
     {
-        private CmdHelper cmdHelper = new CmdHelper();
-
         private string fileName = string.Empty;
 
-        public CmdHelper CMDHelper
-        {
-            get
-            {
-                return this.cmdHelper;
-            }
-        }
+        public CmdHelper CMDHelper { get; } = new CmdHelper();
 
         public string FileName
         {
