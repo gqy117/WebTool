@@ -31,7 +31,7 @@
         {
             get
             {
-                this.fileName = 0 == this.fileName.Length ? Server.MapPath("~/bin/Service/WOL/WolCmd.exe") : this.fileName;
+                this.fileName = this.fileName.Length == 0 ? Server.MapPath("~/bin/Service/WOL/WolCmd.exe") : this.fileName;
                 return this.fileName;
             }
 
