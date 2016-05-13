@@ -1,7 +1,5 @@
 namespace WebToolService
 {
-    using System.Collections.Generic;
-
     public interface IWolService
     {
         ListWrapper<WolModel> GetWolById(int userId);

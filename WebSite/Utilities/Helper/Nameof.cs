@@ -1,11 +1,7 @@
 ﻿namespace Utilities
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Linq.Expressions;
-    using System.Text;
-    using System.Threading.Tasks;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1053:StaticHolderTypesShouldNotHaveConstructors", Justification = "1")]
     public class Nameof<T>

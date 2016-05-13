@@ -1,9 +1,8 @@
 ﻿namespace WebTool
 {
     using System.Linq;
-    using System.Web;
     using System.Web.Optimization;
-    using WebTool.Bundle;
+    using Bundle;
 
     public static class BundleConfig
     {

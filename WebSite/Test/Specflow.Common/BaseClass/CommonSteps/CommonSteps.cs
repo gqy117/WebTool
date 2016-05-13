@@ -1,18 +1,8 @@
 ﻿namespace Specflow.Common
 {
-    using System;
-    using System.Collections.Generic;
     using System.Configuration;
     using System.Linq;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
     using BoDi;
-    using NUnit.Framework;
-    using NUnit.Framework.Constraints;
-    using OpenQA.Selenium.Chrome;
-    using OpenQA.Selenium.Firefox;
-    using OpenQA.Selenium.PhantomJS;
     using OpenQA.Selenium.Remote;
     using TechTalk.SpecFlow;
 
