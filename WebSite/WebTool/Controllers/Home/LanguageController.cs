@@ -7,7 +7,7 @@
     {
         public ActionResult Index()
         {
-           string language = Request?.Cookies[ConstParameter.WebToolLanguage]?.Value;
+           string language = Request?.Cookies?[ConstParameter.WebToolLanguage]?.Value;
 
            return this.PartialView("~/Views/Head/Language/LanguageBar.cshtml", this.LanguageService.GetLanguageModel(language));
         }

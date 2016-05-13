@@ -32,7 +32,7 @@
 
         public virtual void GetCurrentUser()
         {
-            string userName = Request?.Cookies[ConstParameter.WebToolUserName]?.Value;
+            string userName = Request?.Cookies?[ConstParameter.WebToolUserName]?.Value;
             this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
 
