@@ -362,6 +362,10 @@
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.scss</DependentUpon>
     </Content>
+    <Content Include="Content\wol.js" />
+    <Content Include="Content\wol.min.js">
+      <DependentUpon>wol.js</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.scss" />
