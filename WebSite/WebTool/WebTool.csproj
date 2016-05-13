@@ -202,6 +202,7 @@
     <Content Include="Content\assets\breakpoints\breakpoints.js" />
     <Content Include="Content\assets\ckeditor\config.js" />
     <Content Include="Content\assets\ckeditor\plugins\icons.png" />
+    <None Include="bundleconfig.json" />
     <Content Include="Content\assets\css\metro.css" />
     <Content Include="Content\assets\css\sprite-home.css" />
     <Content Include="Content\assets\css\spritesheet.png" />
