@@ -341,6 +341,10 @@
     <Content Include="Content\img\sidebar-menu-arrow.png" />
     <Content Include="Content\img\syncfusion-icons-white.png" />
     <Content Include="Content\img\syncfusion-icons.png" />
+    <Content Include="Content\jqTable.js" />
+    <Content Include="Content\jqTable.min.js">
+      <DependentUpon>jqTable.js</DependentUpon>
+    </Content>
     <Content Include="Content\main.js" />
     <Content Include="Content\main.min.js">
       <DependentUpon>main.js</DependentUpon>

@@ -1,4 +1,5 @@
 [
+    // all.css
     {
         "outputFileName": "Content/all.css",
         "inputFiles": [
@@ -23,6 +24,8 @@
             "outputMode": "singleLine"
         }
     },
+
+    // main.js
     {
         "outputFileName": "Content/main.js",
         "inputFiles": [
@@ -46,6 +49,8 @@
             "preserveImportantComments": false
         }
     },
+
+    // head.js
     {
         "outputFileName": "Content/head.js",
         "inputFiles": [
@@ -61,6 +66,21 @@
             "enabled": true,
             "preserveImportantComments": false
         }
+    },
+
+    // jqTable.js
+    {
+        "outputFileName": "Content/jqTable.js",
+        "inputFiles": [
+            "Views/Shared/Datatable/myDataTable.service.js",
+            "Content/assets/data-tables/jquery.dataTables.js",
+            "Content/assets/data-tables/DT_bootstrap.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "preserveImportantComments": false
+        }
     }
+
 
 ]

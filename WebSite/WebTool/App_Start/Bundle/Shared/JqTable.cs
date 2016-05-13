@@ -6,9 +6,7 @@
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {
-            "~/Views/Shared/Datatable/myDataTable.service.js",
-            "~/Content/assets/data-tables/jquery.dataTables.js",
-            "~/Content/assets/data-tables/DT_bootstrap.js"
+            "~/Content/jqTable.js"
         };
     }
 }
