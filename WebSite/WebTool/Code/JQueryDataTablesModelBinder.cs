@@ -73,13 +73,13 @@
                 if (dataTablesRequest.iSortingCols.Value
                     != dataTablesRequest.iSortCol_.Count)
                 {
-                    throw new InvalidOperationException(string.Format("Amount of items contained in iSortCol_ {0} do not match the amount specified in iSortingCols which is {1}", dataTablesRequest.iSortCol_.Count, dataTablesRequest.iSortingCols.Value));
+                    throw new InvalidOperationException($"Amount of items contained in iSortCol_ {dataTablesRequest.iSortCol_.Count} do not match the amount specified in iSortingCols which is {dataTablesRequest.iSortingCols.Value}");
                 }
 
                 if (dataTablesRequest.iSortingCols.Value
                     != dataTablesRequest.sSortDir_.Count)
                 {
-                    throw new InvalidOperationException(string.Format("Amount of items contained in sSortDir_ {0} do not match the amount specified in iSortingCols which is {1}", dataTablesRequest.sSortDir_.Count, dataTablesRequest.iSortingCols.Value));
+                    throw new InvalidOperationException($"Amount of items contained in sSortDir_ {dataTablesRequest.sSortDir_.Count} do not match the amount specified in iSortingCols which is {dataTablesRequest.iSortingCols.Value}");
                 }
             }
 

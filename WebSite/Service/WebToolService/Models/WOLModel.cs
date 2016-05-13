@@ -43,10 +43,10 @@
         {
             List<string> argumentList = new List<string>();
 
-            argumentList.Add(string.Format("\"{0}\"", this.MacAddress));
-            argumentList.Add(string.Format("\"{0}\"", this.HostName));
-            argumentList.Add(string.Format("\"{0}\"", this.SubnetMask));
-            argumentList.Add(string.Format("\"{0}\"", this.Port));
+            argumentList.Add($"\"{MacAddress}\"");
+            argumentList.Add($"\"{HostName}\"");
+            argumentList.Add($"\"{SubnetMask}\"");
+            argumentList.Add($"\"{Port}\"");
 
             this.Arguments = string.Join(" ", argumentList.ToArray());
         }
