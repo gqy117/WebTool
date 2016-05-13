@@ -10,7 +10,7 @@
     {
         public virtual void AddModelError(LogOnModel userModel)
         {
-            if (!string.IsNullOrEmpty(Option.Safe(() => userModel.ErrorMessage).GetValueOrDefault()))
+            if (!string.IsNullOrEmpty(userModel?.ErrorMessage))
             {
                 this.ModelState.AddModelError(string.Empty, userModel.ErrorMessage);
             }
