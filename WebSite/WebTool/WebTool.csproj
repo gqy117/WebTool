@@ -300,13 +300,33 @@
     <Content Include="Content\assets\uniform\images\bg-input.png" />
     <Content Include="Content\assets\uniform\images\sprite.png" />
     <Content Include="Content\assets\uniform\jquery.uniform.min.js" />
-    <Content Include="Content\head.js" />
-    <Content Include="Content\head.min.js">
+    <Content Include="Content\bundleJs\head.js" />
+    <Content Include="Content\bundleJs\head.min.js">
       <DependentUpon>head.js</DependentUpon>
     </Content>
-    <Content Include="Content\home.js" />
-    <Content Include="Content\home.min.js">
+    <Content Include="Content\bundleJs\home.js" />
+    <Content Include="Content\bundleJs\home.min.js">
       <DependentUpon>home.js</DependentUpon>
+    </Content>
+    <Content Include="Content\bundleJs\jqTable.js" />
+    <Content Include="Content\bundleJs\jqTable.min.js">
+      <DependentUpon>jqTable.js</DependentUpon>
+    </Content>
+    <Content Include="Content\bundleJs\login.js" />
+    <Content Include="Content\bundleJs\login.min.js">
+      <DependentUpon>login.js</DependentUpon>
+    </Content>
+    <Content Include="Content\bundleJs\main.js" />
+    <Content Include="Content\bundleJs\main.min.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Content\bundleJs\register.js" />
+    <Content Include="Content\bundleJs\register.min.js">
+      <DependentUpon>register.js</DependentUpon>
+    </Content>
+    <Content Include="Content\bundleJs\wol.js" />
+    <Content Include="Content\bundleJs\wol.min.js">
+      <DependentUpon>wol.js</DependentUpon>
     </Content>
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\bg-input-focus.png" />
@@ -345,18 +365,6 @@
     <Content Include="Content\img\sidebar-menu-arrow.png" />
     <Content Include="Content\img\syncfusion-icons-white.png" />
     <Content Include="Content\img\syncfusion-icons.png" />
-    <Content Include="Content\jqTable.js" />
-    <Content Include="Content\jqTable.min.js">
-      <DependentUpon>jqTable.js</DependentUpon>
-    </Content>
-    <Content Include="Content\main.js" />
-    <Content Include="Content\main.min.js">
-      <DependentUpon>main.js</DependentUpon>
-    </Content>
-    <Content Include="Content\register.js" />
-    <Content Include="Content\register.min.js">
-      <DependentUpon>register.js</DependentUpon>
-    </Content>
     <Content Include="Content\Site.css.map">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
@@ -365,10 +373,6 @@
     </Content>
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\wol.js" />
-    <Content Include="Content\wol.min.js">
-      <DependentUpon>wol.js</DependentUpon>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
