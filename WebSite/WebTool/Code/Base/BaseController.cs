@@ -32,7 +32,7 @@
 
         public virtual void GetCurrentUser()
         {
-            string userName = Option.Safe(() => Request.Cookies[ConstParameter.WebToolUserName].Value).GetValueOrDefault();
+            string userName = Request?.Cookies[ConstParameter.WebToolUserName]?.Value;
             this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
 
@@ -47,7 +47,7 @@
         public bool IsLogOn()
         {
             this.SetMasterCookie();
-            bool res = (Request.Cookies[ConstParameter.WebToolUserName] == null) ? false : true;
+            bool res = this.Request.Cookies[ConstParameter.WebToolUserName] != null;
 
             return res;
         }

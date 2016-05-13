@@ -30,15 +30,15 @@
 
         private bool IsUrlReferrerNull()
         {
-            string host = Option.Safe(() => this.CurrentContext.HttpContext.Request.UrlReferrer.Host).GetValueOrDefault();
+            string host = this.CurrentContext?.HttpContext?.Request?.UrlReferrer?.Host;
 
             return string.IsNullOrEmpty(host);
         }
 
         private bool IsUrlReferrerSameDomain()
         {
-            return Option.Safe(() => this.CurrentContext.HttpContext.Request.UrlReferrer.Host).GetValueOrDefault() !=
-                   Option.Safe(() => this.CurrentContext.HttpContext.Request.Url.Host).GetValueOrDefault();
+            return this.CurrentContext?.HttpContext?.Request?.UrlReferrer?.Host !=
+                   this.CurrentContext?.HttpContext?.Request?.Url?.Host;
         }
     }
 }
