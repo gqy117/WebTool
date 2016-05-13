@@ -27,7 +27,7 @@
 
     // main.js
     {
-        "outputFileName": "Content/main.js",
+        "outputFileName": "Content/bundleJs/main.js",
         "inputFiles": [
             "Scripts/jquery/jquery-1.8.3.min.js",
             "Scripts/angular/angular.js",
@@ -52,7 +52,7 @@
 
     // head.js
     {
-        "outputFileName": "Content/head.js",
+        "outputFileName": "Content/bundleJs/head.js",
         "inputFiles": [
             "Views/Sidebar/activePanel.module.js",
             "Views/Sidebar/sidebar.service.js",
@@ -70,7 +70,7 @@
 
     // jqTable.js
     {
-        "outputFileName": "Content/jqTable.js",
+        "outputFileName": "Content/bundleJs/jqTable.js",
         "inputFiles": [
             "Views/Shared/Datatable/myDataTable.service.js",
             "Content/assets/data-tables/jquery.dataTables.js",
@@ -84,7 +84,7 @@
 
     // home.js
     {
-        "outputFileName": "Content/home.js",
+        "outputFileName": "Content/bundleJs/home.js",
         "inputFiles": [
             "Views/Home/homeHeaderPanel.service.js",
             "Views/Shared/HeaderPanel/headerPanel.controller.js",
@@ -102,7 +102,7 @@
 
     // wol.js
     {
-        "outputFileName": "Content/wol.js",
+        "outputFileName": "Content/bundleJs/wol.js",
         "inputFiles": [
             "Views/WOL/wolHeaderPanel.service.js",
             "Views/Shared/HeaderPanel/headerPanel.controller.js",
@@ -118,10 +118,23 @@
 
     // register.js
     {
-        "outputFileName": "Content/register.js",
+        "outputFileName": "Content/bundleJs/register.js",
         "inputFiles": [
             "Views/Account/Register/register.service.js",
             "Views/Account/Register/register.controller.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "preserveImportantComments": false
+        }
+    },
+
+    // login
+    {
+        "outputFileName": "Content/bundleJs/login.js",
+        "inputFiles": [
+            "Views/Account/LogOn/login.service.js",
+            "Views/Account/LogOn/login.controller.js"
         ],
         "minify": {
             "enabled": true,
