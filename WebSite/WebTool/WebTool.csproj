@@ -304,6 +304,10 @@
     <Content Include="Content\head.min.js">
       <DependentUpon>head.js</DependentUpon>
     </Content>
+    <Content Include="Content\home.js" />
+    <Content Include="Content\home.min.js">
+      <DependentUpon>home.js</DependentUpon>
+    </Content>
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\bg-input-focus.png" />
     <Content Include="Content\Images\bg-input.png" />
