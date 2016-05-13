@@ -45,5 +45,22 @@
             "enabled": true,
             "preserveImportantComments": false
         }
+    },
+    {
+        "outputFileName": "Content/head.js",
+        "inputFiles": [
+            "Views/Sidebar/activePanel.module.js",
+            "Views/Sidebar/sidebar.service.js",
+            "Views/Sidebar/sidebar.controller.js",
+            "Views/Head/head.service.js",
+            "Views/Head/head.controller.js",
+            "Views/Head/Language/languageBar.service.js",
+            "Views/Head/Language/languageBar.controller.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "preserveImportantComments": false
+        }
     }
+
 ]
