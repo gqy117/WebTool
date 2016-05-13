@@ -6,8 +6,7 @@
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {
-            "~/Views/Account/Register/register.service.js",
-            "~/Views/Account/Register/register.controller.js"
+            "~/Content/register.js"
         };
     }
 }
