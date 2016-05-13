@@ -2,8 +2,8 @@
 @{
     var resourceString = Html.Raw(((BaseController)ViewContext.Controller).ResourceJson);
 
-    string controller = Request?.RequestContext?.RouteData?.Values["controller"]?.ToString();
-    string action = Request?.RequestContext?.RouteData?.Values["action"]?.ToString();
+    string controller = Request.RequestContext.RouteData.Values["controller"].ToString();
+    string action = Request.RequestContext.RouteData.Values["action"].ToString();
 }
 <script>
 window.UIResource = @(resourceString);
