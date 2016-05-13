@@ -353,6 +353,10 @@
     <Content Include="Content\main.min.js">
       <DependentUpon>main.js</DependentUpon>
     </Content>
+    <Content Include="Content\register.js" />
+    <Content Include="Content\register.min.js">
+      <DependentUpon>register.js</DependentUpon>
+    </Content>
     <Content Include="Content\Site.css.map">
       <DependentUpon>Site.css</DependentUpon>
     </Content>

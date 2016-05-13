@@ -113,5 +113,19 @@
             "enabled": true,
             "preserveImportantComments": false
         }
+    },
+
+
+    // register.js
+    {
+        "outputFileName": "Content/register.js",
+        "inputFiles": [
+            "Views/Account/Register/register.service.js",
+            "Views/Account/Register/register.controller.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "preserveImportantComments": false
+        }
     }
 ]

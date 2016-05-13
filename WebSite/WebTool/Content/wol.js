@@ -1,28 +1,28 @@
 var M;
 (function (M) {
     "use strict";
-    var homeHeaderPanelService = (function () {
+    var wolHeaderPanelService = (function () {
         // constructor
-        function homeHeaderPanelService(gaService) {
+        function wolHeaderPanelService(gaService) {
             this.gaService = gaService;
         }
         // methods
-        homeHeaderPanelService.prototype.navigation1 = function () {
-            this.gaService.Track("Index", "Home");
-            console.log("Tracking Home...");
+        wolHeaderPanelService.prototype.navigation1 = function () {
+            this.gaService.Track("WOL", "WOL");
+            console.log("Tracking WOL...");
         };
-        homeHeaderPanelService.prototype.navigation2 = function () {
-            this.gaService.Track("Index", "Dashboard");
-            console.log("Tracking Dashboard...");
+        wolHeaderPanelService.prototype.navigation2 = function () {
+            this.gaService.Track("WOL", "WOL");
+            console.log("Tracking WOL...");
         };
         // inject
-        homeHeaderPanelService.$inject = ["gaService"];
-        return homeHeaderPanelService;
+        wolHeaderPanelService.$inject = ["gaService"];
+        return wolHeaderPanelService;
     }());
-    M.homeHeaderPanelService = homeHeaderPanelService;
+    M.wolHeaderPanelService = wolHeaderPanelService;
     // init
     angular.module("mainApp")
-        .service("headerPanelService", homeHeaderPanelService);
+        .service("headerPanelService", wolHeaderPanelService);
 })(M || (M = {}));
 
 var M;
@@ -53,103 +53,37 @@ var M;
 var M;
 (function (M) {
     "use strict";
-    var homeService = (function () {
-        function homeService() {
+    var wolService = (function () {
+        function wolService() {
         }
-        return homeService;
+        return wolService;
     }());
-    M.homeService = homeService;
+    M.wolService = wolService;
     // init
     angular.module("mainApp")
-        .service("homeService", homeService);
+        .service("wolService", wolService);
 })(M || (M = {}));
 
 var M;
 (function (M) {
     "use strict";
-    var homeController = (function () {
+    var wolController = (function () {
         // constructor
-        function homeController(homeService, sidebarService) {
-            this.homeService = homeService;
-            this.sidebarService = sidebarService;
-            this.activePanel = this.sidebarService.activePanel;
-            this.activePanel.dashboard = true;
-        }
-        // inject
-        homeController.$inject = ["homeService", "sidebarService"];
-        return homeController;
-    }());
-    M.homeController = homeController;
-    // init
-    angular.module("mainApp")
-        .controller("homeController", homeController);
-})(M || (M = {}));
-
-
-
-var M;
-(function (M) {
-    "use strict";
-    var wakeUpPanelService = (function () {
-        // constructor
-        function wakeUpPanelService($window, $http, gaService) {
+        function wolController($window, wolService, sidebarService, myDataTableService) {
             this.$window = $window;
-            this.$http = $http;
-            this.gaService = gaService;
+            this.wolService = wolService;
+            this.sidebarService = sidebarService;
+            this.myDataTableService = myDataTableService;
+            this.activePanel = this.sidebarService.activePanel;
+            this.activePanel.wol = true;
+            this.myDataTableService.createTable("#WOLTable", this.$window.App.baseUrl + "Tool/WOLTable");
         }
-        // methods
-        wakeUpPanelService.prototype.wakeUp = function (wakeUpStatus) {
-            this.gaService.Track("Index", "Panel3_ViewMore");
-            this.$http.post(this.$window.App.baseUrl + "Tool/WakeUp")
-                .then(function () {
-                wakeUpStatus.isShowAlertWakeUpSuccess = true;
-            });
-        };
-        wakeUpPanelService.prototype.showSuccessMessage = function (wakeUpStatus) {
-            wakeUpStatus.isShowAlertWakeUpSuccess = true;
-        };
-        wakeUpPanelService.prototype.hideSuccessMessage = function (wakeUpStatus) {
-            wakeUpStatus.isShowAlertWakeUpSuccess = false;
-        };
         // inject
-        wakeUpPanelService.$inject = ["$window", "$http", "gaService"];
-        return wakeUpPanelService;
+        wolController.$inject = ["$window", "wolService", "sidebarService", "myDataTableService"];
+        return wolController;
     }());
-    M.wakeUpPanelService = wakeUpPanelService;
+    M.wolController = wolController;
     // init
     angular.module("mainApp")
-        .service("wakeUpPanelService", wakeUpPanelService);
-})(M || (M = {}));
-
-var M;
-(function (M) {
-    "use strict";
-    var wakeUpPanelController = (function () {
-        // constructor
-        function wakeUpPanelController(wakeUpPanelService) {
-            this.wakeUpPanelService = wakeUpPanelService;
-            // properties
-            this.isShowAlertWakeUpSuccess = false;
-        }
-        // methods
-        wakeUpPanelController.prototype.wakeUp_Click = function () {
-            var context = this;
-            this.wakeUpPanelService.wakeUp(context);
-        };
-        wakeUpPanelController.prototype.hideSuccessMessage = function () {
-            var context = this;
-            this.wakeUpPanelService.hideSuccessMessage(context);
-        };
-        wakeUpPanelController.prototype.showSuccessMessage = function () {
-            var context = this;
-            this.wakeUpPanelService.showSuccessMessage(context);
-        };
-        // inject
-        wakeUpPanelController.$inject = ["wakeUpPanelService"];
-        return wakeUpPanelController;
-    }());
-    M.wakeUpPanelController = wakeUpPanelController;
-    // init
-    angular.module("mainApp")
-        .controller("wakeUpPanelController", wakeUpPanelController);
+        .controller("wolController", wolController);
 })(M || (M = {}));
