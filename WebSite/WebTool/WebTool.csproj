@@ -300,6 +300,10 @@
     <Content Include="Content\assets\uniform\images\bg-input.png" />
     <Content Include="Content\assets\uniform\images\sprite.png" />
     <Content Include="Content\assets\uniform\jquery.uniform.min.js" />
+    <Content Include="Content\head.js" />
+    <Content Include="Content\head.min.js">
+      <DependentUpon>head.js</DependentUpon>
+    </Content>
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\bg-input-focus.png" />
     <Content Include="Content\Images\bg-input.png" />
