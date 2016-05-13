@@ -1,10 +1,5 @@
 ﻿namespace WebTool.Test
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Web.Mvc;
     using FluentAssertions;
     using Microsoft.Practices.Unity;
@@ -13,7 +8,7 @@
     [TestFixture]
     public class RegisterControllerTest : ControllerTestBase
     {
-        protected override Controller Controller { get { return this.RegisterController; } }
+        protected override Controller Controller => this.RegisterController;
 
         private RegisterController RegisterController { get; set; }
 

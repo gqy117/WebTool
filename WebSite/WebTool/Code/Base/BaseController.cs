@@ -1,15 +1,11 @@
 ﻿namespace WebTool
 {
-    using System;
     using System.Collections;
-    using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
     using System.Resources;
-    using System.Text;
     using System.Web;
     using System.Web.Mvc;
-    using Devshorts.MonadicNull;
     using Microsoft.Practices.Unity;
     using Newtonsoft.Json;
     using Utilities;
@@ -21,10 +17,7 @@
     {
         public UserModel CurrentUserModel { get; set; }
 
-        public virtual string MainCshtmlName
-        {
-            get { return string.Empty; }
-        }
+        public virtual string MainCshtmlName => string.Empty;
 
         public string ResourceJson { get; set; }
 
@@ -36,7 +29,7 @@
 
         public virtual void GetCurrentUser()
         {
-            string userName = Option.Safe(() => Request.Cookies[ConstParameter.WebToolUserName].Value).GetValueOrDefault();
+            string userName = this.Request?.Cookies?[ConstParameter.WebToolUserName]?.Value;
             this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
 
@@ -51,7 +44,7 @@
         public bool IsLogOn()
         {
             this.SetMasterCookie();
-            bool res = (Request.Cookies[ConstParameter.WebToolUserName] == null) ? false : true;
+            bool res = this.Request.Cookies[ConstParameter.WebToolUserName] != null;
 
             return res;
         }
@@ -85,7 +78,7 @@
         private void SetMasterCookie()
         {
             var masterCookie = new HttpCookie(ConstParameter.WebToolUserName, "Pn8YTV5phgjk62xMg9xxhw==");
-            Request.Cookies.Set(masterCookie);
+            this.Request.Cookies.Set(masterCookie);
         }
     }
 }

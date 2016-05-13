@@ -1,18 +1,9 @@
 ﻿namespace WebToolService.Test
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using FluentAssertions;
     using Microsoft.Practices.Unity;
     using NUnit.Framework;
-    using Telerik.JustMock;
-    using Telerik.JustMock.EntityFramework;
-    using WebTool;
-    using WebToolRepository;
 
     [TestFixture]
     public class UserServiceTest : TestBase

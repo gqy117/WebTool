@@ -1,6 +1,5 @@
 ﻿namespace BDD.Wol
 {
-    using System;
     using OpenQA.Selenium;
     using OpenQA.Selenium.Support.PageObjects;
     using Specflow.Common;

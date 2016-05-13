@@ -1,5 +1,4 @@
-﻿@using Devshorts.MonadicNull
-@model WebToolService.UserModel
+﻿@model WebToolService.UserModel
 
 <!-- BEGIN HEADER -->
 <div class="header navbar navbar-inverse navbar-fixed-top">
@@ -24,7 +23,7 @@
                 <li class="dropdown user">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="dropdown-toggle-image sprite-home sprite-home-avatar1_small"></span>
-                        <span class="username">@Option.Safe(() => Model.UserName).GetValueOrDefault()</span> <i class="icon-angle-down"></i>
+                        <span class="username">@(Model?.UserName)</span> <i class="icon-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a ng-click="head.myProfile_Click()"><i class="icon-user"></i>@UIResource.MyProfile</a></li>

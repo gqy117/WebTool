@@ -1,10 +1,5 @@
 ﻿namespace WebTool.Test
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
@@ -49,25 +44,25 @@
 
         private void InitControllerContext()
         {
-            Controller.ControllerContext = new ControllerContext(MockContext.Object, new RouteData(), Controller);
+            this.Controller.ControllerContext = new ControllerContext(this.MockContext.Object, new RouteData(), this.Controller);
         }
 
         private void InitMockContext()
         {
-            MockContext = new Mock<HttpContextBase>();
+            this.MockContext = new Mock<HttpContextBase>();
 
-            MockContext.Setup(c => c.Request).Returns(MockRequest.Object);
-            MockContext.Setup(x => x.Response).Returns(MockResponse.Object);
+            this.MockContext.Setup(c => c.Request).Returns(this.MockRequest.Object);
+            this.MockContext.Setup(x => x.Response).Returns(this.MockResponse.Object);
         }
 
         private void InitMockRequest()
         {
-            MockRequest = new Mock<HttpRequestBase>();
+            this.MockRequest = new Mock<HttpRequestBase>();
         }
 
         private void InitMockResponse()
         {
-            MockResponse = new Mock<HttpResponseBase>();
+            this.MockResponse = new Mock<HttpResponseBase>();
         }
 
         private void SetupDependency()

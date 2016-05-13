@@ -1,11 +1,7 @@
 ﻿namespace WebTool
 {
-    using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Linq;
-    using System.Text;
-    using System.Web;
     using System.Web.Mvc;
     using Microsoft.Practices.Unity;
     using Utilities;
@@ -23,7 +19,7 @@
         {
             get
             {
-                this.fileName = this.fileName.Length == 0 ? Server.MapPath("~/bin/Service/WOL/WolCmd.exe") : this.fileName;
+                this.fileName = this.fileName.Length == 0 ? this.Server.MapPath("~/bin/Service/WOL/WolCmd.exe") : this.fileName;
                 return this.fileName;
             }
 
@@ -33,22 +29,16 @@
             }
         }
 
-        public override IList<string> PropertyList
+        public override IList<string> PropertyList => new List<string>()
         {
-            get
-            {
-                return new List<string>()
-                {
-                    Nameof<WolModel>.Property(x => x.WOLID), 
-                    Nameof<WolModel>.Property(x => x.WolName), 
-                    Nameof<WolModel>.Property(x => x.HostName), 
-                    Nameof<WolModel>.Property(x => x.MacAddress), 
-                    Nameof<WolModel>.Property(x => x.SubnetMask), 
-                    Nameof<WolModel>.Property(x => x.Port), 
-                    Nameof<WolModel>.Property(x => x.Protocol)
-                };
-            }
-        }
+            nameof(WolModel.WOLID),
+            nameof(WolModel.WolName),
+            nameof(WolModel.HostName),
+            nameof(WolModel.MacAddress),
+            nameof(WolModel.SubnetMask),
+            nameof(WolModel.Port),
+            nameof(WolModel.Protocol)
+        };
 
         public WolModel WOLModel { get; set; }
 

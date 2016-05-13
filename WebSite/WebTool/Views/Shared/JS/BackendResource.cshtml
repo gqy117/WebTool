@@ -1,10 +1,9 @@
-﻿@using Devshorts.MonadicNull
-@using WebTool
+﻿@using WebTool
 @{
     var resourceString = Html.Raw(((BaseController)ViewContext.Controller).ResourceJson);
 
-    string controller = Option.Safe(()=>Request.RequestContext.RouteData.Values["controller"].ToString()).GetValueOrDefault();
-    string action = Option.Safe(()=>Request.RequestContext.RouteData.Values["action"].ToString()).GetValueOrDefault();
+    string controller = Request?.RequestContext?.RouteData?.Values?["controller"]?.ToString();
+    string action = Request?.RequestContext?.RouteData?.Values?["action"]?.ToString();
 }
 <script>
 window.UIResource = @(resourceString);

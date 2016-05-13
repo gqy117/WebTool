@@ -1,13 +1,5 @@
 ﻿namespace Utilities
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Net.Mime;
-    using System.Security.Policy;
-    using System.Text;
-
     public interface ICmdHelper
     {
         void Run(string fileName, string arguments);
