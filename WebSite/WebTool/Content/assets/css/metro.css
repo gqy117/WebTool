@@ -296,6 +296,7 @@ Dropdowns
     font-weight: normal;
     line-height: 18px;
     white-space: nowrap;
+    height: 18px;
 }
 
     .dropdown-menu li > a:hover,
