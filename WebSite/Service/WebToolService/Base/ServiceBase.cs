@@ -1,19 +1,11 @@
 ﻿namespace WebToolService
 {
-    using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    using System.Diagnostics;
-    using System.IO;
-    using System.Linq;
-    using System.Runtime.Remoting.Contexts;
-    using System.Text;
     using AutoMapper;
     using Microsoft.Practices.Unity;
     using Utilities;
     using WebToolRepository;
-    using WebToolService;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Justification = "Justification")]
     public abstract class ServiceBase

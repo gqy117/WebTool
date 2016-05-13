@@ -1,25 +1,14 @@
 ﻿namespace WebTool
 {
     using System;
-    using System;
     using System.Collections.Generic;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Linq;
     using System.Reflection;
-    using System.Web;
-    using System.Web;
-    using System.Web.Compilation;
     using System.Web.Mvc;
     using AutoMapper;
-    using DependencyInjection;
-    using Microsoft.Practices.ObjectBuilder2;
     using Microsoft.Practices.Unity;
     using Microsoft.Practices.Unity.Configuration;
     using Microsoft.Practices.Unity.Mvc;
-    using Microsoft.SqlServer.Server;
-    using WebToolRepository;
-    using WebToolService;
 
     public class BootStrap
     {
