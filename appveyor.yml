@@ -17,7 +17,7 @@ configuration: Release
 environment:
   COVERALLS_REPO_TOKEN:
     secure: oPWlAm7qUsd8UDn+sKevbeqai8QfEDr5CdBFgL5aFSuRJdDzAz226rL6oIsHEDev
-
+  os: Visual Studio 2015
 
 
 
