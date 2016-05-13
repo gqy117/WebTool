@@ -10,7 +10,7 @@
         {
             bundles.Add(new StyleBundle("~/Content/AllCSS").IncludeWithCssRewriteUrlTransform(
             "~/Content/assets/bootstrap/css/bootstrap.min.css",
-            "~/Content/assets/css/metro.css",
+            "~/Content/assets/css/metro.min.css",
             "~/Content/assets/font-awesome/css/font-awesome.css",
             "~/Content/assets/css/style.css",
             "~/Content/assets/css/sprite-home.css",
