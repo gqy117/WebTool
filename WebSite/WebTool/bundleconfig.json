@@ -82,7 +82,7 @@
         }
     },
 
-    // jqTable.js
+    // home.js
     {
         "outputFileName": "Content/home.js",
         "inputFiles": [
@@ -98,7 +98,20 @@
             "enabled": true,
             "preserveImportantComments": false
         }
+    },
+
+    // wol.js
+    {
+        "outputFileName": "Content/wol.js",
+        "inputFiles": [
+            "Views/WOL/wolHeaderPanel.service.js",
+            "Views/Shared/HeaderPanel/headerPanel.controller.js",
+            "Views/WOL/wol.service.js",
+            "Views/WOL/wol.controller.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "preserveImportantComments": false
+        }
     }
-
-
 ]
