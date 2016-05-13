@@ -1,13 +1,6 @@
 ﻿namespace WebTool
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Drawing;
-    using System.Linq;
-    using System.Reflection;
-    using System.Text;
     using System.Web.Mvc;
-    using Devshorts.MonadicNull;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1018:MarkAttributesWithAttributeUsage", Justification = "Justification ")]
     public class AntiForgeryAttribute : ActionFilterAttribute
@@ -37,15 +30,15 @@
 
         private bool IsUrlReferrerNull()
         {
-            string host = Option.Safe(() => this.CurrentContext.HttpContext.Request.UrlReferrer.Host).GetValueOrDefault();
+            string host = this.CurrentContext?.HttpContext?.Request?.UrlReferrer?.Host;
 
             return string.IsNullOrEmpty(host);
         }
 
         private bool IsUrlReferrerSameDomain()
         {
-            return Option.Safe(() => this.CurrentContext.HttpContext.Request.UrlReferrer.Host).GetValueOrDefault() !=
-                   Option.Safe(() => this.CurrentContext.HttpContext.Request.Url.Host).GetValueOrDefault();
+            return this.CurrentContext?.HttpContext?.Request?.UrlReferrer?.Host !=
+                   this.CurrentContext?.HttpContext?.Request?.Url?.Host;
         }
     }
 }

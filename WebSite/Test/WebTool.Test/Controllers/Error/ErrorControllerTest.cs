@@ -1,13 +1,8 @@
 ﻿namespace WebTool.Test
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
-    using System.Web.Routing;
     using FluentAssertions;
     using Microsoft.Practices.Unity;
     using Moq;
@@ -16,7 +11,7 @@
     [TestFixture]
     public class ErrorControllerTest : ControllerTestBase
     {
-        protected override Controller Controller { get { return this.ErrorController; } }
+        protected override Controller Controller => this.ErrorController;
 
         private ErrorController ErrorController { get; set; }
 
@@ -44,7 +39,7 @@
         {
             // Arrange
             Action<HttpResponseBase> setStatusCode = x => x.StatusCode = 404;
-            MockResponse.SetupSet(setStatusCode);
+            this.MockResponse.SetupSet(setStatusCode);
 
             // Act
             ViewResult actual = this.ErrorController.NotFound();
@@ -53,7 +48,7 @@
             string expectedViewName = "NotFound";
 
             actual.ViewName.ShouldBeEquivalentTo(expectedViewName);
-            MockResponse.VerifySet(setStatusCode, Times.Once);
+            this.MockResponse.VerifySet(setStatusCode, Times.Once);
         }
 
         protected override void InitController()

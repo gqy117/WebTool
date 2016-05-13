@@ -1,15 +1,10 @@
 namespace WebTool
 {
     using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.Linq;
-    using System.Threading;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
-    using System.Web.SessionState;
     using WebToolCulture;
     using WebToolService;
 
@@ -57,17 +52,17 @@ namespace WebTool
 
         private void SetLanguage()
         {
-            if (Request.Cookies[ConstParameter.WebToolLanguage] != null)
+            if (this.Request.Cookies[ConstParameter.WebToolLanguage] != null)
             {
-                CultureHelper.SetCurrentCulture(Request.Cookies[ConstParameter.WebToolLanguage].Value);
+                CultureHelper.SetCurrentCulture(this.Request.Cookies[ConstParameter.WebToolLanguage].Value);
             }
             else
             {
-                string lang = CultureHelper.GetLang(Request.UserLanguages);
+                string lang = CultureHelper.GetLang(this.Request.UserLanguages);
                 CultureHelper.SetCurrentCulture(lang);
                 HttpCookie cookie = new HttpCookie(ConstParameter.WebToolLanguage, lang);
                 cookie.Expires = DateTime.Now.AddYears(10);
-                Response.Cookies.Add(cookie);
+                this.Response.Cookies.Add(cookie);
             }
         }
     }

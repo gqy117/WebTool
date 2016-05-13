@@ -2,10 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Microsoft.Practices.Unity;
     using NUnit.Framework;
     using Telerik.JustMock;
@@ -22,8 +18,8 @@
         [SetUp]
         public virtual void Init()
         {
-            SetupDependency();
-            SetupDatabase();
+            this.SetupDependency();
+            this.SetupDatabase();
         }
 
         private void CreateDatabase()
@@ -34,10 +30,10 @@
 
         private void SetupDatabase()
         {
-            CreateDatabase();
+            this.CreateDatabase();
 
-            SetupUsersTable();
-            SetupWOLTable();
+            this.SetupUsersTable();
+            this.SetupWOLTable();
         }
 
         private void SetupDependency()

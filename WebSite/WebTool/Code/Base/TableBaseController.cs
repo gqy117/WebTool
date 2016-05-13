@@ -5,9 +5,7 @@
     using System.Collections.ObjectModel;
     using System.Linq;
     using System.Text;
-    using System.Web;
     using System.Web.Mvc;
-    using Devshorts.MonadicNull;
     using UnconstrainedMelody;
     using WebToolService;
 
@@ -54,9 +52,7 @@
                 string[] res = new string[this.PropertyList.Count];
                 for (int i = 0; i < this.PropertyList.Count; i++)
                 {
-                    res[i] =
-                        Option.Safe(() => x.GetType().GetProperty(this.PropertyList[i]).GetValue(x, null).ToString())
-                            .GetValueOrDefault();
+                    res[i] = x?.GetType().GetProperty(this.PropertyList[i])?.GetValue(x, null)?.ToString();
                 }
 
                 return res;

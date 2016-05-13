@@ -1,11 +1,8 @@
 ﻿namespace WebToolService
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
-    using System.Linq;
-    using System.Text;
 
     /// <summary>
     /// Represents the direction of sorting for a column.
@@ -20,12 +17,6 @@
 
     public class JQueryTable
     {
-        public JQueryTable()
-        {
-            this.iDisplayStart = 0;
-            this.iDisplayLength = 10;
-        }
-
         /// <summary>
         /// Gets or sets if the Global search is regex or not.
         /// </summary>
@@ -54,12 +45,12 @@
         /// <summary>
         /// Gets or sets the number of records to display.
         /// </summary>
-        public int iDisplayLength { get; set; }
+        public int iDisplayLength { get; set; } = 10;
 
         /// <summary>
         /// Gets or sets the display start point.
         /// </summary>
-        public int iDisplayStart { get; set; }
+        public int iDisplayStart { get; set; } = 0;
 
         /// <summary>
         /// Gets or sets column being sorted on (you will need to decode this number for your database).

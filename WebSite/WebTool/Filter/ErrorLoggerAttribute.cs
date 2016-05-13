@@ -1,26 +1,14 @@
 ﻿namespace WebTool
 {
     using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Web;
     using System.Web.Mvc;
-    using WebToolService;
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class ErrorLoggerAttribute : HandleErrorAttribute
     {
         private static NLog.Logger logHelper = NLog.LogManager.GetCurrentClassLogger();
 
-        public static NLog.Logger LogHelper
-        {
-            get
-            {
-                return logHelper;
-            }
-        }
+        public static NLog.Logger LogHelper => logHelper;
 
         public void LogError(Exception ex)
         {
