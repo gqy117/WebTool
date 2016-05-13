@@ -19,7 +19,7 @@
         {
             get
             {
-                this.fileName = this.fileName.Length == 0 ? Server.MapPath("~/bin/Service/WOL/WolCmd.exe") : this.fileName;
+                this.fileName = this.fileName.Length == 0 ? this.Server.MapPath("~/bin/Service/WOL/WolCmd.exe") : this.fileName;
                 return this.fileName;
             }
 
@@ -29,22 +29,16 @@
             }
         }
 
-        public override IList<string> PropertyList
+        public override IList<string> PropertyList => new List<string>()
         {
-            get
-            {
-                return new List<string>()
-                {
-                    nameof(WolModel.WOLID),
-                    nameof(WolModel.WolName),
-                    nameof(WolModel.HostName),
-                    nameof(WolModel.MacAddress),
-                    nameof(WolModel.SubnetMask),
-                    nameof(WolModel.Port),
-                    nameof(WolModel.Protocol)
-                };
-            }
-        }
+            nameof(WolModel.WOLID),
+            nameof(WolModel.WolName),
+            nameof(WolModel.HostName),
+            nameof(WolModel.MacAddress),
+            nameof(WolModel.SubnetMask),
+            nameof(WolModel.Port),
+            nameof(WolModel.Protocol)
+        };
 
         public WolModel WOLModel { get; set; }
 

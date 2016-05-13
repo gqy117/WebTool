@@ -18,8 +18,8 @@
         [SetUp]
         public virtual void Init()
         {
-            SetupDependency();
-            SetupDatabase();
+            this.SetupDependency();
+            this.SetupDatabase();
         }
 
         private void CreateDatabase()
@@ -30,10 +30,10 @@
 
         private void SetupDatabase()
         {
-            CreateDatabase();
+            this.CreateDatabase();
 
-            SetupUsersTable();
-            SetupWOLTable();
+            this.SetupUsersTable();
+            this.SetupWOLTable();
         }
 
         private void SetupDependency()

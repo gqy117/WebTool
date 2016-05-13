@@ -10,7 +10,7 @@
     [TestFixture]
     public class LanguageControllerTest : ControllerTestBase
     {
-        protected override Controller Controller { get { return this.LanguageController; } }
+        protected override Controller Controller => this.LanguageController;
 
         private LanguageController LanguageController { get; set; }
 

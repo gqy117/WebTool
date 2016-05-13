@@ -8,7 +8,7 @@
     [TestFixture]
     public class RegisterControllerTest : ControllerTestBase
     {
-        protected override Controller Controller { get { return this.RegisterController; } }
+        protected override Controller Controller => this.RegisterController;
 
         private RegisterController RegisterController { get; set; }
 

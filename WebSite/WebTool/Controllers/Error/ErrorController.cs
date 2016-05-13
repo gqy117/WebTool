@@ -6,13 +6,15 @@
     {
         public ViewResult Error()
         {
-            Response.StatusCode = 500;
+            this.Response.StatusCode = 500;
+
             return this.View("Error");
         }
 
         public ViewResult NotFound()
         {
-            Response.StatusCode = 404;
+            this.Response.StatusCode = 404;
+
             return this.View("NotFound");
         }
     }

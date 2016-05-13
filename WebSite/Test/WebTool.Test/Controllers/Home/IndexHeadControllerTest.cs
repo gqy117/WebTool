@@ -8,7 +8,7 @@
     [TestFixture]
     public class IndexHeadControllerTest : ControllerTestBase
     {
-        protected override Controller Controller { get { return this.IndexHeadController; } }
+        protected override Controller Controller => this.IndexHeadController;
 
         private IndexHeadController IndexHeadController { get; set; }
 

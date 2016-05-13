@@ -8,13 +8,7 @@
     {
         private static NLog.Logger logHelper = NLog.LogManager.GetCurrentClassLogger();
 
-        public static NLog.Logger LogHelper
-        {
-            get
-            {
-                return logHelper;
-            }
-        }
+        public static NLog.Logger LogHelper => logHelper;
 
         public void LogError(Exception ex)
         {
