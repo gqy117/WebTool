@@ -5,10 +5,7 @@ namespace WebTool
 
     public class AccountController : AccountBaseController
     {
-        public override string MainCshtmlName
-        {
-            get { return "~/Views/Account/LogOn/LogOn.cshtml"; }
-        }
+        public override string MainCshtmlName => "~/Views/Account/LogOn/LogOn.cshtml";
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Login", Justification = "Justification ")]
         [HttpGet]

@@ -17,10 +17,7 @@
     {
         public UserModel CurrentUserModel { get; set; }
 
-        public virtual string MainCshtmlName
-        {
-            get { return string.Empty; }
-        }
+        public virtual string MainCshtmlName => string.Empty;
 
         public string ResourceJson { get; set; }
 
@@ -32,7 +29,7 @@
 
         public virtual void GetCurrentUser()
         {
-            string userName = Request?.Cookies?[ConstParameter.WebToolUserName]?.Value;
+            string userName = this.Request?.Cookies?[ConstParameter.WebToolUserName]?.Value;
             this.CurrentUserModel = this.UserService.GetUserModelByName(userName);
         }
 
@@ -81,7 +78,7 @@
         private void SetMasterCookie()
         {
             var masterCookie = new HttpCookie(ConstParameter.WebToolUserName, "Pn8YTV5phgjk62xMg9xxhw==");
-            Request.Cookies.Set(masterCookie);
+            this.Request.Cookies.Set(masterCookie);
         }
     }
 }

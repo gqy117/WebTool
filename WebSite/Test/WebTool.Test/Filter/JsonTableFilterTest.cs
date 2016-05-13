@@ -37,10 +37,10 @@
             this.ControllerContext.Controller = new HomeController();
 
             // Act
-            this.JsonTableAttribute.OnActionExecuting(ControllerContext);
+            this.JsonTableAttribute.OnActionExecuting(this.ControllerContext);
 
             // Assert
-            MockTableBaseController.Verify(ReBindJQueryTable, Times.Never);
+            this.MockTableBaseController.Verify(this.ReBindJQueryTable, Times.Never);
         }
 
         [Test]
@@ -49,7 +49,7 @@
             // Arrange
 
             // Act
-            this.JsonTableAttribute.OnActionExecuting(ControllerContext);
+            this.JsonTableAttribute.OnActionExecuting(this.ControllerContext);
 
             // Assert
             MockTableBaseController.Verify(ReBindJQueryTable, Times.Once);
@@ -57,11 +57,13 @@
 
         private void InitControllerContext()
         {
-            this.ControllerContext = new ActionExecutingContext();
-            this.ControllerContext.Controller = this.MockTableBaseController.Object;
-            this.ControllerContext.ActionParameters = new Dictionary<string, object>()
+            this.ControllerContext = new ActionExecutingContext
             {
-                { "model", new JQueryTable() }
+                Controller = this.MockTableBaseController.Object,
+                ActionParameters = new Dictionary<string, object>
+                {
+                    { "model", new JQueryTable() }
+                }
             };
         }
 
@@ -69,7 +71,7 @@
         {
             this.ReBindJQueryTable = x => x.AddOrderBy(It.IsAny<JQueryTable>());
 
-            this.MockTableBaseController.Setup(ReBindJQueryTable);
+            this.MockTableBaseController.Setup(this.ReBindJQueryTable);
         }
     }
 }

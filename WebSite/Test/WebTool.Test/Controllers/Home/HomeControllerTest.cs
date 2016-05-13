@@ -8,7 +8,7 @@
     [TestFixture]
     public class HomeControllerTest : ControllerTestBase
     {
-        protected override Controller Controller { get { return this.HomeController; } }
+        protected override Controller Controller => this.HomeController;
 
         private HomeController HomeController { get; set; }
 

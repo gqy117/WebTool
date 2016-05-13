@@ -18,17 +18,17 @@
 
         public void DoLogOff()
         {
-            if (Request.Cookies[ConstParameter.WebToolUserName] != null)
+            if (this.Request.Cookies[ConstParameter.WebToolUserName] != null)
             {
-                Request.Cookies[ConstParameter.WebToolUserName].Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies.Add(Request.Cookies[ConstParameter.WebToolUserName]);
+                this.Request.Cookies[ConstParameter.WebToolUserName].Expires = DateTime.Now.AddDays(-1);
+                this.Response.Cookies.Add(this.Request.Cookies[ConstParameter.WebToolUserName]);
             }
         }
 
         public ActionResult DoLogOn(LogOnModel logOnModel)
         {
             bool isAllowed = false;
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
                 isAllowed = this.UserService.IsLogOnAllowed(logOnModel);
                 this.AddModelError(logOnModel);
@@ -56,7 +56,7 @@
             string encryptedUsername = this.AESHelper.EncryptStringToBytes(logOnModel.UserName);
             HttpCookie cookie = new HttpCookie(ConstParameter.WebToolUserName, encryptedUsername);
             this.SetLoginCookieExpires(cookie, logOnModel.RememberMe);
-            Response.Cookies.Add(cookie);
+            this.Response.Cookies.Add(cookie);
         }
 
         private void SetLoginCookieExpires(HttpCookie cookie, bool isRemeber)
