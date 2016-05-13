@@ -32,7 +32,7 @@
 
         private bool IsPost()
         {
-            return "POST" == this.CurrentContext.HttpContext.Request.HttpMethod.ToUpper();
+            return this.CurrentContext.HttpContext.Request.HttpMethod.ToUpper() == "POST";
         }
 
         private bool IsUrlReferrerNull()

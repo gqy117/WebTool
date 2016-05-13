@@ -15,23 +15,15 @@
     [LogOnCheck]
     public class ToolController : TableBaseController
     {
-        private CmdHelper cmdHelper = new CmdHelper();
-
         private string fileName = string.Empty;
 
-        public CmdHelper CMDHelper
-        {
-            get
-            {
-                return this.cmdHelper;
-            }
-        }
+        public CmdHelper CMDHelper { get; } = new CmdHelper();
 
         public string FileName
         {
             get
             {
-                this.fileName = 0 == this.fileName.Length ? Server.MapPath("~/bin/Service/WOL/WolCmd.exe") : this.fileName;
+                this.fileName = this.fileName.Length == 0 ? Server.MapPath("~/bin/Service/WOL/WolCmd.exe") : this.fileName;
                 return this.fileName;
             }
 
