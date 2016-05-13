@@ -86,7 +86,6 @@
     <Compile Include="Helper\Cache\RedisCacheHelperTest.cs" />
     <Compile Include="Helper\CmdHelperTest.cs" />
     <Compile Include="Helper\Encrypt\AESHelperTest.cs" />
-    <Compile Include="Helper\NameofTest.cs" />
     <Compile Include="Helper\StringHelperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -128,4 +127,3 @@
   </Target>
   -->
 </Project>
-
