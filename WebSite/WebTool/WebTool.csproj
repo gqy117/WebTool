@@ -203,9 +203,6 @@
     <Content Include="Content\assets\ckeditor\config.js" />
     <Content Include="Content\assets\ckeditor\plugins\icons.png" />
     <Content Include="Content\assets\css\metro.css" />
-    <Content Include="Content\assets\css\metro.min.css">
-      <DependentUpon>metro.css</DependentUpon>
-    </Content>
     <Content Include="Content\assets\css\sprite-home.css" />
     <Content Include="Content\assets\css\spritesheet.png" />
     <Content Include="Content\assets\css\style.css" />
