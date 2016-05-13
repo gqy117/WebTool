@@ -6,7 +6,7 @@
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {
-            "~/Content/jqTable.js"
+            "~/Content/bundleJs/jqTable.js"
         };
     }
 }

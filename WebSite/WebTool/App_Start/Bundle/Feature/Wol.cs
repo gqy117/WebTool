@@ -6,7 +6,7 @@
     {
         public static readonly IEnumerable<string> Files = new List<string>
         {
-            "~/Content/wol.js"
+            "~/Content/bundleJs/wol.js"
         };
     }
 }
