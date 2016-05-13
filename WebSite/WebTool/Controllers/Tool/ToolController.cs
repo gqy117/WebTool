@@ -35,13 +35,13 @@
             {
                 return new List<string>()
                 {
-                    Nameof<WolModel>.Property(x => x.WOLID), 
-                    Nameof<WolModel>.Property(x => x.WolName), 
-                    Nameof<WolModel>.Property(x => x.HostName), 
-                    Nameof<WolModel>.Property(x => x.MacAddress), 
-                    Nameof<WolModel>.Property(x => x.SubnetMask), 
-                    Nameof<WolModel>.Property(x => x.Port), 
-                    Nameof<WolModel>.Property(x => x.Protocol)
+                    nameof(WolModel.WOLID),
+                    nameof(WolModel.WolName),
+                    nameof(WolModel.HostName),
+                    nameof(WolModel.MacAddress),
+                    nameof(WolModel.SubnetMask),
+                    nameof(WolModel.Port),
+                    nameof(WolModel.Protocol)
                 };
             }
         }
