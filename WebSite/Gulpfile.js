@@ -42,6 +42,8 @@ gulp.task('tslint', function() {
 
 // bundle css
 gulp.task('bundle-css', function() {
+    var baseFolder = './WebTool/Content/';
+
     return gulp.src([
             "./WebTool/Content/assets/bootstrap/css/bootstrap.min.css",
             "./WebTool/Content/assets/css/metro.css",
@@ -59,10 +61,12 @@ gulp.task('bundle-css', function() {
             "./WebTool/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"
         ])
         .pipe(cleanCSS({
-            keepSpecialComments: false
+            keepSpecialComments: false,
+            relativeTo: baseFolder,
+            target: baseFolder
         }))
         .pipe(concat('all.min.css'))
-        .pipe(gulp.dest('./WebTool/Content/'));
+        .pipe(gulp.dest(baseFolder));
 });
 
 
@@ -73,8 +77,8 @@ gulp.task('watch', function() {
     gulp.watch(jsPath, ['jshint']);
     gulp.watch(tsPath, ['ts']);
     gulp.watch(tsPath, ['tslint']);
-    // gulp.watch(tsPath, ['bundle-css']);
+    gulp.watch(tsPath, ['bundle-css']);
 });
 
 // init
-gulp.task('default', ['jshint', 'ts', 'tslint']);
+gulp.task('default', ['jshint', 'ts', 'tslint', 'bundle-css']);
