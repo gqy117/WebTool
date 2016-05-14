@@ -193,6 +193,7 @@
   <ItemGroup>
     <Content Include="App_Data\SideMenu.xml" />
     <Content Include="App_Data\TopMenu.xml" />
+    <Content Include="Content\all.css" />
     <Content Include="Content\all.min.css" />
     <Content Include="Content\assets\bootstrap-datepicker\css\datepicker.css" />
     <Content Include="Content\assets\bootstrap\css\bootstrap-responsive.min.css" />
