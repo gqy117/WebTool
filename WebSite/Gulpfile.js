@@ -73,8 +73,8 @@ gulp.task('watch', function() {
     gulp.watch(jsPath, ['jshint']);
     gulp.watch(tsPath, ['ts']);
     gulp.watch(tsPath, ['tslint']);
-    gulp.watch(tsPath, ['bundle-css']);
+    // gulp.watch(tsPath, ['bundle-css']);
 });
 
 // init
-gulp.task('default', ['jshint', 'ts', 'tslint', 'bundle-css']);
+gulp.task('default', ['jshint', 'ts', 'tslint']);

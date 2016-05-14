@@ -1,6 +1,6 @@
 [
     // all.css
-    /*{
+    {
         "outputFileName": "Content/all.css",
         "inputFiles": [
             "Content/assets/bootstrap/css/bootstrap.min.css",
@@ -23,7 +23,7 @@
             "commentMode": "none",
             "outputMode": "singleLine"
         }
-    },*/
+    },
 
     // main.js
     {
