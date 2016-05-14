@@ -9,7 +9,7 @@
         public static void RegisteCSS(BundleCollection bundles)
         {
             var cssBundle = new StyleBundle("~/Content/AllCSS");
-            cssBundle.Include("~/Content/all.min.css");
+            cssBundle.Include("~/Content/all.css");
 
             bundles.Add(cssBundle);
         }
