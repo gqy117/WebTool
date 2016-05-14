@@ -42,30 +42,37 @@ gulp.task('tslint', function() {
 
 // bundle css
 gulp.task('bundle-css', function() {
-    var baseFolder = './WebTool/Content/';
+    var baseFolder = './WebTool/Content/',
+        cssFiles;
 
-    return gulp.src([
-            "./WebTool/Content/assets/bootstrap/css/bootstrap.min.css",
-            "./WebTool/Content/assets/css/metro.css",
-            "./WebTool/Content/assets/font-awesome/css/font-awesome.css",
-            "./WebTool/Content/assets/css/style.css",
-            "./WebTool/Content/assets/css/sprite-home.css",
-            "./WebTool/Content/assets/css/themes/default.css",
-            ////"./WebTool/Content/assets/css/themes/light.css",
-            "./WebTool/Content/assets/uniform/css/uniform.default.css",
-            "./WebTool/Content/assets/bootstrap/css/bootstrap-responsive.min.css",
-            "./WebTool/Content/Site.css",
-            "./WebTool/Content/assets/css/style_responsive.css",
-            "./WebTool/Content/assets/data-tables/DT_bootstrap.css",
-            "./WebTool/Content/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.css",
-            "./WebTool/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"
-        ])
-        .pipe(cleanCSS({
+    cssFiles = gulp.src([
+        "./WebTool/Content/assets/bootstrap/css/bootstrap.min.css",
+        "./WebTool/Content/assets/css/metro.css",
+        "./WebTool/Content/assets/font-awesome/css/font-awesome.css",
+        "./WebTool/Content/assets/css/style.css",
+        "./WebTool/Content/assets/css/sprite-home.css",
+        "./WebTool/Content/assets/css/themes/default.css",
+        ////"./WebTool/Content/assets/css/themes/light.css",
+        "./WebTool/Content/assets/uniform/css/uniform.default.css",
+        "./WebTool/Content/assets/bootstrap/css/bootstrap-responsive.min.css",
+        "./WebTool/Content/Site.css",
+        "./WebTool/Content/assets/css/style_responsive.css",
+        "./WebTool/Content/assets/data-tables/DT_bootstrap.css",
+        "./WebTool/Content/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.css",
+        "./WebTool/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"
+    ], { base: baseFolder });
+
+    cssFiles.pipe(concat('all.css'))
+        .pipe(eol())
+        .pipe(gulp.dest(baseFolder));
+
+    cssFiles.pipe(cleanCSS({
             keepSpecialComments: false,
             relativeTo: baseFolder,
             target: baseFolder
         }))
         .pipe(concat('all.min.css'))
+        .pipe(eol())
         .pipe(gulp.dest(baseFolder));
 });
 
