@@ -8,6 +8,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-eol": "0.1.1",
     "gulp-jshint": "2.0.0",
+    "gulp-rebase-css-urls": "0.0.2",
     "gulp-resolve-dependencies": "2.2.0",
     "gulp-tslint": "4.3.2",
     "gulp-typescript": "2.13.4",

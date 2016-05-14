@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     ts = require('gulp-typescript'),
     tslint = require('gulp-tslint'),
     concat = require('gulp-concat'),
+    rebaseCssUrls = require('gulp-rebase-css-urls'),
     cleanCSS = require('gulp-clean-css'),
     jsPath = ['./WebTool/Views/**/*.js', './Test/Jasmine/Views/**/*.js'],
     tsPath = './WebTool/**/*.ts',
@@ -43,7 +44,13 @@ gulp.task('tslint', function() {
 // bundle css
 gulp.task('bundle-css', function() {
     var baseFolder = './WebTool/Content/',
-        cssFiles;
+        cssFiles,
+        allCss = 'all.css',
+        allMinCss = 'all.min.css',
+        allCssPath = baseFolder + allCss,
+        allCssResult,
+        allCssMinResult,
+        saveToDest;
 
     cssFiles = gulp.src([
         "./WebTool/Content/assets/bootstrap/css/bootstrap.min.css",
@@ -60,20 +67,31 @@ gulp.task('bundle-css', function() {
         "./WebTool/Content/assets/data-tables/DT_bootstrap.css",
         "./WebTool/Content/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.css",
         "./WebTool/Content/assets/plugins/bootstrap-modal/css/bootstrap-modal.css"
-    ], { base: baseFolder });
+    ]);
 
-    cssFiles.pipe(concat('all.css'))
-        .pipe(eol())
-        .pipe(gulp.dest(baseFolder));
+    saveToDest = function(concatedResult) {
+        concatedResult.pipe(eol())
+            .pipe(gulp.dest(baseFolder));
+    };
 
-    cssFiles.pipe(cleanCSS({
-            keepSpecialComments: false,
-            relativeTo: baseFolder,
-            target: baseFolder
+
+    // bundle css files to all.css
+
+    allCssResult = cssFiles.pipe(rebaseCssUrls(baseFolder))
+        .pipe(concat(allCss));
+
+    saveToDest(allCssResult);
+
+
+    // minify all.css
+
+    allCssMinResult = gulp.src(allCssPath)
+        .pipe(cleanCSS({
+            rebase: false
         }))
-        .pipe(concat('all.min.css'))
-        .pipe(eol())
-        .pipe(gulp.dest(baseFolder));
+        .pipe(concat(allMinCss));
+        
+    saveToDest(allCssMinResult);
 });
 
 
