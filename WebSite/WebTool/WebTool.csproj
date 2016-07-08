@@ -204,7 +204,6 @@
     <Content Include="Content\assets\breakpoints\breakpoints.js" />
     <Content Include="Content\assets\ckeditor\config.js" />
     <Content Include="Content\assets\ckeditor\plugins\icons.png" />
-    <None Include="bundleconfig.json" />
     <Content Include="Content\assets\css\metro.css" />
     <Content Include="Content\assets\css\sprite-home.css" />
     <Content Include="Content\assets\css\spritesheet.png" />
@@ -376,6 +375,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.scss" />
     <Content Include="connectionStrings.config" />
+    <Content Include="bundleconfig.json.backup" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
