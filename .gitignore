@@ -99,6 +99,8 @@ WebSite/WebTool/WebTool.Publish.xml
 #WebSite/WebTool/Web.config
 WebSite/node_modules
 WebSite/bower_components
+WebSite/WebTool/Views/**/*.js
+!WebTool/Views/Shared/Datatable/myDataTable.service.js
 
 # Nuget Packages
 WebSite/packages/
